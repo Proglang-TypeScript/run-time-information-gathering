@@ -1,0 +1,7 @@
+{
+  "name": "master-mind-wp3",
+  "version": "1.0.0",
+  "dependencies": {
+    "jalangi2": "^0.2.5"
+  }
+}
