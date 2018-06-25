@@ -11,7 +11,7 @@ function f1(a) {
 		o.myMethod();
 
 		function f3(s, c) {
-			if (s && a.someValue < 100 && c.someValue < 100) {
+			if (s && a.someValue < 100 && c.someValue < 100 && o.someValue < 100) {
 				a.anotherValue = 1000;
 				return a.anotherValue;
 			}
