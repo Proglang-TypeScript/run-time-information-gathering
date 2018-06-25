@@ -14,6 +14,7 @@
         this.isConstructor = null;
         this.isMethod = null;
         this.args = {};
+        this.declarationEnclosingFunctionId = null;
 
         this.addArgumentContainer = function(argumentIndex, argumentContainer) {
             if (!(argumentIndex in this.args)) {

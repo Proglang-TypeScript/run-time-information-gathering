@@ -57,6 +57,30 @@
             return shadowId + " - " + functionIid;
         }
 
+        function getArgumentContainer(shadowId, functionIid) {
+            var fIid = functionIid;
+            var argumentContainer = sandbox.RuntimeInfoTemp.mapShadowIds[
+                getHashForShadowIdAndFunctionIid(shadowId, fIid)
+            ];
+
+            var functionContainer = null;
+            while(!argumentContainer && fIid) {
+                functionContainer = sandbox.RuntimeInfo.functions[fIid];
+
+                argumentContainer = sandbox.RuntimeInfoTemp.mapShadowIds[
+                    getHashForShadowIdAndFunctionIid(shadowId, fIid)
+                ];
+
+                if (!functionContainer) {
+                    fIid = null;
+                } else {
+                    fIid = functionContainer.declarationEnclosingFunctionId;
+                }
+            }
+
+            return argumentContainer;
+        }
+
         sandbox.RuntimeInfo = {
             functions: {}
         };
@@ -109,6 +133,14 @@
                     }
                 }
             }
+
+            if (typeof val == "function") {
+                val.declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
+            }
+
+            return {
+                result: val
+            };
         };
 
         this.invokeFunPre = function(
@@ -151,6 +183,7 @@
                 functionContainer.iid = iid;
                 functionContainer.isConstructor = isConstructor;
                 functionContainer.isMethod = isMethod;
+                functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
 
                 sandbox.RuntimeInfo.functions[functionIid] = functionContainer;
             }
@@ -174,9 +207,7 @@
             var functionIid = sandbox.RuntimeInfoTemp.functionsStack.top();
             var shadowId = getShadowIdOfObject(base);
 
-            var argumentContainer = sandbox.RuntimeInfoTemp.mapShadowIds[
-                getHashForShadowIdAndFunctionIid(shadowId, functionIid)
-            ];
+            var argumentContainer = getArgumentContainer(shadowId, functionIid);
 
             var interaction = {};
 
@@ -191,7 +222,8 @@
                         field: offset,
                         isComputed: isComputed,
                         isOpAssign: isOpAssign,
-                        isMethodCall: isMethodCall
+                        isMethodCall: isMethodCall,
+                        enclosingFunctionId: functionIid
                     };
                 } else {
                     interaction = {
@@ -200,7 +232,8 @@
                         isComputed: isComputed,
                         isOpAssign: isOpAssign,
                         isMethodCall: isMethodCall,
-                        functionIid: null
+                        functionIid: null,
+                        enclosingFunctionId: functionIid
                     };
 
                     var randomIdentifier = getRandomIdentifier();
@@ -235,6 +268,7 @@
                             typeof: getTypeOf(val),
                             isComputed: isComputed,
                             isOpAssign: isOpAssign,
+                            enclosingFunctionId: functionIid
                         };
 
                         argumentContainer.addInteraction(putFieldInteraction);
