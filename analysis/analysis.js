@@ -257,10 +257,9 @@
             if (functionIid) {
                 var shadowId = getShadowIdOfObject(base);
 
-                var hash = getHashForShadowIdAndFunctionIid(shadowId, functionIid);
-                if (hash in sandbox.RuntimeInfoTemp.mapShadowIds) {
-                    var argumentContainer = sandbox.RuntimeInfoTemp.mapShadowIds[hash];
+                var argumentContainer = getArgumentContainer(shadowId, functionIid);
 
+                if (argumentContainer) {
                     if (offset !== undefined) {
                         var putFieldInteraction = {
                             code: 'setField',
@@ -275,6 +274,20 @@
                     }
                 }
             }
+        };
+
+        this.write = function (iid, name, val) {
+            if (getTypeOf(val) == "object") {
+                for (var key in val) {
+                    if (getTypeOf(val[key]) == "function") {
+                        val[key].declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
+                    }
+                }
+            }
+
+            return {
+                result: val
+            };
         };
 
         this.endExecution = function() {
