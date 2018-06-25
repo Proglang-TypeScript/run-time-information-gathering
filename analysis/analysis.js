@@ -253,6 +253,9 @@
 
         this.putFieldPre = function (iid, base, offset, val, isComputed, isOpAssign) {
             var functionIid = sandbox.RuntimeInfoTemp.functionsStack.top();
+            if (getTypeOf(val) == "function") {
+                val.declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
+            }
 
             if (functionIid) {
                 var shadowId = getShadowIdOfObject(base);
@@ -274,6 +277,13 @@
                     }
                 }
             }
+
+            return {
+                base: base,
+                offset: offset,
+                val: val,
+                skip: false
+            };
         };
 
         this.write = function (iid, name, val) {
