@@ -26,6 +26,16 @@
             console.log("\targumentIndex: ", argumentIndex);
         };
 
+        this.write = function (iid, name, val, lhs, isGlobal, isScriptLocal) {
+            console.log("\nwrite:");
+            console.log("\tiid: ", iid);
+            console.log("\tname: ", name);
+            console.log("\tval: ", val);
+            console.log("\tlhs: ", lhs);
+            console.log("\tisGlobal: ", isGlobal);
+            console.log("\tisScriptLocal: ", isScriptLocal);
+        };
+
         this.invokeFunPre = function(
             iid,
             f,
