@@ -101,19 +101,21 @@
 
         sandbox.RuntimeInfoTemp = {
             functionsStack: new Stack(),
-            mapCallbacksDeclarations: {},
             mapShadowIds: {},
             mapMethodIdentifierInteractions: {},
             mapMethodCalls: {}
         };
 
         this.functionEnter = function (iid, f) {
-            if (f.randomIdentifier in sandbox.RuntimeInfoTemp.mapCallbacksDeclarations) {
-                var fIid = sandbox.RuntimeInfoTemp.mapCallbacksDeclarations[f.randomIdentifier];
-                sandbox.RuntimeInfoTemp.functionsStack.push(fIid);
-            } else {
-                sandbox.RuntimeInfoTemp.functionsStack.push(iid);
+            if (iid && !(iid in sandbox.RuntimeInfo.functions)) {
+                var functionContainer = new sandbox.Constructors.FunctionContainer(iid, f.name);
+                functionContainer.iid = iid;
+                functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
+
+                sandbox.RuntimeInfo.functions[iid] = functionContainer;
             }
+
+            sandbox.RuntimeInfoTemp.functionsStack.push(iid);
         };
 
         this.functionExit = function () {
@@ -179,16 +181,7 @@
 
             for (var argIndex in args) {
                 if (typeof args[argIndex] == "function") {
-                    var randomIdentifier = getRandomIdentifier();
-
-                    args[argIndex].randomIdentifier = randomIdentifier;
-
-                    var lastFunctionIid = sandbox.RuntimeInfoTemp.functionsStack.top();
-
-                    if (lastFunctionIid) {
-                        sandbox.RuntimeInfoTemp.mapCallbacksDeclarations[randomIdentifier] = lastFunctionIid;
-                    }
-
+                    args[argIndex].declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
                 }
             }
 
