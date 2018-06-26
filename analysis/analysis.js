@@ -25,6 +25,10 @@
 
                 return this.s[this.s.length - 1];
             };
+
+            this.isEmpty = function() {
+                return (this.s.length === 0);
+            }
         }
 
         function getTypeOf(val) {
@@ -85,7 +89,7 @@
             if (getTypeOf(val) == "object") {
                 for (var key in val) {
                     if (getTypeOf(val[key]) == "function") {
-                        val[key].declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
+                        val[key].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
                     }
 
                     val[key] = addDeclarationFunctionIdToFunctionsInsideObject(val[key]);
@@ -93,6 +97,14 @@
             }
 
             return val;
+        }
+
+        function getDeclarationEnclosingFunctionId() {
+            if (sandbox.RuntimeInfoTemp.functionsStack.isEmpty()) {
+                return -1;
+            }
+
+            return sandbox.RuntimeInfoTemp.functionsStack.top();
         }
 
         sandbox.RuntimeInfo = {
@@ -151,7 +163,7 @@
             }
 
             if (typeof val == "function") {
-                val.declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
+                val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
             }
 
             return {
@@ -181,7 +193,9 @@
 
             for (var argIndex in args) {
                 if (typeof args[argIndex] == "function") {
-                    args[argIndex].declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
+                    if (!args[argIndex].declarationEnclosingFunctionId) {
+                        args[argIndex].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
+                    }
                 }
             }
 
@@ -261,7 +275,7 @@
         this.putFieldPre = function (iid, base, offset, val, isComputed, isOpAssign) {
             var functionIid = sandbox.RuntimeInfoTemp.functionsStack.top();
             if (getTypeOf(val) == "function") {
-                val.declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
+                val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
             } else {
                 val = addDeclarationFunctionIdToFunctionsInsideObject(val);
             }
