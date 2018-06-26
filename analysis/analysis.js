@@ -81,6 +81,20 @@
             return argumentContainer;
         }
 
+        function addDeclarationFunctionIdToFunctionsInsideObject(val) {
+            if (getTypeOf(val) == "object") {
+                for (var key in val) {
+                    if (getTypeOf(val[key]) == "function") {
+                        val[key].declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
+                    }
+
+                    val[key] = addDeclarationFunctionIdToFunctionsInsideObject(val[key]);
+                }
+            }
+
+            return val;
+        }
+
         sandbox.RuntimeInfo = {
             functions: {}
         };
@@ -255,6 +269,8 @@
             var functionIid = sandbox.RuntimeInfoTemp.functionsStack.top();
             if (getTypeOf(val) == "function") {
                 val.declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
+            } else {
+                val = addDeclarationFunctionIdToFunctionsInsideObject(val);
             }
 
             if (functionIid) {
@@ -287,13 +303,7 @@
         };
 
         this.write = function (iid, name, val) {
-            if (getTypeOf(val) == "object") {
-                for (var key in val) {
-                    if (getTypeOf(val[key]) == "function") {
-                        val[key].declarationEnclosingFunctionId = sandbox.RuntimeInfoTemp.functionsStack.top();
-                    }
-                }
-            }
+            val = addDeclarationFunctionIdToFunctionsInsideObject(val);
 
             return {
                 result: val
