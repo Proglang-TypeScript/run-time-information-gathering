@@ -7,5 +7,4 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     --inlineSource --inlineIID \
     --analysis $JALANGI_PATH/src/js/runtime/SMemory.js \
     --analysis analysis/analysis.js \
-    --analysis analysis/utils.js \
     $TARGET
