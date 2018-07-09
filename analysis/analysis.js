@@ -96,6 +96,7 @@
         };
 
         var FunctionContainer = require("../utils/functionContainer.js").FunctionContainer;
+        var ArgumentContainer = require("../utils/argumentContainer.js").ArgumentContainer;
 
         this.functionEnter = function (iid, f) {
             if (iid && !(iid in sandbox.RuntimeInfo.functions)) {
@@ -119,7 +120,7 @@
                 var functionContainer = sandbox.RuntimeInfo.functions[functionIid];
 
                 if (functionContainer) {
-                    var argumentContainer = new sandbox.Constructors.ArgumentContainer(argumentIndex, name);
+                    var argumentContainer = new ArgumentContainer(argumentIndex, name);
                     argumentContainer.shadowId = getShadowIdOfObject(val);
 
                     var inputValueInteraction = {
