@@ -1,4 +1,5 @@
 /* global J$ */
+/* global require */
 
 // do not remove the following comment
 // JALANGI DO NOT INSTRUMENT
@@ -7,30 +8,6 @@
 
 (function (sandbox) {
     function Analysis() {
-        function Stack() {
-            this.s = [];
-
-            this.push = function(data) {
-                this.s.push(data);
-            };
-
-            this.pop = function() {
-                return this.s.pop();
-            };
-
-            this.top = function() {
-                if (this.s.length === 0) {
-                    return null;
-                }
-
-                return this.s[this.s.length - 1];
-            };
-
-            this.isEmpty = function() {
-                return (this.s.length === 0);
-            };
-        }
-
         function getTypeOf(val) {
             if (val === null) {
                 return "null";
@@ -112,15 +89,17 @@
         };
 
         sandbox.RuntimeInfoTemp = {
-            functionsStack: new Stack(),
+            functionsStack: require("../utils/stack.js").Stack,
             mapShadowIds: {},
             mapMethodIdentifierInteractions: {},
             mapMethodCalls: {}
         };
 
+        var FunctionContainer = require("../utils/functionContainer.js").FunctionContainer;
+
         this.functionEnter = function (iid, f) {
             if (iid && !(iid in sandbox.RuntimeInfo.functions)) {
-                var functionContainer = new sandbox.Constructors.FunctionContainer(iid, f.name);
+                var functionContainer = new FunctionContainer(iid, f.name);
                 functionContainer.iid = iid;
                 functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
 
@@ -217,7 +196,7 @@
             }
 
             if (functionIid && !(functionIid in sandbox.RuntimeInfo.functions)) {
-                var functionContainer = new sandbox.Constructors.FunctionContainer(functionIid, functionName);
+                var functionContainer = new FunctionContainer(functionIid, functionName);
                 functionContainer.iid = iid;
                 functionContainer.isConstructor = isConstructor;
                 functionContainer.isMethod = isMethod;
