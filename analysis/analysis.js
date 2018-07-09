@@ -207,7 +207,8 @@
                         var usedAsArgumentInteraction = {
                             code: 'usedAsArgument',
                             enclosingFunctionId: currentActiveFiid,
-                            targetFunctionId: functionIid
+                            targetFunctionId: functionIid,
+                            argumentIndexInTargetFunction: argIndex
                         };
 
                         argumentContainer.addInteraction(usedAsArgumentInteraction);
