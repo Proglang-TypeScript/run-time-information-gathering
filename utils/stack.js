@@ -28,6 +28,6 @@
 		};
 	}
 
-	exp.Stack = new Stack();
+	exp.Stack = Stack;
 
 })(module.exports);

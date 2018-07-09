@@ -88,15 +88,16 @@
             functions: {}
         };
 
+        var Stack = require("../utils/stack.js").Stack;
+        var FunctionContainer = require("../utils/functionContainer.js").FunctionContainer;
+        var ArgumentContainer = require("../utils/argumentContainer.js").ArgumentContainer;
+
         sandbox.RuntimeInfoTemp = {
-            functionsStack: require("../utils/stack.js").Stack,
+            functionsStack: new Stack(),
             mapShadowIds: {},
             mapMethodIdentifierInteractions: {},
             mapMethodCalls: {}
         };
-
-        var FunctionContainer = require("../utils/functionContainer.js").FunctionContainer;
-        var ArgumentContainer = require("../utils/argumentContainer.js").ArgumentContainer;
 
         this.functionEnter = function (iid, f) {
             if (iid && !(iid in sandbox.RuntimeInfo.functions)) {
