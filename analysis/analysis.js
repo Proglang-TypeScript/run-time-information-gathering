@@ -28,7 +28,7 @@
 
             this.isEmpty = function() {
                 return (this.s.length === 0);
-            }
+            };
         }
 
         function getTypeOf(val) {
@@ -192,9 +192,25 @@
             }
 
             for (var argIndex in args) {
-                if (typeof args[argIndex] == "function") {
+                if (getTypeOf(args[argIndex]) == "function") {
                     if (!args[argIndex].declarationEnclosingFunctionId) {
                         args[argIndex].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
+                    }
+                }
+
+                if (getTypeOf(args[argIndex]) == "object") {
+                    var currentActiveFiid = sandbox.RuntimeInfoTemp.functionsStack.top();
+                    var shadowId = getShadowIdOfObject(args[argIndex]);
+
+                    var argumentContainer = getArgumentContainer(shadowId, currentActiveFiid);
+                    if (currentActiveFiid && argumentContainer) {
+                        var usedAsArgumentInteraction = {
+                            code: 'usedAsArgument',
+                            enclosingFunctionId: currentActiveFiid,
+                            targetFunctionId: functionIid
+                        };
+
+                        argumentContainer.addInteraction(usedAsArgumentInteraction);
                     }
                 }
             }
