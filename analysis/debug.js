@@ -13,8 +13,8 @@
             console.log("\tf.name: ", f.name);
         };
 
-        this.functionExit = function () {
-            console.log("\nfunctionExit");
+        this.functionExit = function (iid) {
+            console.log("\nfunctionExit: ", iid);
         };
 
         this.declare = function (iid, name, val, isArgument, argumentIndex) {
