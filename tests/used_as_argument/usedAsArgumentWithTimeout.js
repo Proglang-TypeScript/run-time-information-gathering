@@ -11,11 +11,12 @@ function f1(a) {
 }
 
 function f2(a) {
-	return f1(a);
-}
-
-function f3(a) {
-	return f2(a);
+	setTimeout(
+		function() {
+      		return f1(a);
+		},
+		300
+	);
 }
 
 var a = {
@@ -23,4 +24,3 @@ var a = {
 };
 
 f2(a);
-f3(a);
