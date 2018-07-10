@@ -9,8 +9,7 @@
 (function (sandbox) {
     function Analysis() {
         var FunctionContainer = require("../utils/functionContainer.js").FunctionContainer;
-        var ArgumentContainer = require("../utils/argumentContainer.js").ArgumentContainer;
-        var SMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
+        var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 
         var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
         var getHashForShadowIdAndFunctionIid = require("../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
@@ -22,7 +21,7 @@
         }
 
         function getShadowIdOfObject(obj) {
-            return SMemoryInterface.getShadowIdOfObject(obj);
+            return sMemoryInterface.getShadowIdOfObject(obj);
         }
 
         function getArgumentContainer(shadowId, functionIid) {
@@ -85,6 +84,12 @@
             ),
             functionExit: new (require("./callbacks/functionExit.js")).FunctionExit(
                 sandbox.RuntimeInfoTemp.functionsExecutionStack
+            ),
+            declare: new (require("./callbacks/declare.js")).Declare(
+                sandbox.RuntimeInfo.functions,
+                sandbox.RuntimeInfoTemp.functionsExecutionStack,
+                sandbox.RuntimeInfoTemp.mapShadowIds,
+                sMemoryInterface
             )
         };
 
@@ -97,40 +102,7 @@
         };
 
         this.declare = function(iid, name, val, isArgument, argumentIndex) {
-            if (argumentIndex >= 0 && isArgument === true && sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction()) {
-                var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
-                var functionContainer = sandbox.RuntimeInfo.functions[functionIid];
-
-                if (functionContainer) {
-                    var argumentContainer = new ArgumentContainer(argumentIndex, name);
-                    argumentContainer.shadowId = getShadowIdOfObject(val);
-
-                    var inputValueInteraction = {
-                        code: "inputValue",
-                        typeof: getTypeOf(val)
-                    };
-
-                    argumentContainer.addInteraction(inputValueInteraction);
-                    functionContainer.addArgumentContainer(argumentIndex, argumentContainer);
-
-                    if (argumentContainer.shadowId) {
-                        sandbox.RuntimeInfoTemp.mapShadowIds[
-                            getHashForShadowIdAndFunctionIid(
-                                argumentContainer.shadowId,
-                                functionIid
-                            )
-                        ] = functionContainer.getArgumentContainer(argumentIndex);
-                    }
-                }
-            }
-
-            if (typeof val == "function") {
-                val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
-            }
-
-            return {
-                result: val
-            };
+            return callbacks.declare.runCallback(iid, name, val, isArgument, argumentIndex);
         };
 
         this.invokeFunPre = function(
