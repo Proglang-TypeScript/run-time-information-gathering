@@ -12,18 +12,7 @@
         var ArgumentContainer = require("../utils/argumentContainer.js").ArgumentContainer;
         var Stack = new require("../utils/stack.js").Stack;
         var FunctionsExecutionStack = require("../utils/functionsExecutionStack.js").FunctionsExecutionStack;
-
-        function getTypeOf(val) {
-            if (val === null) {
-                return "null";
-            }
-
-            if (typeof val === "object" && val instanceof Array) {
-                return "array";
-            }
-
-            return typeof val;
-        }
+        var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
 
         function getRandomIdentifier() {
             var now = new Date();
@@ -117,7 +106,7 @@
             return callbacks.functionExit.runCallback(iid, returnVal, wrappedExceptionVal);
         };
 
-        this.declare = function (iid, name, val, isArgument, argumentIndex) {
+        this.declare = function(iid, name, val, isArgument, argumentIndex) {
             if (argumentIndex >= 0 && isArgument === true && sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction()) {
                 var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
                 var functionContainer = sandbox.RuntimeInfo.functions[functionIid];
