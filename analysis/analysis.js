@@ -10,8 +10,6 @@
     function Analysis() {
         var FunctionContainer = require("../utils/functionContainer.js").FunctionContainer;
         var ArgumentContainer = require("../utils/argumentContainer.js").ArgumentContainer;
-        var Stack = new require("../utils/stack.js").Stack;
-        var FunctionsExecutionStack = require("../utils/functionsExecutionStack.js").FunctionsExecutionStack;
         var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
         var SMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 
@@ -79,19 +77,20 @@
         };
 
         sandbox.RuntimeInfoTemp = {
-            functionsExecutionStack: new FunctionsExecutionStack(),
-            functionsStack: new Stack(),
+            functionsExecutionStack: new (require("../utils/functionsExecutionStack.js")).FunctionsExecutionStack(),
             mapShadowIds: {},
             mapMethodIdentifierInteractions: {},
             mapMethodCalls: {}
         };
 
-        var FunctionEnter = require("./callbacks/functionEnter.js").FunctionEnter;
-        var FunctionExit = require("./callbacks/functionExit.js").FunctionExit;
-
         var callbacks = {
-            functionEnter: new FunctionEnter(sandbox.RuntimeInfo.functions, sandbox.RuntimeInfoTemp.functionsExecutionStack),
-            functionExit: new FunctionExit(sandbox.RuntimeInfoTemp.functionsExecutionStack)
+            functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
+                sandbox.RuntimeInfo.functions,
+                sandbox.RuntimeInfoTemp.functionsExecutionStack
+            ),
+            functionExit: new (require("./callbacks/functionExit.js")).FunctionExit(
+                sandbox.RuntimeInfoTemp.functionsExecutionStack
+            )
         };
 
         this.functionEnter = function(iid, f) {
