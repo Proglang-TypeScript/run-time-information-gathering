@@ -12,11 +12,7 @@
 
         var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
         var getDeclarationEnclosingFunctionIdRequire = require("../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
-
-        function getRandomIdentifier() {
-            var now = new Date();
-            return Math.floor((Math.random() * 1000) + 1).toString() + now.getTime();
-        }
+        var getRandomIdentifier = require("../utils/getRandomIdentifier.js").getRandomIdentifier;
 
         function getShadowIdOfObject(obj) {
             return sMemoryInterface.getShadowIdOfObject(obj);
@@ -76,6 +72,12 @@
                 sandbox.RuntimeInfoTemp.mapMethodIdentifierInteractions,
                 sMemoryInterface,
                 argumentContainerFinder
+            ),
+            getFieldPre: new (require("./callbacks/getFieldPre.js")).GetFieldPre(
+                sandbox.RuntimeInfoTemp.functionsExecutionStack,
+                sandbox.RuntimeInfoTemp.mapMethodIdentifierInteractions,
+                sMemoryInterface,
+                argumentContainerFinder
             )
         };
 
@@ -119,51 +121,14 @@
             isOpAssign,
             isMethodCall
         ) {
-            var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
-            var shadowId = getShadowIdOfObject(base);
-
-            var argumentContainer = argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
-
-            var interaction = {};
-
-            if (isMethodCall === true) {
-                base[offset].methodName = offset;
-            }
-
-            if (functionIid && argumentContainer) {
-                if (isMethodCall === false) {
-                    interaction = {
-                        code: 'getField',
-                        field: offset,
-                        isComputed: isComputed,
-                        isOpAssign: isOpAssign,
-                        isMethodCall: isMethodCall,
-                        enclosingFunctionId: functionIid
-                    };
-                } else {
-                    interaction = {
-                        code: 'methodCall',
-                        methodName: offset,
-                        isComputed: isComputed,
-                        isOpAssign: isOpAssign,
-                        isMethodCall: isMethodCall,
-                        functionIid: null,
-                        enclosingFunctionId: functionIid
-                    };
-
-                    var randomIdentifier = getRandomIdentifier();
-                    base[offset].methodIdentifier = randomIdentifier;
-                    sandbox.RuntimeInfoTemp.mapMethodIdentifierInteractions[randomIdentifier] = interaction;
-                }
-
-                argumentContainer.addInteraction(interaction);
-            }
-
-            return {
-                skip: false,
-                base: base,
-                offset: offset
-            };
+            return callbacks.getFieldPre.runCallback(
+                iid,
+                base,
+                offset,
+                isComputed,
+                isOpAssign,
+                isMethodCall
+            );
         };
 
         this.putFieldPre = function (iid, base, offset, val, isComputed, isOpAssign) {
