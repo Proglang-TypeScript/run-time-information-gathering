@@ -10,8 +10,10 @@
     function Analysis() {
         var FunctionContainer = require("../utils/functionContainer.js").FunctionContainer;
         var ArgumentContainer = require("../utils/argumentContainer.js").ArgumentContainer;
-        var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
         var SMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
+
+        var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
+        var getHashForShadowIdAndFunctionIid = require("../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
 
         function getRandomIdentifier() {
             var now = new Date();
@@ -20,10 +22,6 @@
 
         function getShadowIdOfObject(obj) {
             return SMemoryInterface.getShadowIdOfObject(obj);
-        }
-
-        function getHashForShadowIdAndFunctionIid(shadowId, functionIid) {
-            return shadowId + " - " + functionIid;
         }
 
         function getArgumentContainer(shadowId, functionIid) {
