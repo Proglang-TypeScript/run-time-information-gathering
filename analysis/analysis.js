@@ -12,24 +12,10 @@
 
         var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
         var getDeclarationEnclosingFunctionIdRequire = require("../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
-        var getRandomIdentifier = require("../utils/getRandomIdentifier.js").getRandomIdentifier;
+        var addDeclarationFunctionIdToFunctionsInsideObject = require("../utils/addDeclarationFunctionIdToFunctionsInsideObject.js").addDeclarationFunctionIdToFunctionsInsideObject;
 
         function getShadowIdOfObject(obj) {
             return sMemoryInterface.getShadowIdOfObject(obj);
-        }
-
-        function addDeclarationFunctionIdToFunctionsInsideObject(val) {
-            if (getTypeOf(val) == "object") {
-                for (var key in val) {
-                    if (getTypeOf(val[key]) == "function") {
-                        val[key].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
-                    }
-
-                    val[key] = addDeclarationFunctionIdToFunctionsInsideObject(val[key]);
-                }
-            }
-
-            return val;
         }
 
         function getDeclarationEnclosingFunctionId() {
@@ -131,7 +117,7 @@
             );
         };
 
-        this.putFieldPre = function (iid, base, offset, val, isComputed, isOpAssign) {
+        this.putFieldPre = function(iid, base, offset, val, isComputed, isOpAssign) {
             var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
             if (getTypeOf(val) == "function") {
                 val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
