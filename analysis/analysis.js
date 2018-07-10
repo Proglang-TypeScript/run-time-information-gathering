@@ -109,12 +109,12 @@
             functionExit: new FunctionExit(sandbox.RuntimeInfoTemp.functionsExecutionStack)
         };
 
-        this.functionEnter = function (iid, f) {
-            callbacks.functionEnter.runCallback(iid, f);
+        this.functionEnter = function(iid, f) {
+            return callbacks.functionEnter.runCallback(iid, f);
         };
 
-        this.functionExit = function () {
-            callbacks.functionExit.runCallback();
+        this.functionExit = function (iid, returnVal, wrappedExceptionVal) {
+            return callbacks.functionExit.runCallback(iid, returnVal, wrappedExceptionVal);
         };
 
         this.declare = function (iid, name, val, isArgument, argumentIndex) {

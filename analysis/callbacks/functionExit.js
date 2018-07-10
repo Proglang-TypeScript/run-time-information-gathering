@@ -6,8 +6,14 @@
 	function FunctionExit(functionsExecutionStack) {
 		this.functionsExecutionStack = functionsExecutionStack;
 
-		this.runCallback = function() {
+		this.runCallback = function(iid, returnVal, wrappedExceptionVal) {
 			this.functionsExecutionStack.stopExecution();
+
+			return {
+				returnVal: returnVal,
+				wrappedExceptionVal: wrappedExceptionVal,
+				isBacktrack: false
+			};
 		};
 	}
 
