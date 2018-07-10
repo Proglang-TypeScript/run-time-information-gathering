@@ -8,7 +8,16 @@
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
-	function InvokeFunPre(runTimeInfo, functionsExecutionStack, mapMethodIdentifierInteractions, sMemoryInterface, argumentContainerFinder) {
+	function InvokeFunPre(
+		runTimeInfo,
+		functionsExecutionStack,
+		mapMethodIdentifierInteractions,
+		sMemoryInterface,
+		argumentContainerFinder
+	) {
+
+		var dis = this;
+
 		this.runTimeInfo = runTimeInfo;
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
@@ -25,44 +34,19 @@
 			functionIid
 		) {
 
-			var functionName = f.name;
-
-			if (f.methodName) {
-				functionName = f.methodName;
-			}
-
-			if (f.methodIdentifier in this.mapMethodIdentifierInteractions) {
-				var interaction = this.mapMethodIdentifierInteractions[f.methodIdentifier];
-				interaction.functionIid = functionIid;
-			}
+			addFunctionIidToMethodCallInteraction(f, functionIid);
 
 			for (var argIndex in args) {
-				if (getTypeOf(args[argIndex]) == "function") {
-					if (!args[argIndex].declarationEnclosingFunctionId) {
-						args[argIndex].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
-					}
-				}
-
-				if (getTypeOf(args[argIndex]) == "object") {
-					var currentActiveFiid = this.functionsExecutionStack.getCurrentExecutingFunction();
-					var shadowId = this.sMemoryInterface.getShadowIdOfObject(args[argIndex]);
-
-					var argumentContainer = this.argumentContainerFinder.findArgumentContainer(shadowId, currentActiveFiid);
-					if (currentActiveFiid && argumentContainer) {
-						var usedAsArgumentInteraction = {
-							code: 'usedAsArgument',
-							enclosingFunctionId: currentActiveFiid,
-							targetFunctionId: functionIid,
-							argumentIndexInTargetFunction: argIndex
-						};
-
-						argumentContainer.addInteraction(usedAsArgumentInteraction);
-					}
-				}
+				addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
+				addUsedAsArgumentInteractionIfApplicable(args[argIndex], functionIid, argIndex);
 			}
 
 			if (functionIid && !(functionIid in this.runTimeInfo)) {
-				var functionContainer = new FunctionContainer(functionIid, functionName);
+				var functionContainer = new FunctionContainer(
+					functionIid,
+					getFunctionName(f)
+				);
+
 				functionContainer.iid = iid;
 				functionContainer.isConstructor = isConstructor;
 				functionContainer.isMethod = isMethod;
@@ -78,6 +62,50 @@
 				skip: false
 			};
 		};
+
+		function getFunctionName(f) {
+			var functionName = f.name;
+
+			if (f.methodName) {
+				functionName = f.methodName;
+			}
+
+			return functionName;
+		}
+
+		function addFunctionIidToMethodCallInteraction(f, functionIid) {
+			if (f.methodIdentifier in dis.mapMethodIdentifierInteractions) {
+				var interaction = dis.mapMethodIdentifierInteractions[f.methodIdentifier];
+				interaction.functionIid = functionIid;
+			}
+		}
+
+		function addDeclarationEnclosingFunctionIdIfApplicable(val) {
+			if (getTypeOf(val) == "function") {
+				if (!val.declarationEnclosingFunctionId) {
+					val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
+				}
+			}
+		}
+
+		function addUsedAsArgumentInteractionIfApplicable(val, functionIid, argIndex) {
+			if (getTypeOf(val) == "object") {
+				var currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
+				var shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
+
+				var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, currentActiveFiid);
+				if (currentActiveFiid && argumentContainer) {
+					var usedAsArgumentInteraction = {
+						code: 'usedAsArgument',
+						enclosingFunctionId: currentActiveFiid,
+						targetFunctionId: functionIid,
+						argumentIndexInTargetFunction: argIndex
+					};
+
+					argumentContainer.addInteraction(usedAsArgumentInteraction);
+				}
+			}
+		}
 	}
 
 	exp.InvokeFunPre = InvokeFunPre;
