@@ -13,6 +13,7 @@
         var Stack = new require("../utils/stack.js").Stack;
         var FunctionsExecutionStack = require("../utils/functionsExecutionStack.js").FunctionsExecutionStack;
         var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
+        var SMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 
         function getRandomIdentifier() {
             var now = new Date();
@@ -20,12 +21,7 @@
         }
 
         function getShadowIdOfObject(obj) {
-            if (getTypeOf(obj) !== "object") {
-                return null;
-            }
-
-            var shadowObj = sandbox.smemory.getShadowObjectOfObject(obj);
-            return sandbox.smemory.getIDFromShadowObjectOrFrame(shadowObj);
+            return SMemoryInterface.getShadowIdOfObject(obj);
         }
 
         function getHashForShadowIdAndFunctionIid(shadowId, functionIid) {
