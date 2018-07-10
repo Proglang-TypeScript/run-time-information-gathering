@@ -8,20 +8,6 @@
 
 (function (sandbox) {
     function Analysis() {
-        var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
-
-        var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
-        var getDeclarationEnclosingFunctionIdRequire = require("../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
-        var addDeclarationFunctionIdToFunctionsInsideObject = require("../utils/addDeclarationFunctionIdToFunctionsInsideObject.js").addDeclarationFunctionIdToFunctionsInsideObject;
-
-        function getShadowIdOfObject(obj) {
-            return sMemoryInterface.getShadowIdOfObject(obj);
-        }
-
-        function getDeclarationEnclosingFunctionId() {
-            return getDeclarationEnclosingFunctionIdRequire(sandbox.RuntimeInfoTemp.functionsExecutionStack);
-        }
-
         sandbox.RuntimeInfo = {
             functions: {}
         };
@@ -29,9 +15,10 @@
         sandbox.RuntimeInfoTemp = {
             functionsExecutionStack: new (require("../utils/functionsExecutionStack.js")).FunctionsExecutionStack(),
             mapShadowIds: {},
-            mapMethodIdentifierInteractions: {},
-            mapMethodCalls: {}
+            mapMethodIdentifierInteractions: {}
         };
+
+        var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 
         var argumentContainerFinder = new (require("../utils/argumentContainerFinder.js")).ArgumentContainerFinder(
             sandbox.RuntimeInfo.functions,
@@ -69,7 +56,8 @@
                 sandbox.RuntimeInfoTemp.functionsExecutionStack,
                 sMemoryInterface,
                 argumentContainerFinder
-            )
+            ),
+            write: new (require("./callbacks/write.js")).Write()
         };
 
         this.functionEnter = function(iid, f) {
@@ -134,11 +122,7 @@
         };
 
         this.write = function (iid, name, val) {
-            val = addDeclarationFunctionIdToFunctionsInsideObject(val);
-
-            return {
-                result: val
-            };
+            return callbacks.write.runCallback(val);
         };
 
         this.endExecution = function() {
