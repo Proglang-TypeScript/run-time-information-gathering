@@ -10,36 +10,22 @@
 	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
 	function Declare(runTimeInfo, functionsExecutionStack, mapShadowIds, sMemoryInterface) {
+		var dis = this;
+
 		this.runTimeInfo = runTimeInfo;
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.mapShadowIds = mapShadowIds;
 		this.sMemoryInterface = sMemoryInterface;
 
 		this.runCallback = function(iid, name, val, isArgument, argumentIndex) {
-			if (argumentIndex >= 0 && isArgument === true && this.functionsExecutionStack.getCurrentExecutingFunction()) {
-				var functionIid = this.functionsExecutionStack.getCurrentExecutingFunction();
-				var functionContainer = this.runTimeInfo[functionIid];
+			if (isAnArgumentOfAProcessedFunction(argumentIndex, isArgument)) {
+				var functionContainer = getFunctionContainer();
 
 				if (functionContainer) {
-					var argumentContainer = new ArgumentContainer(argumentIndex, name);
-					argumentContainer.shadowId = this.sMemoryInterface.getShadowIdOfObject(val);
-
-					var inputValueInteraction = {
-						code: "inputValue",
-						typeof: getTypeOf(val)
-					};
-
-					argumentContainer.addInteraction(inputValueInteraction);
+					var argumentContainer = buildArgumentContainer(argumentIndex, name, val);
 					functionContainer.addArgumentContainer(argumentIndex, argumentContainer);
 
-					if (argumentContainer.shadowId) {
-						this.mapShadowIds[
-						getHashForShadowIdAndFunctionIid(
-							argumentContainer.shadowId,
-							functionIid
-							)
-						] = functionContainer.getArgumentContainer(argumentIndex);
-					}
+					addMappingForContainers(argumentContainer, functionContainer);
 				}
 			}
 
@@ -50,7 +36,46 @@
 			return {
 				result: val
 			};
+
 		};
+
+		function isAnArgumentOfAProcessedFunction(argumentIndex, isArgument) {
+			return (
+				argumentIndex >= 0 &&
+				isArgument === true &&
+				dis.functionsExecutionStack.isThereAFunctionExecuting()
+			);
+		}
+
+		function getFunctionContainer() {
+			var functionIid = dis.functionsExecutionStack.getCurrentExecutingFunction();
+			return dis.runTimeInfo[functionIid];
+		}
+
+		function buildArgumentContainer(argumentIndex, name, val) {
+			var argumentContainer = new ArgumentContainer(argumentIndex, name);
+			argumentContainer.shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
+
+			var inputValueInteraction = {
+				code: "inputValue",
+				typeof: getTypeOf(val)
+			};
+
+			argumentContainer.addInteraction(inputValueInteraction);
+
+			return argumentContainer;
+		}
+
+		function addMappingForContainers(argumentContainer, functionContainer) {
+			if (argumentContainer.shadowId) {
+				dis.mapShadowIds[
+					getHashForShadowIdAndFunctionIid(
+						argumentContainer.shadowId,
+						functionContainer.functionId
+					)
+				] = functionContainer.getArgumentContainer(argumentContainer.argumentIndex);
+			}
+		}
 	}
 
 	exp.Declare = Declare;
