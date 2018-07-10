@@ -14,6 +14,7 @@
 
         var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
         var getHashForShadowIdAndFunctionIid = require("../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
+        var getDeclarationEnclosingFunctionIdRequire = require("../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
         function getRandomIdentifier() {
             var now = new Date();
@@ -63,11 +64,7 @@
         }
 
         function getDeclarationEnclosingFunctionId() {
-            if (sandbox.RuntimeInfoTemp.functionsExecutionStack.isThereAFunctionExecuting()) {
-                return -1;
-            }
-
-            return sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
+            return getDeclarationEnclosingFunctionIdRequire(sandbox.RuntimeInfoTemp.functionsExecutionStack);
         }
 
         sandbox.RuntimeInfo = {
