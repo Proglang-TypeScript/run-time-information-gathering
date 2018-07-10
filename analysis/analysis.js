@@ -12,7 +12,6 @@
         var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 
         var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
-        var getHashForShadowIdAndFunctionIid = require("../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
         var getDeclarationEnclosingFunctionIdRequire = require("../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
         function getRandomIdentifier() {
@@ -22,30 +21,6 @@
 
         function getShadowIdOfObject(obj) {
             return sMemoryInterface.getShadowIdOfObject(obj);
-        }
-
-        function getArgumentContainer(shadowId, functionIid) {
-            var fIid = functionIid;
-            var argumentContainer = sandbox.RuntimeInfoTemp.mapShadowIds[
-                getHashForShadowIdAndFunctionIid(shadowId, fIid)
-            ];
-
-            var functionContainer = null;
-            while(!argumentContainer && fIid) {
-                functionContainer = sandbox.RuntimeInfo.functions[fIid];
-
-                argumentContainer = sandbox.RuntimeInfoTemp.mapShadowIds[
-                    getHashForShadowIdAndFunctionIid(shadowId, fIid)
-                ];
-
-                if (!functionContainer) {
-                    fIid = null;
-                } else {
-                    fIid = functionContainer.declarationEnclosingFunctionId;
-                }
-            }
-
-            return argumentContainer;
         }
 
         function addDeclarationFunctionIdToFunctionsInsideObject(val) {
@@ -76,6 +51,11 @@
             mapMethodIdentifierInteractions: {},
             mapMethodCalls: {}
         };
+
+        var ArgumentContainerFinder = new (require("../utils/argumentContainerFinder.js")).ArgumentContainerFinder(
+            sandbox.RuntimeInfo.functions,
+            sandbox.RuntimeInfoTemp.mapShadowIds
+        );
 
         var callbacks = {
             functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
@@ -136,7 +116,7 @@
                     var currentActiveFiid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
                     var shadowId = getShadowIdOfObject(args[argIndex]);
 
-                    var argumentContainer = getArgumentContainer(shadowId, currentActiveFiid);
+                    var argumentContainer = ArgumentContainerFinder.findArgumentContainer(shadowId, currentActiveFiid);
                     if (currentActiveFiid && argumentContainer) {
                         var usedAsArgumentInteraction = {
                             code: 'usedAsArgument',
@@ -179,7 +159,7 @@
             var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
             var shadowId = getShadowIdOfObject(base);
 
-            var argumentContainer = getArgumentContainer(shadowId, functionIid);
+            var argumentContainer = ArgumentContainerFinder.findArgumentContainer(shadowId, functionIid);
 
             var interaction = {};
 
@@ -234,7 +214,7 @@
             if (functionIid) {
                 var shadowId = getShadowIdOfObject(base);
 
-                var argumentContainer = getArgumentContainer(shadowId, functionIid);
+                var argumentContainer = ArgumentContainerFinder.findArgumentContainer(shadowId, functionIid);
 
                 if (argumentContainer) {
                     if (offset !== undefined) {
