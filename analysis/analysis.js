@@ -11,7 +11,7 @@
         var FunctionContainer = require("../utils/functionContainer.js").FunctionContainer;
         var ArgumentContainer = require("../utils/argumentContainer.js").ArgumentContainer;
         var Stack = new require("../utils/stack.js").Stack;
-        var FunctionsExecutionStacks = require("../utils/functionsExecutionStack.js").FunctionsExecutionStacks;
+        var FunctionsExecutionStack = require("../utils/functionsExecutionStack.js").FunctionsExecutionStack;
 
         function getTypeOf(val) {
             if (val === null) {
@@ -82,11 +82,11 @@
         }
 
         function getDeclarationEnclosingFunctionId() {
-            if (sandbox.RuntimeInfoTemp.functionsExecutionStacks.isThereAFunctionExecuting()) {
+            if (sandbox.RuntimeInfoTemp.functionsExecutionStack.isThereAFunctionExecuting()) {
                 return -1;
             }
 
-            return sandbox.RuntimeInfoTemp.functionsExecutionStacks.getCurrentExecutingFunction();
+            return sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
         }
 
         sandbox.RuntimeInfo = {
@@ -94,7 +94,7 @@
         };
 
         sandbox.RuntimeInfoTemp = {
-            functionsExecutionStacks: new FunctionsExecutionStacks(),
+            functionsExecutionStack: new FunctionsExecutionStack(),
             functionsStack: new Stack(),
             mapShadowIds: {},
             mapMethodIdentifierInteractions: {},
@@ -102,8 +102,11 @@
         };
 
         var FunctionEnter = require("./callbacks/functionEnter.js").FunctionEnter;
+        var FunctionExit = require("./callbacks/functionExit.js").FunctionExit;
+
         var callbacks = {
-            functionEnter: new FunctionEnter(sandbox.RuntimeInfo.functions, sandbox.RuntimeInfoTemp.functionsExecutionStacks)
+            functionEnter: new FunctionEnter(sandbox.RuntimeInfo.functions, sandbox.RuntimeInfoTemp.functionsExecutionStack),
+            functionExit: new FunctionExit(sandbox.RuntimeInfoTemp.functionsExecutionStack)
         };
 
         this.functionEnter = function (iid, f) {
@@ -111,12 +114,12 @@
         };
 
         this.functionExit = function () {
-            sandbox.RuntimeInfoTemp.functionsExecutionStacks.stopExecution();
+            callbacks.functionExit.runCallback();
         };
 
         this.declare = function (iid, name, val, isArgument, argumentIndex) {
-            if (argumentIndex >= 0 && isArgument === true && sandbox.RuntimeInfoTemp.functionsExecutionStacks.getCurrentExecutingFunction()) {
-                var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStacks.getCurrentExecutingFunction();
+            if (argumentIndex >= 0 && isArgument === true && sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction()) {
+                var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
                 var functionContainer = sandbox.RuntimeInfo.functions[functionIid];
 
                 if (functionContainer) {
@@ -179,7 +182,7 @@
                 }
 
                 if (getTypeOf(args[argIndex]) == "object") {
-                    var currentActiveFiid = sandbox.RuntimeInfoTemp.functionsExecutionStacks.getCurrentExecutingFunction();
+                    var currentActiveFiid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
                     var shadowId = getShadowIdOfObject(args[argIndex]);
 
                     var argumentContainer = getArgumentContainer(shadowId, currentActiveFiid);
@@ -222,7 +225,7 @@
             isOpAssign,
             isMethodCall
         ) {
-            var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStacks.getCurrentExecutingFunction();
+            var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
             var shadowId = getShadowIdOfObject(base);
 
             var argumentContainer = getArgumentContainer(shadowId, functionIid);
@@ -270,7 +273,7 @@
         };
 
         this.putFieldPre = function (iid, base, offset, val, isComputed, isOpAssign) {
-            var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStacks.getCurrentExecutingFunction();
+            var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
             if (getTypeOf(val) == "function") {
                 val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
             } else {

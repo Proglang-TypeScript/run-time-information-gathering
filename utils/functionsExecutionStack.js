@@ -27,6 +27,6 @@
 		};
 	}
 
-	exp.FunctionsExecutionStacks = FunctionsExecutionStack;
+	exp.FunctionsExecutionStack = FunctionsExecutionStack;
 
 })(module.exports);
