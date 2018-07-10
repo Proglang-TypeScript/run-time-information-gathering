@@ -101,16 +101,13 @@
             mapMethodCalls: {}
         };
 
+        var FunctionEnter = require("./callbacks/functionEnter.js").FunctionEnter;
+        var callbacks = {
+            functionEnter: new FunctionEnter(sandbox.RuntimeInfo.functions, sandbox.RuntimeInfoTemp.functionsExecutionStacks)
+        };
+
         this.functionEnter = function (iid, f) {
-            if (iid && !(iid in sandbox.RuntimeInfo.functions)) {
-                var functionContainer = new FunctionContainer(iid, f.name);
-                functionContainer.iid = iid;
-                functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
-
-                sandbox.RuntimeInfo.functions[iid] = functionContainer;
-            }
-
-            sandbox.RuntimeInfoTemp.functionsExecutionStacks.addExecution(iid);
+            callbacks.functionEnter.runCallback(iid, f);
         };
 
         this.functionExit = function () {

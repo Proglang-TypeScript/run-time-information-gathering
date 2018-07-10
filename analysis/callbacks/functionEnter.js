@@ -1,18 +1,25 @@
 /* global module */
+/* global require */
 
 "use strict";
 
 (function(exp) {
+	var FunctionContainer = require("../../utils/functionContainer.js").FunctionContainer;
 
-	function FunctionEnter(argumentIndex, name) {
-		this.argumentIndex = argumentIndex;
-		this.argumentName = name;
+	function FunctionEnter(runTimeInfo, functionsExecutionStack) {
+		this.runTimeInfo = runTimeInfo;
+		this.functionsExecutionStack = functionsExecutionStack;
 
-		this.shadowId = null;
-		this.interactions = [];
+		this.runCallback = function(iid, f) {
+			if (iid && !(iid in this.runTimeInfo)) {
+				var functionContainer = new FunctionContainer(iid, f.name);
+				functionContainer.iid = iid;
+				functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
 
-		this.addInteraction = function(interaction) {
-			this.interactions.push(interaction);
+				this.runTimeInfo[iid] = functionContainer;
+			}
+
+			this.functionsExecutionStack.addExecution(iid);
 		};
 	}
 
