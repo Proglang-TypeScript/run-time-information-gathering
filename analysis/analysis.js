@@ -8,7 +8,6 @@
 
 (function (sandbox) {
     function Analysis() {
-        var FunctionContainer = require("../utils/functionContainer.js").FunctionContainer;
         var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 
         var getTypeOf = require("../utils/getTypeOf.js").getTypeOf;
@@ -52,7 +51,7 @@
             mapMethodCalls: {}
         };
 
-        var ArgumentContainerFinder = new (require("../utils/argumentContainerFinder.js")).ArgumentContainerFinder(
+        var argumentContainerFinder = new (require("../utils/argumentContainerFinder.js")).ArgumentContainerFinder(
             sandbox.RuntimeInfo.functions,
             sandbox.RuntimeInfoTemp.mapShadowIds
         );
@@ -70,6 +69,13 @@
                 sandbox.RuntimeInfoTemp.functionsExecutionStack,
                 sandbox.RuntimeInfoTemp.mapShadowIds,
                 sMemoryInterface
+            ),
+            invokeFunPre: new (require("./callbacks/invokeFunPre.js")).InvokeFunPre(
+                sandbox.RuntimeInfo.functions,
+                sandbox.RuntimeInfoTemp.functionsExecutionStack,
+                sandbox.RuntimeInfoTemp.mapMethodIdentifierInteractions,
+                sMemoryInterface,
+                argumentContainerFinder
             )
         };
 
@@ -94,58 +100,15 @@
             isMethod,
             functionIid
         ) {
-            var functionName = f.name;
-
-            if (f.methodName) {
-                functionName = f.methodName;
-            }
-
-            if (f.methodIdentifier in sandbox.RuntimeInfoTemp.mapMethodIdentifierInteractions) {
-                var interaction = sandbox.RuntimeInfoTemp.mapMethodIdentifierInteractions[f.methodIdentifier];
-                interaction.functionIid = functionIid;
-            }
-
-            for (var argIndex in args) {
-                if (getTypeOf(args[argIndex]) == "function") {
-                    if (!args[argIndex].declarationEnclosingFunctionId) {
-                        args[argIndex].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
-                    }
-                }
-
-                if (getTypeOf(args[argIndex]) == "object") {
-                    var currentActiveFiid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
-                    var shadowId = getShadowIdOfObject(args[argIndex]);
-
-                    var argumentContainer = ArgumentContainerFinder.findArgumentContainer(shadowId, currentActiveFiid);
-                    if (currentActiveFiid && argumentContainer) {
-                        var usedAsArgumentInteraction = {
-                            code: 'usedAsArgument',
-                            enclosingFunctionId: currentActiveFiid,
-                            targetFunctionId: functionIid,
-                            argumentIndexInTargetFunction: argIndex
-                        };
-
-                        argumentContainer.addInteraction(usedAsArgumentInteraction);
-                    }
-                }
-            }
-
-            if (functionIid && !(functionIid in sandbox.RuntimeInfo.functions)) {
-                var functionContainer = new FunctionContainer(functionIid, functionName);
-                functionContainer.iid = iid;
-                functionContainer.isConstructor = isConstructor;
-                functionContainer.isMethod = isMethod;
-                functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
-
-                sandbox.RuntimeInfo.functions[functionIid] = functionContainer;
-            }
-
-            return {
-                f: f,
-                base: base,
-                args: args,
-                skip: false
-            };
+            return callbacks.invokeFunPre.runCallback(
+                iid,
+                f,
+                base,
+                args,
+                isConstructor,
+                isMethod,
+                functionIid
+            );
         };
 
         this.getFieldPre = function(
@@ -159,7 +122,7 @@
             var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
             var shadowId = getShadowIdOfObject(base);
 
-            var argumentContainer = ArgumentContainerFinder.findArgumentContainer(shadowId, functionIid);
+            var argumentContainer = argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
 
             var interaction = {};
 
@@ -214,7 +177,7 @@
             if (functionIid) {
                 var shadowId = getShadowIdOfObject(base);
 
-                var argumentContainer = ArgumentContainerFinder.findArgumentContainer(shadowId, functionIid);
+                var argumentContainer = argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
 
                 if (argumentContainer) {
                     if (offset !== undefined) {
