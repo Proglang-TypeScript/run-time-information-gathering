@@ -64,6 +64,11 @@
                 sandbox.RuntimeInfoTemp.mapMethodIdentifierInteractions,
                 sMemoryInterface,
                 argumentContainerFinder
+            ),
+            putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(
+                sandbox.RuntimeInfoTemp.functionsExecutionStack,
+                sMemoryInterface,
+                argumentContainerFinder
             )
         };
 
@@ -118,40 +123,14 @@
         };
 
         this.putFieldPre = function(iid, base, offset, val, isComputed, isOpAssign) {
-            var functionIid = sandbox.RuntimeInfoTemp.functionsExecutionStack.getCurrentExecutingFunction();
-            if (getTypeOf(val) == "function") {
-                val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
-            } else {
-                val = addDeclarationFunctionIdToFunctionsInsideObject(val);
-            }
-
-            if (functionIid) {
-                var shadowId = getShadowIdOfObject(base);
-
-                var argumentContainer = argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
-
-                if (argumentContainer) {
-                    if (offset !== undefined) {
-                        var putFieldInteraction = {
-                            code: 'setField',
-                            field: offset,
-                            typeof: getTypeOf(val),
-                            isComputed: isComputed,
-                            isOpAssign: isOpAssign,
-                            enclosingFunctionId: functionIid
-                        };
-
-                        argumentContainer.addInteraction(putFieldInteraction);
-                    }
-                }
-            }
-
-            return {
-                base: base,
-                offset: offset,
-                val: val,
-                skip: false
-            };
+            return callbacks.putFieldPre.runCallback(
+                iid,
+                base,
+                offset,
+                val,
+                isComputed,
+                isOpAssign
+            );
         };
 
         this.write = function (iid, name, val) {
