@@ -23,7 +23,7 @@
 		};
 
 		this.isThereAFunctionExecuting = function() {
-			return this.stack.isEmpty();
+			return !this.stack.isEmpty();
 		};
 	}
 

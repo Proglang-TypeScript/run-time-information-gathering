@@ -4,7 +4,7 @@
 
 (function(exp) {
 	function getDeclarationEnclosingFunctionId(functionsExecutionStack) {
-		if (functionsExecutionStack.isThereAFunctionExecuting()) {
+		if (!functionsExecutionStack.isThereAFunctionExecuting()) {
 			return -1;
 		}
 
