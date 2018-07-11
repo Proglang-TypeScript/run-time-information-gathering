@@ -83,7 +83,7 @@
 		function addDeclarationEnclosingFunctionIdIfApplicable(val) {
 			if (getTypeOf(val) == "function") {
 				if (!val.declarationEnclosingFunctionId) {
-					val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
+					val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(dis.functionsExecutionStack);
 				}
 			}
 		}

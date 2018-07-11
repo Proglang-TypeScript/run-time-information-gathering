@@ -6,9 +6,11 @@
 (function(exp) {
 	var addDeclarationFunctionIdToFunctionsInsideObject = require("../../utils/addDeclarationFunctionIdToFunctionsInsideObject.js").addDeclarationFunctionIdToFunctionsInsideObject;
 
-	function Write() {
+	function Write(functionsExecutionStack) {
+		this.functionsExecutionStack = functionsExecutionStack;
+
 		this.runCallback = function(val) {
-			val = addDeclarationFunctionIdToFunctionsInsideObject(val);
+			val = addDeclarationFunctionIdToFunctionsInsideObject(val, this.functionsExecutionStack);
 
 			return {
 				result: val

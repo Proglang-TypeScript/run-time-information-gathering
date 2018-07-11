@@ -16,9 +16,9 @@
 		this.runCallback = function(iid, base, offset, val, isComputed, isOpAssign) {
 			var functionIid = this.functionsExecutionStack.getCurrentExecutingFunction();
 			if (getTypeOf(val) == "function") {
-				val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId();
+				val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(this.functionsExecutionStack);
 			} else {
-				val = addDeclarationFunctionIdToFunctionsInsideObject(val);
+				val = addDeclarationFunctionIdToFunctionsInsideObject(val, functionsExecutionStack);
 			}
 
 			if (functionIid) {

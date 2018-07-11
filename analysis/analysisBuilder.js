@@ -51,7 +51,7 @@
 					sMemoryInterface,
 					argumentContainerFinder
 				),
-				write: new (require("./callbacks/write.js")).Write()
+				write: new (require("./callbacks/write.js")).Write(functionsExecutionStack)
 			};
 		};
 	}
