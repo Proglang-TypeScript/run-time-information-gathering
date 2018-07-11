@@ -1,0 +1,61 @@
+{
+    "97": {
+        "functionId": 97,
+        "functionName": "myFunction",
+        "iid": 241,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "executeMethod",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 169,
+                        "enclosingFunctionId": 97
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    },
+    "169": {
+        "functionId": 169,
+        "functionName": "executeMethod",
+        "iid": 73,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "v",
+                "shadowId": 5,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "field": "val",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 169
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    }
+}

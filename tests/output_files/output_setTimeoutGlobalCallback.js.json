@@ -1,0 +1,32 @@
+{
+    "49": {
+        "functionId": 49,
+        "functionName": "f",
+        "iid": 49,
+        "isConstructor": null,
+        "isMethod": null,
+        "args": {},
+        "declarationEnclosingFunctionId": -1
+    },
+    "105": {
+        "functionId": 105,
+        "functionName": "getPropTimeout",
+        "iid": 177,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    }
+}
