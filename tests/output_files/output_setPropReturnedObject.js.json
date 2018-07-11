@@ -1,8 +1,8 @@
 {
-    "113": {
-        "functionId": 113,
+    "201": {
+        "functionId": 201,
         "functionName": "setSomeValue",
-        "iid": 201,
+        "iid": 361,
         "isConstructor": false,
         "isMethod": false,
         "args": {
@@ -21,15 +21,72 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 113,
+                        "enclosingFunctionId": 201,
                         "followingInteractions": [
                             {
-                                "code": "setField",
-                                "field": "someValue",
-                                "typeof": "number",
+                                "code": "getField",
+                                "field": "anotherInsideObj",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "enclosingFunctionId": 113
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 201,
+                                "followingInteractions": [
+                                    {
+                                        "code": "setField",
+                                        "field": "someValue",
+                                        "typeof": "number",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": 201
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "code": "setField",
+                        "field": "myObj2",
+                        "typeof": "object",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 201
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "myObj2",
+                "shadowId": 5,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "field": "insideObj",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 201,
+                        "followingInteractions": [
+                            {
+                                "code": "getField",
+                                "field": "anotherInsideObj",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 201,
+                                "followingInteractions": [
+                                    {
+                                        "code": "setField",
+                                        "field": "someValue",
+                                        "typeof": "number",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": 201
+                                    }
+                                ]
                             }
                         ]
                     }

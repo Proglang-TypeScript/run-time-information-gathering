@@ -1,9 +1,12 @@
 "use strict";
 
-function setSomeValue(myObj) {
-	var insideObj = myObj.insideObj;
+function setSomeValue(myObj, myObj2) {
+	var anotherInsideObj = myObj.insideObj.anotherInsideObj;
+	anotherInsideObj.someValue = 100;
 
-	insideObj.someValue = 100;
+	myObj2.insideObj.anotherInsideObj.someValue = 555;
+
+	myObj.myObj2 = myObj2;
 
 	return myObj;
 }
@@ -11,8 +14,18 @@ function setSomeValue(myObj) {
 
 var a = {
 	insideObj: {
-		anotherValue: 1000
+		anotherInsideObj: {
+			anotherValue: 1000
+		}
 	}
 };
 
-a = setSomeValue(a);
+var b = {
+	insideObj: {
+		anotherInsideObj: {
+			anotherValue: 1000
+		}
+	}
+};
+
+a = setSomeValue(a, b);
