@@ -1,11 +1,5 @@
 #!/bin/bash
 
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [[ "$BRANCH" != "master" ]]; then
-  echo 'Tests can only be generated in master!';
-  exit 1;
-fi
-
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
 ROOT_PATH=$SCRIPT_PATH/..
 TESTS_PATH=$SCRIPT_PATH
