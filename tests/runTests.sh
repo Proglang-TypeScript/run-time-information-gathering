@@ -12,13 +12,17 @@ for file in $TEST_FILES; do
 	filename=$(basename "$file")
 
     $ROOT_PATH/run.sh $file > output_test_tmp.json
-    diff="$(diff output_test_tmp.json $TEST_OUTPUT_DIRECTORY/output_$filename.json)"
 
-    echo -n "."
+    output_test_filename="$TEST_OUTPUT_DIRECTORY/output_$filename.json"
+	if [ -f $output_test_filename ]; then
+	    diff="$(diff output_test_tmp.json $output_test_filename)"
 
-    if [ -n "$diff" ]; then
-    	failing_tests+=($filename)
-    fi
+	    echo -n "."
+
+	    if [ -n "$diff" ]; then
+			failing_tests+=($filename)
+	    fi
+	fi
 done
 
 echo ""
