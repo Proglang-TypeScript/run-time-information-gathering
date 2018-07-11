@@ -51,7 +51,8 @@
 				putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(
 					functionsExecutionStack,
 					sMemoryInterface,
-					argumentContainerFinder
+					argumentContainerFinder,
+					mapShadowIdsInteractions
 				),
 				write: new (require("./callbacks/write.js")).Write(functionsExecutionStack)
 			};

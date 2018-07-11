@@ -1,0 +1,41 @@
+{
+    "113": {
+        "functionId": 113,
+        "functionName": "setSomeValue",
+        "iid": 201,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "myObj",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "field": "insideObj",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 113,
+                        "followingInteractions": [
+                            {
+                                "code": "setField",
+                                "field": "someValue",
+                                "typeof": "number",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": 113
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    }
+}
