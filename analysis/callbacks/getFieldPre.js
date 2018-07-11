@@ -12,6 +12,8 @@
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
 
+		var dis = this;
+
 		this.runCallback = function(
             iid,
             base,
@@ -25,38 +27,19 @@
 
 			var argumentContainer = this.argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
 
-
 			if (isMethodCall === true) {
 				base[offset].methodName = offset;
 			}
 
 			if (functionIid && argumentContainer) {
-				var interaction = {};
-
-				if (isMethodCall === false) {
-					interaction = {
-						code: 'getField',
-						field: offset,
-						isComputed: isComputed,
-						isOpAssign: isOpAssign,
-						isMethodCall: isMethodCall,
-						enclosingFunctionId: functionIid
-					};
-				} else {
-					interaction = {
-						code: 'methodCall',
-						methodName: offset,
-						isComputed: isComputed,
-						isOpAssign: isOpAssign,
-						isMethodCall: isMethodCall,
-						functionIid: null,
-						enclosingFunctionId: functionIid,
-					};
-
-					var randomIdentifier = getRandomIdentifier();
-					base[offset].methodIdentifier = randomIdentifier;
-					this.mapMethodIdentifierInteractions[randomIdentifier] = interaction;
-				}
+				var interaction = getInteraction(
+					base,
+					offset,
+					functionIid,
+					isMethodCall,
+					isComputed,
+					isOpAssign
+				);
 
 				argumentContainer.addInteraction(interaction);
 			}
@@ -67,6 +50,37 @@
 				offset: offset
 			};
 		};
+
+		function getInteraction(base, offset, functionIid, isMethodCall, isComputed, isOpAssign) {
+			var interaction = {};
+
+			if (isMethodCall === false) {
+					interaction = {
+						code: 'getField',
+						field: offset,
+						isComputed: isComputed,
+						isOpAssign: isOpAssign,
+						isMethodCall: isMethodCall,
+						enclosingFunctionId: functionIid
+					};
+			} else {
+				interaction = {
+					code: 'methodCall',
+					methodName: offset,
+					isComputed: isComputed,
+					isOpAssign: isOpAssign,
+					isMethodCall: isMethodCall,
+					functionIid: null,
+					enclosingFunctionId: functionIid,
+				};
+
+				var randomIdentifier = getRandomIdentifier();
+				base[offset].methodIdentifier = randomIdentifier;
+				dis.mapMethodIdentifierInteractions[randomIdentifier] = interaction;
+			}
+
+			return interaction;
+		}
 	}
 
 	exp.GetFieldPre = GetFieldPre;
