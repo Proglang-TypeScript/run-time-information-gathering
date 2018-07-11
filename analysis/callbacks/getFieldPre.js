@@ -5,12 +5,15 @@
 
 (function(exp) {
 	var getRandomIdentifier = require("../../utils/getRandomIdentifier.js").getRandomIdentifier;
+	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
+	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
 
-	function GetFieldPre(functionsExecutionStack, mapMethodIdentifierInteractions, sMemoryInterface, argumentContainerFinder) {
+	function GetFieldPre(functionsExecutionStack, mapMethodIdentifierInteractions, sMemoryInterface, argumentContainerFinder, mapShadowIdsInteractions) {
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
+		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
 		var dis = this;
 
@@ -42,6 +45,30 @@
 				);
 
 				argumentContainer.addInteraction(interaction);
+			} else {
+				var mappedInteraction = dis.mapShadowIdsInteractions[
+					getHashForShadowIdAndFunctionIid(
+						shadowId,
+						functionIid
+					)
+				];
+
+				if (mappedInteraction) {
+					var followingInteraction = getInteraction(
+						base,
+						offset,
+						functionIid,
+						isMethodCall,
+						isComputed,
+						isOpAssign
+					);
+
+					if (!mappedInteraction.hasOwnProperty("followingInteractions")) {
+						mappedInteraction.followingInteractions = [];
+					}
+
+					mappedInteraction.followingInteractions.push(followingInteraction);
+				}
 			}
 
 			return {
@@ -63,6 +90,17 @@
 						isMethodCall: isMethodCall,
 						enclosingFunctionId: functionIid
 					};
+
+					if (getTypeOf(base[offset]) == "object") {
+						var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(base[offset]);
+
+						dis.mapShadowIdsInteractions[
+							getHashForShadowIdAndFunctionIid(
+								shadowIdReturnedObject,
+								functionIid
+							)
+						] = interaction;
+					}
 			} else {
 				interaction = {
 					code: 'methodCall',

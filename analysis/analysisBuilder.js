@@ -13,6 +13,7 @@
 			var mapShadowIds = {};
 			var mapMethodIdentifierInteractions = {};
 			var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
+			var mapShadowIdsInteractions = {};
 
 			var argumentContainerFinder = new (require("../utils/argumentContainerFinder.js")).ArgumentContainerFinder(
 				runTimeInfo,
@@ -44,7 +45,8 @@
 					functionsExecutionStack,
 					mapMethodIdentifierInteractions,
 					sMemoryInterface,
-					argumentContainerFinder
+					argumentContainerFinder,
+					mapShadowIdsInteractions
 				),
 				putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(
 					functionsExecutionStack,
