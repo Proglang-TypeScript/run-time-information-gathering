@@ -17,11 +17,13 @@ for file in $TEST_FILES; do
 	if [ -f $output_test_filename ]; then
 	    diff="$(diff output_test_tmp.json $output_test_filename)"
 
-	    echo -n "."
 
-	    if [ -n "$diff" ]; then
+		if [ -n "$diff" ]; then
 			failing_tests+=($filename)
-	    fi
+			echo -n "F"
+	    else
+			echo -n "."
+		fi
 	fi
 done
 
