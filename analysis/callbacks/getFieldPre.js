@@ -49,8 +49,8 @@
 						isComputed: isComputed,
 						isOpAssign: isOpAssign,
 						isMethodCall: isMethodCall,
-						enclosingFunctionId: functionIid,
 						functionIid: null,
+						enclosingFunctionId: functionIid,
 					};
 
 					var randomIdentifier = getRandomIdentifier();
