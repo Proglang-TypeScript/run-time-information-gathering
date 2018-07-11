@@ -1,0 +1,110 @@
+{
+    "233": {
+        "functionId": 233,
+        "functionName": "f2",
+        "iid": 257,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "declarationEnclosingFunctionId": 273
+    },
+    "273": {
+        "functionId": 273,
+        "functionName": "f1",
+        "iid": 329,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "b",
+                "shadowId": 5,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "field": "someValue",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 233
+                    },
+                    {
+                        "code": "setField",
+                        "field": "anotherValue",
+                        "typeof": "number",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 233
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": 345
+    },
+    "345": {
+        "functionId": 345,
+        "functionName": "f",
+        "iid": 345,
+        "isConstructor": null,
+        "isMethod": null,
+        "args": {},
+        "declarationEnclosingFunctionId": 425
+    },
+    "425": {
+        "functionId": 425,
+        "functionName": "getPropTimeout",
+        "iid": 513,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "setField",
+                        "field": "hello",
+                        "typeof": "string",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 345
+                    },
+                    {
+                        "code": "setField",
+                        "field": "anotherValue",
+                        "typeof": "number",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 273
+                    },
+                    {
+                        "code": "getField",
+                        "field": "someValue",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 233
+                    },
+                    {
+                        "code": "setField",
+                        "field": "anotherValue",
+                        "typeof": "number",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 233
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    }
+}

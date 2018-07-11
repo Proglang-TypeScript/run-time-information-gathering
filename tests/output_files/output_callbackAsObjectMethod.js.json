@@ -1,0 +1,76 @@
+{
+    "145": {
+        "functionId": 145,
+        "functionName": "",
+        "iid": 145,
+        "isConstructor": null,
+        "isMethod": null,
+        "args": {},
+        "declarationEnclosingFunctionId": 193
+    },
+    "193": {
+        "functionId": 193,
+        "functionName": "doSomethingAsync",
+        "iid": 417,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": 5,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "usedAsArgument",
+                        "enclosingFunctionId": 145,
+                        "targetFunctionId": 345,
+                        "argumentIndexInTargetFunction": "0"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    },
+    "249": {
+        "functionId": 249,
+        "functionName": "AsyncObj",
+        "iid": 273,
+        "isConstructor": true,
+        "isMethod": false,
+        "args": {},
+        "declarationEnclosingFunctionId": -1
+    },
+    "345": {
+        "functionId": 345,
+        "functionName": "callback",
+        "iid": 129,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": 5,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "field": "someValue",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 345
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": 193
+    }
+}

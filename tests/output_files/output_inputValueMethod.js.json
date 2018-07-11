@@ -1,0 +1,79 @@
+{
+    "49": {
+        "functionId": 49,
+        "functionName": "f",
+        "iid": 193,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "b",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "undefined"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    },
+    "113": {
+        "functionId": 113,
+        "functionName": "f2",
+        "iid": 337,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "null"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    }
+}

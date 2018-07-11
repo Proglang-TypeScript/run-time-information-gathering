@@ -1,0 +1,65 @@
+{
+    "177": {
+        "functionId": 177,
+        "functionName": "",
+        "iid": 177,
+        "isConstructor": null,
+        "isMethod": null,
+        "args": {},
+        "declarationEnclosingFunctionId": 225
+    },
+    "225": {
+        "functionId": 225,
+        "functionName": "doSomething",
+        "iid": 249,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "declarationEnclosingFunctionId": 273
+    },
+    "273": {
+        "functionId": 273,
+        "functionName": "getPropTimeout",
+        "iid": 329,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "b",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "field": "someValue",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 177
+                    },
+                    {
+                        "code": "setField",
+                        "field": "anotherValue",
+                        "typeof": "number",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 177
+                    },
+                    {
+                        "code": "getField",
+                        "field": "anotherValue",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 177
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    }
+}

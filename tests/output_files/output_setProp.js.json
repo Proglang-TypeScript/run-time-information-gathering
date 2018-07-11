@@ -1,0 +1,111 @@
+{
+    "81": {
+        "functionId": 81,
+        "functionName": "setSomeValue",
+        "iid": 417,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "myObj",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "setField",
+                        "field": "someValue",
+                        "typeof": "number",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 81
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    },
+    "169": {
+        "functionId": 169,
+        "functionName": "setVariableValue",
+        "iid": 465,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "myObj",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "setField",
+                        "field": "someField",
+                        "typeof": "number",
+                        "isComputed": true,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 169
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "field",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    },
+    "305": {
+        "functionId": 305,
+        "functionName": "setVariableValueWithArray",
+        "iid": 513,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "myObj",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "setField",
+                        "field": "arrayField",
+                        "typeof": "array",
+                        "isComputed": true,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 305
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "field",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    }
+}

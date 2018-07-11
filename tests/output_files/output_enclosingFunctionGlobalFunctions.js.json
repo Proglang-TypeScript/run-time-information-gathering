@@ -1,0 +1,106 @@
+{
+    "121": {
+        "functionId": 121,
+        "functionName": "f3",
+        "iid": 209,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "s",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "c",
+                "shadowId": 7,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "field": "someValue",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "setField",
+                        "field": "anotherValue",
+                        "typeof": "number",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "getField",
+                        "field": "anotherValue",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 121
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    },
+    "233": {
+        "functionId": 233,
+        "functionName": "f2",
+        "iid": 321,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "o",
+                "shadowId": 5,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "myMethod",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 257,
+                        "enclosingFunctionId": 233
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    },
+    "257": {
+        "functionId": 257,
+        "functionName": "myMethod",
+        "iid": 161,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": 345
+    },
+    "345": {
+        "functionId": 345,
+        "functionName": "f1",
+        "iid": 417,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "declarationEnclosingFunctionId": -1
+    }
+}

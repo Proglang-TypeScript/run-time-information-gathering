@@ -1,0 +1,109 @@
+{
+    "57": {
+        "functionId": 57,
+        "functionName": "myFunction",
+        "iid": 177,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "b",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "undefined"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "undefined"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    },
+    "113": {
+        "functionId": 113,
+        "functionName": "myFunction2",
+        "iid": 377,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "b",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    }
+                ]
+            },
+            "2": {
+                "argumentIndex": 2,
+                "argumentName": "c",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    }
+}
