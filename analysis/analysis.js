@@ -8,57 +8,14 @@
 
 (function (sandbox) {
     function Analysis() {
-        sandbox.RuntimeInfo = {
-            functions: {}
-        };
+        var runTimeInfo = {};
 
-        sandbox.RuntimeInfoTemp = {
-            functionsExecutionStack: new (require("../utils/functionsExecutionStack.js")).FunctionsExecutionStack(),
-            mapShadowIds: {},
-            mapMethodIdentifierInteractions: {}
-        };
-
-        var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
-
-        var argumentContainerFinder = new (require("../utils/argumentContainerFinder.js")).ArgumentContainerFinder(
-            sandbox.RuntimeInfo.functions,
-            sandbox.RuntimeInfoTemp.mapShadowIds
+        var analysisBuilder = new (require("./analysisBuilder.js")).AnalysisBuilder(
+            sandbox,
+            runTimeInfo
         );
 
-        var callbacks = {
-            functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
-                sandbox.RuntimeInfo.functions,
-                sandbox.RuntimeInfoTemp.functionsExecutionStack
-            ),
-            functionExit: new (require("./callbacks/functionExit.js")).FunctionExit(
-                sandbox.RuntimeInfoTemp.functionsExecutionStack
-            ),
-            declare: new (require("./callbacks/declare.js")).Declare(
-                sandbox.RuntimeInfo.functions,
-                sandbox.RuntimeInfoTemp.functionsExecutionStack,
-                sandbox.RuntimeInfoTemp.mapShadowIds,
-                sMemoryInterface
-            ),
-            invokeFunPre: new (require("./callbacks/invokeFunPre.js")).InvokeFunPre(
-                sandbox.RuntimeInfo.functions,
-                sandbox.RuntimeInfoTemp.functionsExecutionStack,
-                sandbox.RuntimeInfoTemp.mapMethodIdentifierInteractions,
-                sMemoryInterface,
-                argumentContainerFinder
-            ),
-            getFieldPre: new (require("./callbacks/getFieldPre.js")).GetFieldPre(
-                sandbox.RuntimeInfoTemp.functionsExecutionStack,
-                sandbox.RuntimeInfoTemp.mapMethodIdentifierInteractions,
-                sMemoryInterface,
-                argumentContainerFinder
-            ),
-            putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(
-                sandbox.RuntimeInfoTemp.functionsExecutionStack,
-                sMemoryInterface,
-                argumentContainerFinder
-            ),
-            write: new (require("./callbacks/write.js")).Write()
-        };
+        var callbacks = analysisBuilder.buildCallbacks();
 
         this.functionEnter = function(iid, f) {
             return callbacks.functionEnter.runCallback(iid, f);
@@ -126,7 +83,7 @@
         };
 
         this.endExecution = function() {
-            console.log(JSON.stringify(sandbox.RuntimeInfo.functions, null, 4));
+            console.log(JSON.stringify(runTimeInfo, null, 4));
         };
     }
 
