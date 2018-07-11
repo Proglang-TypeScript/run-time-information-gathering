@@ -30,7 +30,18 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 145
+                        "enclosingFunctionId": 145,
+                        "followingInteractions": [
+                            {
+                                "code": "methodCall",
+                                "methodName": "myMethod2",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": true,
+                                "functionIid": 369,
+                                "enclosingFunctionId": 145
+                            }
+                        ]
                     },
                     {
                         "code": "getField",
@@ -38,7 +49,18 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 145
+                        "enclosingFunctionId": 145,
+                        "followingInteractions": [
+                            {
+                                "code": "methodCall",
+                                "methodName": "anotherMethod3",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": true,
+                                "functionIid": 657,
+                                "enclosingFunctionId": 145
+                            }
+                        ]
                     },
                     {
                         "code": "methodCall",

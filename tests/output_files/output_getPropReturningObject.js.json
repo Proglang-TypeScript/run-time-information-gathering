@@ -1,0 +1,69 @@
+{
+    "113": {
+        "functionId": 113,
+        "functionName": "f",
+        "iid": 209,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "o",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "field": "insideObj",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 113,
+                        "followingInteractions": [
+                            {
+                                "code": "getField",
+                                "field": "someValue",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 113
+                            }
+                        ]
+                    },
+                    {
+                        "code": "getField",
+                        "field": "insideObj",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 113,
+                        "followingInteractions": [
+                            {
+                                "code": "getField",
+                                "field": "anotherInsideObj",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 113,
+                                "followingInteractions": [
+                                    {
+                                        "code": "getField",
+                                        "field": "anotherValue",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "isMethodCall": false,
+                                        "enclosingFunctionId": 113
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    }
+}
