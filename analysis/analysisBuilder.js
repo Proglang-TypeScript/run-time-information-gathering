@@ -20,6 +20,11 @@
 				mapShadowIds
 			);
 
+			var interactionFinder = new (require("../utils/interactionFinder.js")).InteractionFinder(
+				runTimeInfo,
+				mapShadowIdsInteractions
+			);
+
 			return {
 				functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
 					runTimeInfo,
@@ -46,6 +51,7 @@
 					mapMethodIdentifierInteractions,
 					sMemoryInterface,
 					argumentContainerFinder,
+					interactionFinder,
 					mapShadowIdsInteractions
 				),
 				putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(

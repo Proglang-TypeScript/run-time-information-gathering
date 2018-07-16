@@ -8,11 +8,19 @@
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
 
-	function GetFieldPre(functionsExecutionStack, mapMethodIdentifierInteractions, sMemoryInterface, argumentContainerFinder, mapShadowIdsInteractions) {
+	function GetFieldPre(
+		functionsExecutionStack,
+		mapMethodIdentifierInteractions,
+		sMemoryInterface,
+		argumentContainerFinder,
+		interactionFinder,
+		mapShadowIdsInteractions
+	) {
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
+		this.interactionFinder = interactionFinder;
 		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
 		var dis = this;
@@ -46,12 +54,10 @@
 
 				argumentContainer.addInteraction(interaction);
 			} else {
-				var mappedInteraction = dis.mapShadowIdsInteractions[
-					getHashForShadowIdAndFunctionIid(
-						shadowId,
-						functionIid
-					)
-				];
+				var mappedInteraction = this.interactionFinder.findInteraction(
+					shadowId,
+					functionIid
+				);
 
 				if (mappedInteraction) {
 					var followingInteraction = getInteraction(
