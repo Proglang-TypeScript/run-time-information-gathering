@@ -1,0 +1,85 @@
+{
+    "201": {
+        "functionId": 201,
+        "functionName": "f3",
+        "iid": 225,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "declarationEnclosingFunctionId": 249
+    },
+    "249": {
+        "functionId": 249,
+        "functionName": "f2",
+        "iid": 305,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "declarationEnclosingFunctionId": 329
+    },
+    "329": {
+        "functionId": 329,
+        "functionName": "f1",
+        "iid": 449,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "field": "insideObj",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 249,
+                        "followingInteractions": [
+                            {
+                                "code": "getField",
+                                "field": "anotherInsideObj",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 249,
+                                "followingInteractions": [
+                                    {
+                                        "code": "getField",
+                                        "field": "anotherValue",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "isMethodCall": false,
+                                        "enclosingFunctionId": 201
+                                    }
+                                ]
+                            },
+                            {
+                                "code": "getField",
+                                "field": "anotherValue",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 201
+                            },
+                            {
+                                "code": "getField",
+                                "field": "anotherValue",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 201
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1
+    }
+}
