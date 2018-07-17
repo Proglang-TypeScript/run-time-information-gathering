@@ -13,6 +13,7 @@
 		this.isMethod = null;
 		this.args = {};
 		this.declarationEnclosingFunctionId = null;
+		this.returnTypeOfs = [];
 
 		this.addArgumentContainer = function(argumentIndex, argumentContainer) {
 			if (!(argumentIndex in this.args)) {
@@ -20,6 +21,10 @@
 			} else {
 				this.args[argumentIndex].interactions = this.args[argumentIndex].interactions.concat(argumentContainer.interactions);
 			}
+		};
+
+		this.addReturnTypeOf = function(typeOf) {
+			this.returnTypeOfs.push(typeOf);
 		};
 
 		this.getArgumentContainer = function(argumentIndex) {

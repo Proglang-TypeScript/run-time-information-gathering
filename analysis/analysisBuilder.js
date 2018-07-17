@@ -46,6 +46,9 @@
 					sMemoryInterface,
 					argumentContainerFinder
 				),
+				invokeFun: new (require("./callbacks/invokeFun.js")).InvokeFun(
+					runTimeInfo
+				),
 				getFieldPre: new (require("./callbacks/getFieldPre.js")).GetFieldPre(
 					functionsExecutionStack,
 					mapMethodIdentifierInteractions,

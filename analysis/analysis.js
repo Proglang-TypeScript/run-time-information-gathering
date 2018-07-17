@@ -49,6 +49,28 @@
             );
         };
 
+        this.invokeFun = function (
+            iid,
+            f,
+            base,
+            args,
+            result,
+            isConstructor,
+            isMethod,
+            functionIid
+        ) {
+            return callbacks.invokeFun.runCallback(
+                iid,
+                f,
+                base,
+                args,
+                result,
+                isConstructor,
+                isMethod,
+                functionIid
+            );
+        };
+
         this.getFieldPre = function(
             iid,
             base,
