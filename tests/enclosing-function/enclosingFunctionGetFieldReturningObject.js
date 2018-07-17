@@ -8,8 +8,8 @@ function f1(a) {
 		function f3() {
 			if (
 				insideObj.anotherValue < 100 &&
-				anotherInsideObj.anotherValue < 100 /*&&
-				a.insideObj.anotherInsideObj.someValue < 100*/
+				anotherInsideObj.anotherValue < 100 &&
+				a.insideObj.anotherInsideObj.someValue < 100
 			) {
 				insideObj.anotherValue = 1000;
 				return insideObj.anotherValue;

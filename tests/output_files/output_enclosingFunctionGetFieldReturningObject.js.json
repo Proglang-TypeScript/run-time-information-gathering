@@ -1,26 +1,26 @@
 {
-    "201": {
-        "functionId": 201,
+    "241": {
+        "functionId": 241,
         "functionName": "f3",
-        "iid": 225,
+        "iid": 265,
         "isConstructor": false,
         "isMethod": false,
         "args": {},
-        "declarationEnclosingFunctionId": 249
+        "declarationEnclosingFunctionId": 289
     },
-    "249": {
-        "functionId": 249,
+    "289": {
+        "functionId": 289,
         "functionName": "f2",
-        "iid": 305,
+        "iid": 345,
         "isConstructor": false,
         "isMethod": false,
         "args": {},
-        "declarationEnclosingFunctionId": 329
+        "declarationEnclosingFunctionId": 369
     },
-    "329": {
-        "functionId": 329,
+    "369": {
+        "functionId": 369,
         "functionName": "f1",
-        "iid": 449,
+        "iid": 489,
         "isConstructor": false,
         "isMethod": false,
         "args": {
@@ -39,7 +39,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 249,
+                        "enclosingFunctionId": 289,
                         "followingInteractions": [
                             {
                                 "code": "getField",
@@ -47,7 +47,7 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "isMethodCall": false,
-                                "enclosingFunctionId": 249,
+                                "enclosingFunctionId": 289,
                                 "followingInteractions": [
                                     {
                                         "code": "getField",
@@ -55,7 +55,7 @@
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "isMethodCall": false,
-                                        "enclosingFunctionId": 201
+                                        "enclosingFunctionId": 241
                                     }
                                 ]
                             },
@@ -65,7 +65,43 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "isMethodCall": false,
-                                "enclosingFunctionId": 201
+                                "enclosingFunctionId": 241
+                            }
+                        ]
+                    },
+                    {
+                        "code": "getField",
+                        "field": "insideObj",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 241,
+                        "followingInteractions": [
+                            {
+                                "code": "getField",
+                                "field": "anotherInsideObj",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 241,
+                                "followingInteractions": [
+                                    {
+                                        "code": "getField",
+                                        "field": "someValue",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "isMethodCall": false,
+                                        "enclosingFunctionId": 241
+                                    }
+                                ]
+                            },
+                            {
+                                "code": "setField",
+                                "field": "anotherValue",
+                                "typeof": "number",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": 241
                             },
                             {
                                 "code": "getField",
@@ -73,7 +109,7 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "isMethodCall": false,
-                                "enclosingFunctionId": 201
+                                "enclosingFunctionId": 241
                             }
                         ]
                     }
