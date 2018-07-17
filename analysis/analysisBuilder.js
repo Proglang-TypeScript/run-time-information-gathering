@@ -58,6 +58,7 @@
 					functionsExecutionStack,
 					sMemoryInterface,
 					argumentContainerFinder,
+					interactionFinder,
 					mapShadowIdsInteractions
 				),
 				write: new (require("./callbacks/write.js")).Write(functionsExecutionStack)

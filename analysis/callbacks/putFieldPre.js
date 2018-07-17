@@ -7,12 +7,18 @@
 	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var addDeclarationFunctionIdToFunctionsInsideObject = require("../../utils/addDeclarationFunctionIdToFunctionsInsideObject.js").addDeclarationFunctionIdToFunctionsInsideObject;
-	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
 
-	function PutFieldPre(functionsExecutionStack, sMemoryInterface, argumentContainerFinder, mapShadowIdsInteractions) {
+	function PutFieldPre(
+		functionsExecutionStack,
+		sMemoryInterface,
+		argumentContainerFinder,
+		interactionFinder,
+		mapShadowIdsInteractions
+	) {
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
+		this.interactionFinder = interactionFinder;
 		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
 		var dis = this;
@@ -30,12 +36,10 @@
 						getPutFieldInteracion(offset, val, isComputed, isOpAssign, functionIid)
 					);
 				} else {
-					var mappedInteraction = dis.mapShadowIdsInteractions[
-						getHashForShadowIdAndFunctionIid(
-							shadowId,
-							functionIid
-						)
-					];
+					var mappedInteraction = this.interactionFinder.findInteraction(
+						shadowId,
+						functionIid
+					);
 
 					if (mappedInteraction) {
 						if (!mappedInteraction.hasOwnProperty("followingInteractions")) {
