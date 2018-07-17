@@ -31,20 +31,11 @@
 			if (functionContainer) {
 				functionContainer.addReturnTypeOf(getTypeOf(result));
 
-				if (f.methodIdentifier && (f.methodIdentifier in this.mapMethodIdentifierInteractions)) {
-					var interaction = this.mapMethodIdentifierInteractions[f.methodIdentifier];
-
-					if (getTypeOf(result) == "object") {
-						var shadowIdReturnedObject = this.sMemoryInterface.getShadowIdOfObject(result);
-
-						this.mapShadowIdsInteractions[
-							getHashForShadowIdAndFunctionIid(
-								shadowIdReturnedObject,
-								functionContainer.declarationEnclosingFunctionId
-							)
-						] = interaction;
-					}
-				}
+				mapShadowIdOfResultWithInteraction(
+					f,
+					functionContainer.declarationEnclosingFunctionId,
+					result
+				);
 			}
 
 			return {
@@ -55,6 +46,24 @@
 		function getFunctionContainer(functionIid) {
 			return dis.runTimeInfo[functionIid];
 		}
+
+		function mapShadowIdOfResultWithInteraction(f, mapFunctionIid, result) {
+			if (f.methodIdentifier && (f.methodIdentifier in dis.mapMethodIdentifierInteractions)) {
+				var interaction = dis.mapMethodIdentifierInteractions[f.methodIdentifier];
+
+				if (getTypeOf(result) == "object") {
+					var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
+
+					dis.mapShadowIdsInteractions[
+						getHashForShadowIdAndFunctionIid(
+							shadowIdReturnedObject,
+							mapFunctionIid
+						)
+					] = interaction;
+				}
+			}
+		}
+
 	}
 
 	exp.InvokeFun = InvokeFun;
