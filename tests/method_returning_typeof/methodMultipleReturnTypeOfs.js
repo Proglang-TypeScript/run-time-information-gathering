@@ -1,24 +1,23 @@
 "use strict";
 
 function executeFunctions(obj) {
-	for (var i = 0; i < 20; i++) { 
-		obj.returnRandomTypeOf();
+	for (var i = 0; i < 20; i++) {
+		a.seed = i;
+		obj.returnRandomTypeOf(i);
 	}
 }
 
 var a = {
 	returnRandomTypeOf: function() {
-		var r = Math.floor(Math.random() * 100) + 0;
-
-		if (r < 25) {
+		if ((this.seed % 4) === 0) {
 			return "hello";
 		}
 
-		if (r < 50) {
+		if ((this.seed % 4) === 1) {
 			return 123;
 		}
 
-		if (r < 75) {
+		if ((this.seed % 4) === 2) {
 			var f = function() {
 				return 123;
 			};
