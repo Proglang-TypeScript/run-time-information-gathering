@@ -16,6 +16,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 35,
                         "code": "methodCall",
                         "methodName": "returnString",
                         "isComputed": false,
@@ -25,6 +26,7 @@
                         "enclosingFunctionId": 121
                     },
                     {
+                        "iid": 59,
                         "code": "methodCall",
                         "methodName": "returnNumber",
                         "isComputed": false,
@@ -34,6 +36,7 @@
                         "enclosingFunctionId": 121
                     },
                     {
+                        "iid": 83,
                         "code": "methodCall",
                         "methodName": "returnFunction",
                         "isComputed": false,
@@ -43,6 +46,7 @@
                         "enclosingFunctionId": 121
                     },
                     {
+                        "iid": 107,
                         "code": "methodCall",
                         "methodName": "returnObject",
                         "isComputed": false,

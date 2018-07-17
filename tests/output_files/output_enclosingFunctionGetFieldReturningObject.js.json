@@ -40,6 +40,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 33,
                         "code": "getField",
                         "field": "insideObj",
                         "isComputed": false,
@@ -48,6 +49,7 @@
                         "enclosingFunctionId": 289,
                         "followingInteractions": [
                             {
+                                "iid": 65,
                                 "code": "getField",
                                 "field": "anotherInsideObj",
                                 "isComputed": false,
@@ -56,6 +58,7 @@
                                 "enclosingFunctionId": 289,
                                 "followingInteractions": [
                                     {
+                                        "iid": 121,
                                         "code": "getField",
                                         "field": "anotherValue",
                                         "isComputed": false,
@@ -66,6 +69,7 @@
                                 ]
                             },
                             {
+                                "iid": 97,
                                 "code": "getField",
                                 "field": "anotherValue",
                                 "isComputed": false,
@@ -76,6 +80,7 @@
                         ]
                     },
                     {
+                        "iid": 145,
                         "code": "getField",
                         "field": "insideObj",
                         "isComputed": false,
@@ -84,6 +89,7 @@
                         "enclosingFunctionId": 241,
                         "followingInteractions": [
                             {
+                                "iid": 153,
                                 "code": "getField",
                                 "field": "anotherInsideObj",
                                 "isComputed": false,
@@ -92,6 +98,7 @@
                                 "enclosingFunctionId": 241,
                                 "followingInteractions": [
                                     {
+                                        "iid": 161,
                                         "code": "getField",
                                         "field": "someValue",
                                         "isComputed": false,
@@ -110,6 +117,7 @@
                                 "enclosingFunctionId": 241
                             },
                             {
+                                "iid": 217,
                                 "code": "getField",
                                 "field": "anotherValue",
                                 "isComputed": false,

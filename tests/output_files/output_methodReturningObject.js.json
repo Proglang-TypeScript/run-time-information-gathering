@@ -16,6 +16,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 35,
                         "code": "methodCall",
                         "methodName": "myMethod",
                         "isComputed": false,
@@ -33,6 +34,7 @@
                                 "enclosingFunctionId": 121
                             },
                             {
+                                "iid": 99,
                                 "code": "methodCall",
                                 "methodName": "myMethodInside",
                                 "isComputed": false,
