@@ -1,0 +1,78 @@
+{
+    "121": {
+        "functionId": 121,
+        "functionName": "doSomething",
+        "iid": 289,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "obj",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "myMethod",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 225,
+                        "enclosingFunctionId": 121,
+                        "followingInteractions": [
+                            {
+                                "code": "setField",
+                                "field": "someValue",
+                                "typeof": "number",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": 121
+                            },
+                            {
+                                "code": "methodCall",
+                                "methodName": "myMethodInside",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": true,
+                                "functionIid": 177,
+                                "enclosingFunctionId": 121
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "string"
+        ]
+    },
+    "177": {
+        "functionId": 177,
+        "functionName": "myMethodInside",
+        "iid": 97,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": 121,
+        "returnTypeOfs": [
+            "string"
+        ]
+    },
+    "225": {
+        "functionId": 225,
+        "functionName": "myMethod",
+        "iid": 33,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "object"
+        ]
+    }
+}
