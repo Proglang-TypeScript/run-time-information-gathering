@@ -37,7 +37,10 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": 329
+        "declarationEnclosingFunctionId": 329,
+        "returnTypeOfs": [
+            "number"
+        ]
     },
     "329": {
         "functionId": 329,
@@ -46,7 +49,10 @@
         "isConstructor": false,
         "isMethod": false,
         "args": {},
-        "declarationEnclosingFunctionId": 393
+        "declarationEnclosingFunctionId": 393,
+        "returnTypeOfs": [
+            "number"
+        ]
     },
     "393": {
         "functionId": 393,
@@ -99,6 +105,9 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ]
     }
 }

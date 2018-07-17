@@ -61,7 +61,14 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "boolean",
+            "boolean",
+            "boolean",
+            "boolean",
+            "boolean"
+        ]
     },
     "113": {
         "functionId": 113,
@@ -104,6 +111,9 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ]
     }
 }

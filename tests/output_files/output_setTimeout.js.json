@@ -6,7 +6,10 @@
         "isConstructor": false,
         "isMethod": false,
         "args": {},
-        "declarationEnclosingFunctionId": 273
+        "declarationEnclosingFunctionId": 273,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     },
     "273": {
         "functionId": 273,
@@ -43,7 +46,10 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": 345
+        "declarationEnclosingFunctionId": 345,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     },
     "345": {
         "functionId": 345,
@@ -52,7 +58,8 @@
         "isConstructor": null,
         "isMethod": null,
         "args": {},
-        "declarationEnclosingFunctionId": 425
+        "declarationEnclosingFunctionId": 425,
+        "returnTypeOfs": []
     },
     "425": {
         "functionId": 425,
@@ -105,6 +112,9 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     }
 }

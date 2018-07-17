@@ -74,7 +74,10 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": 745
+        "declarationEnclosingFunctionId": 745,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     },
     "257": {
         "functionId": 257,
@@ -83,7 +86,10 @@
         "isConstructor": false,
         "isMethod": true,
         "args": {},
-        "declarationEnclosingFunctionId": 745
+        "declarationEnclosingFunctionId": 745,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     },
     "369": {
         "functionId": 369,
@@ -92,7 +98,10 @@
         "isConstructor": false,
         "isMethod": true,
         "args": {},
-        "declarationEnclosingFunctionId": 745
+        "declarationEnclosingFunctionId": 745,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     },
     "521": {
         "functionId": 521,
@@ -101,7 +110,10 @@
         "isConstructor": false,
         "isMethod": true,
         "args": {},
-        "declarationEnclosingFunctionId": 745
+        "declarationEnclosingFunctionId": 745,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     },
     "657": {
         "functionId": 657,
@@ -110,7 +122,10 @@
         "isConstructor": false,
         "isMethod": true,
         "args": {},
-        "declarationEnclosingFunctionId": 745
+        "declarationEnclosingFunctionId": 745,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     },
     "745": {
         "functionId": 745,
@@ -163,6 +178,9 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     }
 }

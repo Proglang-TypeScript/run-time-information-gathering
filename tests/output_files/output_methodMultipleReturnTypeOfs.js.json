@@ -1,0 +1,237 @@
+{
+    "121": {
+        "functionId": 121,
+        "functionName": "executeFunctions",
+        "iid": 513,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "obj",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnRandomTypeOf",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 433,
+                        "enclosingFunctionId": 121
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "undefined"
+        ]
+    },
+    "433": {
+        "functionId": 433,
+        "functionName": "returnRandomTypeOf",
+        "iid": 105,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "object",
+            "number",
+            "object",
+            "string",
+            "number",
+            "object",
+            "object",
+            "string",
+            "number",
+            "number",
+            "string",
+            "object",
+            "function",
+            "function",
+            "function",
+            "string",
+            "number",
+            "object",
+            "function",
+            "number"
+        ]
+    }
+}

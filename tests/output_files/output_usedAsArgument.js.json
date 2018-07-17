@@ -38,7 +38,11 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number",
+            "number"
+        ]
     },
     "161": {
         "functionId": 161,
@@ -75,7 +79,11 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number",
+            "number"
+        ]
     },
     "225": {
         "functionId": 225,
@@ -102,6 +110,9 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ]
     }
 }

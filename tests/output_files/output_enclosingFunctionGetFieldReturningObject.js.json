@@ -6,7 +6,10 @@
         "isConstructor": false,
         "isMethod": false,
         "args": {},
-        "declarationEnclosingFunctionId": 289
+        "declarationEnclosingFunctionId": 289,
+        "returnTypeOfs": [
+            "number"
+        ]
     },
     "289": {
         "functionId": 289,
@@ -15,7 +18,10 @@
         "isConstructor": false,
         "isMethod": false,
         "args": {},
-        "declarationEnclosingFunctionId": 369
+        "declarationEnclosingFunctionId": 369,
+        "returnTypeOfs": [
+            "number"
+        ]
     },
     "369": {
         "functionId": 369,
@@ -116,6 +122,9 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ]
     }
 }

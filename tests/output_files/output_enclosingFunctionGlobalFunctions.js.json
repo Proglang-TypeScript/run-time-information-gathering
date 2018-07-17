@@ -53,7 +53,10 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ]
     },
     "233": {
         "functionId": 233,
@@ -83,7 +86,10 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ]
     },
     "257": {
         "functionId": 257,
@@ -92,7 +98,10 @@
         "isConstructor": false,
         "isMethod": true,
         "args": {},
-        "declarationEnclosingFunctionId": 345
+        "declarationEnclosingFunctionId": 345,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     },
     "345": {
         "functionId": 345,
@@ -101,6 +110,9 @@
         "isConstructor": false,
         "isMethod": false,
         "args": {},
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ]
     }
 }

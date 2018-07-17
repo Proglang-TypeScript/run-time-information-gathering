@@ -27,7 +27,10 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "boolean"
+        ]
     },
     "169": {
         "functionId": 169,
@@ -56,6 +59,9 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "boolean"
+        ]
     }
 }

@@ -6,7 +6,8 @@
         "isConstructor": null,
         "isMethod": null,
         "args": {},
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": []
     },
     "105": {
         "functionId": 105,
@@ -27,6 +28,9 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "undefined"
+        ]
     }
 }

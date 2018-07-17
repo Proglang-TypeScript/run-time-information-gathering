@@ -1,0 +1,110 @@
+{
+    "121": {
+        "functionId": 121,
+        "functionName": "executeFunctions",
+        "iid": 457,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "obj",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnString",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 169,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnNumber",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 217,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnFunction",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 329,
+                        "enclosingFunctionId": 121
+                    },
+                    {
+                        "code": "methodCall",
+                        "methodName": "returnObject",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": true,
+                        "functionIid": 393,
+                        "enclosingFunctionId": 121
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "undefined"
+        ]
+    },
+    "169": {
+        "functionId": 169,
+        "functionName": "returnString",
+        "iid": 33,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "string"
+        ]
+    },
+    "217": {
+        "functionId": 217,
+        "functionName": "returnNumber",
+        "iid": 57,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ]
+    },
+    "329": {
+        "functionId": 329,
+        "functionName": "returnFunction",
+        "iid": 81,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "function"
+        ]
+    },
+    "393": {
+        "functionId": 393,
+        "functionName": "returnObject",
+        "iid": 105,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "object"
+        ]
+    }
+}

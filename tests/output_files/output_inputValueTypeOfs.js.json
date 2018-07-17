@@ -46,6 +46,16 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": -1
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "string",
+            "number",
+            "undefined",
+            "null",
+            "object",
+            "array",
+            "boolean",
+            "function"
+        ]
     }
 }
