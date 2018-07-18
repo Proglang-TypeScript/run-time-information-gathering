@@ -33,6 +33,8 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 145,
+                        "returnTypeOf": "object",
+                        "randomIdentifier": "841531902073502",
                         "followingInteractions": [
                             {
                                 "iid": 67,
@@ -54,6 +56,8 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 145,
+                        "returnTypeOf": "object",
+                        "randomIdentifier": "7671531902073502",
                         "followingInteractions": [
                             {
                                 "iid": 99,
@@ -156,7 +160,9 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 257
+                        "enclosingFunctionId": 257,
+                        "returnTypeOf": "undefined",
+                        "randomIdentifier": "5501531902073501"
                     },
                     {
                         "iid": 289,
@@ -165,7 +171,9 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 369
+                        "enclosingFunctionId": 369,
+                        "returnTypeOf": "undefined",
+                        "randomIdentifier": "651531902073502"
                     },
                     {
                         "iid": 577,
@@ -174,7 +182,9 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 657
+                        "enclosingFunctionId": 657,
+                        "returnTypeOf": "undefined",
+                        "randomIdentifier": "9421531902073503"
                     },
                     {
                         "iid": 441,
@@ -183,7 +193,9 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 521
+                        "enclosingFunctionId": 521,
+                        "returnTypeOf": "undefined",
+                        "randomIdentifier": "8791531902073503"
                     }
                 ]
             }

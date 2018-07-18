@@ -23,6 +23,8 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 201,
+                        "returnTypeOf": "object",
+                        "randomIdentifier": "1091531902084880",
                         "followingInteractions": [
                             {
                                 "iid": 41,
@@ -32,6 +34,8 @@
                                 "isOpAssign": false,
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 201,
+                                "returnTypeOf": "object",
+                                "randomIdentifier": "51531902084880",
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
@@ -72,6 +76,8 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 201,
+                        "returnTypeOf": "object",
+                        "randomIdentifier": "7721531902084880",
                         "followingInteractions": [
                             {
                                 "iid": 113,
@@ -81,6 +87,8 @@
                                 "isOpAssign": false,
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 201,
+                                "returnTypeOf": "object",
+                                "randomIdentifier": "2661531902084880",
                                 "followingInteractions": [
                                     {
                                         "code": "setField",

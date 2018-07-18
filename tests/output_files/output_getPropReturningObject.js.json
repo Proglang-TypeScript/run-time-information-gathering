@@ -23,6 +23,8 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 113,
+                        "returnTypeOf": "object",
+                        "randomIdentifier": "4791531902087334",
                         "followingInteractions": [
                             {
                                 "iid": 41,
@@ -31,7 +33,9 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "isMethodCall": false,
-                                "enclosingFunctionId": 113
+                                "enclosingFunctionId": 113,
+                                "returnTypeOf": "number",
+                                "randomIdentifier": "3011531902087334"
                             }
                         ]
                     },
@@ -43,6 +47,8 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 113,
+                        "returnTypeOf": "object",
+                        "randomIdentifier": "431531902087334",
                         "followingInteractions": [
                             {
                                 "iid": 73,
@@ -52,6 +58,8 @@
                                 "isOpAssign": false,
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 113,
+                                "returnTypeOf": "object",
+                                "randomIdentifier": "1241531902087334",
                                 "followingInteractions": [
                                     {
                                         "iid": 81,
@@ -60,7 +68,9 @@
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "isMethodCall": false,
-                                        "enclosingFunctionId": 113
+                                        "enclosingFunctionId": 113,
+                                        "returnTypeOf": "number",
+                                        "randomIdentifier": "7751531902087334"
                                     }
                                 ]
                             }
