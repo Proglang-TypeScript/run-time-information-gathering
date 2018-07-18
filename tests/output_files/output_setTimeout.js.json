@@ -36,7 +36,7 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 233,
                         "returnTypeOf": "number",
-                        "randomIdentifier": "9341531902078271"
+                        "randomIdentifier": "3961531902316672"
                     },
                     {
                         "code": "setField",
@@ -105,7 +105,7 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 233,
                         "returnTypeOf": "number",
-                        "randomIdentifier": "7681531902078271"
+                        "randomIdentifier": "3351531902316671"
                     },
                     {
                         "code": "setField",

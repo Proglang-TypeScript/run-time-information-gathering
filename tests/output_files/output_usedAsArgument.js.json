@@ -24,7 +24,7 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 97,
                         "returnTypeOf": "number",
-                        "randomIdentifier": "8011531902081971"
+                        "randomIdentifier": "4731531902320362"
                     },
                     {
                         "code": "inputValue",
@@ -39,7 +39,7 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 97,
                         "returnTypeOf": "number",
-                        "randomIdentifier": "5871531902081972"
+                        "randomIdentifier": "3071531902320363"
                     }
                 ]
             }

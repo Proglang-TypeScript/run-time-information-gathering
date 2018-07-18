@@ -24,7 +24,7 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 201,
                         "returnTypeOf": "object",
-                        "randomIdentifier": "1091531902084880",
+                        "randomIdentifier": "3741531902323268",
                         "followingInteractions": [
                             {
                                 "iid": 41,
@@ -35,7 +35,7 @@
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 201,
                                 "returnTypeOf": "object",
-                                "randomIdentifier": "51531902084880",
+                                "randomIdentifier": "7701531902323268",
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
@@ -77,7 +77,7 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 201,
                         "returnTypeOf": "object",
-                        "randomIdentifier": "7721531902084880",
+                        "randomIdentifier": "2051531902323268",
                         "followingInteractions": [
                             {
                                 "iid": 113,
@@ -88,7 +88,7 @@
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 201,
                                 "returnTypeOf": "object",
-                                "randomIdentifier": "2661531902084880",
+                                "randomIdentifier": "7111531902323268",
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
