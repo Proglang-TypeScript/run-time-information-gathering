@@ -23,6 +23,9 @@
 		this.interactionFinder = interactionFinder;
 		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
+		this.usedInteractions = {};
+		this.mapRecursiveMainInteractions = {};
+
 		var dis = this;
 
 		this.runCallback = function(
@@ -69,11 +72,24 @@
 						isOpAssign
 					);
 
-					if (!mappedInteraction.hasOwnProperty("followingInteractions")) {
-						mappedInteraction.followingInteractions = [];
-					}
+					var interactionKey = getInteractionKey(followingInteraction);
 
-					mappedInteraction.followingInteractions.push(followingInteraction);
+					if (!(interactionKey in this.usedInteractions)) {
+						if (
+							mappedInteraction.randomIdentifier &&
+							mappedInteraction.randomIdentifier in this.mapRecursiveMainInteractions) {
+
+							mappedInteraction = this.mapRecursiveMainInteractions[mappedInteraction.randomIdentifier];
+						}
+
+						if (!mappedInteraction.hasOwnProperty("followingInteractions")) {
+							mappedInteraction.followingInteractions = [];
+						}
+
+						mappedInteraction.followingInteractions.push(followingInteraction);
+
+						this.usedInteractions[interactionKey] = followingInteraction;
+					}
 				}
 			}
 
@@ -97,6 +113,10 @@
 						enclosingFunctionId: functionIid
 					};
 
+					var interactionKey = getInteractionKey(interaction);
+					
+					interaction.randomIdentifier = getRandomIdentifier();
+
 					if (getTypeOf(base[offset]) == "object") {
 						var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(base[offset]);
 
@@ -106,6 +126,10 @@
 								functionIid
 							)
 						] = interaction;
+
+						if (interactionKey in dis.usedInteractions) {
+							dis.mapRecursiveMainInteractions[interaction.randomIdentifier] = dis.usedInteractions[interactionKey];
+						}
 					}
 			} else {
 				interaction = {
@@ -124,6 +148,17 @@
 			}
 
 			return interaction;
+		}
+
+		function getInteractionKey(interaction) {
+			var randomIdentifier = interaction.randomIdentifier;
+			interaction.randomIdentifier = null;
+
+			var interactionKey = JSON.stringify(interaction);
+
+			interaction.randomIdentifier = randomIdentifier;
+
+			return interactionKey;
 		}
 	}
 
