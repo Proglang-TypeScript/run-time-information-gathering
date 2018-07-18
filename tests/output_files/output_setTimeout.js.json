@@ -28,6 +28,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 185,
                         "code": "getField",
                         "field": "someValue",
                         "isComputed": false,
@@ -94,6 +95,7 @@
                         "enclosingFunctionId": 273
                     },
                     {
+                        "iid": 129,
                         "code": "getField",
                         "field": "someValue",
                         "isComputed": false,

@@ -16,6 +16,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 33,
                         "code": "getField",
                         "field": "someValue",
                         "isComputed": false,
@@ -28,6 +29,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 33,
                         "code": "getField",
                         "field": "someValue",
                         "isComputed": false,

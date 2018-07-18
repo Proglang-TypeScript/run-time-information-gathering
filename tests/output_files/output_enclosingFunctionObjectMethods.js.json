@@ -16,6 +16,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 35,
                         "code": "methodCall",
                         "methodName": "myMethod",
                         "isComputed": false,
@@ -25,6 +26,7 @@
                         "enclosingFunctionId": 145
                     },
                     {
+                        "iid": 57,
                         "code": "getField",
                         "field": "myObj2",
                         "isComputed": false,
@@ -33,6 +35,7 @@
                         "enclosingFunctionId": 145,
                         "followingInteractions": [
                             {
+                                "iid": 67,
                                 "code": "methodCall",
                                 "methodName": "myMethod2",
                                 "isComputed": false,
@@ -44,6 +47,7 @@
                         ]
                     },
                     {
+                        "iid": 89,
                         "code": "getField",
                         "field": "myObj3",
                         "isComputed": false,
@@ -52,6 +56,7 @@
                         "enclosingFunctionId": 145,
                         "followingInteractions": [
                             {
+                                "iid": 99,
                                 "code": "methodCall",
                                 "methodName": "anotherMethod3",
                                 "isComputed": false,
@@ -63,6 +68,7 @@
                         ]
                     },
                     {
+                        "iid": 123,
                         "code": "methodCall",
                         "methodName": "anotherMethod",
                         "isComputed": false,
@@ -144,6 +150,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 177,
                         "code": "getField",
                         "field": "aThirdValue",
                         "isComputed": false,
@@ -152,6 +159,7 @@
                         "enclosingFunctionId": 257
                     },
                     {
+                        "iid": 289,
                         "code": "getField",
                         "field": "aThirdValue2",
                         "isComputed": false,
@@ -160,6 +168,7 @@
                         "enclosingFunctionId": 369
                     },
                     {
+                        "iid": 577,
                         "code": "getField",
                         "field": "aFourthValue3",
                         "isComputed": false,
@@ -168,6 +177,7 @@
                         "enclosingFunctionId": 657
                     },
                     {
+                        "iid": 441,
                         "code": "getField",
                         "field": "aFourthValue",
                         "isComputed": false,

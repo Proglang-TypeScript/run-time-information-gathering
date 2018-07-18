@@ -52,7 +52,8 @@
 					functionIid,
 					isMethodCall,
 					isComputed,
-					isOpAssign
+					isOpAssign,
+					iid
 				);
 
 				argumentContainer.addInteraction(interaction);
@@ -69,7 +70,8 @@
 						functionIid,
 						isMethodCall,
 						isComputed,
-						isOpAssign
+						isOpAssign,
+						iid
 					);
 
 					var interactionKey = getInteractionKey(followingInteraction);
@@ -100,11 +102,12 @@
 			};
 		};
 
-		function getInteraction(base, offset, functionIid, isMethodCall, isComputed, isOpAssign) {
+		function getInteraction(base, offset, functionIid, isMethodCall, isComputed, isOpAssign, iid) {
 			var interaction = {};
 
 			if (isMethodCall === false) {
 					interaction = {
+						iid: iid,
 						code: 'getField',
 						field: offset,
 						isComputed: isComputed,
@@ -133,6 +136,7 @@
 					}
 			} else {
 				interaction = {
+					iid: iid,
 					code: 'methodCall',
 					methodName: offset,
 					isComputed: isComputed,

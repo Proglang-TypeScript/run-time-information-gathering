@@ -16,6 +16,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 33,
                         "code": "getField",
                         "field": "insideObj",
                         "isComputed": false,
@@ -24,6 +25,7 @@
                         "enclosingFunctionId": 201,
                         "followingInteractions": [
                             {
+                                "iid": 41,
                                 "code": "getField",
                                 "field": "anotherInsideObj",
                                 "isComputed": false,
@@ -63,6 +65,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 105,
                         "code": "getField",
                         "field": "insideObj",
                         "isComputed": false,
@@ -71,6 +74,7 @@
                         "enclosingFunctionId": 201,
                         "followingInteractions": [
                             {
+                                "iid": 113,
                                 "code": "getField",
                                 "field": "anotherInsideObj",
                                 "isComputed": false,

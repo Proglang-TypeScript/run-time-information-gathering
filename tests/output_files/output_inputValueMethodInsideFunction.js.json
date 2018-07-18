@@ -16,6 +16,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 75,
                         "code": "methodCall",
                         "methodName": "executeMethod",
                         "isComputed": false,
@@ -49,6 +50,7 @@
                         "typeof": "object"
                     },
                     {
+                        "iid": 137,
                         "code": "getField",
                         "field": "val",
                         "isComputed": false,
