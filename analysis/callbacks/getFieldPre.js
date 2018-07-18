@@ -74,7 +74,7 @@
 						iid
 					);
 
-					var interactionKey = getInteractionKey(followingInteraction);
+					var interactionKey = getInteractionKey(followingInteraction, base[offset]);
 
 					if (!(interactionKey in this.usedInteractions)) {
 						if (
@@ -113,10 +113,11 @@
 						isComputed: isComputed,
 						isOpAssign: isOpAssign,
 						isMethodCall: isMethodCall,
-						enclosingFunctionId: functionIid
+						enclosingFunctionId: functionIid,
+						returnTypeOf: getTypeOf(base[offset])
 					};
 
-					var interactionKey = getInteractionKey(interaction);
+					var interactionKey = getInteractionKey(interaction, base[offset]);
 					
 					interaction.randomIdentifier = getRandomIdentifier();
 
@@ -154,7 +155,7 @@
 			return interaction;
 		}
 
-		function getInteractionKey(interaction) {
+		function getInteractionKey(interaction, obj) {
 			var randomIdentifier = interaction.randomIdentifier;
 			interaction.randomIdentifier = null;
 
@@ -162,7 +163,13 @@
 
 			interaction.randomIdentifier = randomIdentifier;
 
-			return interactionKey;
+			var objSerialized = "";
+			if (getTypeOf(obj) == "object") {
+				var objKeys = Object.keys(obj).sort();
+				objSerialized = JSON.stringify(objKeys);
+			}
+
+			return interactionKey + "|" + objSerialized;
 		}
 	}
 
