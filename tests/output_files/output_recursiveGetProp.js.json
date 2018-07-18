@@ -1,0 +1,331 @@
+98
+{
+    "233": {
+        "functionId": 233,
+        "functionName": "traverse",
+        "iid": 1385,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "shadowId": 3,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "iid": 97,
+                        "code": "getField",
+                        "field": "val",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 233
+                    },
+                    {
+                        "iid": 137,
+                        "code": "getField",
+                        "field": "useRight",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 233
+                    },
+                    {
+                        "iid": 185,
+                        "code": "getField",
+                        "field": "left",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "isMethodCall": false,
+                        "enclosingFunctionId": 233,
+                        "followingInteractions": [
+                            {
+                                "iid": 97,
+                                "code": "getField",
+                                "field": "val",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 233
+                            },
+                            {
+                                "iid": 137,
+                                "code": "getField",
+                                "field": "useRight",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 233
+                            },
+                            {
+                                "iid": 185,
+                                "code": "getField",
+                                "field": "left",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "isMethodCall": false,
+                                "enclosingFunctionId": 233,
+                                "followingInteractions": [
+                                    {
+                                        "iid": 97,
+                                        "code": "getField",
+                                        "field": "val",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "isMethodCall": false,
+                                        "enclosingFunctionId": 233
+                                    },
+                                    {
+                                        "iid": 137,
+                                        "code": "getField",
+                                        "field": "useRight",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "isMethodCall": false,
+                                        "enclosingFunctionId": 233
+                                    },
+                                    {
+                                        "iid": 185,
+                                        "code": "getField",
+                                        "field": "left",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "isMethodCall": false,
+                                        "enclosingFunctionId": 233,
+                                        "followingInteractions": [
+                                            {
+                                                "iid": 97,
+                                                "code": "getField",
+                                                "field": "val",
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "isMethodCall": false,
+                                                "enclosingFunctionId": 233
+                                            },
+                                            {
+                                                "iid": 137,
+                                                "code": "getField",
+                                                "field": "useRight",
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "isMethodCall": false,
+                                                "enclosingFunctionId": 233
+                                            },
+                                            {
+                                                "iid": 185,
+                                                "code": "getField",
+                                                "field": "left",
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "isMethodCall": false,
+                                                "enclosingFunctionId": 233,
+                                                "followingInteractions": [
+                                                    {
+                                                        "iid": 97,
+                                                        "code": "getField",
+                                                        "field": "val",
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "isMethodCall": false,
+                                                        "enclosingFunctionId": 233
+                                                    },
+                                                    {
+                                                        "iid": 137,
+                                                        "code": "getField",
+                                                        "field": "useRight",
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "isMethodCall": false,
+                                                        "enclosingFunctionId": 233
+                                                    },
+                                                    {
+                                                        "iid": 185,
+                                                        "code": "getField",
+                                                        "field": "left",
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "isMethodCall": false,
+                                                        "enclosingFunctionId": 233,
+                                                        "followingInteractions": [
+                                                            {
+                                                                "iid": 97,
+                                                                "code": "getField",
+                                                                "field": "val",
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "isMethodCall": false,
+                                                                "enclosingFunctionId": 233
+                                                            },
+                                                            {
+                                                                "iid": 137,
+                                                                "code": "getField",
+                                                                "field": "useRight",
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "isMethodCall": false,
+                                                                "enclosingFunctionId": 233
+                                                            },
+                                                            {
+                                                                "iid": 185,
+                                                                "code": "getField",
+                                                                "field": "left",
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "isMethodCall": false,
+                                                                "enclosingFunctionId": 233,
+                                                                "followingInteractions": [
+                                                                    {
+                                                                        "iid": 97,
+                                                                        "code": "getField",
+                                                                        "field": "val",
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "isMethodCall": false,
+                                                                        "enclosingFunctionId": 233
+                                                                    },
+                                                                    {
+                                                                        "iid": 137,
+                                                                        "code": "getField",
+                                                                        "field": "useRight",
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "isMethodCall": false,
+                                                                        "enclosingFunctionId": 233
+                                                                    },
+                                                                    {
+                                                                        "iid": 153,
+                                                                        "code": "getField",
+                                                                        "field": "right",
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "isMethodCall": false,
+                                                                        "enclosingFunctionId": 233,
+                                                                        "followingInteractions": [
+                                                                            {
+                                                                                "iid": 97,
+                                                                                "code": "getField",
+                                                                                "field": "val",
+                                                                                "isComputed": false,
+                                                                                "isOpAssign": false,
+                                                                                "isMethodCall": false,
+                                                                                "enclosingFunctionId": 233
+                                                                            },
+                                                                            {
+                                                                                "iid": 137,
+                                                                                "code": "getField",
+                                                                                "field": "useRight",
+                                                                                "isComputed": false,
+                                                                                "isOpAssign": false,
+                                                                                "isMethodCall": false,
+                                                                                "enclosingFunctionId": 233
+                                                                            },
+                                                                            {
+                                                                                "iid": 185,
+                                                                                "code": "getField",
+                                                                                "field": "left",
+                                                                                "isComputed": false,
+                                                                                "isOpAssign": false,
+                                                                                "isMethodCall": false,
+                                                                                "enclosingFunctionId": 233
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ]
+    },
+    "401": {
+        "functionId": 401,
+        "functionName": "Node",
+        "iid": 593,
+        "isConstructor": true,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "val",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "object",
+            "object",
+            "object",
+            "object",
+            "object",
+            "object",
+            "object",
+            "object",
+            "object",
+            "object",
+            "object"
+        ]
+    }
+}
