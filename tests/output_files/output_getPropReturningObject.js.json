@@ -24,7 +24,6 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 113,
                         "returnTypeOf": "object",
-                        "randomIdentifier": "2731531902325720",
                         "followingInteractions": [
                             {
                                 "iid": 41,
@@ -34,8 +33,7 @@
                                 "isOpAssign": false,
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 113,
-                                "returnTypeOf": "number",
-                                "randomIdentifier": "4381531902325720"
+                                "returnTypeOf": "number"
                             }
                         ]
                     },
@@ -48,7 +46,6 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 113,
                         "returnTypeOf": "object",
-                        "randomIdentifier": "7771531902325721",
                         "followingInteractions": [
                             {
                                 "iid": 73,
@@ -59,7 +56,6 @@
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 113,
                                 "returnTypeOf": "object",
-                                "randomIdentifier": "3211531902325721",
                                 "followingInteractions": [
                                     {
                                         "iid": 81,
@@ -69,8 +65,7 @@
                                         "isOpAssign": false,
                                         "isMethodCall": false,
                                         "enclosingFunctionId": 113,
-                                        "returnTypeOf": "number",
-                                        "randomIdentifier": "8271531902325721"
+                                        "returnTypeOf": "number"
                                     }
                                 ]
                             }

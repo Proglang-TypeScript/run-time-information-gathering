@@ -27,8 +27,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 65,
-                        "returnTypeOf": "undefined",
-                        "randomIdentifier": "6411531902324749"
+                        "returnTypeOf": "undefined"
                     },
                     {
                         "code": "inputValue",
@@ -42,8 +41,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 65,
-                        "returnTypeOf": "number",
-                        "randomIdentifier": "7051531902324749"
+                        "returnTypeOf": "number"
                     }
                 ]
             }
@@ -79,8 +77,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 137,
-                        "returnTypeOf": "number",
-                        "randomIdentifier": "8591531902324749"
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "inputValue",
@@ -94,8 +91,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 137,
-                        "returnTypeOf": "number",
-                        "randomIdentifier": "7861531902324749"
+                        "returnTypeOf": "number"
                     }
                 ]
             },

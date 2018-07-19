@@ -34,8 +34,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 89,
-                        "returnTypeOf": "number",
-                        "randomIdentifier": "6421531902324262"
+                        "returnTypeOf": "number"
                     },
                     {
                         "iid": 57,
@@ -45,8 +44,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 89,
-                        "returnTypeOf": "number",
-                        "randomIdentifier": "711531902324262"
+                        "returnTypeOf": "number"
                     }
                 ]
             }

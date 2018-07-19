@@ -75,8 +75,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 345,
-                        "returnTypeOf": "number",
-                        "randomIdentifier": "3361531902315672"
+                        "returnTypeOf": "number"
                     }
                 ]
             }

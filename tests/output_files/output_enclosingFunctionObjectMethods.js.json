@@ -34,7 +34,6 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 145,
                         "returnTypeOf": "object",
-                        "randomIdentifier": "8081531902311867",
                         "followingInteractions": [
                             {
                                 "iid": 67,
@@ -57,7 +56,6 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 145,
                         "returnTypeOf": "object",
-                        "randomIdentifier": "5211531902311867",
                         "followingInteractions": [
                             {
                                 "iid": 99,
@@ -161,8 +159,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 257,
-                        "returnTypeOf": "undefined",
-                        "randomIdentifier": "841531902311866"
+                        "returnTypeOf": "undefined"
                     },
                     {
                         "iid": 289,
@@ -172,8 +169,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 369,
-                        "returnTypeOf": "undefined",
-                        "randomIdentifier": "5111531902311867"
+                        "returnTypeOf": "undefined"
                     },
                     {
                         "iid": 577,
@@ -183,8 +179,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 657,
-                        "returnTypeOf": "undefined",
-                        "randomIdentifier": "5311531902311867"
+                        "returnTypeOf": "undefined"
                     },
                     {
                         "iid": 441,
@@ -194,8 +189,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 521,
-                        "returnTypeOf": "undefined",
-                        "randomIdentifier": "9281531902311867"
+                        "returnTypeOf": "undefined"
                     }
                 ]
             }

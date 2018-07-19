@@ -48,7 +48,6 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 289,
                         "returnTypeOf": "object",
-                        "randomIdentifier": "2041531902311335",
                         "followingInteractions": [
                             {
                                 "iid": 65,
@@ -59,7 +58,6 @@
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 289,
                                 "returnTypeOf": "object",
-                                "randomIdentifier": "5401531902311335",
                                 "followingInteractions": [
                                     {
                                         "iid": 121,
@@ -69,8 +67,7 @@
                                         "isOpAssign": false,
                                         "isMethodCall": false,
                                         "enclosingFunctionId": 241,
-                                        "returnTypeOf": "number",
-                                        "randomIdentifier": "3341531902311336"
+                                        "returnTypeOf": "number"
                                     }
                                 ]
                             },
@@ -82,8 +79,7 @@
                                 "isOpAssign": false,
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 241,
-                                "returnTypeOf": "number",
-                                "randomIdentifier": "7071531902311336"
+                                "returnTypeOf": "number"
                             }
                         ]
                     },
@@ -96,7 +92,6 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 241,
                         "returnTypeOf": "object",
-                        "randomIdentifier": "7961531902311336",
                         "followingInteractions": [
                             {
                                 "iid": 153,
@@ -107,7 +102,6 @@
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 241,
                                 "returnTypeOf": "object",
-                                "randomIdentifier": "7441531902311336",
                                 "followingInteractions": [
                                     {
                                         "iid": 161,
@@ -117,8 +111,7 @@
                                         "isOpAssign": false,
                                         "isMethodCall": false,
                                         "enclosingFunctionId": 241,
-                                        "returnTypeOf": "number",
-                                        "randomIdentifier": "2581531902311336"
+                                        "returnTypeOf": "number"
                                     }
                                 ]
                             },
@@ -138,8 +131,7 @@
                                 "isOpAssign": false,
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 241,
-                                "returnTypeOf": "number",
-                                "randomIdentifier": "3571531902311336"
+                                "returnTypeOf": "number"
                             }
                         ]
                     }

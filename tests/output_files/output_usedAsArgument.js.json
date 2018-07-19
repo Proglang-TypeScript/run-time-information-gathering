@@ -23,8 +23,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 97,
-                        "returnTypeOf": "number",
-                        "randomIdentifier": "4731531902320362"
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "inputValue",
@@ -38,8 +37,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 97,
-                        "returnTypeOf": "number",
-                        "randomIdentifier": "3071531902320363"
+                        "returnTypeOf": "number"
                     }
                 ]
             }
