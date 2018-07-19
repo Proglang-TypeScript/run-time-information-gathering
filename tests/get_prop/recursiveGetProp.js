@@ -34,7 +34,7 @@ function AnotherNode(val) {
 var a1 = new Node(1);
 var a2 = new Node(2);
 var a3 = new Node(3);
-var a4 = new Node(4);
+var a4 = new AnotherNode(4);
 var a5 = new Node(5);
 var a6 = new Node(6);
 
@@ -57,6 +57,7 @@ a9.left = a10;
 
 a7.useRight = true;
 a7.right = a70;
+a70.left = a8;
 
 var s = traverse(a1);
 console.log(s);
