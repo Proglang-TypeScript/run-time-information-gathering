@@ -78,14 +78,7 @@
 					var interactionKey = getInteractionKey(followingInteraction, base[offset]);
 
 					if (!(interactionKey in this.usedInteractions)) {
-						var shadowIdMappedInteraction = dis.sMemoryInterface.getShadowIdOfObject(mappedInteraction);
-						if (
-							shadowIdMappedInteraction &&
-							shadowIdMappedInteraction in this.mapRecursiveMainInteractions) {
-
-							mappedInteraction = this.mapRecursiveMainInteractions[shadowIdMappedInteraction];
-						}
-
+						mappedInteraction = getMainMappedInteraction(mappedInteraction);
 
 						if (!mappedInteraction.hasOwnProperty("followingInteractions")) {
 							mappedInteraction.followingInteractions = [];
@@ -167,6 +160,18 @@
 			}
 
 			return interactionKey + "|" + objSerialized;
+		}
+
+		function getMainMappedInteraction(mappedInteraction) {
+			var shadowIdMappedInteraction = dis.sMemoryInterface.getShadowIdOfObject(mappedInteraction);
+			if (
+				shadowIdMappedInteraction &&
+				shadowIdMappedInteraction in dis.mapRecursiveMainInteractions) {
+
+				return dis.mapRecursiveMainInteractions[shadowIdMappedInteraction];
+			}
+
+			return mappedInteraction;
 		}
 	}
 
