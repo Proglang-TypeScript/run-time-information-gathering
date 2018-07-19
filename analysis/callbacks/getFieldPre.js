@@ -77,11 +77,7 @@
 					if (!this.recursiveInteractionsHandler.interactionAlreadyUsed(followingInteraction, base[offset])) {
 						mappedInteraction = this.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
 
-						if (!mappedInteraction.hasOwnProperty("followingInteractions")) {
-							mappedInteraction.followingInteractions = [];
-						}
-
-						mappedInteraction.followingInteractions.push(followingInteraction);
+						addFollowingInteraction(mappedInteraction, followingInteraction);
 
 						this.recursiveInteractionsHandler.reportUsedInteraction(followingInteraction, base[offset]);
 					}
@@ -140,6 +136,14 @@
 			}
 
 			return interaction;
+		}
+
+		function addFollowingInteraction(baseInteraction, followingInteraction) {
+			if (!baseInteraction.hasOwnProperty("followingInteractions")) {
+				baseInteraction.followingInteractions = [];
+			}
+
+			baseInteraction.followingInteractions.push(followingInteraction);
 		}
 	}
 
