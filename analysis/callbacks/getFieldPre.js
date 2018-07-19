@@ -114,12 +114,9 @@
 						isOpAssign: isOpAssign,
 						isMethodCall: isMethodCall,
 						enclosingFunctionId: functionIid,
-						returnTypeOf: getTypeOf(base[offset])
+						returnTypeOf: getTypeOf(base[offset]),
+						randomIdentifier: getRandomIdentifier()
 					};
-
-					var interactionKey = getInteractionKey(interaction, base[offset]);
-					
-					interaction.randomIdentifier = getRandomIdentifier();
 
 					if (getTypeOf(base[offset]) == "object") {
 						var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(base[offset]);
@@ -131,6 +128,7 @@
 							)
 						] = interaction;
 
+						var interactionKey = getInteractionKey(interaction, base[offset]);
 						if (interactionKey in dis.usedInteractions) {
 							dis.mapRecursiveMainInteractions[interaction.randomIdentifier] = dis.usedInteractions[interactionKey];
 						}
@@ -167,6 +165,7 @@
 			if (getTypeOf(obj) == "object") {
 				var objKeys = Object.keys(obj).sort();
 				objSerialized = JSON.stringify(objKeys);
+				objSerialized += "__constructorName__: " + obj.constructor.name;
 			}
 
 			return interactionKey + "|" + objSerialized;
