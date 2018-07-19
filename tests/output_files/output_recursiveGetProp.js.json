@@ -1,9 +1,9 @@
-98
+125
 {
     "233": {
         "functionId": 233,
         "functionName": "traverse",
-        "iid": 1385,
+        "iid": 1417,
         "isConstructor": false,
         "isMethod": false,
         "args": {
@@ -24,8 +24,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 233,
-                        "returnTypeOf": "number",
-                        "randomIdentifier": "4041531902323776"
+                        "returnTypeOf": "number"
                     },
                     {
                         "iid": 137,
@@ -35,8 +34,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 233,
-                        "returnTypeOf": "boolean",
-                        "randomIdentifier": "8601531902323776"
+                        "returnTypeOf": "boolean"
                     },
                     {
                         "iid": 185,
@@ -47,7 +45,6 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 233,
                         "returnTypeOf": "object",
-                        "randomIdentifier": "8781531902323776",
                         "followingInteractions": [
                             {
                                 "iid": 97,
@@ -57,8 +54,7 @@
                                 "isOpAssign": false,
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 233,
-                                "returnTypeOf": "number",
-                                "randomIdentifier": "2891531902323776"
+                                "returnTypeOf": "number"
                             },
                             {
                                 "iid": 137,
@@ -68,8 +64,7 @@
                                 "isOpAssign": false,
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 233,
-                                "returnTypeOf": "boolean",
-                                "randomIdentifier": "221531902323776"
+                                "returnTypeOf": "boolean"
                             },
                             {
                                 "iid": 185,
@@ -80,8 +75,17 @@
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 233,
                                 "returnTypeOf": "object",
-                                "randomIdentifier": "7001531902323776",
                                 "followingInteractions": [
+                                    {
+                                        "iid": 185,
+                                        "code": "getField",
+                                        "field": "left",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "isMethodCall": false,
+                                        "enclosingFunctionId": 233,
+                                        "returnTypeOf": "object"
+                                    },
                                     {
                                         "iid": 153,
                                         "code": "getField",
@@ -90,21 +94,17 @@
                                         "isOpAssign": false,
                                         "isMethodCall": false,
                                         "enclosingFunctionId": 233,
-                                        "returnTypeOf": "object",
-                                        "randomIdentifier": "7821531902323777",
-                                        "followingInteractions": [
-                                            {
-                                                "iid": 185,
-                                                "code": "getField",
-                                                "field": "left",
-                                                "isComputed": false,
-                                                "isOpAssign": false,
-                                                "isMethodCall": false,
-                                                "enclosingFunctionId": 233,
-                                                "returnTypeOf": "null",
-                                                "randomIdentifier": "3661531902323777"
-                                            }
-                                        ]
+                                        "returnTypeOf": "object"
+                                    },
+                                    {
+                                        "iid": 185,
+                                        "code": "getField",
+                                        "field": "left",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "isMethodCall": false,
+                                        "enclosingFunctionId": 233,
+                                        "returnTypeOf": "null"
                                     }
                                 ]
                             }
@@ -169,10 +169,6 @@
                     {
                         "code": "inputValue",
                         "typeof": "number"
-                    },
-                    {
-                        "code": "inputValue",
-                        "typeof": "number"
                     }
                 ]
             }
@@ -188,7 +184,30 @@
             "object",
             "object",
             "object",
-            "object",
+            "object"
+        ]
+    },
+    "553": {
+        "functionId": 553,
+        "functionName": "AnotherNode",
+        "iid": 713,
+        "isConstructor": true,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "val",
+                "shadowId": null,
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
             "object"
         ]
     }
