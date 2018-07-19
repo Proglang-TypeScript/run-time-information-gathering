@@ -7,6 +7,7 @@
 	var getRandomIdentifier = require("../../utils/getRandomIdentifier.js").getRandomIdentifier;
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
+	var RecursiveInteractionsHandler = require("../../utils/recursiveInteractionsHandler.js").RecursiveInteractionsHandler;
 
 	function GetFieldPre(
 		functionsExecutionStack,
@@ -23,8 +24,7 @@
 		this.interactionFinder = interactionFinder;
 		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
-		this.usedInteractions = {};
-		this.mapRecursiveMainInteractions = {};
+		this.recursiveInteractionsHandler = new RecursiveInteractionsHandler(this.sMemoryInterface);
 
 		var dis = this;
 
@@ -74,11 +74,8 @@
 						iid
 					);
 
-
-					var interactionKey = getInteractionKey(followingInteraction, base[offset]);
-
-					if (!(interactionKey in this.usedInteractions)) {
-						mappedInteraction = getMainMappedInteraction(mappedInteraction);
+					if (!this.recursiveInteractionsHandler.interactionAlreadyUsed(followingInteraction, base[offset])) {
+						mappedInteraction = this.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
 
 						if (!mappedInteraction.hasOwnProperty("followingInteractions")) {
 							mappedInteraction.followingInteractions = [];
@@ -86,7 +83,7 @@
 
 						mappedInteraction.followingInteractions.push(followingInteraction);
 
-						this.usedInteractions[interactionKey] = followingInteraction;
+						this.recursiveInteractionsHandler.reportUsedInteraction(followingInteraction, base[offset]);
 					}
 				}
 			}
@@ -123,7 +120,7 @@
 							)
 						] = interaction;
 
-						associateMainInteractionToCurrentInteraction(interaction, base[offset]);
+						dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(interaction, base[offset]);
 					}
 			} else {
 				interaction = {
@@ -143,39 +140,6 @@
 			}
 
 			return interaction;
-		}
-
-		function getInteractionKey(interaction, obj) {
-			var interactionKey = JSON.stringify(interaction);
-
-			var objSerialized = "";
-			if (getTypeOf(obj) == "object") {
-				var objKeys = Object.keys(obj).sort();
-				objSerialized = JSON.stringify(objKeys);
-				objSerialized += "__constructorName__: " + obj.constructor.name;
-			}
-
-			return interactionKey + "|" + objSerialized;
-		}
-
-		function getMainMappedInteraction(mappedInteraction) {
-			var shadowIdMappedInteraction = dis.sMemoryInterface.getShadowIdOfObject(mappedInteraction);
-			if (
-				shadowIdMappedInteraction &&
-				shadowIdMappedInteraction in dis.mapRecursiveMainInteractions) {
-
-				return dis.mapRecursiveMainInteractions[shadowIdMappedInteraction];
-			}
-
-			return mappedInteraction;
-		}
-
-		function associateMainInteractionToCurrentInteraction(interaction, result) {
-			var interactionKey = getInteractionKey(interaction, result);
-			if (interactionKey in dis.usedInteractions) {
-				var shadowIdInteraction = dis.sMemoryInterface.getShadowIdOfObject(interaction);
-				dis.mapRecursiveMainInteractions[shadowIdInteraction] = dis.usedInteractions[interactionKey];
-			}
 		}
 	}
 
