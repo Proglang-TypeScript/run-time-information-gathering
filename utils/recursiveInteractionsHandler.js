@@ -4,23 +4,18 @@
 "use strict";
 
 (function(exp) {
-	var getTypeOf = require("./getTypeOf.js").getTypeOf;
+	var ObjectSerializer = require("./objectSerializer.js").ObjectSerializer;
 
 	function RecursiveInteractionsHandler(sMemoryInterface) {
 		this.sMemoryInterface = sMemoryInterface;
 
 		this.usedInteractions = {};
 		this.mapRecursiveMainInteractions = {};
+		this.objectSerializer = new ObjectSerializer();
 
 		this.getInteractionKey = function(interaction, obj) {
 			var interactionKey = JSON.stringify(interaction);
-
-			var objSerialized = "";
-			if (getTypeOf(obj) == "object") {
-				var objKeys = Object.keys(obj).sort();
-				objSerialized = JSON.stringify(objKeys);
-				objSerialized += "__constructorName__: " + obj.constructor.name;
-			}
+			var objSerialized = this.objectSerializer.serializeStructure(obj);
 
 			return interactionKey + "|" + objSerialized;
 		};
