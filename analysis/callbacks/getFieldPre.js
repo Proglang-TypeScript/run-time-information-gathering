@@ -123,11 +123,7 @@
 							)
 						] = interaction;
 
-						var interactionKey = getInteractionKey(interaction, base[offset]);
-						if (interactionKey in dis.usedInteractions) {
-							var shadowIdInteraction = dis.sMemoryInterface.getShadowIdOfObject(interaction);
-							dis.mapRecursiveMainInteractions[shadowIdInteraction] = dis.usedInteractions[interactionKey];
-						}
+						associateMainInteractionToCurrentInteraction(interaction, base[offset]);
 					}
 			} else {
 				interaction = {
@@ -172,6 +168,14 @@
 			}
 
 			return mappedInteraction;
+		}
+
+		function associateMainInteractionToCurrentInteraction(interaction, result) {
+			var interactionKey = getInteractionKey(interaction, result);
+			if (interactionKey in dis.usedInteractions) {
+				var shadowIdInteraction = dis.sMemoryInterface.getShadowIdOfObject(interaction);
+				dis.mapRecursiveMainInteractions[shadowIdInteraction] = dis.usedInteractions[interactionKey];
+			}
 		}
 	}
 
