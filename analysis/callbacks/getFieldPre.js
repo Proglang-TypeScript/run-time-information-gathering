@@ -74,15 +74,18 @@
 						iid
 					);
 
+
 					var interactionKey = getInteractionKey(followingInteraction, base[offset]);
 
 					if (!(interactionKey in this.usedInteractions)) {
+						var shadowIdMappedInteraction = dis.sMemoryInterface.getShadowIdOfObject(mappedInteraction);
 						if (
-							mappedInteraction.randomIdentifier &&
-							mappedInteraction.randomIdentifier in this.mapRecursiveMainInteractions) {
+							shadowIdMappedInteraction &&
+							shadowIdMappedInteraction in this.mapRecursiveMainInteractions) {
 
-							mappedInteraction = this.mapRecursiveMainInteractions[mappedInteraction.randomIdentifier];
+							mappedInteraction = this.mapRecursiveMainInteractions[shadowIdMappedInteraction];
 						}
+
 
 						if (!mappedInteraction.hasOwnProperty("followingInteractions")) {
 							mappedInteraction.followingInteractions = [];
@@ -114,8 +117,7 @@
 						isOpAssign: isOpAssign,
 						isMethodCall: isMethodCall,
 						enclosingFunctionId: functionIid,
-						returnTypeOf: getTypeOf(base[offset]),
-						randomIdentifier: getRandomIdentifier()
+						returnTypeOf: getTypeOf(base[offset])
 					};
 
 					if (getTypeOf(base[offset]) == "object") {
@@ -130,7 +132,8 @@
 
 						var interactionKey = getInteractionKey(interaction, base[offset]);
 						if (interactionKey in dis.usedInteractions) {
-							dis.mapRecursiveMainInteractions[interaction.randomIdentifier] = dis.usedInteractions[interactionKey];
+							var shadowIdInteraction = dis.sMemoryInterface.getShadowIdOfObject(interaction);
+							dis.mapRecursiveMainInteractions[shadowIdInteraction] = dis.usedInteractions[interactionKey];
 						}
 					}
 			} else {
@@ -154,12 +157,7 @@
 		}
 
 		function getInteractionKey(interaction, obj) {
-			var randomIdentifier = interaction.randomIdentifier;
-			interaction.randomIdentifier = null;
-
 			var interactionKey = JSON.stringify(interaction);
-
-			interaction.randomIdentifier = randomIdentifier;
 
 			var objSerialized = "";
 			if (getTypeOf(obj) == "object") {

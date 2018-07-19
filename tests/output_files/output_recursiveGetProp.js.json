@@ -24,8 +24,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 233,
-                        "returnTypeOf": "number",
-                        "randomIdentifier": "1981532027792134"
+                        "returnTypeOf": "number"
                     },
                     {
                         "iid": 137,
@@ -35,8 +34,7 @@
                         "isOpAssign": false,
                         "isMethodCall": false,
                         "enclosingFunctionId": 233,
-                        "returnTypeOf": "boolean",
-                        "randomIdentifier": "2721532027792134"
+                        "returnTypeOf": "boolean"
                     },
                     {
                         "iid": 185,
@@ -47,7 +45,6 @@
                         "isMethodCall": false,
                         "enclosingFunctionId": 233,
                         "returnTypeOf": "object",
-                        "randomIdentifier": "5361532027792134",
                         "followingInteractions": [
                             {
                                 "iid": 97,
@@ -57,8 +54,7 @@
                                 "isOpAssign": false,
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 233,
-                                "returnTypeOf": "number",
-                                "randomIdentifier": "8481532027792134"
+                                "returnTypeOf": "number"
                             },
                             {
                                 "iid": 137,
@@ -68,8 +64,7 @@
                                 "isOpAssign": false,
                                 "isMethodCall": false,
                                 "enclosingFunctionId": 233,
-                                "returnTypeOf": "boolean",
-                                "randomIdentifier": "2901532027792134"
+                                "returnTypeOf": "boolean"
                             },
                             {
                                 "iid": 185,
@@ -90,8 +85,7 @@
                                         "isOpAssign": false,
                                         "isMethodCall": false,
                                         "enclosingFunctionId": 233,
-                                        "returnTypeOf": "object",
-                                        "randomIdentifier": "9401532027792134"
+                                        "returnTypeOf": "object"
                                     },
                                     {
                                         "iid": 153,
@@ -101,8 +95,7 @@
                                         "isOpAssign": false,
                                         "isMethodCall": false,
                                         "enclosingFunctionId": 233,
-                                        "returnTypeOf": "object",
-                                        "randomIdentifier": "2111532027792135"
+                                        "returnTypeOf": "object"
                                     },
                                     {
                                         "iid": 185,
@@ -112,8 +105,7 @@
                                         "isOpAssign": false,
                                         "isMethodCall": false,
                                         "enclosingFunctionId": 233,
-                                        "returnTypeOf": "null",
-                                        "randomIdentifier": "8181532027792135"
+                                        "returnTypeOf": "null"
                                     }
                                 ]
                             }
