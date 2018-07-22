@@ -17,7 +17,6 @@ for file in $TEST_FILES; do
 	if [ -f $output_test_filename ]; then
 	    diff="$(diff output_test_tmp.json $output_test_filename)"
 
-
 		if [ -n "$diff" ]; then
 			failing_tests+=($filename)
 			echo -n "F"
@@ -34,7 +33,8 @@ if [ ${#failing_tests[@]} -eq 0 ]; then
 else
 	echo "NOT passed!"
 	echo "Failing tests:"
-	for failing_test in $failing_tests; do
+
+	for failing_test in ${failing_tests[@]}; do
 		echo "- $failing_test"
 	done
 fi
