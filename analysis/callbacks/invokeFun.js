@@ -7,11 +7,15 @@
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
 
-	function InvokeFun(runTimeInfo, sMemoryInterface, mapMethodIdentifierInteractions, mapShadowIdsInteractions) {
+	function InvokeFun(runTimeInfo, sMemoryInterface, recursiveInteractionsHandler, interactionFinder, functionsExecutionStack, mapMethodIdentifierInteractions, mapShadowIdsInteractions) {
 		var dis = this;
 
 		this.runTimeInfo = runTimeInfo;
 		this.sMemoryInterface = sMemoryInterface;
+		this.recursiveInteractionsHandler = recursiveInteractionsHandler;
+		this.interactionFinder = interactionFinder;
+		this.functionsExecutionStack = functionsExecutionStack;
+
 		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
 		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
@@ -34,7 +38,9 @@
 				mapShadowIdOfResultWithInteraction(
 					f,
 					functionContainer.declarationEnclosingFunctionId,
-					result
+					result,
+					this.functionsExecutionStack.getCurrentExecutingFunction(),
+					dis.sMemoryInterface.getShadowIdOfObject(base)
 				);
 			}
 
@@ -47,7 +53,7 @@
 			return dis.runTimeInfo[functionIid];
 		}
 
-		function mapShadowIdOfResultWithInteraction(f, mapFunctionIid, result) {
+		function mapShadowIdOfResultWithInteraction(f, mapFunctionIid, result, functionIid, shadowIdBaseObject) {
 			if (f.methodIdentifier && (f.methodIdentifier in dis.mapMethodIdentifierInteractions)) {
 				var interaction = dis.mapMethodIdentifierInteractions[f.methodIdentifier];
 
@@ -60,8 +66,35 @@
 							mapFunctionIid
 						)
 					] = interaction;
+
+					dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(
+						interaction,
+						result
+					);
+				}
+
+				var mappedInteraction = dis.interactionFinder.findInteraction(
+					shadowIdBaseObject,
+					functionIid
+				);
+
+				if (mappedInteraction) {
+					if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {
+						mappedInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
+						addFollowingInteraction(mappedInteraction, interaction);
+
+						dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
+					}
 				}
 			}
+		}
+
+		function addFollowingInteraction(baseInteraction, followingInteraction) {
+			if (!baseInteraction.hasOwnProperty("followingInteractions")) {
+				baseInteraction.followingInteractions = [];
+			}
+
+			baseInteraction.followingInteractions.push(followingInteraction);
 		}
 
 	}

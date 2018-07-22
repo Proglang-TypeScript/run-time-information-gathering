@@ -7,7 +7,6 @@
 	var getRandomIdentifier = require("../../utils/getRandomIdentifier.js").getRandomIdentifier;
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
-	var RecursiveInteractionsHandler = require("../../utils/recursiveInteractionsHandler.js").RecursiveInteractionsHandler;
 
 	function GetFieldPre(
 		functionsExecutionStack,
@@ -15,6 +14,7 @@
 		sMemoryInterface,
 		argumentContainerFinder,
 		interactionFinder,
+		recursiveInteractionsHandler,
 		mapShadowIdsInteractions
 	) {
 		this.functionsExecutionStack = functionsExecutionStack;
@@ -22,9 +22,8 @@
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
 		this.interactionFinder = interactionFinder;
+		this.recursiveInteractionsHandler = recursiveInteractionsHandler;
 		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
-
-		this.recursiveInteractionsHandler = new RecursiveInteractionsHandler(this.sMemoryInterface);
 
 		var dis = this;
 
@@ -74,12 +73,13 @@
 						iid
 					);
 
-					if (!this.recursiveInteractionsHandler.interactionAlreadyUsed(followingInteraction, base[offset])) {
-						mappedInteraction = this.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
+					if (isMethodCall !== true) {
+						if (!this.recursiveInteractionsHandler.interactionAlreadyUsed(followingInteraction, base[offset])) {
+							mappedInteraction = this.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
+							addFollowingInteraction(mappedInteraction, followingInteraction);
 
-						addFollowingInteraction(mappedInteraction, followingInteraction);
-
-						this.recursiveInteractionsHandler.reportUsedInteraction(followingInteraction, base[offset]);
+							this.recursiveInteractionsHandler.reportUsedInteraction(followingInteraction, base[offset]);
+						}
 					}
 				}
 			}

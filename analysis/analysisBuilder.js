@@ -25,6 +25,10 @@
 				mapShadowIdsInteractions
 			);
 
+			var recursiveInteractionsHandler = new (require("../utils/recursiveInteractionsHandler.js")).RecursiveInteractionsHandler(
+				sMemoryInterface
+			);
+
 			return {
 				functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
 					runTimeInfo,
@@ -49,6 +53,9 @@
 				invokeFun: new (require("./callbacks/invokeFun.js")).InvokeFun(
 					runTimeInfo,
 					sMemoryInterface,
+					recursiveInteractionsHandler,
+					interactionFinder,
+					functionsExecutionStack,
 					mapMethodIdentifierInteractions,
 					mapShadowIdsInteractions
 				),
@@ -58,6 +65,7 @@
 					sMemoryInterface,
 					argumentContainerFinder,
 					interactionFinder,
+					recursiveInteractionsHandler,
 					mapShadowIdsInteractions
 				),
 				putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(
