@@ -35,13 +35,24 @@
 			if (functionContainer) {
 				functionContainer.addReturnTypeOf(getTypeOf(result));
 
-				mapShadowIdOfResultWithInteraction(
-					f,
-					functionContainer.declarationEnclosingFunctionId,
-					result,
-					this.functionsExecutionStack.getCurrentExecutingFunction(),
-					dis.sMemoryInterface.getShadowIdOfObject(base)
-				);
+				if (f.methodIdentifier && (f.methodIdentifier in this.mapMethodIdentifierInteractions)) {
+					var interaction = this.mapMethodIdentifierInteractions[f.methodIdentifier];
+
+					mapShadowIdOfResultWithInteraction(
+						interaction,
+						functionContainer.declarationEnclosingFunctionId,
+						result,
+						this.sMemoryInterface.getShadowIdOfObject(base)
+					);
+
+					addRecursiveFollowingInteraction(
+						interaction,
+						result,
+						this.functionsExecutionStack.getCurrentExecutingFunction(),
+						this.sMemoryInterface.getShadowIdOfObject(base)
+					);
+				}
+
 			}
 
 			return {
@@ -53,38 +64,36 @@
 			return dis.runTimeInfo[functionIid];
 		}
 
-		function mapShadowIdOfResultWithInteraction(f, mapFunctionIid, result, functionIid, shadowIdBaseObject) {
-			if (f.methodIdentifier && (f.methodIdentifier in dis.mapMethodIdentifierInteractions)) {
-				var interaction = dis.mapMethodIdentifierInteractions[f.methodIdentifier];
+		function mapShadowIdOfResultWithInteraction(interaction, mapFunctionIid, result) {
+			if (getTypeOf(result) == "object") {
+				var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
 
-				if (getTypeOf(result) == "object") {
-					var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
+				dis.mapShadowIdsInteractions[
+					getHashForShadowIdAndFunctionIid(
+						shadowIdReturnedObject,
+						mapFunctionIid
+					)
+				] = interaction;
 
-					dis.mapShadowIdsInteractions[
-						getHashForShadowIdAndFunctionIid(
-							shadowIdReturnedObject,
-							mapFunctionIid
-						)
-					] = interaction;
-
-					dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(
-						interaction,
-						result
-					);
-				}
-
-				var mappedInteraction = dis.interactionFinder.findInteraction(
-					shadowIdBaseObject,
-					functionIid
+				dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(
+					interaction,
+					result
 				);
+			}
+		}
 
-				if (mappedInteraction) {
-					if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {
-						mappedInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
-						addFollowingInteraction(mappedInteraction, interaction);
+		function addRecursiveFollowingInteraction(interaction, result, functionIid, shadowIdBaseObject) {
+			var mappedInteraction = dis.interactionFinder.findInteraction(
+				shadowIdBaseObject,
+				functionIid
+			);
 
-						dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
-					}
+			if (mappedInteraction) {
+				if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {
+					mappedInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
+					addFollowingInteraction(mappedInteraction, interaction);
+
+					dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
 				}
 			}
 		}
