@@ -9,7 +9,6 @@
             "0": {
                 "argumentIndex": 0,
                 "argumentName": "myObj",
-                "shadowId": 3,
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -41,7 +40,6 @@
             "0": {
                 "argumentIndex": 0,
                 "argumentName": "myObj",
-                "shadowId": 3,
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -60,7 +58,6 @@
             "1": {
                 "argumentIndex": 1,
                 "argumentName": "field",
-                "shadowId": null,
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -84,7 +81,6 @@
             "0": {
                 "argumentIndex": 0,
                 "argumentName": "myObj",
-                "shadowId": 3,
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -103,7 +99,6 @@
             "1": {
                 "argumentIndex": 1,
                 "argumentName": "field",
-                "shadowId": null,
                 "interactions": [
                     {
                         "code": "inputValue",

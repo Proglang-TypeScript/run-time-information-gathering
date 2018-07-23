@@ -9,7 +9,6 @@
             "0": {
                 "argumentIndex": 0,
                 "argumentName": "myObj",
-                "shadowId": 3,
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -60,7 +59,6 @@
             "1": {
                 "argumentIndex": 1,
                 "argumentName": "myObj2",
-                "shadowId": 5,
                 "interactions": [
                     {
                         "code": "inputValue",

@@ -25,7 +25,7 @@
 					var argumentContainer = buildArgumentContainer(argumentIndex, name, val);
 					functionContainer.addArgumentContainer(argumentIndex, argumentContainer);
 
-					addMappingForContainers(argumentContainer, functionContainer);
+					addMappingForContainers(argumentContainer, functionContainer, val);
 				}
 			}
 
@@ -54,7 +54,6 @@
 
 		function buildArgumentContainer(argumentIndex, name, val) {
 			var argumentContainer = new ArgumentContainer(argumentIndex, name);
-			argumentContainer.shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
 
 			var inputValueInteraction = {
 				code: "inputValue",
@@ -66,11 +65,13 @@
 			return argumentContainer;
 		}
 
-		function addMappingForContainers(argumentContainer, functionContainer) {
-			if (argumentContainer.shadowId) {
+		function addMappingForContainers(argumentContainer, functionContainer, val) {
+			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
+
+			if (shadowId) {
 				dis.mapShadowIds[
 					getHashForShadowIdAndFunctionIid(
-						argumentContainer.shadowId,
+						shadowId,
 						functionContainer.functionId
 					)
 				] = functionContainer.getArgumentContainer(argumentContainer.argumentIndex);
