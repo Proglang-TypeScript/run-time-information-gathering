@@ -16,11 +16,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "someValue",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 81
+                        "enclosingFunctionId": 81,
+                        "followingInteractions": [],
+                        "iid": 41,
+                        "field": "someValue",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     }
                 ]
             }
@@ -47,11 +50,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "someField",
-                        "typeof": "number",
                         "isComputed": true,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 169
+                        "enclosingFunctionId": 169,
+                        "followingInteractions": [],
+                        "iid": 129,
+                        "field": "someField",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     }
                 ]
             },
@@ -88,11 +94,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "arrayField",
-                        "typeof": "array",
                         "isComputed": true,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 305
+                        "enclosingFunctionId": 305,
+                        "followingInteractions": [],
+                        "iid": 265,
+                        "field": "arrayField",
+                        "isMethodCall": false,
+                        "typeof": "array"
                     }
                 ]
             },

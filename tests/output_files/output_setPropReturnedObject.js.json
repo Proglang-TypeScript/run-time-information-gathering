@@ -28,11 +28,14 @@
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
-                                        "field": "someValue",
-                                        "typeof": "number",
                                         "isComputed": false,
                                         "isOpAssign": false,
-                                        "enclosingFunctionId": 201
+                                        "enclosingFunctionId": 201,
+                                        "followingInteractions": [],
+                                        "iid": 81,
+                                        "field": "someValue",
+                                        "isMethodCall": false,
+                                        "typeof": "number"
                                     }
                                 ],
                                 "iid": 41,
@@ -48,11 +51,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "myObj2",
-                        "typeof": "object",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 201
+                        "enclosingFunctionId": 201,
+                        "followingInteractions": [],
+                        "iid": 161,
+                        "field": "myObj2",
+                        "isMethodCall": false,
+                        "typeof": "object"
                     }
                 ]
             },
@@ -78,11 +84,14 @@
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
-                                        "field": "someValue",
-                                        "typeof": "number",
                                         "isComputed": false,
                                         "isOpAssign": false,
-                                        "enclosingFunctionId": 201
+                                        "enclosingFunctionId": 201,
+                                        "followingInteractions": [],
+                                        "iid": 129,
+                                        "field": "someValue",
+                                        "isMethodCall": false,
+                                        "typeof": "number"
                                     }
                                 ],
                                 "iid": 113,

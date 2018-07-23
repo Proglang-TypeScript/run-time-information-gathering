@@ -8,6 +8,8 @@
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var addDeclarationFunctionIdToFunctionsInsideObject = require("../../utils/addDeclarationFunctionIdToFunctionsInsideObject.js").addDeclarationFunctionIdToFunctionsInsideObject;
 
+	var PutFieldInteraction = require("../../utils/interactions/putFieldInteraction.js").PutFieldInteraction;
+
 	function PutFieldPre(
 		functionsExecutionStack,
 		sMemoryInterface,
@@ -33,7 +35,7 @@
 
 				if (argumentContainer) {
 					argumentContainer.addInteraction(
-						getPutFieldInteracion(offset, val, isComputed, isOpAssign, functionIid)
+						getPutFieldInteracion(iid, offset, val, isComputed, isOpAssign, functionIid)
 					);
 				} else {
 					var mappedInteraction = this.interactionFinder.findInteraction(
@@ -47,7 +49,7 @@
 						}
 
 						mappedInteraction.followingInteractions.push(
-							getPutFieldInteracion(offset, val, isComputed, isOpAssign, functionIid)
+							getPutFieldInteracion(iid, offset, val, isComputed, isOpAssign, functionIid)
 						);
 					}
 				}
@@ -74,15 +76,15 @@
 			return val;
 		}
 
-		function getPutFieldInteracion(offset, val, isComputed, isOpAssign, functionIid) {
-			return {
-				code: 'setField',
-				field: offset,
-				typeof: getTypeOf(val),
-				isComputed: isComputed,
-				isOpAssign: isOpAssign,
-				enclosingFunctionId: functionIid
-			};
+		function getPutFieldInteracion(iid, offset, val, isComputed, isOpAssign, functionIid) {
+			var interaction = new PutFieldInteraction(iid, offset);
+
+			interaction.typeof = getTypeOf(val);
+			interaction.isComputed = isComputed;
+			interaction.isOpAssign = isOpAssign;
+			interaction.enclosingFunctionId = functionIid;
+
+			return interaction;
 		}
 	}
 

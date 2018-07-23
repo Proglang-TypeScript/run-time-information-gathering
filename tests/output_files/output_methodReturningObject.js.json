@@ -22,11 +22,14 @@
                         "followingInteractions": [
                             {
                                 "code": "setField",
-                                "field": "someValue",
-                                "typeof": "number",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "enclosingFunctionId": 121
+                                "enclosingFunctionId": 121,
+                                "followingInteractions": [],
+                                "iid": 73,
+                                "field": "someValue",
+                                "isMethodCall": false,
+                                "typeof": "number"
                             },
                             {
                                 "code": "methodCall",

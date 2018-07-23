@@ -49,11 +49,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "anotherValue",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 177
+                        "enclosingFunctionId": 177,
+                        "followingInteractions": [],
+                        "iid": 105,
+                        "field": "anotherValue",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "getField",

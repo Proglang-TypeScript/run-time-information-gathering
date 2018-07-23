@@ -16,11 +16,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -35,11 +38,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -54,11 +60,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -73,11 +82,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -92,11 +104,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -111,11 +126,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -130,11 +148,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -149,11 +170,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -168,11 +192,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -187,11 +214,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -206,11 +236,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -225,11 +258,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -244,11 +280,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -263,11 +302,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -282,11 +324,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -301,11 +346,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -320,11 +368,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -339,11 +390,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -358,11 +412,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",
@@ -377,11 +434,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "seed",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 161
+                        "enclosingFunctionId": 161,
+                        "followingInteractions": [],
+                        "iid": 113,
+                        "field": "seed",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "methodCall",

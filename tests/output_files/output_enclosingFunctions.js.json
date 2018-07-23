@@ -72,11 +72,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "someValue",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 329
+                        "enclosingFunctionId": 329,
+                        "followingInteractions": [],
+                        "iid": 105,
+                        "field": "someValue",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "getField",
@@ -91,11 +94,14 @@
                     },
                     {
                         "code": "setField",
-                        "field": "anotherValue",
-                        "typeof": "number",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 241
+                        "enclosingFunctionId": 241,
+                        "followingInteractions": [],
+                        "iid": 193,
+                        "field": "anotherValue",
+                        "isMethodCall": false,
+                        "typeof": "number"
                     },
                     {
                         "code": "getField",
