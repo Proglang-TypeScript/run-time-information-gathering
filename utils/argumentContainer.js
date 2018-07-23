@@ -8,7 +8,6 @@
 		this.argumentIndex = argumentIndex;
 		this.argumentName = name;
 
-		this.shadowId = null;
 		this.interactions = [];
 
 		this.addInteraction = function(interaction) {

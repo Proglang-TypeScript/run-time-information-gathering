@@ -33,7 +33,6 @@
             "0": {
                 "argumentIndex": 0,
                 "argumentName": "a",
-                "shadowId": 3,
                 "interactions": [
                     {
                         "code": "inputValue",

@@ -9,7 +9,6 @@
             "0": {
                 "argumentIndex": 0,
                 "argumentName": "a",
-                "shadowId": 3,
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -43,7 +42,6 @@
             "0": {
                 "argumentIndex": 0,
                 "argumentName": "v",
-                "shadowId": 5,
                 "interactions": [
                     {
                         "code": "inputValue",

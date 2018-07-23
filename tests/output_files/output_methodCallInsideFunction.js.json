@@ -9,7 +9,6 @@
             "0": {
                 "argumentIndex": 0,
                 "argumentName": "obj",
-                "shadowId": 3,
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -44,7 +43,6 @@
             "1": {
                 "argumentIndex": 1,
                 "argumentName": "a",
-                "shadowId": null,
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -59,7 +57,6 @@
             "2": {
                 "argumentIndex": 2,
                 "argumentName": "b",
-                "shadowId": null,
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -88,7 +85,6 @@
             "0": {
                 "argumentIndex": 0,
                 "argumentName": "a",
-                "shadowId": null,
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -103,7 +99,6 @@
             "1": {
                 "argumentIndex": 1,
                 "argumentName": "b",
-                "shadowId": null,
                 "interactions": [
                     {
                         "code": "inputValue",
