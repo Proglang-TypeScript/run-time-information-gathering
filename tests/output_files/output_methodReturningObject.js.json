@@ -19,10 +19,6 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 121,
-                        "iid": 35,
-                        "methodName": "myMethod",
-                        "isMethodCall": true,
-                        "functionIid": 225,
                         "followingInteractions": [
                             {
                                 "code": "setField",
@@ -37,12 +33,17 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 121,
+                                "followingInteractions": [],
                                 "iid": 99,
                                 "methodName": "myMethodInside",
                                 "isMethodCall": true,
                                 "functionIid": 177
                             }
-                        ]
+                        ],
+                        "iid": 35,
+                        "methodName": "myMethod",
+                        "isMethodCall": true,
+                        "functionIid": 225
                     }
                 ]
             }

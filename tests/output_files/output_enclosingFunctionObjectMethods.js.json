@@ -19,6 +19,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 145,
+                        "followingInteractions": [],
                         "iid": 35,
                         "methodName": "myMethod",
                         "isMethodCall": true,
@@ -29,50 +30,53 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 145,
-                        "iid": 57,
-                        "field": "myObj2",
-                        "isMethodCall": false,
-                        "returnTypeOf": "object",
                         "followingInteractions": [
                             {
                                 "code": "methodCall",
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 145,
+                                "followingInteractions": [],
                                 "iid": 67,
                                 "methodName": "myMethod2",
                                 "isMethodCall": true,
                                 "functionIid": 369
                             }
-                        ]
+                        ],
+                        "iid": 57,
+                        "field": "myObj2",
+                        "isMethodCall": false,
+                        "returnTypeOf": "object"
                     },
                     {
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 145,
-                        "iid": 89,
-                        "field": "myObj3",
-                        "isMethodCall": false,
-                        "returnTypeOf": "object",
                         "followingInteractions": [
                             {
                                 "code": "methodCall",
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 145,
+                                "followingInteractions": [],
                                 "iid": 99,
                                 "methodName": "anotherMethod3",
                                 "isMethodCall": true,
                                 "functionIid": 657
                             }
-                        ]
+                        ],
+                        "iid": 89,
+                        "field": "myObj3",
+                        "isMethodCall": false,
+                        "returnTypeOf": "object"
                     },
                     {
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 145,
+                        "followingInteractions": [],
                         "iid": 123,
                         "methodName": "anotherMethod",
                         "isMethodCall": true,
@@ -154,6 +158,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 257,
+                        "followingInteractions": [],
                         "iid": 177,
                         "field": "aThirdValue",
                         "isMethodCall": false,
@@ -164,6 +169,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 369,
+                        "followingInteractions": [],
                         "iid": 289,
                         "field": "aThirdValue2",
                         "isMethodCall": false,
@@ -174,6 +180,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 657,
+                        "followingInteractions": [],
                         "iid": 577,
                         "field": "aFourthValue3",
                         "isMethodCall": false,
@@ -184,6 +191,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 521,
+                        "followingInteractions": [],
                         "iid": 441,
                         "field": "aFourthValue",
                         "isMethodCall": false,

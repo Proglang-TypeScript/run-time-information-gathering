@@ -86,21 +86,12 @@
 			if (mappedInteraction) {
 				if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {
 					mappedInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
-					addFollowingInteraction(mappedInteraction, interaction);
+					mappedInteraction.addFollowingInteraction(interaction);
 
 					dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
 				}
 			}
 		}
-
-		function addFollowingInteraction(baseInteraction, followingInteraction) {
-			if (!baseInteraction.hasOwnProperty("followingInteractions")) {
-				baseInteraction.followingInteractions = [];
-			}
-
-			baseInteraction.followingInteractions.push(followingInteraction);
-		}
-
 	}
 
 	exp.InvokeFun = InvokeFun;

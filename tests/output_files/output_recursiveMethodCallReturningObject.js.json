@@ -20,6 +20,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 233,
+                        "followingInteractions": [],
                         "iid": 97,
                         "field": "val",
                         "isMethodCall": false,
@@ -30,6 +31,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 233,
+                        "followingInteractions": [],
                         "iid": 137,
                         "field": "useRight",
                         "isMethodCall": false,
@@ -40,16 +42,13 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 233,
-                        "iid": 187,
-                        "methodName": "getLeft",
-                        "isMethodCall": true,
-                        "functionIid": 369,
                         "followingInteractions": [
                             {
                                 "code": "getField",
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 233,
+                                "followingInteractions": [],
                                 "iid": 97,
                                 "field": "val",
                                 "isMethodCall": false,
@@ -60,6 +59,7 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 233,
+                                "followingInteractions": [],
                                 "iid": 137,
                                 "field": "useRight",
                                 "isMethodCall": false,
@@ -70,36 +70,41 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 233,
-                                "iid": 187,
-                                "methodName": "getLeft",
-                                "isMethodCall": true,
-                                "functionIid": 369,
                                 "followingInteractions": [
                                     {
                                         "code": "methodCall",
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": 233,
-                                        "iid": 155,
-                                        "methodName": "getRight",
-                                        "isMethodCall": true,
-                                        "functionIid": 441,
                                         "followingInteractions": [
                                             {
                                                 "code": "methodCall",
                                                 "isComputed": false,
                                                 "isOpAssign": false,
                                                 "enclosingFunctionId": 233,
+                                                "followingInteractions": [],
                                                 "iid": 187,
                                                 "methodName": "getLeft",
                                                 "isMethodCall": true,
                                                 "functionIid": 369
                                             }
-                                        ]
+                                        ],
+                                        "iid": 155,
+                                        "methodName": "getRight",
+                                        "isMethodCall": true,
+                                        "functionIid": 441
                                     }
-                                ]
+                                ],
+                                "iid": 187,
+                                "methodName": "getLeft",
+                                "isMethodCall": true,
+                                "functionIid": 369
                             }
-                        ]
+                        ],
+                        "iid": 187,
+                        "methodName": "getLeft",
+                        "isMethodCall": true,
+                        "functionIid": 369
                     }
                 ]
             }

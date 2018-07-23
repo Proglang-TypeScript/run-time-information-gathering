@@ -20,6 +20,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 233,
+                        "followingInteractions": [],
                         "iid": 97,
                         "field": "val",
                         "isMethodCall": false,
@@ -30,6 +31,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 233,
+                        "followingInteractions": [],
                         "iid": 137,
                         "field": "useRight",
                         "isMethodCall": false,
@@ -40,16 +42,13 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 233,
-                        "iid": 185,
-                        "field": "left",
-                        "isMethodCall": false,
-                        "returnTypeOf": "object",
                         "followingInteractions": [
                             {
                                 "code": "getField",
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 233,
+                                "followingInteractions": [],
                                 "iid": 97,
                                 "field": "val",
                                 "isMethodCall": false,
@@ -60,6 +59,7 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 233,
+                                "followingInteractions": [],
                                 "iid": 137,
                                 "field": "useRight",
                                 "isMethodCall": false,
@@ -70,16 +70,13 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 233,
-                                "iid": 185,
-                                "field": "left",
-                                "isMethodCall": false,
-                                "returnTypeOf": "object",
                                 "followingInteractions": [
                                     {
                                         "code": "getField",
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": 233,
+                                        "followingInteractions": [],
                                         "iid": 185,
                                         "field": "left",
                                         "isMethodCall": false,
@@ -90,6 +87,7 @@
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": 233,
+                                        "followingInteractions": [],
                                         "iid": 153,
                                         "field": "right",
                                         "isMethodCall": false,
@@ -100,14 +98,23 @@
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": 233,
+                                        "followingInteractions": [],
                                         "iid": 185,
                                         "field": "left",
                                         "isMethodCall": false,
                                         "returnTypeOf": "null"
                                     }
-                                ]
+                                ],
+                                "iid": 185,
+                                "field": "left",
+                                "isMethodCall": false,
+                                "returnTypeOf": "object"
                             }
-                        ]
+                        ],
+                        "iid": 185,
+                        "field": "left",
+                        "isMethodCall": false,
+                        "returnTypeOf": "object"
                     }
                 ]
             }

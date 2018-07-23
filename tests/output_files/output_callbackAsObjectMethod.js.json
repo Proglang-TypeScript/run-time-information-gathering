@@ -70,6 +70,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 345,
+                        "followingInteractions": [],
                         "iid": 313,
                         "field": "someValue",
                         "isMethodCall": false,

@@ -19,20 +19,12 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 201,
-                        "iid": 33,
-                        "field": "insideObj",
-                        "isMethodCall": false,
-                        "returnTypeOf": "object",
                         "followingInteractions": [
                             {
                                 "code": "getField",
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 201,
-                                "iid": 41,
-                                "field": "anotherInsideObj",
-                                "isMethodCall": false,
-                                "returnTypeOf": "object",
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
@@ -42,9 +34,17 @@
                                         "isOpAssign": false,
                                         "enclosingFunctionId": 201
                                     }
-                                ]
+                                ],
+                                "iid": 41,
+                                "field": "anotherInsideObj",
+                                "isMethodCall": false,
+                                "returnTypeOf": "object"
                             }
-                        ]
+                        ],
+                        "iid": 33,
+                        "field": "insideObj",
+                        "isMethodCall": false,
+                        "returnTypeOf": "object"
                     },
                     {
                         "code": "setField",
@@ -69,20 +69,12 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": 201,
-                        "iid": 105,
-                        "field": "insideObj",
-                        "isMethodCall": false,
-                        "returnTypeOf": "object",
                         "followingInteractions": [
                             {
                                 "code": "getField",
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": 201,
-                                "iid": 113,
-                                "field": "anotherInsideObj",
-                                "isMethodCall": false,
-                                "returnTypeOf": "object",
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
@@ -92,9 +84,17 @@
                                         "isOpAssign": false,
                                         "enclosingFunctionId": 201
                                     }
-                                ]
+                                ],
+                                "iid": 113,
+                                "field": "anotherInsideObj",
+                                "isMethodCall": false,
+                                "returnTypeOf": "object"
                             }
-                        ]
+                        ],
+                        "iid": 105,
+                        "field": "insideObj",
+                        "isMethodCall": false,
+                        "returnTypeOf": "object"
                     }
                 ]
             }

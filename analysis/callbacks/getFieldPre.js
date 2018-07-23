@@ -146,14 +146,6 @@
 			dis.mapMethodIdentifierInteractions[randomIdentifier] = interaction;
 		}
 
-		function addFollowingInteraction(baseInteraction, followingInteraction) {
-			if (!baseInteraction.hasOwnProperty("followingInteractions")) {
-				baseInteraction.followingInteractions = [];
-			}
-
-			baseInteraction.followingInteractions.push(followingInteraction);
-		}
-
 		function addRecursiveFollowingInteraction(interaction, result, functionIid, shadowIdBaseObject) {
 			var mappedInteraction = dis.interactionFinder.findInteraction(
 				shadowIdBaseObject,
@@ -163,7 +155,7 @@
 			if (mappedInteraction) {
 				if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {
 					mappedInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
-					addFollowingInteraction(mappedInteraction, interaction);
+					mappedInteraction.addFollowingInteraction(interaction);
 
 					dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
 				}
