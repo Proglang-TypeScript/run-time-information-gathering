@@ -48,8 +48,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 137,
                         "code": "getField",
+                        "iid": 137,
                         "field": "val",
                         "isComputed": false,
                         "isOpAssign": false,

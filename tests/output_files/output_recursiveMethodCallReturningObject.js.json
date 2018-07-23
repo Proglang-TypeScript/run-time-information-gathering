@@ -16,8 +16,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 97,
                         "code": "getField",
+                        "iid": 97,
                         "field": "val",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -26,8 +26,8 @@
                         "returnTypeOf": "number"
                     },
                     {
-                        "iid": 137,
                         "code": "getField",
+                        "iid": 137,
                         "field": "useRight",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -46,8 +46,8 @@
                         "enclosingFunctionId": 233,
                         "followingInteractions": [
                             {
-                                "iid": 97,
                                 "code": "getField",
+                                "iid": 97,
                                 "field": "val",
                                 "isComputed": false,
                                 "isOpAssign": false,
@@ -56,8 +56,8 @@
                                 "returnTypeOf": "number"
                             },
                             {
-                                "iid": 137,
                                 "code": "getField",
+                                "iid": 137,
                                 "field": "useRight",
                                 "isComputed": false,
                                 "isOpAssign": false,

@@ -19,8 +19,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 33,
                         "code": "getField",
+                        "iid": 33,
                         "field": "someValue",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -33,8 +33,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 33,
                         "code": "getField",
+                        "iid": 33,
                         "field": "someValue",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -68,8 +68,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 105,
                         "code": "getField",
+                        "iid": 105,
                         "field": "someValue",
                         "isComputed": true,
                         "isOpAssign": false,
@@ -82,8 +82,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 105,
                         "code": "getField",
+                        "iid": 105,
                         "field": "anotherValue",
                         "isComputed": true,
                         "isOpAssign": false,

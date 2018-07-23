@@ -15,8 +15,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 89,
                         "code": "getField",
+                        "iid": 89,
                         "field": "someValue",
                         "isComputed": false,
                         "isOpAssign": false,

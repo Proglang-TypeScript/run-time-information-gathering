@@ -25,8 +25,8 @@
                         "enclosingFunctionId": 145
                     },
                     {
-                        "iid": 57,
                         "code": "getField",
+                        "iid": 57,
                         "field": "myObj2",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -47,8 +47,8 @@
                         ]
                     },
                     {
-                        "iid": 89,
                         "code": "getField",
+                        "iid": 89,
                         "field": "myObj3",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -150,8 +150,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 177,
                         "code": "getField",
+                        "iid": 177,
                         "field": "aThirdValue",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -160,8 +160,8 @@
                         "returnTypeOf": "undefined"
                     },
                     {
-                        "iid": 289,
                         "code": "getField",
+                        "iid": 289,
                         "field": "aThirdValue2",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -170,8 +170,8 @@
                         "returnTypeOf": "undefined"
                     },
                     {
-                        "iid": 577,
                         "code": "getField",
+                        "iid": 577,
                         "field": "aFourthValue3",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -180,8 +180,8 @@
                         "returnTypeOf": "undefined"
                     },
                     {
-                        "iid": 441,
                         "code": "getField",
+                        "iid": 441,
                         "field": "aFourthValue",
                         "isComputed": false,
                         "isOpAssign": false,

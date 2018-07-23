@@ -15,8 +15,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 33,
                         "code": "getField",
+                        "iid": 33,
                         "field": "insideObj",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -25,8 +25,8 @@
                         "returnTypeOf": "object",
                         "followingInteractions": [
                             {
-                                "iid": 41,
                                 "code": "getField",
+                                "iid": 41,
                                 "field": "anotherInsideObj",
                                 "isComputed": false,
                                 "isOpAssign": false,
@@ -65,8 +65,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 105,
                         "code": "getField",
+                        "iid": 105,
                         "field": "insideObj",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -75,8 +75,8 @@
                         "returnTypeOf": "object",
                         "followingInteractions": [
                             {
-                                "iid": 113,
                                 "code": "getField",
+                                "iid": 113,
                                 "field": "anotherInsideObj",
                                 "isComputed": false,
                                 "isOpAssign": false,

@@ -9,6 +9,7 @@
 	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
 
 	var MethodCallInteraction = require("../../utils/interactions/methodCallInteraction.js").MethodCallInteraction;
+	var GetFieldInteraction = require("../../utils/interactions/getFieldInteraction.js").GetFieldInteraction;
 
 	function GetFieldPre(
 		functionsExecutionStack,
@@ -38,9 +39,9 @@
             isMethodCall
 		) {
 			if (isMethodCall === true) {
-				processMethodCallInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid);
+				processMethodCallInteraction(base, offset, isComputed, isOpAssign, iid);
 			} else {
-				processGetFieldInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid);
+				processGetFieldInteraction(base, offset, isComputed, isOpAssign, iid);
 			}
 
 			return {
@@ -50,11 +51,10 @@
 			};
 		};
 
-		function processGetFieldInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid) {
+		function processGetFieldInteraction(base, offset, isComputed, isOpAssign, iid) {
 			var getFieldInteraction = getGetFieldInteraction(
 				base,
 				offset,
-				isMethodCall,
 				isComputed,
 				isOpAssign,
 				iid
@@ -76,13 +76,12 @@
 			}
 		}
 
-		function processMethodCallInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid) {
+		function processMethodCallInteraction(base, offset, isComputed, isOpAssign, iid) {
 			base[offset].methodName = offset;
 
 			var methodCallInteraction = getMethodCallInteraction(
 				base,
 				offset,
-				isMethodCall,
 				isComputed,
 				isOpAssign,
 				iid
@@ -107,17 +106,12 @@
 			return interactionAdded;
 		}
 
-		function getGetFieldInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid) {
-			var interaction = {
-				iid: iid,
-				code: 'getField',
-				field: offset,
-				isComputed: isComputed,
-				isOpAssign: isOpAssign,
-				isMethodCall: isMethodCall,
-				enclosingFunctionId: dis.functionsExecutionStack.getCurrentExecutingFunction(),
-				returnTypeOf: getTypeOf(base[offset])
-			};
+		function getGetFieldInteraction(base, offset, isComputed, isOpAssign, iid) {
+			var interaction = new GetFieldInteraction(iid, offset);
+			interaction.isComputed = isComputed;
+			interaction.isOpAssign = isOpAssign;
+			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
+			interaction.returnTypeOf = getTypeOf(base[offset]);
 
 			return interaction;
 		}
@@ -137,7 +131,7 @@
 			}
 		}
 
-		function getMethodCallInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid) {
+		function getMethodCallInteraction(base, offset, isComputed, isOpAssign, iid) {
 			var interaction = new MethodCallInteraction(iid, offset);
 			interaction.isComputed = isComputed;
 			interaction.isOpAssign = isOpAssign;

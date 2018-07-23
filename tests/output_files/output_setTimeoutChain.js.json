@@ -37,8 +37,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 73,
                         "code": "getField",
+                        "iid": 73,
                         "field": "someValue",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -55,8 +55,8 @@
                         "enclosingFunctionId": 177
                     },
                     {
-                        "iid": 129,
                         "code": "getField",
+                        "iid": 129,
                         "field": "anotherValue",
                         "isComputed": false,
                         "isOpAssign": false,
