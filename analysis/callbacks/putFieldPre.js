@@ -33,10 +33,9 @@
 				var shadowId = this.sMemoryInterface.getShadowIdOfObject(base);
 				var argumentContainer = argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
 
+				var interaction = getPutFieldInteracion(iid, offset, val, isComputed, isOpAssign, functionIid);
 				if (argumentContainer) {
-					argumentContainer.addInteraction(
-						getPutFieldInteracion(iid, offset, val, isComputed, isOpAssign, functionIid)
-					);
+					argumentContainer.addInteraction(interaction);
 				} else {
 					var mappedInteraction = this.interactionFinder.findInteraction(
 						shadowId,
@@ -44,13 +43,7 @@
 					);
 
 					if (mappedInteraction) {
-						if (!mappedInteraction.hasOwnProperty("followingInteractions")) {
-							mappedInteraction.followingInteractions = [];
-						}
-
-						mappedInteraction.followingInteractions.push(
-							getPutFieldInteracion(iid, offset, val, isComputed, isOpAssign, functionIid)
-						);
+						mappedInteraction.addFollowingInteraction(interaction);
 					}
 				}
 			}
