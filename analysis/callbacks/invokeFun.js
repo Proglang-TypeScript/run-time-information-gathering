@@ -38,11 +38,10 @@
 				if (f.methodIdentifier && (f.methodIdentifier in this.mapMethodIdentifierInteractions)) {
 					var interaction = this.mapMethodIdentifierInteractions[f.methodIdentifier];
 
-					mapShadowIdOfResultWithInteraction(
+					processRecursiveInteractionOfResult(
 						interaction,
-						functionContainer.declarationEnclosingFunctionId,
 						result,
-						this.sMemoryInterface.getShadowIdOfObject(base)
+						functionContainer.declarationEnclosingFunctionId
 					);
 
 					addRecursiveFollowingInteraction(
@@ -52,7 +51,6 @@
 						this.sMemoryInterface.getShadowIdOfObject(base)
 					);
 				}
-
 			}
 
 			return {
@@ -64,21 +62,18 @@
 			return dis.runTimeInfo[functionIid];
 		}
 
-		function mapShadowIdOfResultWithInteraction(interaction, mapFunctionIid, result) {
+		function processRecursiveInteractionOfResult(interaction, result, functionIid) {
 			if (getTypeOf(result) == "object") {
 				var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
 
 				dis.mapShadowIdsInteractions[
 					getHashForShadowIdAndFunctionIid(
 						shadowIdReturnedObject,
-						mapFunctionIid
+						functionIid
 					)
 				] = interaction;
 
-				dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(
-					interaction,
-					result
-				);
+				dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(interaction, result);
 			}
 		}
 

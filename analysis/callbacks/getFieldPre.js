@@ -35,53 +35,10 @@
             isOpAssign,
             isMethodCall
 		) {
-			var functionIid = this.functionsExecutionStack.getCurrentExecutingFunction();
-			var shadowId = this.sMemoryInterface.getShadowIdOfObject(base);
-
-			var argumentContainer = this.argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
-
 			if (isMethodCall === true) {
-				base[offset].methodName = offset;
-			}
-
-			if (functionIid && argumentContainer) {
-				var interaction = getInteraction(
-					base,
-					offset,
-					functionIid,
-					isMethodCall,
-					isComputed,
-					isOpAssign,
-					iid
-				);
-
-				argumentContainer.addInteraction(interaction);
+				processMethodCallInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid);
 			} else {
-				var mappedInteraction = this.interactionFinder.findInteraction(
-					shadowId,
-					functionIid
-				);
-
-				if (mappedInteraction) {
-					var followingInteraction = getInteraction(
-						base,
-						offset,
-						functionIid,
-						isMethodCall,
-						isComputed,
-						isOpAssign,
-						iid
-					);
-
-					if (isMethodCall !== true) {
-						if (!this.recursiveInteractionsHandler.interactionAlreadyUsed(followingInteraction, base[offset])) {
-							mappedInteraction = this.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
-							addFollowingInteraction(mappedInteraction, followingInteraction);
-
-							this.recursiveInteractionsHandler.reportUsedInteraction(followingInteraction, base[offset]);
-						}
-					}
-				}
+				processGetFieldInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid);
 			}
 
 			return {
@@ -91,51 +48,112 @@
 			};
 		};
 
-		function getInteraction(base, offset, functionIid, isMethodCall, isComputed, isOpAssign, iid) {
-			var interaction = {};
+		function processGetFieldInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid) {
+			var getFieldInteraction = getGetFieldInteraction(
+				base,
+				offset,
+				isMethodCall,
+				isComputed,
+				isOpAssign,
+				iid
+			);
 
-			if (isMethodCall === false) {
-					interaction = {
-						iid: iid,
-						code: 'getField',
-						field: offset,
-						isComputed: isComputed,
-						isOpAssign: isOpAssign,
-						isMethodCall: isMethodCall,
-						enclosingFunctionId: functionIid,
-						returnTypeOf: getTypeOf(base[offset])
-					};
+			processRecursiveInteractionOfResult(
+				getFieldInteraction,
+				base[offset],
+				dis.functionsExecutionStack.getCurrentExecutingFunction()
+			);
 
-					if (getTypeOf(base[offset]) == "object") {
-						var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(base[offset]);
+			if (!addInteractionToArgumentContainerIfPossible(getFieldInteraction, base)) {
+				addRecursiveFollowingInteraction(
+					getFieldInteraction,
+					base[offset],
+					dis.functionsExecutionStack.getCurrentExecutingFunction(),
+					dis.sMemoryInterface.getShadowIdOfObject(base)
+				);
+			}
+		}
 
-						dis.mapShadowIdsInteractions[
-							getHashForShadowIdAndFunctionIid(
-								shadowIdReturnedObject,
-								functionIid
-							)
-						] = interaction;
+		function processMethodCallInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid) {
+			base[offset].methodName = offset;
 
-						dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(interaction, base[offset]);
-					}
-			} else {
-				interaction = {
-					iid: iid,
-					code: 'methodCall',
-					methodName: offset,
-					isComputed: isComputed,
-					isOpAssign: isOpAssign,
-					isMethodCall: isMethodCall,
-					functionIid: null,
-					enclosingFunctionId: functionIid,
-				};
+			var methodCallInteraction = getMethodCallInteraction(
+				base,
+				offset,
+				isMethodCall,
+				isComputed,
+				isOpAssign,
+				iid
+			);
 
-				var randomIdentifier = getRandomIdentifier();
-				base[offset].methodIdentifier = randomIdentifier;
-				dis.mapMethodIdentifierInteractions[randomIdentifier] = interaction;
+			addRandomIdentifierToMethodCall(methodCallInteraction, base[offset]);
+			addInteractionToArgumentContainerIfPossible(methodCallInteraction, base);
+		}
+
+		function addInteractionToArgumentContainerIfPossible(interaction, base) {
+			var functionIid = dis.functionsExecutionStack.getCurrentExecutingFunction();
+			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
+
+			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
+
+			var interactionAdded = false;
+			if (functionIid && argumentContainer) {
+				argumentContainer.addInteraction(interaction);
+				interactionAdded = true;
 			}
 
+			return interactionAdded;
+		}
+
+		function getGetFieldInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid) {
+			var interaction = {
+				iid: iid,
+				code: 'getField',
+				field: offset,
+				isComputed: isComputed,
+				isOpAssign: isOpAssign,
+				isMethodCall: isMethodCall,
+				enclosingFunctionId: dis.functionsExecutionStack.getCurrentExecutingFunction(),
+				returnTypeOf: getTypeOf(base[offset])
+			};
+
 			return interaction;
+		}
+
+		function processRecursiveInteractionOfResult(interaction, result, functionIid) {
+			if (getTypeOf(result) == "object") {
+				var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
+
+				dis.mapShadowIdsInteractions[
+					getHashForShadowIdAndFunctionIid(
+						shadowIdReturnedObject,
+						functionIid
+					)
+				] = interaction;
+
+				dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(interaction, result);
+			}
+		}
+
+		function getMethodCallInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid) {
+			var interaction = {
+				iid: iid,
+				code: 'methodCall',
+				methodName: offset,
+				isComputed: isComputed,
+				isOpAssign: isOpAssign,
+				isMethodCall: isMethodCall,
+				functionIid: null,
+				enclosingFunctionId: dis.functionsExecutionStack.getCurrentExecutingFunction()
+			};
+
+			return interaction;
+		}
+
+		function addRandomIdentifierToMethodCall(interaction, f) {
+			var randomIdentifier = getRandomIdentifier();
+			f.methodIdentifier = randomIdentifier;
+			dis.mapMethodIdentifierInteractions[randomIdentifier] = interaction;
 		}
 
 		function addFollowingInteraction(baseInteraction, followingInteraction) {
@@ -144,6 +162,22 @@
 			}
 
 			baseInteraction.followingInteractions.push(followingInteraction);
+		}
+
+		function addRecursiveFollowingInteraction(interaction, result, functionIid, shadowIdBaseObject) {
+			var mappedInteraction = dis.interactionFinder.findInteraction(
+				shadowIdBaseObject,
+				functionIid
+			);
+
+			if (mappedInteraction) {
+				if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {
+					mappedInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
+					addFollowingInteraction(mappedInteraction, interaction);
+
+					dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
+				}
+			}
 		}
 	}
 
