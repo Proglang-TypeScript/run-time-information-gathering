@@ -63,7 +63,7 @@
             "0": {
                 "argumentIndex": 0,
                 "argumentName": "myObj",
-                "shadowId": 7,
+                "shadowId": 9,
                 "interactions": [
                     {
                         "code": "inputValue",
