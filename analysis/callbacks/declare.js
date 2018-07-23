@@ -9,6 +9,8 @@
 	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
 	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
+	var InputValueInteraction = require("../../utils/interactions/inputValueInteraction.js").InputValueInteraction;
+
 	function Declare(runTimeInfo, functionsExecutionStack, mapShadowIds, sMemoryInterface) {
 		var dis = this;
 
@@ -54,13 +56,7 @@
 
 		function buildArgumentContainer(argumentIndex, name, val) {
 			var argumentContainer = new ArgumentContainer(argumentIndex, name);
-
-			var inputValueInteraction = {
-				code: "inputValue",
-				typeof: getTypeOf(val)
-			};
-
-			argumentContainer.addInteraction(inputValueInteraction);
+			argumentContainer.addInteraction(new InputValueInteraction(getTypeOf(val)));
 
 			return argumentContainer;
 		}
