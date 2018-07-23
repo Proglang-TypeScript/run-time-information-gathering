@@ -16,13 +16,13 @@
                     },
                     {
                         "code": "methodCall",
-                        "iid": 51,
-                        "methodName": "myMethod",
                         "isComputed": false,
                         "isOpAssign": false,
+                        "enclosingFunctionId": 73,
+                        "iid": 51,
+                        "methodName": "myMethod",
                         "isMethodCall": true,
-                        "functionIid": 177,
-                        "enclosingFunctionId": 73
+                        "functionIid": 177
                     },
                     {
                         "code": "inputValue",
@@ -30,13 +30,13 @@
                     },
                     {
                         "code": "methodCall",
-                        "iid": 51,
-                        "methodName": "myMethod",
                         "isComputed": false,
                         "isOpAssign": false,
+                        "enclosingFunctionId": 73,
+                        "iid": 51,
+                        "methodName": "myMethod",
                         "isMethodCall": true,
-                        "functionIid": 177,
-                        "enclosingFunctionId": 73
+                        "functionIid": 177
                     }
                 ]
             },

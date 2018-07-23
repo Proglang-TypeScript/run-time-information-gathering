@@ -40,76 +40,76 @@
                     },
                     {
                         "code": "getField",
-                        "iid": 33,
-                        "field": "insideObj",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 289,
+                        "iid": 33,
+                        "field": "insideObj",
+                        "isMethodCall": false,
                         "returnTypeOf": "object",
                         "followingInteractions": [
                             {
                                 "code": "getField",
-                                "iid": 65,
-                                "field": "anotherInsideObj",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "isMethodCall": false,
                                 "enclosingFunctionId": 289,
+                                "iid": 65,
+                                "field": "anotherInsideObj",
+                                "isMethodCall": false,
                                 "returnTypeOf": "object",
                                 "followingInteractions": [
                                     {
                                         "code": "getField",
-                                        "iid": 121,
-                                        "field": "anotherValue",
                                         "isComputed": false,
                                         "isOpAssign": false,
-                                        "isMethodCall": false,
                                         "enclosingFunctionId": 241,
+                                        "iid": 121,
+                                        "field": "anotherValue",
+                                        "isMethodCall": false,
                                         "returnTypeOf": "number"
                                     }
                                 ]
                             },
                             {
                                 "code": "getField",
-                                "iid": 97,
-                                "field": "anotherValue",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "isMethodCall": false,
                                 "enclosingFunctionId": 241,
+                                "iid": 97,
+                                "field": "anotherValue",
+                                "isMethodCall": false,
                                 "returnTypeOf": "number"
                             }
                         ]
                     },
                     {
                         "code": "getField",
-                        "iid": 145,
-                        "field": "insideObj",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 241,
+                        "iid": 145,
+                        "field": "insideObj",
+                        "isMethodCall": false,
                         "returnTypeOf": "object",
                         "followingInteractions": [
                             {
                                 "code": "getField",
-                                "iid": 153,
-                                "field": "anotherInsideObj",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "isMethodCall": false,
                                 "enclosingFunctionId": 241,
+                                "iid": 153,
+                                "field": "anotherInsideObj",
+                                "isMethodCall": false,
                                 "returnTypeOf": "object",
                                 "followingInteractions": [
                                     {
                                         "code": "getField",
-                                        "iid": 161,
-                                        "field": "someValue",
                                         "isComputed": false,
                                         "isOpAssign": false,
-                                        "isMethodCall": false,
                                         "enclosingFunctionId": 241,
+                                        "iid": 161,
+                                        "field": "someValue",
+                                        "isMethodCall": false,
                                         "returnTypeOf": "number"
                                     }
                                 ]
@@ -124,12 +124,12 @@
                             },
                             {
                                 "code": "getField",
-                                "iid": 217,
-                                "field": "anotherValue",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "isMethodCall": false,
                                 "enclosingFunctionId": 241,
+                                "iid": 217,
+                                "field": "anotherValue",
+                                "isMethodCall": false,
                                 "returnTypeOf": "number"
                             }
                         ]

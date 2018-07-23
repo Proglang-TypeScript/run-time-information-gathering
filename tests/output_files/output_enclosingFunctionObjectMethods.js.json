@@ -16,67 +16,67 @@
                     },
                     {
                         "code": "methodCall",
-                        "iid": 35,
-                        "methodName": "myMethod",
                         "isComputed": false,
                         "isOpAssign": false,
+                        "enclosingFunctionId": 145,
+                        "iid": 35,
+                        "methodName": "myMethod",
                         "isMethodCall": true,
-                        "functionIid": 257,
-                        "enclosingFunctionId": 145
+                        "functionIid": 257
                     },
                     {
                         "code": "getField",
-                        "iid": 57,
-                        "field": "myObj2",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 145,
+                        "iid": 57,
+                        "field": "myObj2",
+                        "isMethodCall": false,
                         "returnTypeOf": "object",
                         "followingInteractions": [
                             {
                                 "code": "methodCall",
-                                "iid": 67,
-                                "methodName": "myMethod2",
                                 "isComputed": false,
                                 "isOpAssign": false,
+                                "enclosingFunctionId": 145,
+                                "iid": 67,
+                                "methodName": "myMethod2",
                                 "isMethodCall": true,
-                                "functionIid": 369,
-                                "enclosingFunctionId": 145
+                                "functionIid": 369
                             }
                         ]
                     },
                     {
                         "code": "getField",
-                        "iid": 89,
-                        "field": "myObj3",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 145,
+                        "iid": 89,
+                        "field": "myObj3",
+                        "isMethodCall": false,
                         "returnTypeOf": "object",
                         "followingInteractions": [
                             {
                                 "code": "methodCall",
-                                "iid": 99,
-                                "methodName": "anotherMethod3",
                                 "isComputed": false,
                                 "isOpAssign": false,
+                                "enclosingFunctionId": 145,
+                                "iid": 99,
+                                "methodName": "anotherMethod3",
                                 "isMethodCall": true,
-                                "functionIid": 657,
-                                "enclosingFunctionId": 145
+                                "functionIid": 657
                             }
                         ]
                     },
                     {
                         "code": "methodCall",
-                        "iid": 123,
-                        "methodName": "anotherMethod",
                         "isComputed": false,
                         "isOpAssign": false,
+                        "enclosingFunctionId": 145,
+                        "iid": 123,
+                        "methodName": "anotherMethod",
                         "isMethodCall": true,
-                        "functionIid": 521,
-                        "enclosingFunctionId": 145
+                        "functionIid": 521
                     }
                 ]
             }
@@ -151,42 +151,42 @@
                     },
                     {
                         "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 257,
                         "iid": 177,
                         "field": "aThirdValue",
-                        "isComputed": false,
-                        "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 257,
                         "returnTypeOf": "undefined"
                     },
                     {
                         "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 369,
                         "iid": 289,
                         "field": "aThirdValue2",
-                        "isComputed": false,
-                        "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 369,
                         "returnTypeOf": "undefined"
                     },
                     {
                         "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 657,
                         "iid": 577,
                         "field": "aFourthValue3",
-                        "isComputed": false,
-                        "isOpAssign": false,
                         "isMethodCall": false,
-                        "enclosingFunctionId": 657,
                         "returnTypeOf": "undefined"
                     },
                     {
                         "code": "getField",
-                        "iid": 441,
-                        "field": "aFourthValue",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 521,
+                        "iid": 441,
+                        "field": "aFourthValue",
+                        "isMethodCall": false,
                         "returnTypeOf": "undefined"
                     }
                 ]

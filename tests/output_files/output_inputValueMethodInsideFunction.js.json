@@ -16,13 +16,13 @@
                     },
                     {
                         "code": "methodCall",
-                        "iid": 75,
-                        "methodName": "executeMethod",
                         "isComputed": false,
                         "isOpAssign": false,
+                        "enclosingFunctionId": 97,
+                        "iid": 75,
+                        "methodName": "executeMethod",
                         "isMethodCall": true,
-                        "functionIid": 169,
-                        "enclosingFunctionId": 97
+                        "functionIid": 169
                     }
                 ]
             }
@@ -49,12 +49,12 @@
                     },
                     {
                         "code": "getField",
-                        "iid": 137,
-                        "field": "val",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 169,
+                        "iid": 137,
+                        "field": "val",
+                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     }
                 ]

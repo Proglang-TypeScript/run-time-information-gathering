@@ -17,83 +17,83 @@
                     },
                     {
                         "code": "getField",
-                        "iid": 97,
-                        "field": "val",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 233,
+                        "iid": 97,
+                        "field": "val",
+                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     },
                     {
                         "code": "getField",
-                        "iid": 137,
-                        "field": "useRight",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 233,
+                        "iid": 137,
+                        "field": "useRight",
+                        "isMethodCall": false,
                         "returnTypeOf": "boolean"
                     },
                     {
                         "code": "methodCall",
-                        "iid": 187,
-                        "methodName": "getLeft",
                         "isComputed": false,
                         "isOpAssign": false,
+                        "enclosingFunctionId": 233,
+                        "iid": 187,
+                        "methodName": "getLeft",
                         "isMethodCall": true,
                         "functionIid": 369,
-                        "enclosingFunctionId": 233,
                         "followingInteractions": [
                             {
                                 "code": "getField",
-                                "iid": 97,
-                                "field": "val",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "isMethodCall": false,
                                 "enclosingFunctionId": 233,
+                                "iid": 97,
+                                "field": "val",
+                                "isMethodCall": false,
                                 "returnTypeOf": "number"
                             },
                             {
                                 "code": "getField",
-                                "iid": 137,
-                                "field": "useRight",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "isMethodCall": false,
                                 "enclosingFunctionId": 233,
+                                "iid": 137,
+                                "field": "useRight",
+                                "isMethodCall": false,
                                 "returnTypeOf": "boolean"
                             },
                             {
                                 "code": "methodCall",
-                                "iid": 187,
-                                "methodName": "getLeft",
                                 "isComputed": false,
                                 "isOpAssign": false,
+                                "enclosingFunctionId": 233,
+                                "iid": 187,
+                                "methodName": "getLeft",
                                 "isMethodCall": true,
                                 "functionIid": 369,
-                                "enclosingFunctionId": 233,
                                 "followingInteractions": [
                                     {
                                         "code": "methodCall",
-                                        "iid": 155,
-                                        "methodName": "getRight",
                                         "isComputed": false,
                                         "isOpAssign": false,
+                                        "enclosingFunctionId": 233,
+                                        "iid": 155,
+                                        "methodName": "getRight",
                                         "isMethodCall": true,
                                         "functionIid": 441,
-                                        "enclosingFunctionId": 233,
                                         "followingInteractions": [
                                             {
                                                 "code": "methodCall",
-                                                "iid": 187,
-                                                "methodName": "getLeft",
                                                 "isComputed": false,
                                                 "isOpAssign": false,
+                                                "enclosingFunctionId": 233,
+                                                "iid": 187,
+                                                "methodName": "getLeft",
                                                 "isMethodCall": true,
-                                                "functionIid": 369,
-                                                "enclosingFunctionId": 233
+                                                "functionIid": 369
                                             }
                                         ]
                                     }

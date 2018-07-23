@@ -16,43 +16,43 @@
                     },
                     {
                         "code": "methodCall",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 121,
                         "iid": 35,
                         "methodName": "returnString",
-                        "isComputed": false,
-                        "isOpAssign": false,
                         "isMethodCall": true,
-                        "functionIid": 169,
-                        "enclosingFunctionId": 121
+                        "functionIid": 169
                     },
                     {
                         "code": "methodCall",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 121,
                         "iid": 59,
                         "methodName": "returnNumber",
-                        "isComputed": false,
-                        "isOpAssign": false,
                         "isMethodCall": true,
-                        "functionIid": 217,
-                        "enclosingFunctionId": 121
+                        "functionIid": 217
                     },
                     {
                         "code": "methodCall",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 121,
                         "iid": 83,
                         "methodName": "returnFunction",
-                        "isComputed": false,
-                        "isOpAssign": false,
                         "isMethodCall": true,
-                        "functionIid": 329,
-                        "enclosingFunctionId": 121
+                        "functionIid": 329
                     },
                     {
                         "code": "methodCall",
-                        "iid": 107,
-                        "methodName": "returnObject",
                         "isComputed": false,
                         "isOpAssign": false,
+                        "enclosingFunctionId": 121,
+                        "iid": 107,
+                        "methodName": "returnObject",
                         "isMethodCall": true,
-                        "functionIid": 393,
-                        "enclosingFunctionId": 121
+                        "functionIid": 393
                     }
                 ]
             }

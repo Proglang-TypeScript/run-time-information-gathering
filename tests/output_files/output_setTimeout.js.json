@@ -28,12 +28,12 @@
                     },
                     {
                         "code": "getField",
-                        "iid": 185,
-                        "field": "someValue",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 233,
+                        "iid": 185,
+                        "field": "someValue",
+                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     },
                     {
@@ -95,12 +95,12 @@
                     },
                     {
                         "code": "getField",
-                        "iid": 129,
-                        "field": "someValue",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 233,
+                        "iid": 129,
+                        "field": "someValue",
+                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     },
                     {

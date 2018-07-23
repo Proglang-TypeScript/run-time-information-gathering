@@ -67,12 +67,12 @@
                     },
                     {
                         "code": "getField",
-                        "iid": 313,
-                        "field": "someValue",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 345,
+                        "iid": 313,
+                        "field": "someValue",
+                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     }
                 ]

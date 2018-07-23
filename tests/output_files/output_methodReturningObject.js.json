@@ -16,13 +16,13 @@
                     },
                     {
                         "code": "methodCall",
-                        "iid": 35,
-                        "methodName": "myMethod",
                         "isComputed": false,
                         "isOpAssign": false,
+                        "enclosingFunctionId": 121,
+                        "iid": 35,
+                        "methodName": "myMethod",
                         "isMethodCall": true,
                         "functionIid": 225,
-                        "enclosingFunctionId": 121,
                         "followingInteractions": [
                             {
                                 "code": "setField",
@@ -34,13 +34,13 @@
                             },
                             {
                                 "code": "methodCall",
-                                "iid": 99,
-                                "methodName": "myMethodInside",
                                 "isComputed": false,
                                 "isOpAssign": false,
+                                "enclosingFunctionId": 121,
+                                "iid": 99,
+                                "methodName": "myMethodInside",
                                 "isMethodCall": true,
-                                "functionIid": 177,
-                                "enclosingFunctionId": 121
+                                "functionIid": 177
                             }
                         ]
                     }

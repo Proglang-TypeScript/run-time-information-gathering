@@ -20,12 +20,12 @@
                     },
                     {
                         "code": "getField",
-                        "iid": 33,
-                        "field": "someValue",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 65,
+                        "iid": 33,
+                        "field": "someValue",
+                        "isMethodCall": false,
                         "returnTypeOf": "undefined"
                     },
                     {
@@ -34,12 +34,12 @@
                     },
                     {
                         "code": "getField",
-                        "iid": 33,
-                        "field": "someValue",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 65,
+                        "iid": 33,
+                        "field": "someValue",
+                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     }
                 ]
@@ -69,12 +69,12 @@
                     },
                     {
                         "code": "getField",
-                        "iid": 105,
-                        "field": "someValue",
                         "isComputed": true,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 137,
+                        "iid": 105,
+                        "field": "someValue",
+                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     },
                     {
@@ -83,12 +83,12 @@
                     },
                     {
                         "code": "getField",
-                        "iid": 105,
-                        "field": "anotherValue",
                         "isComputed": true,
                         "isOpAssign": false,
-                        "isMethodCall": false,
                         "enclosingFunctionId": 137,
+                        "iid": 105,
+                        "field": "anotherValue",
+                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     }
                 ]

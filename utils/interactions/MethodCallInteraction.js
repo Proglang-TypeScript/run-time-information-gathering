@@ -4,24 +4,21 @@
 "use strict";
 
 (function(exp) {
-	var Interaction = require("./interaction.js").Interaction;
+	var ActiveInteraction = require("./activeInteraction.js").ActiveInteraction;
 
 	function MethodCallInteraction(iid, methodName) {
-		Interaction.call(this);
+		ActiveInteraction.call(this);
 
-		this.code = 'methodCall';
-		
 		this.iid = iid;
 		this.methodName = methodName;
-		
-		this.isComputed = null;
-		this.isOpAssign = null;
+
+		this.code = 'methodCall';
 		this.isMethodCall = true;
+		
 		this.functionIid = null;
-		this.enclosingFunctionId = null;
 	}
 
-	MethodCallInteraction.prototype = Object.create(Interaction.prototype);
+	MethodCallInteraction.prototype = Object.create(ActiveInteraction.prototype);
 	MethodCallInteraction.prototype.constructor = MethodCallInteraction;
 
 	exp.MethodCallInteraction = MethodCallInteraction;
