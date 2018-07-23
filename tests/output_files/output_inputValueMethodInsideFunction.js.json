@@ -15,8 +15,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 75,
                         "code": "methodCall",
+                        "iid": 75,
                         "methodName": "executeMethod",
                         "isComputed": false,
                         "isOpAssign": false,

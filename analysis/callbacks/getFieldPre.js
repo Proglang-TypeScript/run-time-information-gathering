@@ -8,6 +8,8 @@
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
 
+	var MethodCallInteraction = require("../../utils/interactions/methodCallInteraction.js").MethodCallInteraction;
+
 	function GetFieldPre(
 		functionsExecutionStack,
 		mapMethodIdentifierInteractions,
@@ -136,16 +138,10 @@
 		}
 
 		function getMethodCallInteraction(base, offset, isMethodCall, isComputed, isOpAssign, iid) {
-			var interaction = {
-				iid: iid,
-				code: 'methodCall',
-				methodName: offset,
-				isComputed: isComputed,
-				isOpAssign: isOpAssign,
-				isMethodCall: isMethodCall,
-				functionIid: null,
-				enclosingFunctionId: dis.functionsExecutionStack.getCurrentExecutingFunction()
-			};
+			var interaction = new MethodCallInteraction(iid, offset);
+			interaction.isComputed = isComputed;
+			interaction.isOpAssign = isOpAssign;
+			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 
 			return interaction;
 		}

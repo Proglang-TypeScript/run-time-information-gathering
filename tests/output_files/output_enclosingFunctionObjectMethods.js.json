@@ -15,8 +15,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 35,
                         "code": "methodCall",
+                        "iid": 35,
                         "methodName": "myMethod",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -35,8 +35,8 @@
                         "returnTypeOf": "object",
                         "followingInteractions": [
                             {
-                                "iid": 67,
                                 "code": "methodCall",
+                                "iid": 67,
                                 "methodName": "myMethod2",
                                 "isComputed": false,
                                 "isOpAssign": false,
@@ -57,8 +57,8 @@
                         "returnTypeOf": "object",
                         "followingInteractions": [
                             {
-                                "iid": 99,
                                 "code": "methodCall",
+                                "iid": 99,
                                 "methodName": "anotherMethod3",
                                 "isComputed": false,
                                 "isOpAssign": false,
@@ -69,8 +69,8 @@
                         ]
                     },
                     {
-                        "iid": 123,
                         "code": "methodCall",
+                        "iid": 123,
                         "methodName": "anotherMethod",
                         "isComputed": false,
                         "isOpAssign": false,

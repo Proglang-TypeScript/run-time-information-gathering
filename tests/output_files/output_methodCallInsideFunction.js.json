@@ -15,8 +15,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 51,
                         "code": "methodCall",
+                        "iid": 51,
                         "methodName": "myMethod",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -29,8 +29,8 @@
                         "typeof": "object"
                     },
                     {
-                        "iid": 51,
                         "code": "methodCall",
+                        "iid": 51,
                         "methodName": "myMethod",
                         "isComputed": false,
                         "isOpAssign": false,

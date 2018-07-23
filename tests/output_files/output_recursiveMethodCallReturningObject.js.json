@@ -36,8 +36,8 @@
                         "returnTypeOf": "boolean"
                     },
                     {
-                        "iid": 187,
                         "code": "methodCall",
+                        "iid": 187,
                         "methodName": "getLeft",
                         "isComputed": false,
                         "isOpAssign": false,
@@ -66,8 +66,8 @@
                                 "returnTypeOf": "boolean"
                             },
                             {
-                                "iid": 187,
                                 "code": "methodCall",
+                                "iid": 187,
                                 "methodName": "getLeft",
                                 "isComputed": false,
                                 "isOpAssign": false,
@@ -76,8 +76,8 @@
                                 "enclosingFunctionId": 233,
                                 "followingInteractions": [
                                     {
-                                        "iid": 155,
                                         "code": "methodCall",
+                                        "iid": 155,
                                         "methodName": "getRight",
                                         "isComputed": false,
                                         "isOpAssign": false,
@@ -86,8 +86,8 @@
                                         "enclosingFunctionId": 233,
                                         "followingInteractions": [
                                             {
-                                                "iid": 187,
                                                 "code": "methodCall",
+                                                "iid": 187,
                                                 "methodName": "getLeft",
                                                 "isComputed": false,
                                                 "isOpAssign": false,
