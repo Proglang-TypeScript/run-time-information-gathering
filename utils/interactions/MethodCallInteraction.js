@@ -15,6 +15,7 @@
 		this.code = 'methodCall';
 		
 		this.functionIid = null;
+		this.returnTypeOf = null;
 	}
 
 	MethodCallInteraction.prototype = Object.create(ActiveInteraction.prototype);

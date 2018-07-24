@@ -22,7 +22,8 @@
                         "followingInteractions": [],
                         "iid": 35,
                         "methodName": "myMethod",
-                        "functionIid": 257
+                        "functionIid": 257,
+                        "returnTypeOf": "undefined"
                     },
                     {
                         "code": "getField",
@@ -38,7 +39,8 @@
                                 "followingInteractions": [],
                                 "iid": 67,
                                 "methodName": "myMethod2",
-                                "functionIid": 369
+                                "functionIid": 369,
+                                "returnTypeOf": "undefined"
                             }
                         ],
                         "iid": 57,
@@ -59,7 +61,8 @@
                                 "followingInteractions": [],
                                 "iid": 99,
                                 "methodName": "anotherMethod3",
-                                "functionIid": 657
+                                "functionIid": 657,
+                                "returnTypeOf": "undefined"
                             }
                         ],
                         "iid": 89,
@@ -74,7 +77,8 @@
                         "followingInteractions": [],
                         "iid": 123,
                         "methodName": "anotherMethod",
-                        "functionIid": 521
+                        "functionIid": 521,
+                        "returnTypeOf": "undefined"
                     }
                 ]
             }

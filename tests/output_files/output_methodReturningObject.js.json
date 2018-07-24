@@ -38,12 +38,14 @@
                                 "followingInteractions": [],
                                 "iid": 99,
                                 "methodName": "myMethodInside",
-                                "functionIid": 177
+                                "functionIid": 177,
+                                "returnTypeOf": "string"
                             }
                         ],
                         "iid": 35,
                         "methodName": "myMethod",
-                        "functionIid": 225
+                        "functionIid": 225,
+                        "returnTypeOf": "object"
                     }
                 ]
             }

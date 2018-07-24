@@ -5,6 +5,7 @@
 
 (function(exp) {
 	var Interaction = require("./interaction.js").Interaction;
+	var getTypeOf = require("../getTypeOf.js").getTypeOf;
 
 	function ActiveInteraction() {
 		Interaction.call(this);
@@ -20,6 +21,14 @@
 
 	ActiveInteraction.prototype.addFollowingInteraction = function(followingInteraction) {
 		this.followingInteractions.push(followingInteraction);
+	};
+
+	ActiveInteraction.prototype.setReturnTypeOf = function(result) {
+		this.returnTypeOf = getTypeOf(result);
+
+		if (getTypeOf(result) == "object" && result.constructor.name != "Object") {
+			this.returnTypeOf += " - " + result.constructor.name;
+		}
 	};
 
 	exp.ActiveInteraction = ActiveInteraction;

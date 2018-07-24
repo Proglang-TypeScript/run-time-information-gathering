@@ -22,7 +22,8 @@
                         "followingInteractions": [],
                         "iid": 51,
                         "methodName": "myMethod",
-                        "functionIid": 177
+                        "functionIid": 177,
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "inputValue",
@@ -36,7 +37,8 @@
                         "followingInteractions": [],
                         "iid": 51,
                         "methodName": "myMethod",
-                        "functionIid": 177
+                        "functionIid": 177,
+                        "returnTypeOf": "string"
                     }
                 ]
             },

@@ -1,9 +1,8 @@
-15
 {
     "233": {
         "functionId": 233,
         "functionName": "traverse",
-        "iid": 1097,
+        "iid": 1377,
         "isConstructor": false,
         "isMethod": false,
         "args": {
@@ -72,6 +71,17 @@
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": 233,
+                                        "followingInteractions": [],
+                                        "iid": 155,
+                                        "methodName": "getRight",
+                                        "functionIid": 441,
+                                        "returnTypeOf": "object - Node"
+                                    },
+                                    {
+                                        "code": "methodCall",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": 233,
                                         "followingInteractions": [
                                             {
                                                 "code": "methodCall",
@@ -81,22 +91,26 @@
                                                 "followingInteractions": [],
                                                 "iid": 187,
                                                 "methodName": "getLeft",
-                                                "functionIid": 369
+                                                "functionIid": 617,
+                                                "returnTypeOf": "null"
                                             }
                                         ],
-                                        "iid": 155,
-                                        "methodName": "getRight",
-                                        "functionIid": 441
+                                        "iid": 187,
+                                        "methodName": "getLeft",
+                                        "functionIid": 369,
+                                        "returnTypeOf": "object - AnotherNode"
                                     }
                                 ],
                                 "iid": 187,
                                 "methodName": "getLeft",
-                                "functionIid": 369
+                                "functionIid": 369,
+                                "returnTypeOf": "object - Node"
                             }
                         ],
                         "iid": 187,
                         "methodName": "getLeft",
-                        "functionIid": 369
+                        "functionIid": 369,
+                        "returnTypeOf": "object - Node"
                     }
                 ]
             }
@@ -118,7 +132,8 @@
             "object",
             "object",
             "object",
-            "null"
+            "object",
+            "object"
         ]
     },
     "441": {
@@ -163,6 +178,22 @@
                     {
                         "code": "inputValue",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
                     }
                 ]
             },
@@ -173,6 +204,22 @@
                     {
                         "code": "inputValue",
                         "typeof": "null"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
                     },
                     {
                         "code": "inputValue",
@@ -202,6 +249,22 @@
                     },
                     {
                         "code": "inputValue",
+                        "typeof": "null"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "null"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "null"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "null"
+                    },
+                    {
+                        "code": "inputValue",
                         "typeof": "object"
                     },
                     {
@@ -225,6 +288,65 @@
             "object",
             "object",
             "object",
+            "object",
+            "object",
+            "object",
+            "object",
+            "object"
+        ]
+    },
+    "617": {
+        "functionId": 617,
+        "functionName": "getLeft",
+        "iid": 185,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": 233,
+        "returnTypeOfs": [
+            "null"
+        ]
+    },
+    "729": {
+        "functionId": 729,
+        "functionName": "AnotherNode",
+        "iid": 969,
+        "isConstructor": true,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "val",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "left",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "null"
+                    }
+                ]
+            },
+            "2": {
+                "argumentIndex": 2,
+                "argumentName": "right",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
             "object"
         ]
     }

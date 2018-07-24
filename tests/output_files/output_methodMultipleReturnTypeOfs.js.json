@@ -32,7 +32,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "string"
                     },
                     {
                         "code": "setField",
@@ -52,7 +53,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "setField",
@@ -72,7 +74,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "function"
                     },
                     {
                         "code": "setField",
@@ -92,7 +95,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "object"
                     },
                     {
                         "code": "setField",
@@ -112,7 +116,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "string"
                     },
                     {
                         "code": "setField",
@@ -132,7 +137,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "setField",
@@ -152,7 +158,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "function"
                     },
                     {
                         "code": "setField",
@@ -172,7 +179,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "object"
                     },
                     {
                         "code": "setField",
@@ -192,7 +200,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "string"
                     },
                     {
                         "code": "setField",
@@ -212,7 +221,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "setField",
@@ -232,7 +242,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "function"
                     },
                     {
                         "code": "setField",
@@ -252,7 +263,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "object"
                     },
                     {
                         "code": "setField",
@@ -272,7 +284,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "string"
                     },
                     {
                         "code": "setField",
@@ -292,7 +305,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "setField",
@@ -312,7 +326,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "function"
                     },
                     {
                         "code": "setField",
@@ -332,7 +347,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "object"
                     },
                     {
                         "code": "setField",
@@ -352,7 +368,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "string"
                     },
                     {
                         "code": "setField",
@@ -372,7 +389,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "setField",
@@ -392,7 +410,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "function"
                     },
                     {
                         "code": "setField",
@@ -412,7 +431,8 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "functionIid": 457
+                        "functionIid": 457,
+                        "returnTypeOf": "object"
                     }
                 ]
             }

@@ -85,7 +85,8 @@
                         "followingInteractions": [],
                         "iid": 163,
                         "methodName": "myMethod",
-                        "functionIid": 257
+                        "functionIid": 257,
+                        "returnTypeOf": "undefined"
                     }
                 ]
             }

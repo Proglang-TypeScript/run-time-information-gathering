@@ -22,7 +22,8 @@
                         "followingInteractions": [],
                         "iid": 75,
                         "methodName": "executeMethod",
-                        "functionIid": 169
+                        "functionIid": 169,
+                        "returnTypeOf": "boolean"
                     }
                 ]
             }
