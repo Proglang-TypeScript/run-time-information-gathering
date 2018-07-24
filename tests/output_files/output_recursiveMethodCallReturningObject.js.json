@@ -75,7 +75,7 @@
                                         "iid": 155,
                                         "methodName": "getRight",
                                         "functionIid": 441,
-                                        "returnTypeOf": "object - Node"
+                                        "returnTypeOf": "Node"
                                     },
                                     {
                                         "code": "methodCall",
@@ -98,19 +98,19 @@
                                         "iid": 187,
                                         "methodName": "getLeft",
                                         "functionIid": 369,
-                                        "returnTypeOf": "object - AnotherNode"
+                                        "returnTypeOf": "AnotherNode"
                                     }
                                 ],
                                 "iid": 187,
                                 "methodName": "getLeft",
                                 "functionIid": 369,
-                                "returnTypeOf": "object - Node"
+                                "returnTypeOf": "Node"
                             }
                         ],
                         "iid": 187,
                         "methodName": "getLeft",
                         "functionIid": 369,
-                        "returnTypeOf": "object - Node"
+                        "returnTypeOf": "Node"
                     }
                 ]
             }

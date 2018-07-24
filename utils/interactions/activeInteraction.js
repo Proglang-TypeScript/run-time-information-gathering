@@ -24,10 +24,10 @@
 	};
 
 	ActiveInteraction.prototype.setReturnTypeOf = function(result) {
-		this.returnTypeOf = getTypeOf(result);
-
 		if (getTypeOf(result) == "object" && result.constructor.name != "Object") {
-			this.returnTypeOf += " - " + result.constructor.name;
+			this.returnTypeOf = result.constructor.name;
+		} else {
+			this.returnTypeOf = getTypeOf(result);
 		}
 	};
 

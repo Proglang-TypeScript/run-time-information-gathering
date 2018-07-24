@@ -111,7 +111,7 @@
 			interaction.isComputed = isComputed;
 			interaction.isOpAssign = isOpAssign;
 			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
-			interaction.returnTypeOf = getTypeOf(base[offset]);
+			interaction.setReturnTypeOf(base[offset]);
 
 			return interaction;
 		}

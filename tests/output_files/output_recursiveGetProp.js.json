@@ -75,7 +75,7 @@
                                         "followingInteractions": [],
                                         "iid": 185,
                                         "field": "left",
-                                        "returnTypeOf": "object"
+                                        "returnTypeOf": "AnotherNode"
                                     },
                                     {
                                         "code": "getField",
@@ -85,7 +85,7 @@
                                         "followingInteractions": [],
                                         "iid": 153,
                                         "field": "right",
-                                        "returnTypeOf": "object"
+                                        "returnTypeOf": "Node"
                                     },
                                     {
                                         "code": "getField",
@@ -100,12 +100,12 @@
                                 ],
                                 "iid": 185,
                                 "field": "left",
-                                "returnTypeOf": "object"
+                                "returnTypeOf": "Node"
                             }
                         ],
                         "iid": 185,
                         "field": "left",
-                        "returnTypeOf": "object"
+                        "returnTypeOf": "Node"
                     }
                 ]
             }
