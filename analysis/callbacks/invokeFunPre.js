@@ -8,6 +8,8 @@
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
+	var UsedAsArgumentInteraction = require("../../utils/interactions/usedAsArgumentInteraction.js").UsedAsArgumentInteraction;
+
 	function InvokeFunPre(
 		runTimeInfo,
 		functionsExecutionStack,
@@ -95,12 +97,11 @@
 
 				var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, currentActiveFiid);
 				if (currentActiveFiid && argumentContainer) {
-					var usedAsArgumentInteraction = {
-						code: 'usedAsArgument',
-						enclosingFunctionId: currentActiveFiid,
-						targetFunctionId: functionIid,
-						argumentIndexInTargetFunction: argIndex
-					};
+					var usedAsArgumentInteraction = new UsedAsArgumentInteraction(
+						currentActiveFiid,
+						functionIid,
+						argIndex
+					);
 
 					argumentContainer.addInteraction(usedAsArgumentInteraction);
 				}
