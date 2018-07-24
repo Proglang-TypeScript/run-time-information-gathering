@@ -11,12 +11,12 @@
 
 	var InputValueInteraction = require("../../utils/interactions/inputValueInteraction.js").InputValueInteraction;
 
-	function Declare(runTimeInfo, functionsExecutionStack, mapShadowIds, sMemoryInterface) {
+	function Declare(runTimeInfo, functionsExecutionStack, mapShadowIdsArgumentContainer, sMemoryInterface) {
 		var dis = this;
 
 		this.runTimeInfo = runTimeInfo;
 		this.functionsExecutionStack = functionsExecutionStack;
-		this.mapShadowIds = mapShadowIds;
+		this.mapShadowIdsArgumentContainer = mapShadowIdsArgumentContainer;
 		this.sMemoryInterface = sMemoryInterface;
 
 		this.runCallback = function(iid, name, val, isArgument, argumentIndex) {
@@ -65,7 +65,7 @@
 			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
 
 			if (shadowId) {
-				dis.mapShadowIds[
+				dis.mapShadowIdsArgumentContainer[
 					getHashForShadowIdAndFunctionIid(
 						shadowId,
 						functionContainer.functionId

@@ -6,13 +6,13 @@
 (function(exp) {
 	var getHashForShadowIdAndFunctionIid = require("./getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
 
-	function ArgumentContainerFinder(runTimeInfo, mapShadowIds) {
+	function ArgumentContainerFinder(runTimeInfo, mapShadowIdsArgumentContainer) {
 		this.runTimeInfo = runTimeInfo;
-		this.mapShadowIds = mapShadowIds;
+		this.mapShadowIdsArgumentContainer = mapShadowIdsArgumentContainer;
 
         this.findArgumentContainer = function(shadowId, functionIid) {
             var fIid = functionIid;
-            var argumentContainer = this.mapShadowIds[
+            var argumentContainer = this.mapShadowIdsArgumentContainer[
                 getHashForShadowIdAndFunctionIid(shadowId, fIid)
             ];
 
@@ -20,7 +20,7 @@
             while(!argumentContainer && fIid) {
                 functionContainer = this.runTimeInfo[fIid];
 
-                argumentContainer = this.mapShadowIds[
+                argumentContainer = this.mapShadowIdsArgumentContainer[
                     getHashForShadowIdAndFunctionIid(shadowId, fIid)
                 ];
 
