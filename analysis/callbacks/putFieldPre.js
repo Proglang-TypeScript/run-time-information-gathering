@@ -26,26 +26,18 @@
 		var dis = this;
 
 		this.runCallback = function(iid, base, offset, val, isComputed, isOpAssign) {
-			var functionIid = this.functionsExecutionStack.getCurrentExecutingFunction();
 			val = addDeclarationEnclosingFunctionId(val);
 
-			if (offset !== undefined && functionIid) {
-				var shadowId = this.sMemoryInterface.getShadowIdOfObject(base);
-				var argumentContainer = argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
+			var interaction = getPutFieldInteracion(
+				iid,
+				offset,
+				val,
+				isComputed,
+				isOpAssign
+			);
 
-				var interaction = getPutFieldInteracion(iid, offset, val, isComputed, isOpAssign, functionIid);
-				if (argumentContainer) {
-					argumentContainer.addInteraction(interaction);
-				} else {
-					var mappedInteraction = this.interactionFinder.findInteraction(
-						shadowId,
-						functionIid
-					);
-
-					if (mappedInteraction) {
-						mappedInteraction.addFollowingInteraction(interaction);
-					}
-				}
+			if (!addInteractionToArgumentContainerIfPossible(interaction, base)) {
+				addFollowingInteractionToMappedInteraction(interaction, base);
 			}
 
 			return {
@@ -55,6 +47,32 @@
 				skip: false
 			};
 		};
+
+		function addInteractionToArgumentContainerIfPossible(interaction, base) {
+			var functionIid = dis.functionsExecutionStack.getCurrentExecutingFunction();
+			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
+
+			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
+
+			var interactionAdded = false;
+			if (functionIid && argumentContainer) {
+				argumentContainer.addInteraction(interaction);
+				interactionAdded = true;
+			}
+
+			return interactionAdded;
+		}
+
+		function addFollowingInteractionToMappedInteraction(interaction, base) {
+			var mappedInteraction = dis.interactionFinder.findInteraction(
+				dis.sMemoryInterface.getShadowIdOfObject(base),
+				dis.functionsExecutionStack.getCurrentExecutingFunction()
+			);
+
+			if (mappedInteraction) {
+				mappedInteraction.addFollowingInteraction(interaction);
+			}
+		}
 
 		function addDeclarationEnclosingFunctionId(val) {
 			if (getTypeOf(val) == "function") {
@@ -69,13 +87,13 @@
 			return val;
 		}
 
-		function getPutFieldInteracion(iid, offset, val, isComputed, isOpAssign, functionIid) {
+		function getPutFieldInteracion(iid, offset, val, isComputed, isOpAssign) {
 			var interaction = new PutFieldInteraction(iid, offset);
 
 			interaction.typeof = getTypeOf(val);
 			interaction.isComputed = isComputed;
 			interaction.isOpAssign = isOpAssign;
-			interaction.enclosingFunctionId = functionIid;
+			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 
 			return interaction;
 		}
