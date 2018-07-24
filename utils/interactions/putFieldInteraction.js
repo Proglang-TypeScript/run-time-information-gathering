@@ -13,7 +13,6 @@
 		this.field = field;
 
 		this.code = 'setField';
-		this.isMethodCall = false;
 
 		this.typeof = null;
 	}

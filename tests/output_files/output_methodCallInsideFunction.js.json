@@ -22,7 +22,6 @@
                         "followingInteractions": [],
                         "iid": 51,
                         "methodName": "myMethod",
-                        "isMethodCall": true,
                         "functionIid": 177
                     },
                     {
@@ -37,7 +36,6 @@
                         "followingInteractions": [],
                         "iid": 51,
                         "methodName": "myMethod",
-                        "isMethodCall": true,
                         "functionIid": 177
                     }
                 ]

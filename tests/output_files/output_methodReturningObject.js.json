@@ -28,7 +28,6 @@
                                 "followingInteractions": [],
                                 "iid": 73,
                                 "field": "someValue",
-                                "isMethodCall": false,
                                 "typeof": "number"
                             },
                             {
@@ -39,13 +38,11 @@
                                 "followingInteractions": [],
                                 "iid": 99,
                                 "methodName": "myMethodInside",
-                                "isMethodCall": true,
                                 "functionIid": 177
                             }
                         ],
                         "iid": 35,
                         "methodName": "myMethod",
-                        "isMethodCall": true,
                         "functionIid": 225
                     }
                 ]

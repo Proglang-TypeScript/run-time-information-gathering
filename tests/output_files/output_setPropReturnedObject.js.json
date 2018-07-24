@@ -34,19 +34,16 @@
                                         "followingInteractions": [],
                                         "iid": 81,
                                         "field": "someValue",
-                                        "isMethodCall": false,
                                         "typeof": "number"
                                     }
                                 ],
                                 "iid": 41,
                                 "field": "anotherInsideObj",
-                                "isMethodCall": false,
                                 "returnTypeOf": "object"
                             }
                         ],
                         "iid": 33,
                         "field": "insideObj",
-                        "isMethodCall": false,
                         "returnTypeOf": "object"
                     },
                     {
@@ -57,7 +54,6 @@
                         "followingInteractions": [],
                         "iid": 161,
                         "field": "myObj2",
-                        "isMethodCall": false,
                         "typeof": "object"
                     }
                 ]
@@ -90,19 +86,16 @@
                                         "followingInteractions": [],
                                         "iid": 129,
                                         "field": "someValue",
-                                        "isMethodCall": false,
                                         "typeof": "number"
                                     }
                                 ],
                                 "iid": 113,
                                 "field": "anotherInsideObj",
-                                "isMethodCall": false,
                                 "returnTypeOf": "object"
                             }
                         ],
                         "iid": 105,
                         "field": "insideObj",
-                        "isMethodCall": false,
                         "returnTypeOf": "object"
                     }
                 ]

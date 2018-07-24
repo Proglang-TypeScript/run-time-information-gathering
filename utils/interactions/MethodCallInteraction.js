@@ -13,7 +13,6 @@
 		this.methodName = methodName;
 
 		this.code = 'methodCall';
-		this.isMethodCall = true;
 		
 		this.functionIid = null;
 	}

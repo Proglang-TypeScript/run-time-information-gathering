@@ -22,7 +22,6 @@
                         "followingInteractions": [],
                         "iid": 75,
                         "methodName": "executeMethod",
-                        "isMethodCall": true,
                         "functionIid": 169
                     }
                 ]
@@ -56,7 +55,6 @@
                         "followingInteractions": [],
                         "iid": 137,
                         "field": "val",
-                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     }
                 ]

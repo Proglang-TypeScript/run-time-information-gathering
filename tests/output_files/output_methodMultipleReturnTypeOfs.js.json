@@ -22,7 +22,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -33,7 +32,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -44,7 +42,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -55,7 +52,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -66,7 +62,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -77,7 +72,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -88,7 +82,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -99,7 +92,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -110,7 +102,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -121,7 +112,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -132,7 +122,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -143,7 +132,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -154,7 +142,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -165,7 +152,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -176,7 +162,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -187,7 +172,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -198,7 +182,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -209,7 +192,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -220,7 +202,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -231,7 +212,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -242,7 +222,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -253,7 +232,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -264,7 +242,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -275,7 +252,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -286,7 +262,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -297,7 +272,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -308,7 +282,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -319,7 +292,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -330,7 +302,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -341,7 +312,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -352,7 +322,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -363,7 +332,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -374,7 +342,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -385,7 +352,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -396,7 +362,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -407,7 +372,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -418,7 +382,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -429,7 +392,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     },
                     {
@@ -440,7 +402,6 @@
                         "followingInteractions": [],
                         "iid": 113,
                         "field": "seed",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -451,7 +412,6 @@
                         "followingInteractions": [],
                         "iid": 147,
                         "methodName": "returnRandomTypeOf",
-                        "isMethodCall": true,
                         "functionIid": 457
                     }
                 ]

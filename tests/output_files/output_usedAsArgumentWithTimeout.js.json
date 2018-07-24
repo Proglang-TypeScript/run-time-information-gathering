@@ -22,7 +22,6 @@
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "someValue",
-                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     }
                 ]

@@ -34,7 +34,6 @@
                         "followingInteractions": [],
                         "iid": 185,
                         "field": "someValue",
-                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     },
                     {
@@ -45,7 +44,6 @@
                         "followingInteractions": [],
                         "iid": 217,
                         "field": "anotherValue",
-                        "isMethodCall": false,
                         "typeof": "number"
                     }
                 ]
@@ -89,7 +87,6 @@
                         "followingInteractions": [],
                         "iid": 41,
                         "field": "hello",
-                        "isMethodCall": false,
                         "typeof": "string"
                     },
                     {
@@ -100,7 +97,6 @@
                         "followingInteractions": [],
                         "iid": 105,
                         "field": "anotherValue",
-                        "isMethodCall": false,
                         "typeof": "number"
                     },
                     {
@@ -111,7 +107,6 @@
                         "followingInteractions": [],
                         "iid": 129,
                         "field": "someValue",
-                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     },
                     {
@@ -122,7 +117,6 @@
                         "followingInteractions": [],
                         "iid": 161,
                         "field": "anotherValue",
-                        "isMethodCall": false,
                         "typeof": "number"
                     }
                 ]

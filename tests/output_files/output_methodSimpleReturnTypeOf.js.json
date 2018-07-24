@@ -22,7 +22,6 @@
                         "followingInteractions": [],
                         "iid": 35,
                         "methodName": "returnString",
-                        "isMethodCall": true,
                         "functionIid": 169
                     },
                     {
@@ -33,7 +32,6 @@
                         "followingInteractions": [],
                         "iid": 59,
                         "methodName": "returnNumber",
-                        "isMethodCall": true,
                         "functionIid": 217
                     },
                     {
@@ -44,7 +42,6 @@
                         "followingInteractions": [],
                         "iid": 83,
                         "methodName": "returnFunction",
-                        "isMethodCall": true,
                         "functionIid": 329
                     },
                     {
@@ -55,7 +52,6 @@
                         "followingInteractions": [],
                         "iid": 107,
                         "methodName": "returnObject",
-                        "isMethodCall": true,
                         "functionIid": 393
                     }
                 ]

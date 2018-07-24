@@ -58,13 +58,11 @@
                                         "followingInteractions": [],
                                         "iid": 121,
                                         "field": "anotherValue",
-                                        "isMethodCall": false,
                                         "returnTypeOf": "number"
                                     }
                                 ],
                                 "iid": 65,
                                 "field": "anotherInsideObj",
-                                "isMethodCall": false,
                                 "returnTypeOf": "object"
                             },
                             {
@@ -75,13 +73,11 @@
                                 "followingInteractions": [],
                                 "iid": 97,
                                 "field": "anotherValue",
-                                "isMethodCall": false,
                                 "returnTypeOf": "number"
                             }
                         ],
                         "iid": 33,
                         "field": "insideObj",
-                        "isMethodCall": false,
                         "returnTypeOf": "object"
                     },
                     {
@@ -104,13 +100,11 @@
                                         "followingInteractions": [],
                                         "iid": 161,
                                         "field": "someValue",
-                                        "isMethodCall": false,
                                         "returnTypeOf": "number"
                                     }
                                 ],
                                 "iid": 153,
                                 "field": "anotherInsideObj",
-                                "isMethodCall": false,
                                 "returnTypeOf": "object"
                             },
                             {
@@ -121,7 +115,6 @@
                                 "followingInteractions": [],
                                 "iid": 193,
                                 "field": "anotherValue",
-                                "isMethodCall": false,
                                 "typeof": "number"
                             },
                             {
@@ -132,13 +125,11 @@
                                 "followingInteractions": [],
                                 "iid": 217,
                                 "field": "anotherValue",
-                                "isMethodCall": false,
                                 "returnTypeOf": "number"
                             }
                         ],
                         "iid": 145,
                         "field": "insideObj",
-                        "isMethodCall": false,
                         "returnTypeOf": "object"
                     }
                 ]

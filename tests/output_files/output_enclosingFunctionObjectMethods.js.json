@@ -22,7 +22,6 @@
                         "followingInteractions": [],
                         "iid": 35,
                         "methodName": "myMethod",
-                        "isMethodCall": true,
                         "functionIid": 257
                     },
                     {
@@ -39,13 +38,11 @@
                                 "followingInteractions": [],
                                 "iid": 67,
                                 "methodName": "myMethod2",
-                                "isMethodCall": true,
                                 "functionIid": 369
                             }
                         ],
                         "iid": 57,
                         "field": "myObj2",
-                        "isMethodCall": false,
                         "returnTypeOf": "object"
                     },
                     {
@@ -62,13 +59,11 @@
                                 "followingInteractions": [],
                                 "iid": 99,
                                 "methodName": "anotherMethod3",
-                                "isMethodCall": true,
                                 "functionIid": 657
                             }
                         ],
                         "iid": 89,
                         "field": "myObj3",
-                        "isMethodCall": false,
                         "returnTypeOf": "object"
                     },
                     {
@@ -79,7 +74,6 @@
                         "followingInteractions": [],
                         "iid": 123,
                         "methodName": "anotherMethod",
-                        "isMethodCall": true,
                         "functionIid": 521
                     }
                 ]
@@ -161,7 +155,6 @@
                         "followingInteractions": [],
                         "iid": 177,
                         "field": "aThirdValue",
-                        "isMethodCall": false,
                         "returnTypeOf": "undefined"
                     },
                     {
@@ -172,7 +165,6 @@
                         "followingInteractions": [],
                         "iid": 289,
                         "field": "aThirdValue2",
-                        "isMethodCall": false,
                         "returnTypeOf": "undefined"
                     },
                     {
@@ -183,7 +175,6 @@
                         "followingInteractions": [],
                         "iid": 577,
                         "field": "aFourthValue3",
-                        "isMethodCall": false,
                         "returnTypeOf": "undefined"
                     },
                     {
@@ -194,7 +185,6 @@
                         "followingInteractions": [],
                         "iid": 441,
                         "field": "aFourthValue",
-                        "isMethodCall": false,
                         "returnTypeOf": "undefined"
                     }
                 ]

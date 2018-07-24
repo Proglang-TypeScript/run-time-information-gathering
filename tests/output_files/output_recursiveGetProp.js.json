@@ -23,7 +23,6 @@
                         "followingInteractions": [],
                         "iid": 97,
                         "field": "val",
-                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     },
                     {
@@ -34,7 +33,6 @@
                         "followingInteractions": [],
                         "iid": 137,
                         "field": "useRight",
-                        "isMethodCall": false,
                         "returnTypeOf": "boolean"
                     },
                     {
@@ -51,7 +49,6 @@
                                 "followingInteractions": [],
                                 "iid": 97,
                                 "field": "val",
-                                "isMethodCall": false,
                                 "returnTypeOf": "number"
                             },
                             {
@@ -62,7 +59,6 @@
                                 "followingInteractions": [],
                                 "iid": 137,
                                 "field": "useRight",
-                                "isMethodCall": false,
                                 "returnTypeOf": "boolean"
                             },
                             {
@@ -79,7 +75,6 @@
                                         "followingInteractions": [],
                                         "iid": 185,
                                         "field": "left",
-                                        "isMethodCall": false,
                                         "returnTypeOf": "object"
                                     },
                                     {
@@ -90,7 +85,6 @@
                                         "followingInteractions": [],
                                         "iid": 153,
                                         "field": "right",
-                                        "isMethodCall": false,
                                         "returnTypeOf": "object"
                                     },
                                     {
@@ -101,19 +95,16 @@
                                         "followingInteractions": [],
                                         "iid": 185,
                                         "field": "left",
-                                        "isMethodCall": false,
                                         "returnTypeOf": "null"
                                     }
                                 ],
                                 "iid": 185,
                                 "field": "left",
-                                "isMethodCall": false,
                                 "returnTypeOf": "object"
                             }
                         ],
                         "iid": 185,
                         "field": "left",
-                        "isMethodCall": false,
                         "returnTypeOf": "object"
                     }
                 ]

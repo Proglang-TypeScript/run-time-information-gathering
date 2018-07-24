@@ -26,7 +26,6 @@
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "someValue",
-                        "isMethodCall": false,
                         "returnTypeOf": "undefined"
                     },
                     {
@@ -41,7 +40,6 @@
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "someValue",
-                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     }
                 ]
@@ -77,7 +75,6 @@
                         "followingInteractions": [],
                         "iid": 105,
                         "field": "someValue",
-                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     },
                     {
@@ -92,7 +89,6 @@
                         "followingInteractions": [],
                         "iid": 105,
                         "field": "anotherValue",
-                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     }
                 ]

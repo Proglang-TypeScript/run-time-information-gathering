@@ -73,7 +73,6 @@
                         "followingInteractions": [],
                         "iid": 313,
                         "field": "someValue",
-                        "isMethodCall": false,
                         "returnTypeOf": "number"
                     }
                 ]
