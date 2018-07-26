@@ -42,26 +42,6 @@
                         "isOpAssign": false,
                         "enclosingFunctionId": 177,
                         "followingInteractions": [],
-                        "iid": 73,
-                        "field": "someValue",
-                        "returnTypeOf": "number"
-                    },
-                    {
-                        "code": "setField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 177,
-                        "followingInteractions": [],
-                        "iid": 105,
-                        "field": "anotherValue",
-                        "typeof": "number"
-                    },
-                    {
-                        "code": "getField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 177,
-                        "followingInteractions": [],
                         "iid": 129,
                         "field": "anotherValue",
                         "returnTypeOf": "number"
