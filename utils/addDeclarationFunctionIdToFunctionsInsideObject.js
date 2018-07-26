@@ -14,7 +14,7 @@
 					val[key].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(functionsExecutionStack);
 				}
 
-				if (key !== sMemoryInterface.getSpecialPropActual()) {
+				if (key !== sMemoryInterface.getSpecialPropActual()) { // avoid circular reference
 					val[key] = addDeclarationFunctionIdToFunctionsInsideObject(
 						val[key],
 						functionsExecutionStack,
