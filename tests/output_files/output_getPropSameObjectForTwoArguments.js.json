@@ -1,8 +1,9 @@
+true
 {
-    "89": {
-        "functionId": 89,
-        "functionName": "someValueLessThan100",
-        "iid": 185,
+    "49": {
+        "functionId": 49,
+        "functionName": "doNothingMyObj",
+        "iid": 289,
         "isConstructor": false,
         "isMethod": false,
         "args": {
@@ -13,6 +14,62 @@
                     {
                         "code": "inputValue",
                         "typeof": "object"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "object"
+        ]
+    },
+    "97": {
+        "functionId": 97,
+        "functionName": "doNothingMyOtherObj",
+        "iid": 329,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "myOtherObj",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "object"
+        ]
+    },
+    "201": {
+        "functionId": 201,
+        "functionName": "someValueLessThan100",
+        "iid": 385,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "myObj",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 201,
+                        "followingInteractions": [],
+                        "iid": 129,
+                        "field": "myValue",
+                        "returnTypeOf": "number"
                     }
                 ]
             },
@@ -28,20 +85,10 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 89,
+                        "enclosingFunctionId": 201,
                         "followingInteractions": [],
-                        "iid": 33,
-                        "field": "someValue",
-                        "returnTypeOf": "number"
-                    },
-                    {
-                        "code": "getField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 89,
-                        "followingInteractions": [],
-                        "iid": 57,
-                        "field": "anotherValue",
+                        "iid": 153,
+                        "field": "myOtherValue",
                         "returnTypeOf": "number"
                     }
                 ]

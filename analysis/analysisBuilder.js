@@ -14,6 +14,12 @@
 			var mapMethodIdentifierInteractions = {};
 			var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 			var mapShadowIdsInteractions = {};
+			var mapProxyShadowIds = {};
+
+			var objectSerializer = new (require("../utils/objectSerializer.js")).ObjectSerializer();
+			var interactionSerializer = new (require("../utils/interactionSerializer.js")).InteractionSerializer(
+				objectSerializer
+			);
 
 			var argumentContainerFinder = new (require("../utils/argumentContainerFinder.js")).ArgumentContainerFinder(
 				runTimeInfo,
@@ -26,7 +32,8 @@
 			);
 
 			var recursiveInteractionsHandler = new (require("../utils/recursiveInteractionsHandler.js")).RecursiveInteractionsHandler(
-				sMemoryInterface
+				sMemoryInterface,
+				interactionSerializer
 			);
 
 			return {
@@ -47,6 +54,7 @@
 					runTimeInfo,
 					functionsExecutionStack,
 					mapMethodIdentifierInteractions,
+					mapProxyShadowIds,
 					sMemoryInterface,
 					argumentContainerFinder
 				),
@@ -75,7 +83,14 @@
 					interactionFinder,
 					mapShadowIdsInteractions
 				),
-				write: new (require("./callbacks/write.js")).Write(functionsExecutionStack)
+				write: new (require("./callbacks/write.js")).Write(
+					functionsExecutionStack,
+					sMemoryInterface
+				),
+				binaryPre: new (require("./callbacks/binaryPre.js")).BinaryPre(
+					mapProxyShadowIds,
+					sMemoryInterface
+				)
 			};
 		};
 	}

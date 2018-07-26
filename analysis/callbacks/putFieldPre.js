@@ -80,7 +80,8 @@
 			} else {
 				val = addDeclarationFunctionIdToFunctionsInsideObject(
 					val,
-					dis.functionsExecutionStack
+					dis.functionsExecutionStack,
+					dis.sMemoryInterface
 				);
 			}
 

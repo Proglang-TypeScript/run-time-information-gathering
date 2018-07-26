@@ -104,6 +104,15 @@
             return callbacks.write.runCallback(val);
         };
 
+        this.binaryPre = function (iid, op, left, right) {
+            return callbacks.binaryPre.runCallback(
+                iid,
+                op,
+                left,
+                right
+            );
+        };
+
         this.endExecution = function() {
             console.log(JSON.stringify(runTimeInfo, null, 4));
         };

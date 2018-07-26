@@ -17,6 +17,14 @@
 			var shadowObj = this.sMemory.getShadowObjectOfObject(obj);
 			return this.sMemory.getIDFromShadowObjectOrFrame(shadowObj);
 		};
+
+		this.getSpecialPropActual = function() {
+			return "*J$A*";
+		};
+
+		this.getSpecialPropSObject = function() {
+			return "*J$O*";
+		};
 	}
 
 	exp.SMemoryInterface = SMemoryInterface;

@@ -1,18 +1,15 @@
 /* global module */
-/* global require */
 
 "use strict";
 
 (function(exp) {
-	var InteractionSerializer = require("./interactionSerializer.js").InteractionSerializer;
-
-	function RecursiveInteractionsHandler(sMemoryInterface) {
+	function RecursiveInteractionsHandler(sMemoryInterface, interactionSerializer) {
 		this.sMemoryInterface = sMemoryInterface;
 
 		this.usedInteractions = {};
 		this.mapRecursiveMainInteractions = {};
 
-		this.interactionSerializer = new InteractionSerializer();
+		this.interactionSerializer = interactionSerializer;
 
 		this.getInteractionKey = function(interaction, obj) {
 			return this.interactionSerializer.serialize(interaction, obj);

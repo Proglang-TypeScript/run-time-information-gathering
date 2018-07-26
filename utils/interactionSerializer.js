@@ -1,13 +1,10 @@
 /* global module */
-/* global require */
 
 "use strict";
 
 (function(exp) {
-	var ObjectSerializer = require("./objectSerializer.js").ObjectSerializer;
-
-	function InteractionSerializer() {
-		this.objectSerializer = new ObjectSerializer();
+	function InteractionSerializer(objectSerializer) {
+		this.objectSerializer = objectSerializer;
 
 		this.serialize = function(interaction, obj) {
 			var interactionKey = JSON.stringify(interaction);

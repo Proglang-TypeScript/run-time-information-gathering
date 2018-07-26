@@ -4,16 +4,19 @@
 "use strict";
 
 (function(exp) {
+	var getRandomIdentifier = require("../../utils/getRandomIdentifier.js").getRandomIdentifier;
 	var FunctionContainer = require("../../utils/functionContainer.js").FunctionContainer;
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
 	var UsedAsArgumentInteraction = require("../../utils/interactions/usedAsArgumentInteraction.js").UsedAsArgumentInteraction;
+	var ArgumentProxyBuilder = require("../../utils/argumentProxyBuilder.js").ArgumentProxyBuilder;
 
 	function InvokeFunPre(
 		runTimeInfo,
 		functionsExecutionStack,
 		mapMethodIdentifierInteractions,
+		mapProxyShadowIds,
 		sMemoryInterface,
 		argumentContainerFinder
 	) {
@@ -23,8 +26,11 @@
 		this.runTimeInfo = runTimeInfo;
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
+		this.mapProxyShadowIds = mapProxyShadowIds;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
+
+		this.argumentProxyBuilder = new ArgumentProxyBuilder();
 
 		this.runCallback = function(
 			iid,
@@ -41,6 +47,7 @@
 			for (var argIndex in args) {
 				addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
 				addUsedAsArgumentInteractionIfApplicable(args[argIndex], functionIid, argIndex);
+				convertToProxyIfItIsAnObject(args, argIndex);
 			}
 
 			if (functionIid && !(functionIid in this.runTimeInfo)) {
@@ -105,6 +112,18 @@
 
 					argumentContainer.addInteraction(usedAsArgumentInteraction);
 				}
+			}
+		}
+
+		function convertToProxyIfItIsAnObject(args, argIndex) {
+			if (getTypeOf(args[argIndex]) == "object") {
+
+				let obj = args[argIndex];
+				let proxy = dis.argumentProxyBuilder.buildProxy(obj);
+				args[argIndex] = proxy;
+
+				var shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(proxy);
+				dis.mapProxyShadowIds[shadowIdProxy] = obj;
 			}
 		}
 	}

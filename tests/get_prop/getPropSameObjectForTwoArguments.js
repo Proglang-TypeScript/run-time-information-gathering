@@ -1,12 +1,24 @@
 "use strict";
 
+function doNothingMyObj(myObj) {
+	return myObj;
+}
+
+function doNothingMyOtherObj(myOtherObj) {
+	return myOtherObj;
+}
+
 function someValueLessThan100(myObj, myOtherObj) {
-	return (myObj.someValue < 100) && (myOtherObj.anotherValue < 10000);
+	return (myObj.myValue < 1000 && myOtherObj.myOtherValue < 1000 && myObj == myOtherObj);
 }
 
 var a = {
-	someValue: 99,
-	anotherValue: 999
+	myValue: 100,
+	myOtherValue: 100
 };
 
-someValueLessThan100(a, a);
+var b = doNothingMyObj(a);
+
+var c = doNothingMyOtherObj(b);
+
+console.log(someValueLessThan100(b, c));
