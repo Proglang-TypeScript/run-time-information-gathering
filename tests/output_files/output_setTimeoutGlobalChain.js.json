@@ -1,0 +1,77 @@
+{
+    "177": {
+        "functionId": 177,
+        "functionName": "",
+        "iid": 177,
+        "isConstructor": null,
+        "isMethod": null,
+        "args": {},
+        "declarationEnclosingFunctionId": 225,
+        "returnTypeOfs": []
+    },
+    "225": {
+        "functionId": 225,
+        "functionName": "doSomething",
+        "iid": 249,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "declarationEnclosingFunctionId": 273,
+        "returnTypeOfs": [
+            "undefined"
+        ]
+    },
+    "273": {
+        "functionId": 273,
+        "functionName": "getPropTimeout",
+        "iid": 329,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "b",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 177,
+                        "followingInteractions": [],
+                        "iid": 73,
+                        "field": "someValue",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "setField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 177,
+                        "followingInteractions": [],
+                        "iid": 105,
+                        "field": "anotherValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 177,
+                        "followingInteractions": [],
+                        "iid": 129,
+                        "field": "anotherValue",
+                        "returnTypeOf": "number"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "undefined"
+        ]
+    }
+}
