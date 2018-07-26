@@ -19,11 +19,11 @@
 		};
 
 		this.getSpecialPropActual = function() {
-			return "*J$A*";
+			return this.sMemory.getSpecialPropActual();
 		};
 
 		this.getSpecialPropSObject = function() {
-			return "*J$O*";
+			return this.sMemory.getSpecialPropSObject();
 		};
 	}
 
