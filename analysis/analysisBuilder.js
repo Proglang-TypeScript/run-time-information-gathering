@@ -16,7 +16,10 @@
 			var mapShadowIdsInteractions = {};
 			var mapProxyShadowIds = {};
 
-			var objectSerializer = new (require("../utils/objectSerializer.js")).ObjectSerializer();
+			var objectSerializer = new (require("../utils/objectSerializer.js")).ObjectSerializer(
+				sMemoryInterface
+			);
+
 			var interactionSerializer = new (require("../utils/interactionSerializer.js")).InteractionSerializer(
 				objectSerializer
 			);

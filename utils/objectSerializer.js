@@ -6,13 +6,17 @@
 (function(exp) {
 	var getTypeOf = require("./getTypeOf.js").getTypeOf;
 
-	function ObjectSerializer() {
+	function ObjectSerializer(smemoryInterface) {
+		this.smemoryInterface = smemoryInterface;
+
+		var dis = this;
+
 		this.serializeStructure = function(obj) {
 			var objSerialized = "";
 
 			if (getTypeOf(obj) == "object") {
 				var objKeys = Object.keys(obj).sort().filter(function(elem) {
-					return !elem.startsWith("*J$O*");
+					return !elem.startsWith(dis.smemoryInterface.getSpecialPropSObject());
 				});
 
 				objSerialized = JSON.stringify(objKeys);
