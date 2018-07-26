@@ -39,6 +39,10 @@
 				interactionSerializer
 			);
 
+			var argumentProxyBuilder = new (require("../utils/argumentProxyBuilder.js")).ArgumentProxyBuilder(
+				sMemoryInterface
+			);
+
 			return {
 				functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
 					runTimeInfo,
@@ -57,9 +61,10 @@
 					runTimeInfo,
 					functionsExecutionStack,
 					mapMethodIdentifierInteractions,
-					mapProxyShadowIds,
 					sMemoryInterface,
-					argumentContainerFinder
+					argumentContainerFinder,
+					argumentProxyBuilder,
+					mapProxyShadowIds
 				),
 				invokeFun: new (require("./callbacks/invokeFun.js")).InvokeFun(
 					runTimeInfo,

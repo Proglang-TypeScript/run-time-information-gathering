@@ -4,21 +4,20 @@
 "use strict";
 
 (function(exp) {
-	var getRandomIdentifier = require("../../utils/getRandomIdentifier.js").getRandomIdentifier;
 	var FunctionContainer = require("../../utils/functionContainer.js").FunctionContainer;
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
 	var UsedAsArgumentInteraction = require("../../utils/interactions/usedAsArgumentInteraction.js").UsedAsArgumentInteraction;
-	var ArgumentProxyBuilder = require("../../utils/argumentProxyBuilder.js").ArgumentProxyBuilder;
 
 	function InvokeFunPre(
 		runTimeInfo,
 		functionsExecutionStack,
 		mapMethodIdentifierInteractions,
-		mapProxyShadowIds,
 		sMemoryInterface,
-		argumentContainerFinder
+		argumentContainerFinder,
+		argumentProxyBuilder,
+		mapProxyShadowIds
 	) {
 
 		var dis = this;
@@ -30,7 +29,7 @@
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
 
-		this.argumentProxyBuilder = new ArgumentProxyBuilder();
+		this.argumentProxyBuilder = argumentProxyBuilder;
 
 		this.runCallback = function(
 			iid,

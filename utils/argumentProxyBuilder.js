@@ -6,8 +6,10 @@
 (function(exp) {
 	var getRandomIdentifier = require("./getRandomIdentifier.js").getRandomIdentifier;
 
-	function ArgumentProxyBuilder() {
-		let shadowObjectKey = "*J$O*";
+	function ArgumentProxyBuilder(sMemoryInterface) {
+		this.sMemoryInterface = sMemoryInterface;
+
+		let shadowObjectKey = this.sMemoryInterface.getSpecialPropSObject();
 
 		this.buildProxy = function(obj) {
 			return new Proxy(
