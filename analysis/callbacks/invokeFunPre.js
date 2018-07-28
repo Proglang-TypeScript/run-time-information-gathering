@@ -115,14 +115,15 @@
 		}
 
 		function convertToProxyIfItIsAnObject(args, argIndex) {
-			if (getTypeOf(args[argIndex]) == "object") {
+			let arg = args[argIndex];
 
-				let obj = args[argIndex];
-				let proxy = dis.argumentProxyBuilder.buildProxy(obj);
+			if (getTypeOf(arg) == "object" && !(arg instanceof String) && !(arg instanceof Number)) {
+
+				let proxy = dis.argumentProxyBuilder.buildProxy(arg);
 				args[argIndex] = proxy;
 
 				var shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(proxy);
-				dis.mapProxyShadowIds[shadowIdProxy] = obj;
+				dis.mapProxyShadowIds[shadowIdProxy] = arg;
 			}
 		}
 	}
