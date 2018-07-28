@@ -1,0 +1,46 @@
+true
+{
+    "113": {
+        "functionId": 113,
+        "functionName": "f",
+        "iid": 185,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "n",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "methodCall",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 113,
+                        "followingInteractions": [],
+                        "iid": 35,
+                        "methodName": "valueOf",
+                        "returnTypeOf": null
+                    },
+                    {
+                        "code": "methodCall",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 113,
+                        "followingInteractions": [],
+                        "iid": 59,
+                        "methodName": "toString",
+                        "returnTypeOf": null
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "boolean"
+        ]
+    }
+}
