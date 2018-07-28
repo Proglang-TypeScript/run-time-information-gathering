@@ -121,14 +121,25 @@
 
 		function convertToWrapperObjectIfItIsALiteral(args, argIndex) {
 			let originalArg = args[argIndex];
+			let newArg;
+			let shadowIdProxy;
 
 			switch(getTypeOf(args[argIndex])) {
 				case "string":
-					let newArg = dis.argumentWrapperObjectBuilder.buildFromString(originalArg);
+					newArg = dis.argumentWrapperObjectBuilder.buildFromString(originalArg);
 
 					args[argIndex] = newArg;
 
-					var shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(newArg);
+					shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(newArg);
+					dis.mapWrapperObjectsOriginalValues[shadowIdProxy] = originalArg;
+					break;
+
+				case "number":
+					newArg = dis.argumentWrapperObjectBuilder.buildFromNumber(originalArg);
+
+					args[argIndex] = newArg;
+
+					shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(newArg);
 					dis.mapWrapperObjectsOriginalValues[shadowIdProxy] = originalArg;
 					break;
 			}

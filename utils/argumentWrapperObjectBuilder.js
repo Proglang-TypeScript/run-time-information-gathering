@@ -22,6 +22,21 @@
 
 			return wrapperObj;
 		};
+
+		this.buildFromNumber = function(
+			/* jshint ignore:start */
+			val
+			/* jshint ignore:end */
+		) {
+			let wrapperObj;
+			/* jshint ignore:start */
+			wrapperObj = new Number(val);
+			/* jshint ignore:end */
+
+			wrapperObj[this.getOriginalTypeOfField()] = "number";
+
+			return wrapperObj;
+		};
 	}
 
 	exp.ArgumentWrapperObjectBuilder = ArgumentWrapperObjectBuilder;
