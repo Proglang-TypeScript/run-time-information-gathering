@@ -15,6 +15,16 @@
                         "typeof": "string"
                     },
                     {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": 65,
+                        "followingInteractions": [],
+                        "iid": 33,
+                        "field": "someValue",
+                        "returnTypeOf": "undefined"
+                    },
+                    {
                         "code": "inputValue",
                         "typeof": "object"
                     },
