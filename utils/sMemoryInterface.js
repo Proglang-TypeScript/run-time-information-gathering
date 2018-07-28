@@ -1,21 +1,20 @@
 /* global module */
-/* global require */
 
 "use strict";
 
 (function(exp) {
-	var getTypeOf = require("./getTypeOf.js").getTypeOf;
-
 	function SMemoryInterface(sMemory) {
 		this.sMemory = sMemory;
 
 		this.getShadowIdOfObject = function(obj) {
-			if (getTypeOf(obj) !== "object") {
+			var shadowObj = this.sMemory.getShadowObjectOfObject(obj);
+			var shadowId = this.sMemory.getIDFromShadowObjectOrFrame(shadowObj);
+
+			if (shadowId === undefined) {
 				return null;
 			}
 
-			var shadowObj = this.sMemory.getShadowObjectOfObject(obj);
-			return this.sMemory.getIDFromShadowObjectOrFrame(shadowObj);
+			return shadowId;
 		};
 
 		this.getSpecialPropActual = function() {
