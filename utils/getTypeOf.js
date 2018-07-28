@@ -1,8 +1,11 @@
 /* global module */
+/* global require */
 
 "use strict";
 
 (function(exp) {
+	var argumentWrapperObjectBuilder = new (require("./argumentWrapperObjectBuilder.js")).ArgumentWrapperObjectBuilder();
+
 	function getTypeOf(val) {
 		if (val === null) {
 			return "null";
@@ -13,8 +16,8 @@
 				return "array";
 			}
 
-			if (val.__ORIGINAL_TYPEOF__) {
-				return val.__ORIGINAL_TYPEOF__;
+			if (val[argumentWrapperObjectBuilder.getOriginalTypeOfField()]) {
+				return val[argumentWrapperObjectBuilder.getOriginalTypeOfField()];
 			}
 		}
 

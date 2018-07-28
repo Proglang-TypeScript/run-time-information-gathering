@@ -44,6 +44,8 @@
 				sMemoryInterface
 			);
 
+			var argumentWrapperObjectBuilder = new (require("../utils/argumentWrapperObjectBuilder.js")).ArgumentWrapperObjectBuilder();
+
 			return {
 				functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
 					runTimeInfo,
@@ -65,6 +67,7 @@
 					sMemoryInterface,
 					argumentContainerFinder,
 					argumentProxyBuilder,
+					argumentWrapperObjectBuilder,
 					mapProxyObjectsOriginalObjects,
 					mapWrapperObjectsOriginalValues
 				),

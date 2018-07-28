@@ -17,6 +17,7 @@
 		sMemoryInterface,
 		argumentContainerFinder,
 		argumentProxyBuilder,
+		argumentWrapperObjectBuilder,
 		mapProxyObjectsOriginalObjects,
 		mapWrapperObjectsOriginalValues
 	) {
@@ -28,6 +29,7 @@
 		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
+		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
 		this.argumentProxyBuilder = argumentProxyBuilder;
 
 		this.mapProxyObjectsOriginalObjects = mapProxyObjectsOriginalObjects;
@@ -122,13 +124,8 @@
 
 			switch(getTypeOf(args[argIndex])) {
 				case "string":
-					let newArg;
+					let newArg = dis.argumentWrapperObjectBuilder.buildFromString(originalArg);
 
-					/* jshint ignore:start */
-					newArg = new String(originalArg);
-					/* jshint ignore:end */
-
-					newArg.__ORIGINAL_TYPEOF__ = "string";
 					args[argIndex] = newArg;
 
 					var shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(newArg);
