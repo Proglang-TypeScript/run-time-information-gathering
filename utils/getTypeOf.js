@@ -8,8 +8,14 @@
 			return "null";
 		}
 
-		if (typeof val === "object" && val instanceof Array) {
-			return "array";
+		if (typeof val === "object") {
+			if (val instanceof Array) {
+				return "array";
+			}
+
+			if (val.__ORIGINAL_TYPEOF__) {
+				return val.__ORIGINAL_TYPEOF__;
+			}
 		}
 
 		return typeof val;

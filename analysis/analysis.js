@@ -113,6 +113,10 @@
             );
         };
 
+        this.unaryPre = function (iid, op, left) {
+            return callbacks.unaryPre.runCallback(iid, op, left);
+        };
+
         this.endExecution = function() {
             console.log(JSON.stringify(runTimeInfo, null, 4));
         };

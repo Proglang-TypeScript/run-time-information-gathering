@@ -17,7 +17,8 @@
 		sMemoryInterface,
 		argumentContainerFinder,
 		argumentProxyBuilder,
-		mapProxyShadowIds
+		mapProxyObjectsOriginalObjects,
+		mapWrapperObjectsOriginalValues
 	) {
 
 		var dis = this;
@@ -25,11 +26,12 @@
 		this.runTimeInfo = runTimeInfo;
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
-		this.mapProxyShadowIds = mapProxyShadowIds;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
-
 		this.argumentProxyBuilder = argumentProxyBuilder;
+
+		this.mapProxyObjectsOriginalObjects = mapProxyObjectsOriginalObjects;
+		this.mapWrapperObjectsOriginalValues = mapWrapperObjectsOriginalValues;
 
 		this.runCallback = function(
 			iid,
@@ -46,6 +48,7 @@
 			for (var argIndex in args) {
 				addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
 				addUsedAsArgumentInteractionIfApplicable(args[argIndex], functionIid, argIndex);
+				convertToWrapperObjectIfItIsALiteral(args, argIndex);
 				convertToProxyIfItIsAnObject(args, argIndex);
 			}
 
@@ -114,6 +117,26 @@
 			}
 		}
 
+		function convertToWrapperObjectIfItIsALiteral(args, argIndex) {
+			let originalArg = args[argIndex];
+
+			switch(getTypeOf(args[argIndex])) {
+				case "string":
+					let newArg;
+
+					/* jshint ignore:start */
+					newArg = new String(originalArg);
+					/* jshint ignore:end */
+
+					newArg.__ORIGINAL_TYPEOF__ = "string";
+					args[argIndex] = newArg;
+
+					var shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(newArg);
+					dis.mapWrapperObjectsOriginalValues[shadowIdProxy] = originalArg;
+					break;
+			}
+		}
+
 		function convertToProxyIfItIsAnObject(args, argIndex) {
 			let arg = args[argIndex];
 
@@ -123,7 +146,7 @@
 				args[argIndex] = proxy;
 
 				var shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(proxy);
-				dis.mapProxyShadowIds[shadowIdProxy] = arg;
+				dis.mapProxyObjectsOriginalObjects[shadowIdProxy] = arg;
 			}
 		}
 	}
