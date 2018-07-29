@@ -50,8 +50,8 @@
 		}
 
 		function getFunctionContainer() {
-			var functionIid = dis.functionsExecutionStack.getCurrentExecutingFunction();
-			return dis.runTimeInfo[functionIid];
+			let functionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
+			return dis.runTimeInfo[functionId];
 		}
 
 		function buildArgumentContainer(argumentIndex, name, val) {

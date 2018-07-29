@@ -92,13 +92,13 @@
 		}
 
 		function addInteractionToArgumentContainerIfPossible(interaction, base) {
-			var functionIid = dis.functionsExecutionStack.getCurrentExecutingFunction();
+			var functionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
 
-			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
+			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionId);
 
 			var interactionAdded = false;
-			if (functionIid && argumentContainer) {
+			if (functionId && argumentContainer) {
 				argumentContainer.addInteraction(interaction);
 				interactionAdded = true;
 			}
@@ -116,14 +116,14 @@
 			return interaction;
 		}
 
-		function processRecursiveInteractionOfResult(interaction, result, functionIid) {
+		function processRecursiveInteractionOfResult(interaction, result, functionId) {
 			if (getTypeOf(result) == "object") {
 				var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
 
 				dis.mapShadowIdsInteractions[
 					getHashForShadowIdAndFunctionIid(
 						shadowIdReturnedObject,
-						functionIid
+						functionId
 					)
 				] = interaction;
 
@@ -146,10 +146,10 @@
 			dis.mapMethodIdentifierInteractions[randomIdentifier] = interaction;
 		}
 
-		function addRecursiveFollowingInteraction(interaction, result, functionIid, shadowIdBaseObject) {
+		function addRecursiveFollowingInteraction(interaction, result, functionId, shadowIdBaseObject) {
 			var mappedInteraction = dis.interactionFinder.findInteraction(
 				shadowIdBaseObject,
-				functionIid
+				functionId
 			);
 
 			if (mappedInteraction) {

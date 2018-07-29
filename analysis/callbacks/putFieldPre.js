@@ -49,13 +49,13 @@
 		};
 
 		function addInteractionToArgumentContainerIfPossible(interaction, base) {
-			var functionIid = dis.functionsExecutionStack.getCurrentExecutingFunction();
+			var functionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
 
-			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionIid);
+			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionId);
 
 			var interactionAdded = false;
-			if (functionIid && argumentContainer) {
+			if (functionId && argumentContainer) {
 				argumentContainer.addInteraction(interaction);
 				interactionAdded = true;
 			}

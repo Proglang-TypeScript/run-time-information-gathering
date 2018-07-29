@@ -6,13 +6,13 @@
 (function(exp) {
 	var Interaction = require("./interaction.js").Interaction;
 
-	function UsedAsArgumentInteraction(currentActiveFiid, functionIid, argIndex) {
+	function UsedAsArgumentInteraction(currentActiveFiid, functionId, argIndex) {
 		Interaction.call(this);
 
 		this.code = "usedAsArgument";
 
 		this.enclosingFunctionId = currentActiveFiid;
-		this.targetFunctionId = functionIid;
+		this.targetFunctionId = functionId;
 		this.argumentIndexInTargetFunction = argIndex;
 	}
 

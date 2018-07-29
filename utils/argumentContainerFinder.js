@@ -10,24 +10,24 @@
 		this.runTimeInfo = runTimeInfo;
 		this.mapShadowIdsArgumentContainer = mapShadowIdsArgumentContainer;
 
-        this.findArgumentContainer = function(shadowId, functionIid) {
-            var fIid = functionIid;
+        this.findArgumentContainer = function(shadowId, functionId) {
+            var fId = functionId;
             var argumentContainer = this.mapShadowIdsArgumentContainer[
-                getHashForShadowIdAndFunctionIid(shadowId, fIid)
+                getHashForShadowIdAndFunctionIid(shadowId, fId)
             ];
 
             var functionContainer = null;
-            while(!argumentContainer && fIid) {
-                functionContainer = this.runTimeInfo[fIid];
+            while(!argumentContainer && fId) {
+                functionContainer = this.runTimeInfo[fId];
 
                 argumentContainer = this.mapShadowIdsArgumentContainer[
-                    getHashForShadowIdAndFunctionIid(shadowId, fIid)
+                    getHashForShadowIdAndFunctionIid(shadowId, fId)
                 ];
 
                 if (!functionContainer) {
-                    fIid = null;
+                    fId = null;
                 } else {
-                    fIid = functionContainer.declarationEnclosingFunctionId;
+                    fId = functionContainer.declarationEnclosingFunctionId;
                 }
             }
 

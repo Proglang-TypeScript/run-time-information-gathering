@@ -10,24 +10,24 @@
 		this.runTimeInfo = runTimeInfo;
 		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
-		this.findInteraction = function(shadowId, functionIid) {
-			var fIid = functionIid;
+		this.findInteraction = function(shadowId, functionId) {
+			var fId = functionId;
 			var mappedInteraction = this.mapShadowIdsInteractions[
-				getHashForShadowIdAndFunctionIid(shadowId, fIid)
+				getHashForShadowIdAndFunctionIid(shadowId, fId)
 			];
 
 			var functionContainer = null;
-			while(!mappedInteraction && fIid) {
-				functionContainer = this.runTimeInfo[fIid];
+			while(!mappedInteraction && fId) {
+				functionContainer = this.runTimeInfo[fId];
 
 				mappedInteraction = this.mapShadowIdsInteractions[
-					getHashForShadowIdAndFunctionIid(shadowId, fIid)
+					getHashForShadowIdAndFunctionIid(shadowId, fId)
 				];
 
 				if (!functionContainer) {
-					fIid = null;
+					fId = null;
 				} else {
-					fIid = functionContainer.declarationEnclosingFunctionId;
+					fId = functionContainer.declarationEnclosingFunctionId;
 				}
 			}
 

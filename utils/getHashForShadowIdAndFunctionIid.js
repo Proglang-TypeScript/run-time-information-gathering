@@ -3,8 +3,8 @@
 "use strict";
 
 (function(exp) {
-	function getHashForShadowIdAndFunctionIid(shadowId, functionIid) {
-		return shadowId + " - " + functionIid;
+	function getHashForShadowIdAndFunctionIid(shadowId, functionId) {
+		return shadowId + " - " + functionId;
 	}
 
 	exp.getHashForShadowIdAndFunctionIid = getHashForShadowIdAndFunctionIid;

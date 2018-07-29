@@ -44,18 +44,20 @@
 		) {
 
 			if (!isConsoleLog(f)) {
-				addFunctionIidToMethodCallInteraction(f, functionIid);
+				setFunctionId(f, functionIid);
+
+				addFunctionIidToMethodCallInteraction(f);
 
 				for (var argIndex in args) {
 					addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
-					addUsedAsArgumentInteractionIfApplicable(args[argIndex], functionIid, argIndex);
+					addUsedAsArgumentInteractionIfApplicable(args[argIndex], f, argIndex);
 					convertToWrapperObjectIfItIsALiteral(args, argIndex);
 					convertToProxyIfItIsAnObject(args, argIndex);
 				}
 
-				if (functionIid && !(functionIid in this.runTimeInfo)) {
+				if (functionNotProcessed(f)) {
 					var functionContainer = new FunctionContainer(
-						functionIid,
+						f.functionId,
 						getFunctionName(f)
 					);
 
@@ -64,7 +66,7 @@
 					functionContainer.isMethod = isMethod;
 					functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
 
-					this.runTimeInfo[functionIid] = functionContainer;
+					this.runTimeInfo[functionContainer.functionId] = functionContainer;
 				}
 			}
 
@@ -75,6 +77,23 @@
 				skip: false
 			};
 		};
+
+		function functionNotProcessed(f) {
+			let functionId = f.functionId;
+			return (functionId && !(functionId in dis.runTimeInfo));
+		}
+
+		function setFunctionId(f, functionIid) {
+			let functionIdField = "functionId";
+
+			if (functionIid) {
+				f[functionIdField] = functionIid;
+			} else {
+				if (f.methodIdentifier) {
+					f[functionIdField] = f.methodIdentifier;
+				}
+			}
+		}
 
 		function isConsoleLog(f) {
 			return (f.name === "bound consoleCall");
@@ -90,7 +109,9 @@
 			return functionName;
 		}
 
-		function addFunctionIidToMethodCallInteraction(f, functionIid) {
+		function addFunctionIidToMethodCallInteraction(f) {
+			let functionIid = f.functionId;
+
 			if (f.methodIdentifier in dis.mapMethodIdentifierInteractions) {
 				var interaction = dis.mapMethodIdentifierInteractions[f.methodIdentifier];
 				interaction.functionIid = functionIid;
@@ -105,7 +126,9 @@
 			}
 		}
 
-		function addUsedAsArgumentInteractionIfApplicable(val, functionIid, argIndex) {
+		function addUsedAsArgumentInteractionIfApplicable(val, f, argIndex) {
+			let functionId = f.functionId;
+
 			if (getTypeOf(val) == "object") {
 				var currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
 				var shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
@@ -114,7 +137,7 @@
 				if (currentActiveFiid && argumentContainer) {
 					var usedAsArgumentInteraction = new UsedAsArgumentInteraction(
 						currentActiveFiid,
-						functionIid,
+						functionId,
 						argIndex
 					);
 

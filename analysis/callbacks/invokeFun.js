@@ -24,13 +24,10 @@
 			f,
 			base,
 			args,
-			result,
-			isConstructor,
-			isMethod,
-			functionIid
+			result
 		) {
 
-			var functionContainer = getFunctionContainer(functionIid);
+			var functionContainer = getFunctionContainer(f);
 
 			if (functionContainer) {
 				functionContainer.addReturnTypeOf(getTypeOf(result));
@@ -59,18 +56,18 @@
 			};
 		};
 
-		function getFunctionContainer(functionIid) {
-			return dis.runTimeInfo[functionIid];
+		function getFunctionContainer(f) {
+			return dis.runTimeInfo[f.functionId];
 		}
 
-		function processRecursiveInteractionOfResult(interaction, result, functionIid) {
+		function processRecursiveInteractionOfResult(interaction, result, functionId) {
 			if (getTypeOf(result) == "object") {
 				var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
 
 				dis.mapShadowIdsInteractions[
 					getHashForShadowIdAndFunctionIid(
 						shadowIdReturnedObject,
-						functionIid
+						functionId
 					)
 				] = interaction;
 
@@ -78,10 +75,10 @@
 			}
 		}
 
-		function addRecursiveFollowingInteraction(interaction, result, functionIid, shadowIdBaseObject) {
+		function addRecursiveFollowingInteraction(interaction, result, functionId, shadowIdBaseObject) {
 			var mappedInteraction = dis.interactionFinder.findInteraction(
 				shadowIdBaseObject,
-				functionIid
+				functionId
 			);
 
 			if (mappedInteraction) {
