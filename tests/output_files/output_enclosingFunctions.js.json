@@ -1,6 +1,83 @@
 {
-    "241": {
-        "functionId": 241,
+    "functionId_1": {
+        "functionId": "functionId_1",
+        "functionName": "f1",
+        "iid": 481,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "setField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 105,
+                        "field": "someValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_5",
+                        "followingInteractions": [],
+                        "iid": 137,
+                        "field": "someValue",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "setField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_5",
+                        "followingInteractions": [],
+                        "iid": 193,
+                        "field": "anotherValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_5",
+                        "followingInteractions": [],
+                        "iid": 217,
+                        "field": "anotherValue",
+                        "returnTypeOf": "number"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ],
+        "functionIid": 393
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "f2",
+        "iid": 369,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_1",
+        "returnTypeOfs": [
+            "number"
+        ],
+        "functionIid": 329
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
         "functionName": "f3",
         "iid": 305,
         "isConstructor": false,
@@ -28,7 +105,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 241,
+                        "enclosingFunctionId": "functionId_5",
                         "followingInteractions": [],
                         "iid": 161,
                         "field": "someValue",
@@ -37,84 +114,10 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": 329,
+        "declarationEnclosingFunctionId": "functionId_3",
         "returnTypeOfs": [
             "number"
-        ]
-    },
-    "329": {
-        "functionId": 329,
-        "functionName": "f2",
-        "iid": 369,
-        "isConstructor": false,
-        "isMethod": false,
-        "args": {},
-        "declarationEnclosingFunctionId": 393,
-        "returnTypeOfs": [
-            "number"
-        ]
-    },
-    "393": {
-        "functionId": 393,
-        "functionName": "f1",
-        "iid": 481,
-        "isConstructor": false,
-        "isMethod": false,
-        "args": {
-            "0": {
-                "argumentIndex": 0,
-                "argumentName": "a",
-                "interactions": [
-                    {
-                        "code": "inputValue",
-                        "typeof": "object"
-                    },
-                    {
-                        "code": "setField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 329,
-                        "followingInteractions": [],
-                        "iid": 105,
-                        "field": "someValue",
-                        "typeof": "number"
-                    },
-                    {
-                        "code": "getField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 241,
-                        "followingInteractions": [],
-                        "iid": 137,
-                        "field": "someValue",
-                        "returnTypeOf": "number"
-                    },
-                    {
-                        "code": "setField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 241,
-                        "followingInteractions": [],
-                        "iid": 193,
-                        "field": "anotherValue",
-                        "typeof": "number"
-                    },
-                    {
-                        "code": "getField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 241,
-                        "followingInteractions": [],
-                        "iid": 217,
-                        "field": "anotherValue",
-                        "returnTypeOf": "number"
-                    }
-                ]
-            }
-        },
-        "declarationEnclosingFunctionId": -1,
-        "returnTypeOfs": [
-            "number"
-        ]
+        ],
+        "functionIid": 241
     }
 }

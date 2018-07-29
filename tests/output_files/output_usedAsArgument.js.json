@@ -1,6 +1,47 @@
 {
-    "97": {
-        "functionId": 97,
+    "functionId_1": {
+        "functionId": "functionId_1",
+        "functionName": "f2",
+        "iid": 297,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "usedAsArgument",
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
+                        "argumentIndexInTargetFunction": "0"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "usedAsArgument",
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
+                        "argumentIndexInTargetFunction": "0"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number",
+            "number"
+        ],
+        "functionIid": 161
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "f1",
         "iid": 137,
         "isConstructor": false,
@@ -18,7 +59,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 97,
+                        "enclosingFunctionId": "functionId_3",
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "someValue",
@@ -32,7 +73,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 97,
+                        "enclosingFunctionId": "functionId_3",
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "someValue",
@@ -45,50 +86,11 @@
         "returnTypeOfs": [
             "number",
             "number"
-        ]
+        ],
+        "functionIid": 97
     },
-    "161": {
-        "functionId": 161,
-        "functionName": "f2",
-        "iid": 297,
-        "isConstructor": false,
-        "isMethod": false,
-        "args": {
-            "0": {
-                "argumentIndex": 0,
-                "argumentName": "a",
-                "interactions": [
-                    {
-                        "code": "inputValue",
-                        "typeof": "object"
-                    },
-                    {
-                        "code": "usedAsArgument",
-                        "enclosingFunctionId": 161,
-                        "targetFunctionId": 97,
-                        "argumentIndexInTargetFunction": "0"
-                    },
-                    {
-                        "code": "inputValue",
-                        "typeof": "object"
-                    },
-                    {
-                        "code": "usedAsArgument",
-                        "enclosingFunctionId": 161,
-                        "targetFunctionId": 97,
-                        "argumentIndexInTargetFunction": "0"
-                    }
-                ]
-            }
-        },
-        "declarationEnclosingFunctionId": -1,
-        "returnTypeOfs": [
-            "number",
-            "number"
-        ]
-    },
-    "225": {
-        "functionId": 225,
+    "functionId_5": {
+        "functionId": "functionId_5",
         "functionName": "f3",
         "iid": 329,
         "isConstructor": false,
@@ -104,8 +106,8 @@
                     },
                     {
                         "code": "usedAsArgument",
-                        "enclosingFunctionId": 225,
-                        "targetFunctionId": 161,
+                        "enclosingFunctionId": "functionId_5",
+                        "targetFunctionId": "functionId_1",
                         "argumentIndexInTargetFunction": "0"
                     }
                 ]
@@ -114,6 +116,7 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "number"
-        ]
+        ],
+        "functionIid": 225
     }
 }

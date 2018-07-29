@@ -1,6 +1,6 @@
 {
-    "49": {
-        "functionId": 49,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "f",
         "iid": 89,
         "isConstructor": false,
@@ -55,6 +55,7 @@
             "array",
             "boolean",
             "function"
-        ]
+        ],
+        "functionIid": 49
     }
 }

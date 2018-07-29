@@ -1,7 +1,7 @@
 true
 {
-    "129": {
-        "functionId": 129,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "f",
         "iid": 201,
         "isConstructor": false,
@@ -19,7 +19,7 @@ true
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 129,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "length",
@@ -29,11 +29,12 @@ true
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 129,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 67,
                         "methodName": "indexOf",
-                        "returnTypeOf": null
+                        "functionId": "functionId_3",
+                        "returnTypeOf": "number"
                     }
                 ]
             }
@@ -41,6 +42,18 @@ true
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "boolean"
+        ],
+        "functionIid": 129
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "indexOf",
+        "iid": 65,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "returnTypeOfs": [
+            "number"
         ]
     }
 }

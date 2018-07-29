@@ -1,6 +1,6 @@
 {
-    "73": {
-        "functionId": 73,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "doSomething",
         "iid": 273,
         "isConstructor": false,
@@ -18,11 +18,11 @@
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 73,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 51,
                         "methodName": "myMethod",
-                        "functionIid": 177,
+                        "functionId": "functionId_3",
                         "returnTypeOf": "number"
                     },
                     {
@@ -33,11 +33,11 @@
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 73,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 51,
                         "methodName": "myMethod",
-                        "functionIid": 177,
+                        "functionId": "functionId_3",
                         "returnTypeOf": "string"
                     }
                 ]
@@ -75,10 +75,11 @@
         "returnTypeOfs": [
             "number",
             "string"
-        ]
+        ],
+        "functionIid": 73
     },
-    "177": {
-        "functionId": 177,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "myMethod",
         "iid": 49,
         "isConstructor": false,
@@ -117,6 +118,7 @@
         "returnTypeOfs": [
             "number",
             "string"
-        ]
+        ],
+        "functionIid": 177
     }
 }

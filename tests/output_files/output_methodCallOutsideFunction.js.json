@@ -1,48 +1,6 @@
 {
-    "89": {
-        "functionId": 89,
-        "functionName": "doSomething",
-        "iid": 145,
-        "isConstructor": false,
-        "isMethod": false,
-        "args": {
-            "0": {
-                "argumentIndex": 0,
-                "argumentName": "a",
-                "interactions": [
-                    {
-                        "code": "inputValue",
-                        "typeof": "string"
-                    },
-                    {
-                        "code": "inputValue",
-                        "typeof": "number"
-                    }
-                ]
-            },
-            "1": {
-                "argumentIndex": 1,
-                "argumentName": "b",
-                "interactions": [
-                    {
-                        "code": "inputValue",
-                        "typeof": "number"
-                    },
-                    {
-                        "code": "inputValue",
-                        "typeof": "string"
-                    }
-                ]
-            }
-        },
-        "declarationEnclosingFunctionId": -1,
-        "returnTypeOfs": [
-            "number",
-            "string"
-        ]
-    },
-    "169": {
-        "functionId": 169,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "myMethod",
         "iid": 257,
         "isConstructor": false,
@@ -81,6 +39,50 @@
         "returnTypeOfs": [
             "number",
             "string"
-        ]
+        ],
+        "functionIid": 169
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "doSomething",
+        "iid": 145,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "b",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number",
+            "string"
+        ],
+        "functionIid": 89
     }
 }

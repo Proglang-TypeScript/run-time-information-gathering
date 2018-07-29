@@ -1,6 +1,6 @@
 {
-    "49": {
-        "functionId": 49,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "f",
         "iid": 193,
         "isConstructor": false,
@@ -57,10 +57,11 @@
             "number",
             "object",
             "number"
-        ]
+        ],
+        "functionIid": 49
     },
-    "113": {
-        "functionId": 113,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "f2",
         "iid": 337,
         "isConstructor": false,
@@ -80,6 +81,7 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "null"
-        ]
+        ],
+        "functionIid": 113
     }
 }

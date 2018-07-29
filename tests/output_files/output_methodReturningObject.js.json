@@ -1,6 +1,6 @@
 {
-    "121": {
-        "functionId": 121,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "doSomething",
         "iid": 289,
         "isConstructor": false,
@@ -18,13 +18,13 @@
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 121,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [
                             {
                                 "code": "setField",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "enclosingFunctionId": 121,
+                                "enclosingFunctionId": "functionId_1",
                                 "followingInteractions": [],
                                 "iid": 73,
                                 "field": "someValue",
@@ -34,17 +34,17 @@
                                 "code": "methodCall",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "enclosingFunctionId": 121,
+                                "enclosingFunctionId": "functionId_1",
                                 "followingInteractions": [],
                                 "iid": 99,
                                 "methodName": "myMethodInside",
-                                "functionIid": 177,
+                                "functionId": "functionId_5",
                                 "returnTypeOf": "string"
                             }
                         ],
                         "iid": 35,
                         "methodName": "myMethod",
-                        "functionIid": 225,
+                        "functionId": "functionId_3",
                         "returnTypeOf": "object"
                     }
                 ]
@@ -53,22 +53,11 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "string"
-        ]
+        ],
+        "functionIid": 121
     },
-    "177": {
-        "functionId": 177,
-        "functionName": "myMethodInside",
-        "iid": 97,
-        "isConstructor": false,
-        "isMethod": true,
-        "args": {},
-        "declarationEnclosingFunctionId": 121,
-        "returnTypeOfs": [
-            "string"
-        ]
-    },
-    "225": {
-        "functionId": 225,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "myMethod",
         "iid": 33,
         "isConstructor": false,
@@ -77,6 +66,20 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "object"
-        ]
+        ],
+        "functionIid": 225
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "myMethodInside",
+        "iid": 97,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_1",
+        "returnTypeOfs": [
+            "string"
+        ],
+        "functionIid": 177
     }
 }

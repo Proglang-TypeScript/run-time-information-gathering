@@ -1,71 +1,6 @@
 {
-    "233": {
-        "functionId": 233,
-        "functionName": "f2",
-        "iid": 257,
-        "isConstructor": false,
-        "isMethod": false,
-        "args": {},
-        "declarationEnclosingFunctionId": 273,
-        "returnTypeOfs": [
-            "undefined"
-        ]
-    },
-    "273": {
-        "functionId": 273,
-        "functionName": "f1",
-        "iid": 329,
-        "isConstructor": false,
-        "isMethod": false,
-        "args": {
-            "0": {
-                "argumentIndex": 0,
-                "argumentName": "b",
-                "interactions": [
-                    {
-                        "code": "inputValue",
-                        "typeof": "object"
-                    },
-                    {
-                        "code": "getField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 233,
-                        "followingInteractions": [],
-                        "iid": 185,
-                        "field": "someValue",
-                        "returnTypeOf": "number"
-                    },
-                    {
-                        "code": "setField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 233,
-                        "followingInteractions": [],
-                        "iid": 217,
-                        "field": "anotherValue",
-                        "typeof": "number"
-                    }
-                ]
-            }
-        },
-        "declarationEnclosingFunctionId": 345,
-        "returnTypeOfs": [
-            "undefined"
-        ]
-    },
-    "345": {
-        "functionId": 345,
-        "functionName": "f",
-        "iid": 345,
-        "isConstructor": null,
-        "isMethod": null,
-        "args": {},
-        "declarationEnclosingFunctionId": 425,
-        "returnTypeOfs": []
-    },
-    "425": {
-        "functionId": 425,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "getPropTimeout",
         "iid": 513,
         "isConstructor": false,
@@ -83,7 +18,7 @@
                         "code": "setField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 345,
+                        "enclosingFunctionId": "functionId_5",
                         "followingInteractions": [],
                         "iid": 41,
                         "field": "hello",
@@ -93,7 +28,7 @@
                         "code": "setField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 273,
+                        "enclosingFunctionId": "functionId_7",
                         "followingInteractions": [],
                         "iid": 105,
                         "field": "anotherValue",
@@ -103,7 +38,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 233,
+                        "enclosingFunctionId": "functionId_9",
                         "followingInteractions": [],
                         "iid": 129,
                         "field": "someValue",
@@ -113,7 +48,7 @@
                         "code": "setField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 233,
+                        "enclosingFunctionId": "functionId_9",
                         "followingInteractions": [],
                         "iid": 161,
                         "field": "anotherValue",
@@ -125,6 +60,86 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "undefined"
+        ],
+        "functionIid": 425
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "setTimeout",
+        "iid": 409,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "returnTypeOfs": [
+            "object"
         ]
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "f",
+        "iid": "functionId_5",
+        "isConstructor": null,
+        "isMethod": null,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_1",
+        "returnTypeOfs": [],
+        "functionIid": 345
+    },
+    "functionId_7": {
+        "functionId": "functionId_7",
+        "functionName": "f1",
+        "iid": 329,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "b",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_9",
+                        "followingInteractions": [],
+                        "iid": 185,
+                        "field": "someValue",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "setField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_9",
+                        "followingInteractions": [],
+                        "iid": 217,
+                        "field": "anotherValue",
+                        "typeof": "number"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": "functionId_5",
+        "returnTypeOfs": [
+            "undefined"
+        ],
+        "functionIid": 273
+    },
+    "functionId_9": {
+        "functionId": "functionId_9",
+        "functionName": "f2",
+        "iid": 257,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_7",
+        "returnTypeOfs": [
+            "undefined"
+        ],
+        "functionIid": 233
     }
 }

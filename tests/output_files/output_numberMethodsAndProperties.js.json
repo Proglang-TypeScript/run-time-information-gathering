@@ -1,7 +1,7 @@
 true
 {
-    "129": {
-        "functionId": 129,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "f",
         "iid": 201,
         "isConstructor": false,
@@ -19,21 +19,23 @@ true
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 129,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 35,
                         "methodName": "valueOf",
-                        "returnTypeOf": null
+                        "functionId": "functionId_3",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 129,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 59,
                         "methodName": "toString",
-                        "returnTypeOf": null
+                        "functionId": "functionId_5",
+                        "returnTypeOf": "string"
                     }
                 ]
             }
@@ -41,6 +43,29 @@ true
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "boolean"
+        ],
+        "functionIid": 129
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "valueOf",
+        "iid": 33,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "returnTypeOfs": [
+            "number"
+        ]
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "toString",
+        "iid": 57,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "returnTypeOfs": [
+            "string"
         ]
     }
 }

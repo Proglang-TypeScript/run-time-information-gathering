@@ -1,28 +1,6 @@
 {
-    "177": {
-        "functionId": 177,
-        "functionName": "",
-        "iid": 177,
-        "isConstructor": null,
-        "isMethod": null,
-        "args": {},
-        "declarationEnclosingFunctionId": 225,
-        "returnTypeOfs": []
-    },
-    "225": {
-        "functionId": 225,
-        "functionName": "doSomething",
-        "iid": 249,
-        "isConstructor": false,
-        "isMethod": false,
-        "args": {},
-        "declarationEnclosingFunctionId": 273,
-        "returnTypeOfs": [
-            "undefined"
-        ]
-    },
-    "273": {
-        "functionId": 273,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "getPropTimeout",
         "iid": 329,
         "isConstructor": false,
@@ -40,7 +18,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 177,
+                        "enclosingFunctionId": "functionId_7",
                         "followingInteractions": [],
                         "iid": 129,
                         "field": "anotherValue",
@@ -52,6 +30,42 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "undefined"
+        ],
+        "functionIid": 273
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "doSomething",
+        "iid": 249,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_1",
+        "returnTypeOfs": [
+            "undefined"
+        ],
+        "functionIid": 225
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "setTimeout",
+        "iid": 209,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "returnTypeOfs": [
+            "object"
         ]
+    },
+    "functionId_7": {
+        "functionId": "functionId_7",
+        "functionName": "",
+        "iid": "functionId_7",
+        "isConstructor": null,
+        "isMethod": null,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_3",
+        "returnTypeOfs": [],
+        "functionIid": 177
     }
 }
