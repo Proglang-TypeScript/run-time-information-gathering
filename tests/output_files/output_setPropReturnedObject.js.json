@@ -1,6 +1,6 @@
 {
-    "201": {
-        "functionId": 201,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "setSomeValue",
         "iid": 361,
         "isConstructor": false,
@@ -18,19 +18,19 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 201,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [
                             {
                                 "code": "getField",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "enclosingFunctionId": 201,
+                                "enclosingFunctionId": "functionId_1",
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
                                         "isComputed": false,
                                         "isOpAssign": false,
-                                        "enclosingFunctionId": 201,
+                                        "enclosingFunctionId": "functionId_1",
                                         "followingInteractions": [],
                                         "iid": 81,
                                         "field": "someValue",
@@ -50,7 +50,7 @@
                         "code": "setField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 201,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 161,
                         "field": "myObj2",
@@ -70,19 +70,19 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 201,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [
                             {
                                 "code": "getField",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "enclosingFunctionId": 201,
+                                "enclosingFunctionId": "functionId_1",
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
                                         "isComputed": false,
                                         "isOpAssign": false,
-                                        "enclosingFunctionId": 201,
+                                        "enclosingFunctionId": "functionId_1",
                                         "followingInteractions": [],
                                         "iid": 129,
                                         "field": "someValue",
@@ -104,6 +104,7 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "object"
-        ]
+        ],
+        "functionIid": 201
     }
 }

@@ -1,16 +1,6 @@
 {
-    "49": {
-        "functionId": 49,
-        "functionName": "f",
-        "iid": 49,
-        "isConstructor": null,
-        "isMethod": null,
-        "args": {},
-        "declarationEnclosingFunctionId": -1,
-        "returnTypeOfs": []
-    },
-    "105": {
-        "functionId": 105,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "getPropTimeout",
         "iid": 177,
         "isConstructor": false,
@@ -30,6 +20,29 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "undefined"
+        ],
+        "functionIid": 105
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "setTimeout",
+        "iid": 89,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "returnTypeOfs": [
+            "object"
         ]
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "f",
+        "iid": "functionId_5",
+        "isConstructor": null,
+        "isMethod": null,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [],
+        "functionIid": 49
     }
 }

@@ -1,6 +1,6 @@
 {
-    "113": {
-        "functionId": 113,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "f",
         "iid": 209,
         "isConstructor": false,
@@ -18,13 +18,13 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 113,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [
                             {
                                 "code": "getField",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "enclosingFunctionId": 113,
+                                "enclosingFunctionId": "functionId_1",
                                 "followingInteractions": [],
                                 "iid": 41,
                                 "field": "someValue",
@@ -39,19 +39,19 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 113,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [
                             {
                                 "code": "getField",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "enclosingFunctionId": 113,
+                                "enclosingFunctionId": "functionId_1",
                                 "followingInteractions": [
                                     {
                                         "code": "getField",
                                         "isComputed": false,
                                         "isOpAssign": false,
-                                        "enclosingFunctionId": 113,
+                                        "enclosingFunctionId": "functionId_1",
                                         "followingInteractions": [],
                                         "iid": 81,
                                         "field": "anotherValue",
@@ -73,6 +73,7 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "boolean"
-        ]
+        ],
+        "functionIid": 113
     }
 }

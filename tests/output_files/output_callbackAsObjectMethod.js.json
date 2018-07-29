@@ -1,16 +1,19 @@
 {
-    "145": {
-        "functionId": 145,
-        "functionName": "",
-        "iid": 145,
-        "isConstructor": null,
-        "isMethod": null,
+    "functionId_1": {
+        "functionId": "functionId_1",
+        "functionName": "AsyncObj",
+        "iid": 273,
+        "isConstructor": true,
+        "isMethod": false,
         "args": {},
-        "declarationEnclosingFunctionId": 193,
-        "returnTypeOfs": []
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "object"
+        ],
+        "functionIid": 249
     },
-    "193": {
-        "functionId": 193,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "doSomethingAsync",
         "iid": 417,
         "isConstructor": false,
@@ -26,8 +29,8 @@
                     },
                     {
                         "code": "usedAsArgument",
-                        "enclosingFunctionId": 145,
-                        "targetFunctionId": 345,
+                        "enclosingFunctionId": "functionId_7",
+                        "targetFunctionId": "functionId_9",
                         "argumentIndexInTargetFunction": "0"
                     }
                 ]
@@ -36,22 +39,33 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "undefined"
-        ]
+        ],
+        "functionIid": 193
     },
-    "249": {
-        "functionId": 249,
-        "functionName": "AsyncObj",
-        "iid": 273,
-        "isConstructor": true,
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "setTimeout",
+        "iid": 177,
+        "isConstructor": false,
         "isMethod": false,
         "args": {},
-        "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "object"
         ]
     },
-    "345": {
-        "functionId": 345,
+    "functionId_7": {
+        "functionId": "functionId_7",
+        "functionName": "",
+        "iid": "functionId_7",
+        "isConstructor": null,
+        "isMethod": null,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_3",
+        "returnTypeOfs": [],
+        "functionIid": 145
+    },
+    "functionId_9": {
+        "functionId": "functionId_9",
         "functionName": "callback",
         "iid": 129,
         "isConstructor": false,
@@ -69,7 +83,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 345,
+                        "enclosingFunctionId": "functionId_9",
                         "followingInteractions": [],
                         "iid": 313,
                         "field": "someValue",
@@ -78,9 +92,10 @@
                 ]
             }
         },
-        "declarationEnclosingFunctionId": 193,
+        "declarationEnclosingFunctionId": "functionId_3",
         "returnTypeOfs": [
             "boolean"
-        ]
+        ],
+        "functionIid": 345
     }
 }

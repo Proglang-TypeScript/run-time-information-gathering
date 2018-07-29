@@ -1,6 +1,6 @@
 {
-    "97": {
-        "functionId": 97,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "myFunction",
         "iid": 241,
         "isConstructor": false,
@@ -18,11 +18,11 @@
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 97,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 75,
                         "methodName": "executeMethod",
-                        "functionIid": 169,
+                        "functionId": "functionId_3",
                         "returnTypeOf": "boolean"
                     }
                 ]
@@ -31,10 +31,11 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "boolean"
-        ]
+        ],
+        "functionIid": 97
     },
-    "169": {
-        "functionId": 169,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "executeMethod",
         "iid": 73,
         "isConstructor": false,
@@ -52,7 +53,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 169,
+                        "enclosingFunctionId": "functionId_3",
                         "followingInteractions": [],
                         "iid": 137,
                         "field": "val",
@@ -64,6 +65,7 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "boolean"
-        ]
+        ],
+        "functionIid": 169
     }
 }

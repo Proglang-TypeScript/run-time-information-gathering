@@ -1,155 +1,6 @@
 {
-    "233": {
-        "functionId": 233,
-        "functionName": "traverse",
-        "iid": 1377,
-        "isConstructor": false,
-        "isMethod": false,
-        "args": {
-            "0": {
-                "argumentIndex": 0,
-                "argumentName": "a",
-                "interactions": [
-                    {
-                        "code": "inputValue",
-                        "typeof": "object"
-                    },
-                    {
-                        "code": "getField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 233,
-                        "followingInteractions": [],
-                        "iid": 97,
-                        "field": "val",
-                        "returnTypeOf": "number"
-                    },
-                    {
-                        "code": "getField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 233,
-                        "followingInteractions": [],
-                        "iid": 137,
-                        "field": "useRight",
-                        "returnTypeOf": "boolean"
-                    },
-                    {
-                        "code": "methodCall",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 233,
-                        "followingInteractions": [
-                            {
-                                "code": "getField",
-                                "isComputed": false,
-                                "isOpAssign": false,
-                                "enclosingFunctionId": 233,
-                                "followingInteractions": [],
-                                "iid": 97,
-                                "field": "val",
-                                "returnTypeOf": "number"
-                            },
-                            {
-                                "code": "getField",
-                                "isComputed": false,
-                                "isOpAssign": false,
-                                "enclosingFunctionId": 233,
-                                "followingInteractions": [],
-                                "iid": 137,
-                                "field": "useRight",
-                                "returnTypeOf": "boolean"
-                            },
-                            {
-                                "code": "methodCall",
-                                "isComputed": false,
-                                "isOpAssign": false,
-                                "enclosingFunctionId": 233,
-                                "followingInteractions": [
-                                    {
-                                        "code": "methodCall",
-                                        "isComputed": false,
-                                        "isOpAssign": false,
-                                        "enclosingFunctionId": 233,
-                                        "followingInteractions": [],
-                                        "iid": 155,
-                                        "methodName": "getRight",
-                                        "functionIid": 441,
-                                        "returnTypeOf": "Node"
-                                    },
-                                    {
-                                        "code": "methodCall",
-                                        "isComputed": false,
-                                        "isOpAssign": false,
-                                        "enclosingFunctionId": 233,
-                                        "followingInteractions": [
-                                            {
-                                                "code": "methodCall",
-                                                "isComputed": false,
-                                                "isOpAssign": false,
-                                                "enclosingFunctionId": 233,
-                                                "followingInteractions": [],
-                                                "iid": 187,
-                                                "methodName": "getLeft",
-                                                "functionIid": 617,
-                                                "returnTypeOf": "null"
-                                            }
-                                        ],
-                                        "iid": 187,
-                                        "methodName": "getLeft",
-                                        "functionIid": 369,
-                                        "returnTypeOf": "AnotherNode"
-                                    }
-                                ],
-                                "iid": 187,
-                                "methodName": "getLeft",
-                                "functionIid": 369,
-                                "returnTypeOf": "Node"
-                            }
-                        ],
-                        "iid": 187,
-                        "methodName": "getLeft",
-                        "functionIid": 369,
-                        "returnTypeOf": "Node"
-                    }
-                ]
-            }
-        },
-        "declarationEnclosingFunctionId": -1,
-        "returnTypeOfs": [
-            "number"
-        ]
-    },
-    "369": {
-        "functionId": 369,
-        "functionName": "getLeft",
-        "iid": 185,
-        "isConstructor": false,
-        "isMethod": true,
-        "args": {},
-        "declarationEnclosingFunctionId": 233,
-        "returnTypeOfs": [
-            "object",
-            "object",
-            "object",
-            "object",
-            "object"
-        ]
-    },
-    "441": {
-        "functionId": 441,
-        "functionName": "getRight",
-        "iid": 153,
-        "isConstructor": false,
-        "isMethod": true,
-        "args": {},
-        "declarationEnclosingFunctionId": 233,
-        "returnTypeOfs": [
-            "object"
-        ]
-    },
-    "481": {
-        "functionId": 481,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "Node",
         "iid": 801,
         "isConstructor": true,
@@ -293,22 +144,11 @@
             "object",
             "object",
             "object"
-        ]
+        ],
+        "functionIid": 481
     },
-    "617": {
-        "functionId": 617,
-        "functionName": "getLeft",
-        "iid": 185,
-        "isConstructor": false,
-        "isMethod": true,
-        "args": {},
-        "declarationEnclosingFunctionId": 233,
-        "returnTypeOfs": [
-            "null"
-        ]
-    },
-    "729": {
-        "functionId": 729,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "AnotherNode",
         "iid": 969,
         "isConstructor": true,
@@ -348,6 +188,245 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "object"
-        ]
+        ],
+        "functionIid": 729
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "traverse",
+        "iid": 1377,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_5",
+                        "followingInteractions": [],
+                        "iid": 97,
+                        "field": "val",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_5",
+                        "followingInteractions": [],
+                        "iid": 137,
+                        "field": "useRight",
+                        "returnTypeOf": "boolean"
+                    },
+                    {
+                        "code": "methodCall",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_5",
+                        "followingInteractions": [
+                            {
+                                "code": "getField",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": "functionId_5",
+                                "followingInteractions": [],
+                                "iid": 97,
+                                "field": "val",
+                                "returnTypeOf": "number"
+                            },
+                            {
+                                "code": "getField",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": "functionId_5",
+                                "followingInteractions": [],
+                                "iid": 137,
+                                "field": "useRight",
+                                "returnTypeOf": "boolean"
+                            },
+                            {
+                                "code": "methodCall",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": "functionId_5",
+                                "followingInteractions": [
+                                    {
+                                        "code": "methodCall",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": "functionId_5",
+                                        "followingInteractions": [
+                                            {
+                                                "code": "methodCall",
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "enclosingFunctionId": "functionId_5",
+                                                "followingInteractions": [
+                                                    {
+                                                        "code": "methodCall",
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "enclosingFunctionId": "functionId_5",
+                                                        "followingInteractions": [
+                                                            {
+                                                                "code": "methodCall",
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "enclosingFunctionId": "functionId_5",
+                                                                "followingInteractions": [
+                                                                    {
+                                                                        "code": "methodCall",
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "enclosingFunctionId": "functionId_5",
+                                                                        "followingInteractions": [],
+                                                                        "iid": 187,
+                                                                        "methodName": "getLeft",
+                                                                        "functionId": "functionId_19",
+                                                                        "returnTypeOf": "null"
+                                                                    }
+                                                                ],
+                                                                "iid": 187,
+                                                                "methodName": "getLeft",
+                                                                "functionId": "functionId_17",
+                                                                "returnTypeOf": "AnotherNode"
+                                                            }
+                                                        ],
+                                                        "iid": 187,
+                                                        "methodName": "getLeft",
+                                                        "functionId": "functionId_15",
+                                                        "returnTypeOf": "Node"
+                                                    }
+                                                ],
+                                                "iid": 155,
+                                                "methodName": "getRight",
+                                                "functionId": "functionId_13",
+                                                "returnTypeOf": "Node"
+                                            }
+                                        ],
+                                        "iid": 187,
+                                        "methodName": "getLeft",
+                                        "functionId": "functionId_11",
+                                        "returnTypeOf": "Node"
+                                    }
+                                ],
+                                "iid": 187,
+                                "methodName": "getLeft",
+                                "functionId": "functionId_9",
+                                "returnTypeOf": "Node"
+                            }
+                        ],
+                        "iid": 187,
+                        "methodName": "getLeft",
+                        "functionId": "functionId_7",
+                        "returnTypeOf": "Node"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ],
+        "functionIid": 233
+    },
+    "functionId_7": {
+        "functionId": "functionId_7",
+        "functionName": "getLeft",
+        "iid": 185,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_5",
+        "returnTypeOfs": [
+            "object"
+        ],
+        "functionIid": 369
+    },
+    "functionId_9": {
+        "functionId": "functionId_9",
+        "functionName": "getLeft",
+        "iid": 185,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_5",
+        "returnTypeOfs": [
+            "object"
+        ],
+        "functionIid": 369
+    },
+    "functionId_11": {
+        "functionId": "functionId_11",
+        "functionName": "getLeft",
+        "iid": 185,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_5",
+        "returnTypeOfs": [
+            "object"
+        ],
+        "functionIid": 369
+    },
+    "functionId_13": {
+        "functionId": "functionId_13",
+        "functionName": "getRight",
+        "iid": 153,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_5",
+        "returnTypeOfs": [
+            "object"
+        ],
+        "functionIid": 441
+    },
+    "functionId_15": {
+        "functionId": "functionId_15",
+        "functionName": "getLeft",
+        "iid": 185,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_5",
+        "returnTypeOfs": [
+            "object"
+        ],
+        "functionIid": 369
+    },
+    "functionId_17": {
+        "functionId": "functionId_17",
+        "functionName": "getLeft",
+        "iid": 185,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_5",
+        "returnTypeOfs": [
+            "object"
+        ],
+        "functionIid": 369
+    },
+    "functionId_19": {
+        "functionId": "functionId_19",
+        "functionName": "getLeft",
+        "iid": 185,
+        "isConstructor": false,
+        "isMethod": true,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_5",
+        "returnTypeOfs": [
+            "null"
+        ],
+        "functionIid": 617
     }
 }

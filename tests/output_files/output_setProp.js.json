@@ -1,6 +1,6 @@
 {
-    "81": {
-        "functionId": 81,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "setSomeValue",
         "iid": 417,
         "isConstructor": false,
@@ -18,7 +18,7 @@
                         "code": "setField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 81,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 41,
                         "field": "someValue",
@@ -30,10 +30,11 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "object"
-        ]
+        ],
+        "functionIid": 81
     },
-    "169": {
-        "functionId": 169,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "setVariableValue",
         "iid": 465,
         "isConstructor": false,
@@ -51,7 +52,7 @@
                         "code": "setField",
                         "isComputed": true,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 169,
+                        "enclosingFunctionId": "functionId_3",
                         "followingInteractions": [],
                         "iid": 129,
                         "field": "someField",
@@ -73,10 +74,11 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "object"
-        ]
+        ],
+        "functionIid": 169
     },
-    "305": {
-        "functionId": 305,
+    "functionId_5": {
+        "functionId": "functionId_5",
         "functionName": "setVariableValueWithArray",
         "iid": 513,
         "isConstructor": false,
@@ -94,7 +96,7 @@
                         "code": "setField",
                         "isComputed": true,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 305,
+                        "enclosingFunctionId": "functionId_5",
                         "followingInteractions": [],
                         "iid": 265,
                         "field": "arrayField",
@@ -116,6 +118,7 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "object"
-        ]
+        ],
+        "functionIid": 305
     }
 }

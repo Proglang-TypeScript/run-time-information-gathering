@@ -1,122 +1,7 @@
 125
 {
-    "233": {
-        "functionId": 233,
-        "functionName": "traverse",
-        "iid": 1417,
-        "isConstructor": false,
-        "isMethod": false,
-        "args": {
-            "0": {
-                "argumentIndex": 0,
-                "argumentName": "a",
-                "interactions": [
-                    {
-                        "code": "inputValue",
-                        "typeof": "object"
-                    },
-                    {
-                        "code": "getField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 233,
-                        "followingInteractions": [],
-                        "iid": 97,
-                        "field": "val",
-                        "returnTypeOf": "number"
-                    },
-                    {
-                        "code": "getField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 233,
-                        "followingInteractions": [],
-                        "iid": 137,
-                        "field": "useRight",
-                        "returnTypeOf": "boolean"
-                    },
-                    {
-                        "code": "getField",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": 233,
-                        "followingInteractions": [
-                            {
-                                "code": "getField",
-                                "isComputed": false,
-                                "isOpAssign": false,
-                                "enclosingFunctionId": 233,
-                                "followingInteractions": [],
-                                "iid": 97,
-                                "field": "val",
-                                "returnTypeOf": "number"
-                            },
-                            {
-                                "code": "getField",
-                                "isComputed": false,
-                                "isOpAssign": false,
-                                "enclosingFunctionId": 233,
-                                "followingInteractions": [],
-                                "iid": 137,
-                                "field": "useRight",
-                                "returnTypeOf": "boolean"
-                            },
-                            {
-                                "code": "getField",
-                                "isComputed": false,
-                                "isOpAssign": false,
-                                "enclosingFunctionId": 233,
-                                "followingInteractions": [
-                                    {
-                                        "code": "getField",
-                                        "isComputed": false,
-                                        "isOpAssign": false,
-                                        "enclosingFunctionId": 233,
-                                        "followingInteractions": [],
-                                        "iid": 185,
-                                        "field": "left",
-                                        "returnTypeOf": "AnotherNode"
-                                    },
-                                    {
-                                        "code": "getField",
-                                        "isComputed": false,
-                                        "isOpAssign": false,
-                                        "enclosingFunctionId": 233,
-                                        "followingInteractions": [],
-                                        "iid": 153,
-                                        "field": "right",
-                                        "returnTypeOf": "Node"
-                                    },
-                                    {
-                                        "code": "getField",
-                                        "isComputed": false,
-                                        "isOpAssign": false,
-                                        "enclosingFunctionId": 233,
-                                        "followingInteractions": [],
-                                        "iid": 185,
-                                        "field": "left",
-                                        "returnTypeOf": "null"
-                                    }
-                                ],
-                                "iid": 185,
-                                "field": "left",
-                                "returnTypeOf": "Node"
-                            }
-                        ],
-                        "iid": 185,
-                        "field": "left",
-                        "returnTypeOf": "Node"
-                    }
-                ]
-            }
-        },
-        "declarationEnclosingFunctionId": -1,
-        "returnTypeOfs": [
-            "number"
-        ]
-    },
-    "401": {
-        "functionId": 401,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "Node",
         "iid": 593,
         "isConstructor": true,
@@ -181,10 +66,11 @@
             "object",
             "object",
             "object"
-        ]
+        ],
+        "functionIid": 401
     },
-    "553": {
-        "functionId": 553,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "AnotherNode",
         "iid": 713,
         "isConstructor": true,
@@ -204,6 +90,123 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "object"
-        ]
+        ],
+        "functionIid": 553
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "traverse",
+        "iid": 1417,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_5",
+                        "followingInteractions": [],
+                        "iid": 97,
+                        "field": "val",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_5",
+                        "followingInteractions": [],
+                        "iid": 137,
+                        "field": "useRight",
+                        "returnTypeOf": "boolean"
+                    },
+                    {
+                        "code": "getField",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_5",
+                        "followingInteractions": [
+                            {
+                                "code": "getField",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": "functionId_5",
+                                "followingInteractions": [],
+                                "iid": 97,
+                                "field": "val",
+                                "returnTypeOf": "number"
+                            },
+                            {
+                                "code": "getField",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": "functionId_5",
+                                "followingInteractions": [],
+                                "iid": 137,
+                                "field": "useRight",
+                                "returnTypeOf": "boolean"
+                            },
+                            {
+                                "code": "getField",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": "functionId_5",
+                                "followingInteractions": [
+                                    {
+                                        "code": "getField",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": "functionId_5",
+                                        "followingInteractions": [],
+                                        "iid": 185,
+                                        "field": "left",
+                                        "returnTypeOf": "AnotherNode"
+                                    },
+                                    {
+                                        "code": "getField",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": "functionId_5",
+                                        "followingInteractions": [],
+                                        "iid": 153,
+                                        "field": "right",
+                                        "returnTypeOf": "Node"
+                                    },
+                                    {
+                                        "code": "getField",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": "functionId_5",
+                                        "followingInteractions": [],
+                                        "iid": 185,
+                                        "field": "left",
+                                        "returnTypeOf": "null"
+                                    }
+                                ],
+                                "iid": 185,
+                                "field": "left",
+                                "returnTypeOf": "Node"
+                            }
+                        ],
+                        "iid": 185,
+                        "field": "left",
+                        "returnTypeOf": "Node"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "number"
+        ],
+        "functionIid": 233
     }
 }

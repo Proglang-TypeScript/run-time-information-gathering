@@ -1,6 +1,6 @@
 {
-    "65": {
-        "functionId": 65,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "someValueLessThan100",
         "iid": 209,
         "isConstructor": false,
@@ -18,7 +18,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 65,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "someValue",
@@ -32,7 +32,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 65,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "someValue",
@@ -46,7 +46,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 65,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "someValue",
@@ -60,10 +60,11 @@
             "boolean",
             "boolean",
             "boolean"
-        ]
+        ],
+        "functionIid": 65
     },
-    "137": {
-        "functionId": 137,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "variableValueLessThan100",
         "iid": 417,
         "isConstructor": false,
@@ -81,7 +82,7 @@
                         "code": "getField",
                         "isComputed": true,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 137,
+                        "enclosingFunctionId": "functionId_3",
                         "followingInteractions": [],
                         "iid": 105,
                         "field": "someValue",
@@ -95,7 +96,7 @@
                         "code": "getField",
                         "isComputed": true,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 137,
+                        "enclosingFunctionId": "functionId_3",
                         "followingInteractions": [],
                         "iid": 105,
                         "field": "anotherValue",
@@ -122,6 +123,7 @@
         "returnTypeOfs": [
             "boolean",
             "boolean"
-        ]
+        ],
+        "functionIid": 137
     }
 }

@@ -1,6 +1,6 @@
 {
-    "145": {
-        "functionId": 145,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "myFunction",
         "iid": 377,
         "isConstructor": false,
@@ -18,7 +18,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 145,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 89,
                         "field": "someValue",
@@ -30,10 +30,11 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "boolean"
-        ]
+        ],
+        "functionIid": 145
     },
-    "297": {
-        "functionId": 297,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "myFunction2",
         "iid": 409,
         "isConstructor": false,
@@ -53,6 +54,7 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "boolean"
-        ]
+        ],
+        "functionIid": 297
     }
 }

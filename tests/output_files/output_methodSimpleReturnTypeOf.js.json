@@ -1,6 +1,6 @@
 {
-    "121": {
-        "functionId": 121,
+    "functionId_1": {
+        "functionId": "functionId_1",
         "functionName": "executeFunctions",
         "iid": 457,
         "isConstructor": false,
@@ -18,44 +18,44 @@
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 121,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 35,
                         "methodName": "returnString",
-                        "functionIid": 169,
+                        "functionId": "functionId_3",
                         "returnTypeOf": "string"
                     },
                     {
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 121,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 59,
                         "methodName": "returnNumber",
-                        "functionIid": 217,
+                        "functionId": "functionId_5",
                         "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 121,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 83,
                         "methodName": "returnFunction",
-                        "functionIid": 329,
+                        "functionId": "functionId_7",
                         "returnTypeOf": "function"
                     },
                     {
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 121,
+                        "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
                         "iid": 107,
                         "methodName": "returnObject",
-                        "functionIid": 393,
+                        "functionId": "functionId_9",
                         "returnTypeOf": "object"
                     }
                 ]
@@ -64,10 +64,11 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "undefined"
-        ]
+        ],
+        "functionIid": 121
     },
-    "169": {
-        "functionId": 169,
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "returnString",
         "iid": 33,
         "isConstructor": false,
@@ -76,10 +77,11 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "string"
-        ]
+        ],
+        "functionIid": 169
     },
-    "217": {
-        "functionId": 217,
+    "functionId_5": {
+        "functionId": "functionId_5",
         "functionName": "returnNumber",
         "iid": 57,
         "isConstructor": false,
@@ -88,10 +90,11 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "number"
-        ]
+        ],
+        "functionIid": 217
     },
-    "329": {
-        "functionId": 329,
+    "functionId_7": {
+        "functionId": "functionId_7",
         "functionName": "returnFunction",
         "iid": 81,
         "isConstructor": false,
@@ -100,10 +103,11 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "function"
-        ]
+        ],
+        "functionIid": 329
     },
-    "393": {
-        "functionId": 393,
+    "functionId_9": {
+        "functionId": "functionId_9",
         "functionName": "returnObject",
         "iid": 105,
         "isConstructor": false,
@@ -112,6 +116,7 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "object"
-        ]
+        ],
+        "functionIid": 393
     }
 }

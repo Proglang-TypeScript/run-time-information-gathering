@@ -1,6 +1,58 @@
 {
-    "97": {
-        "functionId": 97,
+    "functionId_1": {
+        "functionId": "functionId_1",
+        "functionName": "f2",
+        "iid": 289,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "usedAsArgument",
+                        "enclosingFunctionId": "functionId_5",
+                        "targetFunctionId": "functionId_7",
+                        "argumentIndexInTargetFunction": "0"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "undefined"
+        ],
+        "functionIid": 217
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "setTimeout",
+        "iid": 201,
+        "isConstructor": false,
+        "isMethod": false,
+        "args": {},
+        "returnTypeOfs": [
+            "object"
+        ]
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "",
+        "iid": "functionId_5",
+        "isConstructor": null,
+        "isMethod": null,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_1",
+        "returnTypeOfs": [],
+        "functionIid": 169
+    },
+    "functionId_7": {
+        "functionId": "functionId_7",
         "functionName": "f1",
         "iid": 145,
         "isConstructor": false,
@@ -18,7 +70,7 @@
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 97,
+                        "enclosingFunctionId": "functionId_7",
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "someValue",
@@ -30,45 +82,7 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             "number"
-        ]
-    },
-    "169": {
-        "functionId": 169,
-        "functionName": "",
-        "iid": 169,
-        "isConstructor": null,
-        "isMethod": null,
-        "args": {},
-        "declarationEnclosingFunctionId": 217,
-        "returnTypeOfs": []
-    },
-    "217": {
-        "functionId": 217,
-        "functionName": "f2",
-        "iid": 289,
-        "isConstructor": false,
-        "isMethod": false,
-        "args": {
-            "0": {
-                "argumentIndex": 0,
-                "argumentName": "a",
-                "interactions": [
-                    {
-                        "code": "inputValue",
-                        "typeof": "object"
-                    },
-                    {
-                        "code": "usedAsArgument",
-                        "enclosingFunctionId": 169,
-                        "targetFunctionId": 97,
-                        "argumentIndexInTargetFunction": "0"
-                    }
-                ]
-            }
-        },
-        "declarationEnclosingFunctionId": -1,
-        "returnTypeOfs": [
-            "undefined"
-        ]
+        ],
+        "functionIid": 97
     }
 }
