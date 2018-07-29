@@ -27,7 +27,7 @@
 			if (shadowId in dis.mapWrapperObjectsOriginalValues) {
 				return dis.mapWrapperObjectsOriginalValues[shadowId];
 			}
-			
+
 			return val;
 		}
 	}

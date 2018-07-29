@@ -7,7 +7,7 @@
 		this.getOriginalTypeOfField = function() {
 			return "__ORIGINAL_TYPEOF__";
 		};
-		
+
 		this.buildFromString = function(
 			/* jshint ignore:start */
 			val
