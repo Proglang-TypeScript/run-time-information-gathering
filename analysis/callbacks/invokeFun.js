@@ -42,7 +42,10 @@
 					processRecursiveInteractionOfResult(
 						interaction,
 						result,
-						functionContainer.declarationEnclosingFunctionId
+						this.functionsExecutionStack.getCurrentExecutingFunction()
+						// Let variable 'f' be the function that executed the invokeFun() callback.
+						// invokeFun() callback is executed after functionExit(),
+						// so the current executing function is the function that executed function 'f'.
 					);
 
 					addRecursiveFollowingInteraction(
