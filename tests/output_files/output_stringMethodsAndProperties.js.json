@@ -1,9 +1,9 @@
 true
 {
-    "113": {
-        "functionId": 113,
+    "129": {
+        "functionId": 129,
         "functionName": "f",
-        "iid": 185,
+        "iid": 201,
         "isConstructor": false,
         "isMethod": false,
         "args": {
@@ -19,7 +19,7 @@ true
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 113,
+                        "enclosingFunctionId": 129,
                         "followingInteractions": [],
                         "iid": 33,
                         "field": "length",
@@ -29,7 +29,7 @@ true
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": 113,
+                        "enclosingFunctionId": 129,
                         "followingInteractions": [],
                         "iid": 67,
                         "methodName": "indexOf",

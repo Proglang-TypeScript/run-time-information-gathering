@@ -18,7 +18,6 @@
 		argumentContainerFinder,
 		argumentProxyBuilder,
 		argumentWrapperObjectBuilder,
-		mapProxyObjectsOriginalObjects,
 		mapWrapperObjectsOriginalValues
 	) {
 
@@ -32,7 +31,6 @@
 		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
 		this.argumentProxyBuilder = argumentProxyBuilder;
 
-		this.mapProxyObjectsOriginalObjects = mapProxyObjectsOriginalObjects;
 		this.mapWrapperObjectsOriginalValues = mapWrapperObjectsOriginalValues;
 
 		this.runCallback = function(
@@ -156,7 +154,7 @@
 				args[argIndex] = proxy;
 
 				var shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(proxy);
-				dis.mapProxyObjectsOriginalObjects[shadowIdProxy] = arg;
+				dis.mapWrapperObjectsOriginalValues[shadowIdProxy] = arg;
 			}
 		}
 	}

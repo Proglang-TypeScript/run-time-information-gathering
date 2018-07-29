@@ -14,7 +14,6 @@
 			var mapMethodIdentifierInteractions = {};
 			var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 			var mapShadowIdsInteractions = {};
-			var mapProxyObjectsOriginalObjects = {};
 			var mapWrapperObjectsOriginalValues = {};
 
 			var objectSerializer = new (require("../utils/objectSerializer.js")).ObjectSerializer(
@@ -68,7 +67,6 @@
 					argumentContainerFinder,
 					argumentProxyBuilder,
 					argumentWrapperObjectBuilder,
-					mapProxyObjectsOriginalObjects,
 					mapWrapperObjectsOriginalValues
 				),
 				invokeFun: new (require("./callbacks/invokeFun.js")).InvokeFun(
@@ -101,7 +99,7 @@
 					sMemoryInterface
 				),
 				binaryPre: new (require("./callbacks/binaryPre.js")).BinaryPre(
-					mapProxyObjectsOriginalObjects,
+					mapWrapperObjectsOriginalValues,
 					sMemoryInterface
 				),
 				unaryPre: new (require("./callbacks/unaryPre.js")).UnaryPre(

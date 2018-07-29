@@ -3,8 +3,8 @@
 "use strict";
 
 (function(exp) {
-	function BinaryPre(mapProxyObjectsOriginalObjects, sMemoryInterface) {
-		this.mapProxyObjectsOriginalObjects = mapProxyObjectsOriginalObjects;
+	function BinaryPre(mapWrapperObjectsOriginalValues, sMemoryInterface) {
+		this.mapWrapperObjectsOriginalValues = mapWrapperObjectsOriginalValues;
 		this.sMemoryInterface = sMemoryInterface;
 
 		var dis = this;
@@ -39,7 +39,7 @@
 		function replaceValueIfItIsAProxy(val) {
 			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
 
-			if (shadowId in dis.mapProxyObjectsOriginalObjects) {
+			if (shadowId in dis.mapWrapperObjectsOriginalValues) {
 				return getRealObjectFromProxy(shadowId);
 			} else {
 				return val;
@@ -47,9 +47,9 @@
 		}
 
 		function getRealObjectFromProxy(shadowId) {
-			var targetObjectFromProxy = dis.mapProxyObjectsOriginalObjects[shadowId];
+			var targetObjectFromProxy = dis.mapWrapperObjectsOriginalValues[shadowId];
 
-			if (dis.sMemoryInterface.getShadowIdOfObject(targetObjectFromProxy) in dis.mapProxyObjectsOriginalObjects) {
+			if (dis.sMemoryInterface.getShadowIdOfObject(targetObjectFromProxy) in dis.mapWrapperObjectsOriginalValues) {
 				return getRealObjectFromProxy(dis.sMemoryInterface.getShadowIdOfObject(targetObjectFromProxy));
 			}
 
