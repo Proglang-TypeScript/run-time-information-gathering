@@ -79,6 +79,7 @@
 					recursiveInteractionsHandler,
 					interactionFinder,
 					functionsExecutionStack,
+					argumentWrapperObjectBuilder,
 					mapMethodIdentifierInteractions,
 					mapShadowIdsInteractions
 				),

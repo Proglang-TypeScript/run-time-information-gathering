@@ -7,7 +7,16 @@
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getHashForShadowIdAndFunctionId = require("../../utils/getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 
-	function InvokeFun(runTimeInfo, sMemoryInterface, recursiveInteractionsHandler, interactionFinder, functionsExecutionStack, mapMethodIdentifierInteractions, mapShadowIdsInteractions) {
+	function InvokeFun(
+		runTimeInfo,
+		sMemoryInterface,
+		recursiveInteractionsHandler,
+		interactionFinder,
+		functionsExecutionStack,
+		argumentWrapperObjectBuilder,
+		mapMethodIdentifierInteractions,
+		mapShadowIdsInteractions
+	) {
 		var dis = this;
 
 		this.runTimeInfo = runTimeInfo;
@@ -15,6 +24,7 @@
 		this.recursiveInteractionsHandler = recursiveInteractionsHandler;
 		this.interactionFinder = interactionFinder;
 		this.functionsExecutionStack = functionsExecutionStack;
+		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
 
 		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
 		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
@@ -36,6 +46,8 @@
 					var interaction = this.mapMethodIdentifierInteractions[f.methodIdentifier];
 					interaction.setReturnTypeOf(result);
 
+					result = changeResultToWrapperObjectIfItIsALiteral(result);
+
 					processRecursiveInteractionOfResult(
 						interaction,
 						result,
@@ -55,6 +67,19 @@
 				result: result
 			};
 		};
+
+		function changeResultToWrapperObjectIfItIsALiteral(result) {
+			switch(getTypeOf(result)) {
+				case "string":
+					return dis.argumentWrapperObjectBuilder.buildFromString(result);
+
+				case "number":
+					return dis.argumentWrapperObjectBuilder.buildFromNumber(result);
+
+				default:
+					return result;
+			}
+		}
 
 		function getFunctionContainer(f) {
 			return dis.runTimeInfo[f.functionId];
