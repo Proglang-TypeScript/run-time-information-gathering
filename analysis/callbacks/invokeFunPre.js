@@ -58,15 +58,7 @@
 				}
 
 				if (functionNotProcessed(f)) {
-					var functionContainer = new FunctionContainer(
-						functionId,
-						getFunctionName(f)
-					);
-
-					functionContainer.iid = iid;
-					functionContainer.isConstructor = isConstructor;
-					functionContainer.isMethod = isMethod;
-					functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
+					var functionContainer = new FunctionContainer(f, isConstructor);
 					functionContainer.functionIid = functionIid;
 
 					this.runTimeInfo[functionContainer.functionId] = functionContainer;

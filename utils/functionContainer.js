@@ -4,15 +4,13 @@
 
 (function(exp) {
 
-	function FunctionContainer(functionId, name) {
-		this.functionId = functionId;
-		this.functionName = name;
+	function FunctionContainer(f, isConstructor) {
+		this.functionId = f.functionId;
+		this.functionName = getFunctionName(f);
 
-		this.iid = null;
-		this.isConstructor = null;
-		this.isMethod = null;
+		this.isConstructor = (isConstructor === true);
 		this.args = {};
-		this.declarationEnclosingFunctionId = null;
+		this.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
 		this.returnTypeOfs = [];
 		this.functionIid = null;
 
@@ -31,6 +29,16 @@
 		this.getArgumentContainer = function(argumentIndex) {
 			return this.args[argumentIndex];
 		};
+
+		function getFunctionName(f) {
+			var functionName = f.name;
+
+			if (f.methodName) {
+				functionName = f.methodName;
+			}
+
+			return functionName;
+		}
 	}
 
 	exp.FunctionContainer = FunctionContainer;

@@ -17,9 +17,7 @@
 			let functionId = this.functionIdHandler.setFunctionId(f);
 
 			if (functionNotProcessed(f)) {
-				var functionContainer = new FunctionContainer(functionId, f.name);
-				functionContainer.iid = functionId;
-				functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
+				var functionContainer = new FunctionContainer(f);
 				functionContainer.functionIid = iid;
 
 				this.runTimeInfo[functionId] = functionContainer;
