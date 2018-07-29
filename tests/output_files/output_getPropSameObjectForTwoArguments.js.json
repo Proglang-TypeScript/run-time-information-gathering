@@ -3,9 +3,7 @@ true
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "doNothingMyObj",
-        "iid": 289,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -27,9 +25,7 @@ true
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "doNothingMyOtherObj",
-        "iid": 329,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -51,9 +47,7 @@ true
     "functionId_5": {
         "functionId": "functionId_5",
         "functionName": "someValueLessThan100",
-        "iid": 385,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,

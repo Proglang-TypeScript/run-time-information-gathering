@@ -2,9 +2,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "executeFunctions",
-        "iid": 457,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -70,9 +68,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "returnString",
-        "iid": 33,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
@@ -83,9 +79,7 @@
     "functionId_5": {
         "functionId": "functionId_5",
         "functionName": "returnNumber",
-        "iid": 57,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
@@ -96,9 +90,7 @@
     "functionId_7": {
         "functionId": "functionId_7",
         "functionName": "returnFunction",
-        "iid": 81,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
@@ -109,9 +101,7 @@
     "functionId_9": {
         "functionId": "functionId_9",
         "functionName": "returnObject",
-        "iid": 105,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [

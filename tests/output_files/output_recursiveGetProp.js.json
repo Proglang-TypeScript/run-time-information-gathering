@@ -3,9 +3,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "Node",
-        "iid": 593,
         "isConstructor": true,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -72,9 +70,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "AnotherNode",
-        "iid": 713,
         "isConstructor": true,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -96,9 +92,7 @@
     "functionId_5": {
         "functionId": "functionId_5",
         "functionName": "traverse",
-        "iid": 1417,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,

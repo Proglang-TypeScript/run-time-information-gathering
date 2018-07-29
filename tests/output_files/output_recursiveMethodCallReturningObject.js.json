@@ -2,9 +2,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "Node",
-        "iid": 801,
         "isConstructor": true,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -150,9 +148,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "AnotherNode",
-        "iid": 969,
         "isConstructor": true,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -194,9 +190,7 @@
     "functionId_5": {
         "functionId": "functionId_5",
         "functionName": "traverse",
-        "iid": 1377,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -341,9 +335,7 @@
     "functionId_7": {
         "functionId": "functionId_7",
         "functionName": "getLeft",
-        "iid": 185,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
@@ -354,9 +346,7 @@
     "functionId_9": {
         "functionId": "functionId_9",
         "functionName": "getLeft",
-        "iid": 185,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
@@ -367,9 +357,7 @@
     "functionId_11": {
         "functionId": "functionId_11",
         "functionName": "getLeft",
-        "iid": 185,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
@@ -380,9 +368,7 @@
     "functionId_13": {
         "functionId": "functionId_13",
         "functionName": "getRight",
-        "iid": 153,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
@@ -393,9 +379,7 @@
     "functionId_15": {
         "functionId": "functionId_15",
         "functionName": "getLeft",
-        "iid": 185,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
@@ -406,9 +390,7 @@
     "functionId_17": {
         "functionId": "functionId_17",
         "functionName": "getLeft",
-        "iid": 185,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
@@ -419,9 +401,7 @@
     "functionId_19": {
         "functionId": "functionId_19",
         "functionName": "getLeft",
-        "iid": 185,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [

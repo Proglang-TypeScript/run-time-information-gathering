@@ -2,9 +2,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "f1",
-        "iid": 489,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -120,9 +118,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "f2",
-        "iid": 345,
         "isConstructor": false,
-        "isMethod": false,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [
@@ -133,9 +129,7 @@
     "functionId_5": {
         "functionId": "functionId_5",
         "functionName": "f3",
-        "iid": 265,
         "isConstructor": false,
-        "isMethod": false,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_3",
         "returnTypeOfs": [

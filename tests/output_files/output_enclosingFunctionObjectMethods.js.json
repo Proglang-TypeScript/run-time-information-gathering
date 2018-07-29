@@ -2,9 +2,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "f1",
-        "iid": 841,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -66,9 +64,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "f2",
-        "iid": 721,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -156,9 +152,7 @@
     "functionId_5": {
         "functionId": "functionId_5",
         "functionName": "myMethod",
-        "iid": 33,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [
@@ -169,9 +163,7 @@
     "functionId_7": {
         "functionId": "functionId_7",
         "functionName": "myMethod2",
-        "iid": 65,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [
@@ -182,9 +174,7 @@
     "functionId_9": {
         "functionId": "functionId_9",
         "functionName": "anotherMethod3",
-        "iid": 97,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [
@@ -195,9 +185,7 @@
     "functionId_11": {
         "functionId": "functionId_11",
         "functionName": "anotherMethod",
-        "iid": 121,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [

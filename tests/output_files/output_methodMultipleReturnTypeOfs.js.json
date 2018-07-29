@@ -2,9 +2,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "executeFunctions",
-        "iid": 529,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -446,9 +444,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "returnRandomTypeOf",
-        "iid": 145,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [

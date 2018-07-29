@@ -3,9 +3,7 @@ true
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "f",
-        "iid": 201,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -48,9 +46,7 @@ true
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "indexOf",
-        "iid": 65,
         "isConstructor": false,
-        "isMethod": true,
         "args": {},
         "returnTypeOfs": [
             "number"

@@ -2,9 +2,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "setSomeValue",
-        "iid": 417,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -36,9 +34,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "setVariableValue",
-        "iid": 465,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -80,9 +76,7 @@
     "functionId_5": {
         "functionId": "functionId_5",
         "functionName": "setVariableValueWithArray",
-        "iid": 513,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,

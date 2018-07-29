@@ -2,9 +2,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "doSomething",
-        "iid": 273,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -81,9 +79,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "myMethod",
-        "iid": 49,
         "isConstructor": false,
-        "isMethod": true,
         "args": {
             "0": {
                 "argumentIndex": 0,

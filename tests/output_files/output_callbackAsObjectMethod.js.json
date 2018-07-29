@@ -2,9 +2,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "AsyncObj",
-        "iid": 273,
         "isConstructor": true,
-        "isMethod": false,
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
@@ -15,9 +13,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "doSomethingAsync",
-        "iid": 417,
         "isConstructor": false,
-        "isMethod": true,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -45,9 +41,7 @@
     "functionId_5": {
         "functionId": "functionId_5",
         "functionName": "setTimeout",
-        "iid": 177,
         "isConstructor": false,
-        "isMethod": false,
         "args": {},
         "returnTypeOfs": [
             "object"
@@ -56,9 +50,7 @@
     "functionId_7": {
         "functionId": "functionId_7",
         "functionName": "",
-        "iid": "functionId_7",
-        "isConstructor": null,
-        "isMethod": null,
+        "isConstructor": false,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_3",
         "returnTypeOfs": [],
@@ -67,9 +59,7 @@
     "functionId_9": {
         "functionId": "functionId_9",
         "functionName": "callback",
-        "iid": 129,
         "isConstructor": false,
-        "isMethod": true,
         "args": {
             "0": {
                 "argumentIndex": 0,

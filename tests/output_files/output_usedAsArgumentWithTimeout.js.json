@@ -2,9 +2,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "f2",
-        "iid": 289,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -32,9 +30,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "setTimeout",
-        "iid": 201,
         "isConstructor": false,
-        "isMethod": false,
         "args": {},
         "returnTypeOfs": [
             "object"
@@ -43,9 +39,7 @@
     "functionId_5": {
         "functionId": "functionId_5",
         "functionName": "",
-        "iid": "functionId_5",
-        "isConstructor": null,
-        "isMethod": null,
+        "isConstructor": false,
         "args": {},
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [],
@@ -54,9 +48,7 @@
     "functionId_7": {
         "functionId": "functionId_7",
         "functionName": "f1",
-        "iid": 145,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,

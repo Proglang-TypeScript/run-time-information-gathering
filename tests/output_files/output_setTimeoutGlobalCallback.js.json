@@ -2,9 +2,7 @@
     "functionId_1": {
         "functionId": "functionId_1",
         "functionName": "getPropTimeout",
-        "iid": 177,
         "isConstructor": false,
-        "isMethod": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
@@ -26,9 +24,7 @@
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "setTimeout",
-        "iid": 89,
         "isConstructor": false,
-        "isMethod": false,
         "args": {},
         "returnTypeOfs": [
             "object"
@@ -37,9 +33,7 @@
     "functionId_5": {
         "functionId": "functionId_5",
         "functionName": "f",
-        "iid": "functionId_5",
-        "isConstructor": null,
-        "isMethod": null,
+        "isConstructor": false,
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [],
