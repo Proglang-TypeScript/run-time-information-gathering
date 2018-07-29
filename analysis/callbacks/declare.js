@@ -6,7 +6,7 @@
 (function(exp) {
 	var ArgumentContainer = require("../../utils/argumentContainer.js").ArgumentContainer;
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
-	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
+	var getHashForShadowIdAndFunctionId = require("../../utils/getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
 	var InputValueInteraction = require("../../utils/interactions/inputValueInteraction.js").InputValueInteraction;
@@ -66,7 +66,7 @@
 
 			if (shadowId) {
 				dis.mapShadowIdsArgumentContainer[
-					getHashForShadowIdAndFunctionIid(
+					getHashForShadowIdAndFunctionId(
 						shadowId,
 						functionContainer.functionId
 					)

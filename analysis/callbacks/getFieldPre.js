@@ -6,7 +6,7 @@
 (function(exp) {
 	var getRandomIdentifier = require("../../utils/getRandomIdentifier.js").getRandomIdentifier;
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
-	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
+	var getHashForShadowIdAndFunctionId = require("../../utils/getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 
 	var MethodCallInteraction = require("../../utils/interactions/methodCallInteraction.js").MethodCallInteraction;
 	var GetFieldInteraction = require("../../utils/interactions/getFieldInteraction.js").GetFieldInteraction;
@@ -121,7 +121,7 @@
 				var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
 
 				dis.mapShadowIdsInteractions[
-					getHashForShadowIdAndFunctionIid(
+					getHashForShadowIdAndFunctionId(
 						shadowIdReturnedObject,
 						functionId
 					)

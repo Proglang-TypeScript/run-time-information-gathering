@@ -4,7 +4,7 @@
 "use strict";
 
 (function(exp) {
-	var getHashForShadowIdAndFunctionIid = require("./getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
+	var getHashForShadowIdAndFunctionId = require("./getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 
 	function InteractionFinder(runTimeInfo, mapShadowIdsInteractions) {
 		this.runTimeInfo = runTimeInfo;
@@ -13,7 +13,7 @@
 		this.findInteraction = function(shadowId, functionId) {
 			var fId = functionId;
 			var mappedInteraction = this.mapShadowIdsInteractions[
-				getHashForShadowIdAndFunctionIid(shadowId, fId)
+				getHashForShadowIdAndFunctionId(shadowId, fId)
 			];
 
 			var functionContainer = null;
@@ -21,7 +21,7 @@
 				functionContainer = this.runTimeInfo[fId];
 
 				mappedInteraction = this.mapShadowIdsInteractions[
-					getHashForShadowIdAndFunctionIid(shadowId, fId)
+					getHashForShadowIdAndFunctionId(shadowId, fId)
 				];
 
 				if (!functionContainer) {

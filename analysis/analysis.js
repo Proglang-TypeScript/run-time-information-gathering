@@ -54,20 +54,14 @@
             f,
             base,
             args,
-            result,
-            isConstructor,
-            isMethod,
-            functionIid
+            result
         ) {
             return callbacks.invokeFun.runCallback(
                 iid,
                 f,
                 base,
                 args,
-                result,
-                isConstructor,
-                isMethod,
-                functionIid
+                result
             );
         };
 

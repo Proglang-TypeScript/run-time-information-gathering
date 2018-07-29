@@ -46,7 +46,7 @@
 			if (!isConsoleLog(f)) {
 				setFunctionId(f, functionIid);
 
-				addFunctionIidToMethodCallInteraction(f);
+				addFunctionIdToMethodCallInteraction(f);
 
 				for (var argIndex in args) {
 					addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
@@ -109,12 +109,10 @@
 			return functionName;
 		}
 
-		function addFunctionIidToMethodCallInteraction(f) {
-			let functionIid = f.functionId;
-
+		function addFunctionIdToMethodCallInteraction(f) {
 			if (f.methodIdentifier in dis.mapMethodIdentifierInteractions) {
 				var interaction = dis.mapMethodIdentifierInteractions[f.methodIdentifier];
-				interaction.functionIid = functionIid;
+				interaction.functionId = f.functionId;
 			}
 		}
 

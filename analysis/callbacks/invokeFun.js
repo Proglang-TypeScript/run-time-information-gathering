@@ -5,7 +5,7 @@
 
 (function(exp) {
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
-	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
+	var getHashForShadowIdAndFunctionId = require("../../utils/getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 
 	function InvokeFun(runTimeInfo, sMemoryInterface, recursiveInteractionsHandler, interactionFinder, functionsExecutionStack, mapMethodIdentifierInteractions, mapShadowIdsInteractions) {
 		var dis = this;
@@ -65,7 +65,7 @@
 				var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
 
 				dis.mapShadowIdsInteractions[
-					getHashForShadowIdAndFunctionIid(
+					getHashForShadowIdAndFunctionId(
 						shadowIdReturnedObject,
 						functionId
 					)

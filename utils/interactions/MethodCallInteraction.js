@@ -14,7 +14,7 @@
 
 		this.code = 'methodCall';
 		
-		this.functionIid = null;
+		this.functionId = null;
 		this.returnTypeOf = null;
 	}
 
