@@ -6,7 +6,7 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            "AsyncObj"
         ],
         "functionIid": 249
     },
@@ -44,7 +44,7 @@
         "isConstructor": false,
         "args": {},
         "returnTypeOfs": [
-            "AsyncObj"
+            "Timeout"
         ]
     },
     "functionId_7": {

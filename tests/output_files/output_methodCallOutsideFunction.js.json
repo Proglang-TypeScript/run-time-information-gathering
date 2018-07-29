@@ -13,8 +13,20 @@
                         "typeof": "string"
                     },
                     {
+                        "code": "usedAsArgument",
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
+                        "argumentIndexInTargetFunction": "0"
+                    },
+                    {
                         "code": "inputValue",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "usedAsArgument",
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
+                        "argumentIndexInTargetFunction": "0"
                     }
                 ]
             },
@@ -27,8 +39,20 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "usedAsArgument",
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
+                        "argumentIndexInTargetFunction": "1"
+                    },
+                    {
                         "code": "inputValue",
                         "typeof": "string"
+                    },
+                    {
+                        "code": "usedAsArgument",
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
+                        "argumentIndexInTargetFunction": "1"
                     }
                 ]
             }
@@ -54,20 +78,8 @@
                         "typeof": "string"
                     },
                     {
-                        "code": "usedAsArgument",
-                        "enclosingFunctionId": 169,
-                        "targetFunctionId": 89,
-                        "argumentIndexInTargetFunction": "0"
-                    },
-                    {
                         "code": "inputValue",
                         "typeof": "number"
-                    },
-                    {
-                        "code": "usedAsArgument",
-                        "enclosingFunctionId": 169,
-                        "targetFunctionId": 89,
-                        "argumentIndexInTargetFunction": "0"
                     }
                 ]
             },
@@ -80,20 +92,8 @@
                         "typeof": "number"
                     },
                     {
-                        "code": "usedAsArgument",
-                        "enclosingFunctionId": 169,
-                        "targetFunctionId": 89,
-                        "argumentIndexInTargetFunction": "1"
-                    },
-                    {
                         "code": "inputValue",
                         "typeof": "string"
-                    },
-                    {
-                        "code": "usedAsArgument",
-                        "enclosingFunctionId": 169,
-                        "targetFunctionId": 89,
-                        "argumentIndexInTargetFunction": "1"
                     }
                 ]
             }

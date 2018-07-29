@@ -33,7 +33,7 @@
         "isConstructor": false,
         "args": {},
         "returnTypeOfs": [
-            "object"
+            "Timeout"
         ]
     },
     "functionId_5": {

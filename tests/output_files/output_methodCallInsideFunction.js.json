@@ -50,8 +50,8 @@
                     },
                     {
                         "code": "usedAsArgument",
-                        "enclosingFunctionId": 73,
-                        "targetFunctionId": 177,
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
                         "argumentIndexInTargetFunction": "0"
                     },
                     {
@@ -60,8 +60,8 @@
                     },
                     {
                         "code": "usedAsArgument",
-                        "enclosingFunctionId": 73,
-                        "targetFunctionId": 177,
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
                         "argumentIndexInTargetFunction": "0"
                     }
                 ]
@@ -76,8 +76,8 @@
                     },
                     {
                         "code": "usedAsArgument",
-                        "enclosingFunctionId": 73,
-                        "targetFunctionId": 177,
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
                         "argumentIndexInTargetFunction": "1"
                     },
                     {
@@ -86,8 +86,8 @@
                     },
                     {
                         "code": "usedAsArgument",
-                        "enclosingFunctionId": 73,
-                        "targetFunctionId": 177,
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
                         "argumentIndexInTargetFunction": "1"
                     }
                 ]

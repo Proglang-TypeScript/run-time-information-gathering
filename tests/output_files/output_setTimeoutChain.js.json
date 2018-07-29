@@ -68,7 +68,7 @@
         "isConstructor": false,
         "args": {},
         "returnTypeOfs": [
-            "object"
+            "Timeout"
         ]
     },
     "functionId_7": {
