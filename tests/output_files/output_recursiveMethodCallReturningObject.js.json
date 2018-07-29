@@ -12,7 +12,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "getField",
@@ -129,11 +129,11 @@
         "args": {},
         "declarationEnclosingFunctionId": 233,
         "returnTypeOfs": [
-            "object",
-            "object",
-            "object",
-            "object",
-            "object"
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "AnotherNode"
         ]
     },
     "441": {
@@ -145,7 +145,7 @@
         "args": {},
         "declarationEnclosingFunctionId": 233,
         "returnTypeOfs": [
-            "object"
+            "Node"
         ]
     },
     "481": {
@@ -207,19 +207,19 @@
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "AnotherNode"
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
@@ -227,15 +227,15 @@
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     }
                 ]
             },
@@ -265,7 +265,7 @@
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
@@ -284,15 +284,15 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object"
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node"
         ]
     },
     "617": {
@@ -340,14 +340,14 @@
                 "interactions": [
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     }
                 ]
             }
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            "AnotherNode"
         ]
     }
 }

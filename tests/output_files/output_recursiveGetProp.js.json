@@ -13,7 +13,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "getField",
@@ -171,16 +171,16 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object"
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node"
         ]
     },
     "553": {
@@ -203,7 +203,7 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            "AnotherNode"
         ]
     }
 }

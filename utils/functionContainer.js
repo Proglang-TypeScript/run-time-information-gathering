@@ -1,8 +1,10 @@
 /* global module */
+/* global require */
 
 "use strict";
 
 (function(exp) {
+	var getTypeOfForReporting = require("./getTypeOf.js").getTypeOfForReporting;
 
 	function FunctionContainer(functionId, name) {
 		this.functionId = functionId;
@@ -24,7 +26,7 @@
 		};
 
 		this.addReturnTypeOf = function(typeOf) {
-			this.returnTypeOfs.push(typeOf);
+			this.returnTypeOfs.push(getTypeOfForReporting(typeOf));
 		};
 
 		this.getArgumentContainer = function(argumentIndex) {

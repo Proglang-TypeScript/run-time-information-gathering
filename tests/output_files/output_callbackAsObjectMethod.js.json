@@ -47,7 +47,7 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            "AsyncObj"
         ]
     },
     "345": {

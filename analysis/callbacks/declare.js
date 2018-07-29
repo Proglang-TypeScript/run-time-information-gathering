@@ -5,7 +5,7 @@
 
 (function(exp) {
 	var ArgumentContainer = require("../../utils/argumentContainer.js").ArgumentContainer;
-	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
+	var getTypeOfForReporting = require("../../utils/getTypeOf.js").getTypeOfForReporting;
 	var getHashForShadowIdAndFunctionIid = require("../../utils/getHashForShadowIdAndFunctionIid.js").getHashForShadowIdAndFunctionIid;
 	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
@@ -56,7 +56,7 @@
 
 		function buildArgumentContainer(argumentIndex, name, val) {
 			var argumentContainer = new ArgumentContainer(argumentIndex, name);
-			argumentContainer.addInteraction(new InputValueInteraction(getTypeOf(val)));
+			argumentContainer.addInteraction(new InputValueInteraction(getTypeOfForReporting(val)));
 
 			return argumentContainer;
 		}
