@@ -56,19 +56,19 @@
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "AnotherNode"
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
@@ -76,15 +76,15 @@
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     }
                 ]
             },
@@ -114,7 +114,7 @@
                     },
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
@@ -133,15 +133,15 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object"
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node"
         ],
         "functionIid": 481
     },
@@ -176,14 +176,14 @@
                 "interactions": [
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     }
                 ]
             }
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            "AnotherNode"
         ],
         "functionIid": 729
     },
@@ -198,7 +198,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "getField",
@@ -339,7 +339,7 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "object"
+            "Node"
         ],
         "functionIid": 369
     },
@@ -350,7 +350,7 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "object"
+            "Node"
         ],
         "functionIid": 369
     },
@@ -361,7 +361,7 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "object"
+            "Node"
         ],
         "functionIid": 369
     },
@@ -372,7 +372,7 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "object"
+            "Node"
         ],
         "functionIid": 441
     },
@@ -383,7 +383,7 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "object"
+            "Node"
         ],
         "functionIid": 369
     },
@@ -394,7 +394,7 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "object"
+            "AnotherNode"
         ],
         "functionIid": 369
     },

@@ -44,7 +44,7 @@
         "isConstructor": false,
         "args": {},
         "returnTypeOfs": [
-            "object"
+            "AsyncObj"
         ]
     },
     "functionId_7": {

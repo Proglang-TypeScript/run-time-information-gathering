@@ -54,16 +54,16 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object",
-            "object"
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node",
+            "Node"
         ],
         "functionIid": 401
     },
@@ -85,7 +85,7 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            "AnotherNode"
         ],
         "functionIid": 553
     },
@@ -100,7 +100,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
-                        "typeof": "object"
+                        "typeof": "Node"
                     },
                     {
                         "code": "getField",

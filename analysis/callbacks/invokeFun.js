@@ -40,7 +40,7 @@
 			var functionContainer = getFunctionContainer(f);
 
 			if (functionContainer) {
-				functionContainer.addReturnTypeOf(getTypeOf(result));
+				functionContainer.addReturnTypeOf(result);
 
 				if (f.methodIdentifier && (f.methodIdentifier in this.mapMethodIdentifierInteractions)) {
 					var interaction = this.mapMethodIdentifierInteractions[f.methodIdentifier];
