@@ -45,27 +45,29 @@
 			functionIid
 		) {
 
-			addFunctionIidToMethodCallInteraction(f, functionIid);
+			if (!isConsoleLog(f)) {
+				addFunctionIidToMethodCallInteraction(f, functionIid);
 
-			for (var argIndex in args) {
-				addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
-				addUsedAsArgumentInteractionIfApplicable(args[argIndex], functionIid, argIndex);
-				convertToWrapperObjectIfItIsALiteral(args, argIndex);
-				convertToProxyIfItIsAnObject(args, argIndex);
-			}
+				for (var argIndex in args) {
+					addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
+					addUsedAsArgumentInteractionIfApplicable(args[argIndex], functionIid, argIndex);
+					convertToWrapperObjectIfItIsALiteral(args, argIndex);
+					convertToProxyIfItIsAnObject(args, argIndex);
+				}
 
-			if (functionIid && !(functionIid in this.runTimeInfo)) {
-				var functionContainer = new FunctionContainer(
-					functionIid,
-					getFunctionName(f)
-				);
+				if (functionIid && !(functionIid in this.runTimeInfo)) {
+					var functionContainer = new FunctionContainer(
+						functionIid,
+						getFunctionName(f)
+					);
 
-				functionContainer.iid = iid;
-				functionContainer.isConstructor = isConstructor;
-				functionContainer.isMethod = isMethod;
-				functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
+					functionContainer.iid = iid;
+					functionContainer.isConstructor = isConstructor;
+					functionContainer.isMethod = isMethod;
+					functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
 
-				this.runTimeInfo[functionIid] = functionContainer;
+					this.runTimeInfo[functionIid] = functionContainer;
+				}
 			}
 
 			return {
@@ -75,6 +77,10 @@
 				skip: false
 			};
 		};
+
+		function isConsoleLog(f) {
+			return (f.name === "bound consoleCall");
+		}
 
 		function getFunctionName(f) {
 			var functionName = f.name;
