@@ -45,10 +45,13 @@
 
 			var argumentWrapperObjectBuilder = new (require("../utils/argumentWrapperObjectBuilder.js")).ArgumentWrapperObjectBuilder();
 
+			var functionIdHandler = new (require("../utils/functionIdHandler.js")).FunctionIdHandler();
+
 			return {
 				functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
 					runTimeInfo,
-					functionsExecutionStack
+					functionsExecutionStack,
+					functionIdHandler
 				),
 				functionExit: new (require("./callbacks/functionExit.js")).FunctionExit(
 					functionsExecutionStack
@@ -67,6 +70,7 @@
 					argumentContainerFinder,
 					argumentProxyBuilder,
 					argumentWrapperObjectBuilder,
+					functionIdHandler,
 					mapWrapperObjectsOriginalValues
 				),
 				invokeFun: new (require("./callbacks/invokeFun.js")).InvokeFun(

@@ -14,6 +14,7 @@
 		this.args = {};
 		this.declarationEnclosingFunctionId = null;
 		this.returnTypeOfs = [];
+		this.functionIid = null;
 
 		this.addArgumentContainer = function(argumentIndex, argumentContainer) {
 			if (!(argumentIndex in this.args)) {

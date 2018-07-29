@@ -6,41 +6,31 @@
 (function(exp) {
 	var FunctionContainer = require("../../utils/functionContainer.js").FunctionContainer;
 
-	function FunctionEnter(runTimeInfo, functionsExecutionStack) {
+	function FunctionEnter(runTimeInfo, functionsExecutionStack, functionIdHandler) {
 		this.runTimeInfo = runTimeInfo;
 		this.functionsExecutionStack = functionsExecutionStack;
+		this.functionIdHandler = functionIdHandler;
 
 		var dis = this;
 
 		this.runCallback = function(iid, f) {
-			setFunctionId(f, iid);
+			let functionId = this.functionIdHandler.setFunctionId(f);
 
 			if (functionNotProcessed(f)) {
-				var functionContainer = new FunctionContainer(f.functionId, f.name);
-				functionContainer.iid = f.functionId;
+				var functionContainer = new FunctionContainer(functionId, f.name);
+				functionContainer.iid = functionId;
 				functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
+				functionContainer.functionIid = iid;
 
-				this.runTimeInfo[f.functionId] = functionContainer;
+				this.runTimeInfo[functionId] = functionContainer;
 			}
 
-			this.functionsExecutionStack.addExecution(f.functionId);
+			this.functionsExecutionStack.addExecution(functionId);
 		};
 
 		function functionNotProcessed(f) {
-			let functionId = f.functionId;
+			let functionId = dis.functionIdHandler.getFunctionId(f);
 			return (functionId && !(functionId in dis.runTimeInfo));
-		}
-
-		function setFunctionId(f, functionIid) {
-			let functionIdField = "functionId";
-
-			if (functionIid) {
-				f[functionIdField] = functionIid;
-			} else {
-				if (f.methodIdentifier) {
-					f[functionIdField] = f.methodIdentifier;
-				}
-			}
 		}
 	}
 

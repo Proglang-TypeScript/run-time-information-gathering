@@ -18,6 +18,7 @@
 		argumentContainerFinder,
 		argumentProxyBuilder,
 		argumentWrapperObjectBuilder,
+		functionIdHandler,
 		mapWrapperObjectsOriginalValues
 	) {
 
@@ -30,6 +31,7 @@
 		this.argumentContainerFinder = argumentContainerFinder;
 		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
 		this.argumentProxyBuilder = argumentProxyBuilder;
+		this.functionIdHandler = functionIdHandler;
 
 		this.mapWrapperObjectsOriginalValues = mapWrapperObjectsOriginalValues;
 
@@ -44,7 +46,7 @@
 		) {
 
 			if (!isConsoleLog(f)) {
-				setFunctionId(f, functionIid);
+				let functionId = this.functionIdHandler.setFunctionId(f);
 
 				addFunctionIdToMethodCallInteraction(f);
 
@@ -57,7 +59,7 @@
 
 				if (functionNotProcessed(f)) {
 					var functionContainer = new FunctionContainer(
-						f.functionId,
+						functionId,
 						getFunctionName(f)
 					);
 
@@ -65,6 +67,7 @@
 					functionContainer.isConstructor = isConstructor;
 					functionContainer.isMethod = isMethod;
 					functionContainer.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
+					functionContainer.functionIid = functionIid;
 
 					this.runTimeInfo[functionContainer.functionId] = functionContainer;
 				}
@@ -79,7 +82,7 @@
 		};
 
 		function functionNotProcessed(f) {
-			let functionId = f.functionId;
+			let functionId = dis.functionIdHandler.getFunctionId(f);
 			return (functionId && !(functionId in dis.runTimeInfo));
 		}
 
@@ -112,7 +115,7 @@
 		function addFunctionIdToMethodCallInteraction(f) {
 			if (f.methodIdentifier in dis.mapMethodIdentifierInteractions) {
 				var interaction = dis.mapMethodIdentifierInteractions[f.methodIdentifier];
-				interaction.functionId = f.functionId;
+				interaction.functionId = dis.functionIdHandler.getFunctionId(f);
 			}
 		}
 
@@ -125,7 +128,7 @@
 		}
 
 		function addUsedAsArgumentInteractionIfApplicable(val, f, argIndex) {
-			let functionId = f.functionId;
+			let functionId = dis.functionIdHandler.getFunctionId(f);
 
 			if (getTypeOf(val) == "object") {
 				var currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
