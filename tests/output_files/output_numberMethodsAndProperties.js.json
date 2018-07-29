@@ -29,7 +29,18 @@ true
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
-                        "followingInteractions": [],
+                        "followingInteractions": [
+                            {
+                                "code": "getField",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": "functionId_1",
+                                "followingInteractions": [],
+                                "iid": 65,
+                                "field": "length",
+                                "returnTypeOf": "number"
+                            }
+                        ],
                         "iid": 59,
                         "methodName": "toString",
                         "functionId": "functionId_5",
