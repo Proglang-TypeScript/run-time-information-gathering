@@ -6,17 +6,16 @@
 (function(exp) {
 	var ArgumentContainer = require("../../utils/argumentContainer.js").ArgumentContainer;
 	var getTypeOfForReporting = require("../../utils/getTypeOf.js").getTypeOfForReporting;
-	var getHashForShadowIdAndFunctionId = require("../../utils/getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
 	var InputValueInteraction = require("../../utils/interactions/inputValueInteraction.js").InputValueInteraction;
 
-	function Declare(runTimeInfo, functionsExecutionStack, mapShadowIdsArgumentContainer, sMemoryInterface) {
+	function Declare(runTimeInfo, functionsExecutionStack, argumentContainerFinder, sMemoryInterface) {
 		var dis = this;
 
 		this.runTimeInfo = runTimeInfo;
 		this.functionsExecutionStack = functionsExecutionStack;
-		this.mapShadowIdsArgumentContainer = mapShadowIdsArgumentContainer;
+		this.argumentContainerFinder = argumentContainerFinder;
 		this.sMemoryInterface = sMemoryInterface;
 
 		this.runCallback = function(iid, name, val, isArgument, argumentIndex) {
@@ -27,7 +26,7 @@
 					var argumentContainer = buildArgumentContainer(argumentIndex, name, val);
 					functionContainer.addArgumentContainer(argumentIndex, argumentContainer);
 
-					addMappingForContainers(argumentContainer, functionContainer, val);
+					this.argumentContainerFinder.addMappingForContainers(argumentContainer, functionContainer, val);
 				}
 			}
 
@@ -59,19 +58,6 @@
 			argumentContainer.addInteraction(new InputValueInteraction(getTypeOfForReporting(val)));
 
 			return argumentContainer;
-		}
-
-		function addMappingForContainers(argumentContainer, functionContainer, val) {
-			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
-
-			if (shadowId) {
-				dis.mapShadowIdsArgumentContainer[
-					getHashForShadowIdAndFunctionId(
-						shadowId,
-						functionContainer.functionId
-					)
-				] = functionContainer.getArgumentContainer(argumentContainer.argumentIndex);
-			}
 		}
 	}
 

@@ -10,7 +10,6 @@
 
 		this.buildCallbacks = function() {
 			var functionsExecutionStack = new (require("../utils/functionsExecutionStack.js")).FunctionsExecutionStack();
-			var mapShadowIdsArgumentContainer = {};
 			var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 			var mapShadowIdsInteractions = {};
 			var mapWrapperObjectsOriginalValues = {};
@@ -25,7 +24,7 @@
 
 			var argumentContainerFinder = new (require("../utils/argumentContainerFinder.js")).ArgumentContainerFinder(
 				runTimeInfo,
-				mapShadowIdsArgumentContainer
+				sMemoryInterface
 			);
 
 			var interactionFinder = new (require("../utils/interactionFinder.js")).InteractionFinder(
@@ -58,7 +57,7 @@
 				declare: new (require("./callbacks/declare.js")).Declare(
 					runTimeInfo,
 					functionsExecutionStack,
-					mapShadowIdsArgumentContainer,
+					argumentContainerFinder,
 					sMemoryInterface
 				),
 				invokeFunPre: new (require("./callbacks/invokeFunPre.js")).InvokeFunPre(

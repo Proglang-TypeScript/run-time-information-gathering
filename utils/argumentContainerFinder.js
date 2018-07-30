@@ -6,9 +6,11 @@
 (function(exp) {
 	var getHashForShadowIdAndFunctionId = require("./getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 
-	function ArgumentContainerFinder(runTimeInfo, mapShadowIdsArgumentContainer) {
+	function ArgumentContainerFinder(runTimeInfo, sMemoryInterface) {
 		this.runTimeInfo = runTimeInfo;
-		this.mapShadowIdsArgumentContainer = mapShadowIdsArgumentContainer;
+        this.sMemoryInterface = sMemoryInterface;
+
+		this.mapShadowIdsArgumentContainer = {};
 
         this.findArgumentContainer = function(shadowId, functionId) {
             var fId = functionId;
@@ -32,6 +34,19 @@
             }
 
             return argumentContainer;
+        };
+
+        this.addMappingForContainers = function(argumentContainer, functionContainer, val) {
+            var shadowId = this.sMemoryInterface.getShadowIdOfObject(val);
+
+            if (shadowId) {
+                this.mapShadowIdsArgumentContainer[
+                    getHashForShadowIdAndFunctionId(
+                        shadowId,
+                        functionContainer.functionId
+                    )
+                ] = functionContainer.getArgumentContainer(argumentContainer.argumentIndex);
+            }
         };
 	}
 
