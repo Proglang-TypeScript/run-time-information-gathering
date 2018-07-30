@@ -31,13 +31,14 @@ true
                         "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [
                             {
-                                "code": "getField",
+                                "code": "methodCall",
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_1",
                                 "followingInteractions": [],
-                                "iid": 65,
-                                "field": "length",
+                                "iid": 75,
+                                "methodName": "indexOf",
+                                "functionId": "functionId_7",
                                 "returnTypeOf": "number"
                             }
                         ],
@@ -53,7 +54,7 @@ true
         "returnTypeOfs": [
             "boolean"
         ],
-        "functionIid": 129
+        "functionIid": 137
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -71,6 +72,15 @@ true
         "args": {},
         "returnTypeOfs": [
             "string"
+        ]
+    },
+    "functionId_7": {
+        "functionId": "functionId_7",
+        "functionName": "indexOf",
+        "isConstructor": false,
+        "args": {},
+        "returnTypeOfs": [
+            "number"
         ]
     }
 }

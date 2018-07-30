@@ -1,7 +1,9 @@
 "use strict";
 
 function f(s) {
-	return s.length < 100 && (s.indexOf("hello") !== -1) && (typeof s === "string") && s === "hello";
+	var index = s.indexOf("hello");
+
+	return s.length < 100 && (index.toString() !== "-1") && (typeof s === "string") && s === "hello";
 }
 
 var s = "hello";

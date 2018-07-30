@@ -1,7 +1,7 @@
 "use strict";
 
 function f(n) {
-	return n.valueOf() < 100 && n.toString().length < 100 && (typeof n === "number") && (n === 99);
+	return n.valueOf() < 100 && (n.toString().indexOf("lijalwidj") !== -1) && (typeof n === "number") && (n === 99);
 }
 
 var n = 99;

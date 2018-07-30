@@ -14,24 +14,36 @@ true
                         "typeof": "string"
                     },
                     {
+                        "code": "methodCall",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_1",
+                        "followingInteractions": [
+                            {
+                                "code": "methodCall",
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": "functionId_1",
+                                "followingInteractions": [],
+                                "iid": 99,
+                                "methodName": "toString",
+                                "functionId": "functionId_5",
+                                "returnTypeOf": "string"
+                            }
+                        ],
+                        "iid": 43,
+                        "methodName": "indexOf",
+                        "functionId": "functionId_3",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [],
-                        "iid": 33,
+                        "iid": 73,
                         "field": "length",
-                        "returnTypeOf": "number"
-                    },
-                    {
-                        "code": "methodCall",
-                        "isComputed": false,
-                        "isOpAssign": false,
-                        "enclosingFunctionId": "functionId_1",
-                        "followingInteractions": [],
-                        "iid": 67,
-                        "methodName": "indexOf",
-                        "functionId": "functionId_3",
                         "returnTypeOf": "number"
                     }
                 ]
@@ -41,7 +53,7 @@ true
         "returnTypeOfs": [
             "boolean"
         ],
-        "functionIid": 129
+        "functionIid": 161
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -50,6 +62,15 @@ true
         "args": {},
         "returnTypeOfs": [
             "number"
+        ]
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "toString",
+        "isConstructor": false,
+        "args": {},
+        "returnTypeOfs": [
+            "string"
         ]
     }
 }
