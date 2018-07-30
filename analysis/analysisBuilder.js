@@ -11,7 +11,6 @@
 		this.buildCallbacks = function() {
 			var functionsExecutionStack = new (require("../utils/functionsExecutionStack.js")).FunctionsExecutionStack();
 			var mapShadowIdsArgumentContainer = {};
-			var mapMethodIdentifierInteractions = {};
 			var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 			var mapShadowIdsInteractions = {};
 			var mapWrapperObjectsOriginalValues = {};
@@ -65,7 +64,6 @@
 				invokeFunPre: new (require("./callbacks/invokeFunPre.js")).InvokeFunPre(
 					runTimeInfo,
 					functionsExecutionStack,
-					mapMethodIdentifierInteractions,
 					sMemoryInterface,
 					argumentContainerFinder,
 					argumentProxyBuilder,
@@ -80,16 +78,15 @@
 					interactionFinder,
 					functionsExecutionStack,
 					argumentWrapperObjectBuilder,
-					mapMethodIdentifierInteractions,
 					mapShadowIdsInteractions
 				),
 				getFieldPre: new (require("./callbacks/getFieldPre.js")).GetFieldPre(
 					functionsExecutionStack,
-					mapMethodIdentifierInteractions,
 					sMemoryInterface,
 					argumentContainerFinder,
 					interactionFinder,
 					recursiveInteractionsHandler,
+					functionIdHandler,
 					mapShadowIdsInteractions
 				),
 				putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(

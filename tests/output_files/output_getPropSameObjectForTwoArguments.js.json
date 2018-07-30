@@ -44,8 +44,8 @@ true
         ],
         "functionIid": 97
     },
-    "functionId_5": {
-        "functionId": "functionId_5",
+    "functionId_7": {
+        "functionId": "functionId_7",
         "functionName": "someValueLessThan100",
         "isConstructor": false,
         "args": {
@@ -61,7 +61,7 @@ true
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": "functionId_5",
+                        "enclosingFunctionId": "functionId_7",
                         "followingInteractions": [],
                         "iid": 129,
                         "field": "myValue",
@@ -81,7 +81,7 @@ true
                         "code": "getField",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": "functionId_5",
+                        "enclosingFunctionId": "functionId_7",
                         "followingInteractions": [],
                         "iid": 153,
                         "field": "myOtherValue",

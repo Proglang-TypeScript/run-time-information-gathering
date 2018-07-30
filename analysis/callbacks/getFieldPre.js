@@ -4,7 +4,6 @@
 "use strict";
 
 (function(exp) {
-	var getRandomIdentifier = require("../../utils/getRandomIdentifier.js").getRandomIdentifier;
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 	var getHashForShadowIdAndFunctionId = require("../../utils/getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 
@@ -13,19 +12,19 @@
 
 	function GetFieldPre(
 		functionsExecutionStack,
-		mapMethodIdentifierInteractions,
 		sMemoryInterface,
 		argumentContainerFinder,
 		interactionFinder,
 		recursiveInteractionsHandler,
+		functionIdHandler,
 		mapShadowIdsInteractions
 	) {
 		this.functionsExecutionStack = functionsExecutionStack;
-		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
 		this.interactionFinder = interactionFinder;
 		this.recursiveInteractionsHandler = recursiveInteractionsHandler;
+		this.functionIdHandler = functionIdHandler;
 		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
 		var dis = this;
@@ -87,7 +86,7 @@
 				iid
 			);
 
-			addRandomIdentifierToMethodCall(methodCallInteraction, base[offset]);
+			addFunctionIdToInteraction(methodCallInteraction, base[offset]);
 			addInteractionToArgumentContainerIfPossible(methodCallInteraction, base);
 		}
 
@@ -140,10 +139,11 @@
 			return interaction;
 		}
 
-		function addRandomIdentifierToMethodCall(interaction, f) {
-			var randomIdentifier = getRandomIdentifier();
-			f.methodIdentifier = randomIdentifier;
-			dis.mapMethodIdentifierInteractions[randomIdentifier] = interaction;
+		function addFunctionIdToInteraction(interaction, f) {
+			let functionId = dis.functionIdHandler.setFunctionId(f);
+
+			interaction.functionId = functionId;
+			f.lastInteraction = interaction;
 		}
 
 		function addRecursiveFollowingInteraction(interaction, result, functionId, shadowIdBaseObject) {

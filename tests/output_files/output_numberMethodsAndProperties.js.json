@@ -1,7 +1,7 @@
 true
 {
-    "functionId_1": {
-        "functionId": "functionId_1",
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "f",
         "isConstructor": false,
         "args": {
@@ -17,34 +17,34 @@ true
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": "functionId_1",
+                        "enclosingFunctionId": "functionId_3",
                         "followingInteractions": [],
                         "iid": 35,
                         "methodName": "valueOf",
-                        "functionId": "functionId_3",
+                        "functionId": "functionId_5",
                         "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
                         "isComputed": false,
                         "isOpAssign": false,
-                        "enclosingFunctionId": "functionId_1",
+                        "enclosingFunctionId": "functionId_3",
                         "followingInteractions": [
                             {
                                 "code": "methodCall",
                                 "isComputed": false,
                                 "isOpAssign": false,
-                                "enclosingFunctionId": "functionId_1",
+                                "enclosingFunctionId": "functionId_3",
                                 "followingInteractions": [],
                                 "iid": 75,
                                 "methodName": "indexOf",
-                                "functionId": "functionId_7",
+                                "functionId": "functionId_9",
                                 "returnTypeOf": "number"
                             }
                         ],
                         "iid": 59,
                         "methodName": "toString",
-                        "functionId": "functionId_5",
+                        "functionId": "functionId_7",
                         "returnTypeOf": "string"
                     }
                 ]
@@ -56,8 +56,8 @@ true
         ],
         "functionIid": 137
     },
-    "functionId_3": {
-        "functionId": "functionId_3",
+    "functionId_5": {
+        "functionId": "functionId_5",
         "functionName": "valueOf",
         "isConstructor": false,
         "args": {},
@@ -65,8 +65,8 @@ true
             "number"
         ]
     },
-    "functionId_5": {
-        "functionId": "functionId_5",
+    "functionId_7": {
+        "functionId": "functionId_7",
         "functionName": "toString",
         "isConstructor": false,
         "args": {},
@@ -74,8 +74,8 @@ true
             "string"
         ]
     },
-    "functionId_7": {
-        "functionId": "functionId_7",
+    "functionId_9": {
+        "functionId": "functionId_9",
         "functionName": "indexOf",
         "isConstructor": false,
         "args": {},

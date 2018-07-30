@@ -13,7 +13,6 @@
 	function InvokeFunPre(
 		runTimeInfo,
 		functionsExecutionStack,
-		mapMethodIdentifierInteractions,
 		sMemoryInterface,
 		argumentContainerFinder,
 		argumentProxyBuilder,
@@ -26,7 +25,6 @@
 
 		this.runTimeInfo = runTimeInfo;
 		this.functionsExecutionStack = functionsExecutionStack;
-		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
 		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
@@ -47,8 +45,6 @@
 
 			if (!isConsoleLog(f)) {
 				this.functionIdHandler.setFunctionId(f);
-
-				addFunctionIdToMethodCallInteraction(f);
 
 				for (var argIndex in args) {
 					addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
@@ -80,13 +76,6 @@
 
 		function isConsoleLog(f) {
 			return (f.name === "bound consoleCall");
-		}
-
-		function addFunctionIdToMethodCallInteraction(f) {
-			if (f.methodIdentifier in dis.mapMethodIdentifierInteractions) {
-				var interaction = dis.mapMethodIdentifierInteractions[f.methodIdentifier];
-				interaction.functionId = dis.functionIdHandler.getFunctionId(f);
-			}
 		}
 
 		function addDeclarationEnclosingFunctionIdIfApplicable(val) {

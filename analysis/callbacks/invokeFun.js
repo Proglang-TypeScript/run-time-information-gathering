@@ -14,7 +14,6 @@
 		interactionFinder,
 		functionsExecutionStack,
 		argumentWrapperObjectBuilder,
-		mapMethodIdentifierInteractions,
 		mapShadowIdsInteractions
 	) {
 		var dis = this;
@@ -26,7 +25,6 @@
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
 
-		this.mapMethodIdentifierInteractions = mapMethodIdentifierInteractions;
 		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
 		this.runCallback = function(
@@ -42,8 +40,8 @@
 			if (functionContainer) {
 				functionContainer.addReturnTypeOf(result);
 
-				if (f.methodIdentifier && (f.methodIdentifier in this.mapMethodIdentifierInteractions)) {
-					var interaction = this.mapMethodIdentifierInteractions[f.methodIdentifier];
+				if (f.lastInteraction) {
+					var interaction = f.lastInteraction;
 					interaction.setReturnTypeOf(result);
 
 					result = changeResultToWrapperObjectIfItIsALiteral(result);
