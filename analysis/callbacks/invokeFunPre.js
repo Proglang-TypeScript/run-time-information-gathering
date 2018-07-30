@@ -46,7 +46,7 @@
 		) {
 
 			if (!isConsoleLog(f)) {
-				let functionId = this.functionIdHandler.setFunctionId(f);
+				this.functionIdHandler.setFunctionId(f);
 
 				addFunctionIdToMethodCallInteraction(f);
 
@@ -78,30 +78,8 @@
 			return (functionId && !(functionId in dis.runTimeInfo));
 		}
 
-		function setFunctionId(f, functionIid) {
-			let functionIdField = "functionId";
-
-			if (functionIid) {
-				f[functionIdField] = functionIid;
-			} else {
-				if (f.methodIdentifier) {
-					f[functionIdField] = f.methodIdentifier;
-				}
-			}
-		}
-
 		function isConsoleLog(f) {
 			return (f.name === "bound consoleCall");
-		}
-
-		function getFunctionName(f) {
-			var functionName = f.name;
-
-			if (f.methodName) {
-				functionName = f.methodName;
-			}
-
-			return functionName;
 		}
 
 		function addFunctionIdToMethodCallInteraction(f) {
