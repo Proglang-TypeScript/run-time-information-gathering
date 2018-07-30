@@ -8,22 +8,16 @@
 
 	function InvokeFun(
 		runTimeInfo,
-		sMemoryInterface,
-		recursiveInteractionsHandler,
-		interactionFinder,
 		functionsExecutionStack,
 		argumentWrapperObjectBuilder,
-		argumentContainerFinder
+		interactionWithResultHandler
 	) {
 		var dis = this;
 
 		this.runTimeInfo = runTimeInfo;
-		this.sMemoryInterface = sMemoryInterface;
-		this.recursiveInteractionsHandler = recursiveInteractionsHandler;
-		this.interactionFinder = interactionFinder;
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
-		this.argumentContainerFinder = argumentContainerFinder;
+		this.interactionWithResultHandler = interactionWithResultHandler;
 
 		this.runCallback = function(
 			iid,
@@ -44,23 +38,16 @@
 
 					result = changeResultToWrapperObjectIfItIsALiteral(result);
 
-					processRecursiveInteractionOfResult(
+					this.interactionWithResultHandler.processResultOfInteraction(
 						interaction,
-						result,
-						this.functionsExecutionStack.getCurrentExecutingFunction()
+						this.functionsExecutionStack.getCurrentExecutingFunction(),
 						// Let variable 'f' be the function that executed the invokeFun() callback.
 						// invokeFun() callback is executed after functionExit(),
 						// so the current executing function is the function that executed function 'f'.
-					);
 
-					if (!addInteractionToArgumentContainerIfPossible(interaction, base)) {
-						addRecursiveFollowingInteraction(
-							interaction,
-							result,
-							this.functionsExecutionStack.getCurrentExecutingFunction(),
-							this.sMemoryInterface.getShadowIdOfObject(base)
-						);
-					}
+						result,
+						base
+					);
 				}
 			}
 
@@ -68,21 +55,6 @@
 				result: result
 			};
 		};
-
-		function addInteractionToArgumentContainerIfPossible(interaction, base) {
-			var functionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
-			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
-
-			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionId);
-
-			var interactionAdded = false;
-			if (functionId && argumentContainer) {
-				argumentContainer.addInteraction(interaction);
-				interactionAdded = true;
-			}
-
-			return interactionAdded;
-		}
 
 		function changeResultToWrapperObjectIfItIsALiteral(result) {
 			switch(getTypeOf(result)) {
@@ -99,29 +71,6 @@
 
 		function getFunctionContainer(f) {
 			return dis.runTimeInfo[f.functionId];
-		}
-
-		function processRecursiveInteractionOfResult(interaction, result, functionId) {
-			if (getTypeOf(result) == "object") {
-				dis.interactionFinder.addMapping(interaction, functionId, result);
-				dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(interaction, result);
-			}
-		}
-
-		function addRecursiveFollowingInteraction(interaction, result, functionId, shadowIdBaseObject) {
-			var mappedInteraction = dis.interactionFinder.findInteraction(
-				shadowIdBaseObject,
-				functionId
-			);
-
-			if (mappedInteraction) {
-				if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {
-					mappedInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
-					mappedInteraction.addFollowingInteraction(interaction);
-
-					dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
-				}
-			}
 		}
 	}
 

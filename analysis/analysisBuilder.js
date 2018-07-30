@@ -44,6 +44,13 @@
 
 			var functionIdHandler = new (require("../utils/functionIdHandler.js")).FunctionIdHandler();
 
+			var interactionWithResultHandler = new (require("../utils/interactionWithResultHandler.js")).InteractionWithResultHandler(
+				interactionFinder,
+				recursiveInteractionsHandler,
+				sMemoryInterface,
+				argumentContainerFinder
+			);
+
 			return {
 				functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
 					runTimeInfo,
@@ -71,12 +78,9 @@
 				),
 				invokeFun: new (require("./callbacks/invokeFun.js")).InvokeFun(
 					runTimeInfo,
-					sMemoryInterface,
-					recursiveInteractionsHandler,
-					interactionFinder,
 					functionsExecutionStack,
 					argumentWrapperObjectBuilder,
-					argumentContainerFinder
+					interactionWithResultHandler
 				),
 				getFieldPre: new (require("./callbacks/getFieldPre.js")).GetFieldPre(
 					functionsExecutionStack,
