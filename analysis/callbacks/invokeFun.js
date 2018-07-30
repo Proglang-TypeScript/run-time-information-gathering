@@ -5,7 +5,6 @@
 
 (function(exp) {
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
-	var getHashForShadowIdAndFunctionId = require("../../utils/getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 
 	function InvokeFun(
 		runTimeInfo,
@@ -13,7 +12,8 @@
 		recursiveInteractionsHandler,
 		interactionFinder,
 		functionsExecutionStack,
-		argumentWrapperObjectBuilder
+		argumentWrapperObjectBuilder,
+		argumentContainerFinder
 	) {
 		var dis = this;
 
@@ -23,6 +23,7 @@
 		this.interactionFinder = interactionFinder;
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
+		this.argumentContainerFinder = argumentContainerFinder;
 
 		this.runCallback = function(
 			iid,
@@ -52,12 +53,14 @@
 						// so the current executing function is the function that executed function 'f'.
 					);
 
-					addRecursiveFollowingInteraction(
-						interaction,
-						result,
-						this.functionsExecutionStack.getCurrentExecutingFunction(),
-						this.sMemoryInterface.getShadowIdOfObject(base)
-					);
+					if (!addInteractionToArgumentContainerIfPossible(interaction, base)) {
+						addRecursiveFollowingInteraction(
+							interaction,
+							result,
+							this.functionsExecutionStack.getCurrentExecutingFunction(),
+							this.sMemoryInterface.getShadowIdOfObject(base)
+						);
+					}
 				}
 			}
 
@@ -65,6 +68,21 @@
 				result: result
 			};
 		};
+
+		function addInteractionToArgumentContainerIfPossible(interaction, base) {
+			var functionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
+			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
+
+			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionId);
+
+			var interactionAdded = false;
+			if (functionId && argumentContainer) {
+				argumentContainer.addInteraction(interaction);
+				interactionAdded = true;
+			}
+
+			return interactionAdded;
+		}
 
 		function changeResultToWrapperObjectIfItIsALiteral(result) {
 			switch(getTypeOf(result)) {

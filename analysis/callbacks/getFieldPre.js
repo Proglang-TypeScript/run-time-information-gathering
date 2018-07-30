@@ -84,7 +84,6 @@
 			);
 
 			addFunctionIdToInteraction(methodCallInteraction, base[offset]);
-			addInteractionToArgumentContainerIfPossible(methodCallInteraction, base);
 		}
 
 		function addInteractionToArgumentContainerIfPossible(interaction, base) {

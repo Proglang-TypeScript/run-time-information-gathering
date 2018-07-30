@@ -75,7 +75,8 @@
 					recursiveInteractionsHandler,
 					interactionFinder,
 					functionsExecutionStack,
-					argumentWrapperObjectBuilder
+					argumentWrapperObjectBuilder,
+					argumentContainerFinder
 				),
 				getFieldPre: new (require("./callbacks/getFieldPre.js")).GetFieldPre(
 					functionsExecutionStack,
