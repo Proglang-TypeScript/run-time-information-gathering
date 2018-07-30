@@ -11,9 +11,7 @@
 
 		this.interactionSerializer = interactionSerializer;
 
-		this.getInteractionKey = function(interaction, obj) {
-			return this.interactionSerializer.serialize(interaction, obj);
-		};
+		var dis = this;
 
 		this.getMainInteractionForCurrentInteraction = function(interaction) {
 			var shadowIdInteraction = this.sMemoryInterface.getShadowIdOfObject(interaction);
@@ -30,23 +28,27 @@
 		this.associateMainInteractionToCurrentInteraction = function(interaction, result) {
 			if (this.interactionAlreadyUsed(interaction, result)) {
 				var shadowIdInteraction = this.sMemoryInterface.getShadowIdOfObject(interaction);
-				var interactionKey = this.getInteractionKey(interaction, result);
+				var interactionKey = getInteractionKey(interaction, result);
 				
 				this.mapRecursiveMainInteractions[shadowIdInteraction] = this.usedInteractions[interactionKey];
 			}
 		};
 
 		this.reportUsedInteraction = function(interaction, result) {
-			var interactionKey = this.getInteractionKey(interaction, result);
+			var interactionKey = getInteractionKey(interaction, result);
 
 			this.usedInteractions[interactionKey] = interaction;
 		};
 
 		this.interactionAlreadyUsed = function(interaction, result) {
-			var interactionKey = this.getInteractionKey(interaction, result);
+			var interactionKey = getInteractionKey(interaction, result);
 
 			return (interactionKey in this.usedInteractions);
 		};
+
+		function getInteractionKey(interaction, obj) {
+			return dis.interactionSerializer.serialize(interaction, obj);
+		}
 	}
 
 	exp.RecursiveInteractionsHandler = RecursiveInteractionsHandler;
