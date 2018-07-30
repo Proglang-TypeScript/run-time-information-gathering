@@ -6,9 +6,11 @@
 (function(exp) {
 	var getHashForShadowIdAndFunctionId = require("./getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 
-	function InteractionFinder(runTimeInfo, mapShadowIdsInteractions) {
+	function InteractionFinder(runTimeInfo, sMemoryInterface) {
 		this.runTimeInfo = runTimeInfo;
-		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
+		this.sMemoryInterface = sMemoryInterface;
+
+		this.mapShadowIdsInteractions = {};
 
 		this.findInteraction = function(shadowId, functionId) {
 			var fId = functionId;
@@ -32,6 +34,18 @@
 			}
 
 			return mappedInteraction;
+		};
+
+		this.addMapping = function(interaction, functionId, result) {
+			var shadowId = this.sMemoryInterface.getShadowIdOfObject(result);
+
+			if (shadowId && functionId) {
+				this.mapShadowIdsInteractions[
+				getHashForShadowIdAndFunctionId(
+					shadowId,
+					functionId
+				)] = interaction;
+			}
 		};
 	}
 

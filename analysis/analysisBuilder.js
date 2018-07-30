@@ -11,7 +11,6 @@
 		this.buildCallbacks = function() {
 			var functionsExecutionStack = new (require("../utils/functionsExecutionStack.js")).FunctionsExecutionStack();
 			var sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
-			var mapShadowIdsInteractions = {};
 			var mapWrapperObjectsOriginalValues = {};
 
 			var objectSerializer = new (require("../utils/objectSerializer.js")).ObjectSerializer(
@@ -29,7 +28,7 @@
 
 			var interactionFinder = new (require("../utils/interactionFinder.js")).InteractionFinder(
 				runTimeInfo,
-				mapShadowIdsInteractions
+				sMemoryInterface
 			);
 
 			var recursiveInteractionsHandler = new (require("../utils/recursiveInteractionsHandler.js")).RecursiveInteractionsHandler(
@@ -76,8 +75,7 @@
 					recursiveInteractionsHandler,
 					interactionFinder,
 					functionsExecutionStack,
-					argumentWrapperObjectBuilder,
-					mapShadowIdsInteractions
+					argumentWrapperObjectBuilder
 				),
 				getFieldPre: new (require("./callbacks/getFieldPre.js")).GetFieldPre(
 					functionsExecutionStack,
@@ -85,15 +83,13 @@
 					argumentContainerFinder,
 					interactionFinder,
 					recursiveInteractionsHandler,
-					functionIdHandler,
-					mapShadowIdsInteractions
+					functionIdHandler
 				),
 				putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(
 					functionsExecutionStack,
 					sMemoryInterface,
 					argumentContainerFinder,
-					interactionFinder,
-					mapShadowIdsInteractions
+					interactionFinder
 				),
 				write: new (require("./callbacks/write.js")).Write(
 					functionsExecutionStack,

@@ -5,7 +5,6 @@
 
 (function(exp) {
 	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
-	var getHashForShadowIdAndFunctionId = require("../../utils/getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
 
 	var MethodCallInteraction = require("../../utils/interactions/methodCallInteraction.js").MethodCallInteraction;
 	var GetFieldInteraction = require("../../utils/interactions/getFieldInteraction.js").GetFieldInteraction;
@@ -16,8 +15,7 @@
 		argumentContainerFinder,
 		interactionFinder,
 		recursiveInteractionsHandler,
-		functionIdHandler,
-		mapShadowIdsInteractions
+		functionIdHandler
 	) {
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.sMemoryInterface = sMemoryInterface;
@@ -25,7 +23,6 @@
 		this.interactionFinder = interactionFinder;
 		this.recursiveInteractionsHandler = recursiveInteractionsHandler;
 		this.functionIdHandler = functionIdHandler;
-		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
 		var dis = this;
 
@@ -117,15 +114,7 @@
 
 		function processRecursiveInteractionOfResult(interaction, result, functionId) {
 			if (getTypeOf(result) == "object") {
-				var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
-
-				dis.mapShadowIdsInteractions[
-					getHashForShadowIdAndFunctionId(
-						shadowIdReturnedObject,
-						functionId
-					)
-				] = interaction;
-
+				dis.interactionFinder.addMapping(interaction, functionId, result);
 				dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(interaction, result);
 			}
 		}

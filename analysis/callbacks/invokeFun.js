@@ -13,8 +13,7 @@
 		recursiveInteractionsHandler,
 		interactionFinder,
 		functionsExecutionStack,
-		argumentWrapperObjectBuilder,
-		mapShadowIdsInteractions
+		argumentWrapperObjectBuilder
 	) {
 		var dis = this;
 
@@ -24,8 +23,6 @@
 		this.interactionFinder = interactionFinder;
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
-
-		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
 		this.runCallback = function(
 			iid,
@@ -88,15 +85,7 @@
 
 		function processRecursiveInteractionOfResult(interaction, result, functionId) {
 			if (getTypeOf(result) == "object") {
-				var shadowIdReturnedObject = dis.sMemoryInterface.getShadowIdOfObject(result);
-
-				dis.mapShadowIdsInteractions[
-					getHashForShadowIdAndFunctionId(
-						shadowIdReturnedObject,
-						functionId
-					)
-				] = interaction;
-
+				dis.interactionFinder.addMapping(interaction, functionId, result);
 				dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(interaction, result);
 			}
 		}

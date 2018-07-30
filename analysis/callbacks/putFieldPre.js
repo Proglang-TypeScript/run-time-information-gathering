@@ -14,14 +14,12 @@
 		functionsExecutionStack,
 		sMemoryInterface,
 		argumentContainerFinder,
-		interactionFinder,
-		mapShadowIdsInteractions
+		interactionFinder
 	) {
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
 		this.interactionFinder = interactionFinder;
-		this.mapShadowIdsInteractions = mapShadowIdsInteractions;
 
 		var dis = this;
 
