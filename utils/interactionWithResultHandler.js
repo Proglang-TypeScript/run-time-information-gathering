@@ -20,7 +20,7 @@
 
 		var dis = this;
 
-		this.processResultOfInteraction = function(interaction, functionId, result, base) {
+		this.processInteractionWithResult = function(interaction, functionId, result, base) {
 			if (getTypeOf(result) == "object") {
 				dis.interactionFinder.addMapping(interaction, functionId, result);
 				dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(

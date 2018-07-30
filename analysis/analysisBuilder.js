@@ -51,6 +51,12 @@
 				argumentContainerFinder
 			);
 
+			var wrapperObjectsHandler = new (require("../utils/wrapperObjectsHandler.js")).WrapperObjectsHandler(
+				sMemoryInterface,
+				argumentWrapperObjectBuilder,
+				argumentProxyBuilder
+			);
+
 			return {
 				functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
 					runTimeInfo,
@@ -71,10 +77,8 @@
 					functionsExecutionStack,
 					sMemoryInterface,
 					argumentContainerFinder,
-					argumentProxyBuilder,
-					argumentWrapperObjectBuilder,
 					functionIdHandler,
-					mapWrapperObjectsOriginalValues
+					wrapperObjectsHandler
 				),
 				invokeFun: new (require("./callbacks/invokeFun.js")).InvokeFun(
 					runTimeInfo,
@@ -99,12 +103,10 @@
 					sMemoryInterface
 				),
 				binaryPre: new (require("./callbacks/binaryPre.js")).BinaryPre(
-					mapWrapperObjectsOriginalValues,
-					sMemoryInterface
+					wrapperObjectsHandler
 				),
 				unaryPre: new (require("./callbacks/unaryPre.js")).UnaryPre(
-					mapWrapperObjectsOriginalValues,
-					sMemoryInterface
+					wrapperObjectsHandler
 				)
 			};
 		};

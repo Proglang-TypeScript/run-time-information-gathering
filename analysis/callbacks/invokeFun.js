@@ -38,7 +38,7 @@
 
 					result = changeResultToWrapperObjectIfItIsALiteral(result);
 
-					this.interactionWithResultHandler.processResultOfInteraction(
+					this.interactionWithResultHandler.processInteractionWithResult(
 						interaction,
 						this.functionsExecutionStack.getCurrentExecutingFunction(),
 						// Let variable 'f' be the function that executed the invokeFun() callback.

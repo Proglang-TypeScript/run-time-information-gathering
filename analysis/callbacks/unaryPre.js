@@ -3,9 +3,8 @@
 "use strict";
 
 (function(exp) {
-	function UnaryPre(mapWrapperObjectsOriginalValues, sMemoryInterface) {
-		this.mapWrapperObjectsOriginalValues = mapWrapperObjectsOriginalValues;
-		this.sMemoryInterface = sMemoryInterface;
+	function UnaryPre(wrapperObjectsHandler) {
+		this.wrapperObjectsHandler = wrapperObjectsHandler;
 
 		var dis = this;
 
@@ -22,13 +21,11 @@
 		};
 
 		function replaceValueIfItIsAWrapperObject(val) {
-			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
-
-			if (shadowId in dis.mapWrapperObjectsOriginalValues) {
-				return dis.mapWrapperObjectsOriginalValues[shadowId];
+			if (dis.wrapperObjectsHandler.objectIsWrapperObject(val)) {
+				return dis.wrapperObjectsHandler.getRealValueFromWrapperObject(val);
+			} else {
+				return val;
 			}
-
-			return val;
 		}
 	}
 

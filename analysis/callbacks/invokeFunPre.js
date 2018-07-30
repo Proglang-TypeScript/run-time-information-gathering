@@ -15,10 +15,8 @@
 		functionsExecutionStack,
 		sMemoryInterface,
 		argumentContainerFinder,
-		argumentProxyBuilder,
-		argumentWrapperObjectBuilder,
 		functionIdHandler,
-		mapWrapperObjectsOriginalValues
+		wrapperObjectsHandler
 	) {
 
 		var dis = this;
@@ -27,11 +25,8 @@
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;
-		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
-		this.argumentProxyBuilder = argumentProxyBuilder;
 		this.functionIdHandler = functionIdHandler;
-
-		this.mapWrapperObjectsOriginalValues = mapWrapperObjectsOriginalValues;
+		this.wrapperObjectsHandler = wrapperObjectsHandler;
 
 		this.runCallback = function(
 			iid,
@@ -107,38 +102,11 @@
 		}
 
 		function convertToWrapperObjectIfItIsALiteral(args, argIndex) {
-			let originalArg = args[argIndex];
-			let newArg;
-
-			switch(getTypeOf(args[argIndex])) {
-				case "string":
-					newArg = dis.argumentWrapperObjectBuilder.buildFromString(originalArg);
-					break;
-
-				case "number":
-					newArg = dis.argumentWrapperObjectBuilder.buildFromNumber(originalArg);
-					break;
-			}
-
-			if (newArg) {
-				args[argIndex] = newArg;
-
-				let shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(newArg);
-				dis.mapWrapperObjectsOriginalValues[shadowIdProxy] = originalArg;
-			}
+			args[argIndex] = dis.wrapperObjectsHandler.convertToWrapperObjectIfItIsALiteral(args[argIndex]);
 		}
 
 		function convertToProxyIfItIsAnObject(args, argIndex) {
-			let arg = args[argIndex];
-
-			if (getTypeOf(arg) == "object" && !(arg instanceof String) && !(arg instanceof Number)) {
-
-				let proxy = dis.argumentProxyBuilder.buildProxy(arg);
-				args[argIndex] = proxy;
-
-				var shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(proxy);
-				dis.mapWrapperObjectsOriginalValues[shadowIdProxy] = arg;
-			}
+			args[argIndex] = dis.wrapperObjectsHandler.convertToProxyIfItIsAnObject(args[argIndex]);
 		}
 	}
 
