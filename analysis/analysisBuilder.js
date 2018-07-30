@@ -85,10 +85,8 @@
 				getFieldPre: new (require("./callbacks/getFieldPre.js")).GetFieldPre(
 					functionsExecutionStack,
 					sMemoryInterface,
-					argumentContainerFinder,
-					interactionFinder,
-					recursiveInteractionsHandler,
-					functionIdHandler
+					functionIdHandler,
+					interactionWithResultHandler
 				),
 				putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(
 					functionsExecutionStack,
