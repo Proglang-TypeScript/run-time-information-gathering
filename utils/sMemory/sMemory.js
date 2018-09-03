@@ -316,48 +316,4 @@
     }
 
     var smemory = sandbox.smemory = new SMemory();
-
-    function MyAnalysis() {
-        this.literal = function (iid, val, hasGetterSetter) {
-            smemory.defineFunction(val);
-        };
-
-        this.declare = function (iid, name, val, isArgument, argumentIndex, isCatchParam) {
-            smemory.initialize(name);
-        };
-
-        this.functionEnter = function (iid, f, dis, args) {
-            smemory.functionEnter(f);
-            smemory.initialize('this');
-        };
-
-
-        this.functionExit = function (iid, returnVal, wrappedExceptionVal) {
-            smemory.functionReturn();
-        };
-
-
-        this.scriptEnter = function (iid, instrumentedFileName, originalFileName) {
-            smemory.scriptEnter(instrumentedFileName, originalFileName);
-        };
-
-        this.scriptExit = function (iid, wrappedExceptionVal) {
-            smemory.scriptReturn();
-        };
-
-
-        //this.instrumentCodePre = function (iid, code, isDirect) {
-        //    smemory.evalBegin(isDirect);
-        //};
-        //
-        //
-        //this.instrumentCode = function (iid, newCode, newAst, isDirect) {
-        //    console.log(newCode);
-        //    smemory.evalEnd(isDirect);
-        //};
-
-    }
-
-    sandbox.analysis = new MyAnalysis();
-
 }(J$));
