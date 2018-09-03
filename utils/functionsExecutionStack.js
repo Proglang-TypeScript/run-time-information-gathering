@@ -1,11 +1,31 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
+	function Stack() {
+		this.s = [];
 
-	var Stack = require("./stack.js").Stack;
+		this.push = function(data) {
+			this.s.push(data);
+		};
+
+		this.pop = function() {
+			return this.s.pop();
+		};
+
+		this.top = function() {
+			if (this.s.length === 0) {
+				return null;
+			}
+
+			return this.s[this.s.length - 1];
+		};
+
+		this.isEmpty = function() {
+			return (this.s.length === 0);
+		};
+	}
 
 	function FunctionsExecutionStack() {
 		this.stack = new Stack();
@@ -27,6 +47,10 @@
 		};
 	}
 
-	exp.FunctionsExecutionStack = FunctionsExecutionStack;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+    sandbox.utils.FunctionsExecutionStack = new FunctionsExecutionStack();
+
+}(J$));

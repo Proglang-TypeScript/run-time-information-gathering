@@ -8,6 +8,7 @@ ROOT_PATH=$SCRIPT_PATH
 
 node $JALANGI_PATH/src/js/commands/jalangi.js \
     --inlineSource --inlineIID \
+    --analysis $ROOT_PATH/utils/functionsExecutionStack.js \
     --analysis $ROOT_PATH/utils/sMemory/sMemory.js \
     --analysis $ROOT_PATH/analysis/analysis.js \
     $TARGET | tee output.json

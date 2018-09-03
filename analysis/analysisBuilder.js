@@ -11,7 +11,7 @@
 		var dis = this;
 
 		this.buildCallbacks = function() {
-			var variables = buildVariables();
+			var variables = buildVariables(sandbox);
 
 			return {
 				functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
@@ -67,10 +67,10 @@
 			};
 		};
 
-		function buildVariables() {
+		function buildVariables(sandbox) {
 			var variables = {};
 
-			variables.functionsExecutionStack = new (require("../utils/functionsExecutionStack.js")).FunctionsExecutionStack();
+			variables.functionsExecutionStack = sandbox.utils.FunctionsExecutionStack;
 			variables.sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
 
 			variables.objectSerializer = new (require("../utils/objectSerializer.js")).ObjectSerializer(
