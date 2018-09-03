@@ -71,7 +71,7 @@
 			var variables = {};
 
 			variables.functionsExecutionStack = sandbox.utils.FunctionsExecutionStack;
-			variables.sMemoryInterface = new (require("../utils/sMemoryInterface.js")).SMemoryInterface(sandbox.smemory);
+			variables.sMemoryInterface = sandbox.utils.SMemoryInterface;
 
 			variables.objectSerializer = new (require("../utils/objectSerializer.js")).ObjectSerializer(
 				variables.sMemoryInterface

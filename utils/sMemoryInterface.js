@@ -1,8 +1,8 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
 	function SMemoryInterface(sMemory) {
 		this.sMemory = sMemory;
 
@@ -26,6 +26,9 @@
 		};
 	}
 
-	exp.SMemoryInterface = SMemoryInterface;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+    sandbox.utils.SMemoryInterface = new SMemoryInterface(sandbox.smemory);
+}(J$));
