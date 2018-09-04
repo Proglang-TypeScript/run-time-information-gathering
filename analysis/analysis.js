@@ -20,10 +20,6 @@
             }
         };
 
-        this.write = function (iid, name, val) {
-            return callbacks.write.runCallback(val);
-        };
-
         this.binaryPre = function (iid, op, left, right) {
             return callbacks.binaryPre.runCallback(
                 iid,

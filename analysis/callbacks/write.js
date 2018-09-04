@@ -1,20 +1,23 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
+	function WriteAnalysis() {
+		this.callbackName = "write";
 
-	function Write(functionsExecutionStack, sMemoryInterface, sandbox) {
 		var addDeclarationFunctionIdToFunctionsInsideObject = sandbox.functions.addDeclarationFunctionIdToFunctionsInsideObject;
 
-		this.functionsExecutionStack = functionsExecutionStack;
-		this.sMemoryInterface = sMemoryInterface;
+		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
 
-		this.runCallback = function(val) {
+		var dis = this;
+
+		this.callback = function(iid, name, val) {
 			val = addDeclarationFunctionIdToFunctionsInsideObject(
 				val,
-				this.functionsExecutionStack,
-				this.sMemoryInterface
+				dis.functionsExecutionStack,
+				dis.sMemoryInterface
 			);
 
 			return {
@@ -23,6 +26,6 @@
 		};
 	}
 
-	exp.Write = Write;
+	sandbox.analysis = new WriteAnalysis();
 
-})(module.exports);
+}(J$));

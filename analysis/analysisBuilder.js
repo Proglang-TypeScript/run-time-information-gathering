@@ -12,11 +12,6 @@
 			var variables = buildVariables(sandbox);
 
 			return {
-				write: new (require("./callbacks/write.js")).Write(
-					variables.functionsExecutionStack,
-					variables.sMemoryInterface,
-					sandbox
-				),
 				binaryPre: new (require("./callbacks/binaryPre.js")).BinaryPre(
 					variables.wrapperObjectsHandler
 				),
