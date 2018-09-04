@@ -20,24 +20,6 @@
             }
         };
 
-        this.getFieldPre = function(
-            iid,
-            base,
-            offset,
-            isComputed,
-            isOpAssign,
-            isMethodCall
-        ) {
-            return callbacks.getFieldPre.runCallback(
-                iid,
-                base,
-                offset,
-                isComputed,
-                isOpAssign,
-                isMethodCall
-            );
-        };
-
         this.putFieldPre = function(iid, base, offset, val, isComputed, isOpAssign) {
             return callbacks.putFieldPre.runCallback(
                 iid,

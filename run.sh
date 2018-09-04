@@ -46,4 +46,5 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     --analysis $ROOT_PATH/analysis/callbacks/declare.js \
     --analysis $ROOT_PATH/analysis/callbacks/invokeFunPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/invokeFun.js \
+    --analysis $ROOT_PATH/analysis/callbacks/getFieldPre.js \
     $TARGET | tee output.json

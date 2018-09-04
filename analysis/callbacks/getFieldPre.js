@@ -1,28 +1,22 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-
-	function GetFieldPre(
-		functionsExecutionStack,
-		sMemoryInterface,
-		functionIdHandler,
-		interactionWithResultHandler,
-		sandbox
-	) {
+(function (sandbox) {
+	function GetFieldPreAnalysis() {
+		this.callbackName = "getFieldPre";
 
 		var MethodCallInteraction = sandbox.utils.MethodCallInteraction;
 		var GetFieldInteraction = sandbox.utils.GetFieldInteraction;
 
-		this.functionsExecutionStack = functionsExecutionStack;
-		this.sMemoryInterface = sMemoryInterface;
-		this.functionIdHandler = functionIdHandler;
-		this.interactionWithResultHandler = interactionWithResultHandler;
+		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
+		this.functionIdHandler = sandbox.utils.functionIdHandler;
+		this.interactionWithResultHandler = sandbox.utils.interactionWithResultHandler;
 
 		var dis = this;
 
-		this.runCallback = function(
+		this.callback = function(
             iid,
             base,
             offset,
@@ -101,6 +95,6 @@
 		}
 	}
 
-	exp.GetFieldPre = GetFieldPre;
+	sandbox.analysis = new GetFieldPreAnalysis();
 
-})(module.exports);
+}(J$));
