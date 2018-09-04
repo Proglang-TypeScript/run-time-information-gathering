@@ -20,15 +20,6 @@
             }
         };
 
-        this.binaryPre = function (iid, op, left, right) {
-            return callbacks.binaryPre.runCallback(
-                iid,
-                op,
-                left,
-                right
-            );
-        };
-
         this.unaryPre = function (iid, op, left) {
             return callbacks.unaryPre.runCallback(iid, op, left);
         };

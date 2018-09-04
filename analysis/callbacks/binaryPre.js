@@ -1,14 +1,16 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	function BinaryPre(wrapperObjectsHandler) {
-		this.wrapperObjectsHandler = wrapperObjectsHandler;
+(function (sandbox) {
+	function BinaryPreAnalysis() {
+		this.callbackName = "binaryPre";
+
+		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
 
 		var dis = this;
 
-		this.runCallback = function(
+		this.callback = function(
 			iid,
 			op,
 			left,
@@ -54,6 +56,6 @@
 		}
 	}
 
-	exp.BinaryPre = BinaryPre;
+	sandbox.analysis = new BinaryPreAnalysis();
 
-})(module.exports);
+}(J$));

@@ -12,9 +12,6 @@
 			var variables = buildVariables(sandbox);
 
 			return {
-				binaryPre: new (require("./callbacks/binaryPre.js")).BinaryPre(
-					variables.wrapperObjectsHandler
-				),
 				unaryPre: new (require("./callbacks/unaryPre.js")).UnaryPre(
 					variables.wrapperObjectsHandler
 				)
