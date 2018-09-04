@@ -28,5 +28,12 @@
         }
     });
 
-    sandbox.analysis = new Analysis();
+    if (sandbox.Constants.isBrowser) {
+        window.addEventListener('keydown', function (e) {
+            // keyboard shortcut is Alt-Shift-T for now
+            if (e.altKey && e.shiftKey && e.keyCode === 84) {
+                sandbox.analysis.endExecution();
+            }
+        });
+    }
 }(J$));
