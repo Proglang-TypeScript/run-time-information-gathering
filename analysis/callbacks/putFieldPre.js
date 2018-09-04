@@ -1,31 +1,25 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
+	function PutFieldPreAnalysis() {
+		this.callbackName = "putFieldPre";
 
-
-	function PutFieldPre(
-		functionsExecutionStack,
-		sMemoryInterface,
-		argumentContainerFinder,
-		interactionFinder,
-		sandbox
-	) {
 		var getDeclarationEnclosingFunctionId = sandbox.functions.getDeclarationEnclosingFunctionId;
 		var getTypeOf = sandbox.functions.getTypeOf;
 		var addDeclarationFunctionIdToFunctionsInsideObject = sandbox.functions.addDeclarationFunctionIdToFunctionsInsideObject;
 
 		var PutFieldInteraction = sandbox.utils.PutFieldInteraction;
 	
-		this.functionsExecutionStack = functionsExecutionStack;
-		this.sMemoryInterface = sMemoryInterface;
-		this.argumentContainerFinder = argumentContainerFinder;
-		this.interactionFinder = interactionFinder;
+		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
+		this.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
+		this.interactionFinder = sandbox.utils.interactionFinder;
 
 		var dis = this;
 
-		this.runCallback = function(iid, base, offset, val, isComputed, isOpAssign) {
+		this.callback = function(iid, base, offset, val, isComputed, isOpAssign) {
 			val = addDeclarationEnclosingFunctionId(val);
 
 			var interaction = getPutFieldInteracion(
@@ -100,6 +94,6 @@
 		}
 	}
 
-	exp.PutFieldPre = PutFieldPre;
+	sandbox.analysis = new PutFieldPreAnalysis();
 
-})(module.exports);
+}(J$));

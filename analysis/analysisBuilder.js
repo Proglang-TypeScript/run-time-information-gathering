@@ -12,13 +12,6 @@
 			var variables = buildVariables(sandbox);
 
 			return {
-				putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(
-					variables.functionsExecutionStack,
-					variables.sMemoryInterface,
-					variables.argumentContainerFinder,
-					variables.interactionFinder,
-					sandbox
-				),
 				write: new (require("./callbacks/write.js")).Write(
 					variables.functionsExecutionStack,
 					variables.sMemoryInterface,

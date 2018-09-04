@@ -20,17 +20,6 @@
             }
         };
 
-        this.putFieldPre = function(iid, base, offset, val, isComputed, isOpAssign) {
-            return callbacks.putFieldPre.runCallback(
-                iid,
-                base,
-                offset,
-                val,
-                isComputed,
-                isOpAssign
-            );
-        };
-
         this.write = function (iid, name, val) {
             return callbacks.write.runCallback(val);
         };
