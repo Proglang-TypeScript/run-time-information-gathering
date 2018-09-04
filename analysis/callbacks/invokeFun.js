@@ -1,26 +1,21 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
+	function InvokeFunAnalysis() {
+		this.callbackName = "invokeFun";
 
-	function InvokeFun(
-		runTimeInfo,
-		functionsExecutionStack,
-		argumentWrapperObjectBuilder,
-		interactionWithResultHandler,
-		sandbox
-	) {
-		
 		var getTypeOf = sandbox.functions.getTypeOf;
+
+		this.runTimeInfo = sandbox.runTimeInfo;
+		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+		this.argumentWrapperObjectBuilder = sandbox.utils.argumentWrapperObjectBuilder;
+		this.interactionWithResultHandler = sandbox.utils.interactionWithResultHandler;
+
 		var dis = this;
 
-		this.runTimeInfo = runTimeInfo;
-		this.functionsExecutionStack = functionsExecutionStack;
-		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
-		this.interactionWithResultHandler = interactionWithResultHandler;
-
-		this.runCallback = function(
+		this.callback = function(
 			iid,
 			f,
 			base,
@@ -39,9 +34,9 @@
 
 					result = changeResultToWrapperObjectIfItIsALiteral(result);
 
-					this.interactionWithResultHandler.processInteractionWithResult(
+					dis.interactionWithResultHandler.processInteractionWithResult(
 						interaction,
-						this.functionsExecutionStack.getCurrentExecutingFunction(),
+						dis.functionsExecutionStack.getCurrentExecutingFunction(),
 						// Let variable 'f' be the function that executed the invokeFun() callback.
 						// invokeFun() callback is executed after functionExit(),
 						// so the current executing function is the function that executed function 'f'.
@@ -75,6 +70,6 @@
 		}
 	}
 
-	exp.InvokeFun = InvokeFun;
+	sandbox.analysis = new InvokeFunAnalysis();
 
-})(module.exports);
+}(J$));

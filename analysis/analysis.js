@@ -20,22 +20,6 @@
             }
         };
 
-        this.invokeFun = function (
-            iid,
-            f,
-            base,
-            args,
-            result
-        ) {
-            return callbacks.invokeFun.runCallback(
-                iid,
-                f,
-                base,
-                args,
-                result
-            );
-        };
-
         this.getFieldPre = function(
             iid,
             base,

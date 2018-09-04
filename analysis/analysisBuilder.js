@@ -12,13 +12,6 @@
 			var variables = buildVariables(sandbox);
 
 			return {
-				invokeFun: new (require("./callbacks/invokeFun.js")).InvokeFun(
-					this.runTimeInfo,
-					variables.functionsExecutionStack,
-					variables.argumentWrapperObjectBuilder,
-					variables.interactionWithResultHandler,
-					sandbox
-				),
 				getFieldPre: new (require("./callbacks/getFieldPre.js")).GetFieldPre(
 					variables.functionsExecutionStack,
 					variables.sMemoryInterface,
