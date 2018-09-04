@@ -12,9 +12,6 @@
 			var variables = buildVariables(sandbox);
 
 			return {
-				functionExit: new (require("./callbacks/functionExit.js")).FunctionExit(
-					variables.functionsExecutionStack
-				),
 				declare: new (require("./callbacks/declare.js")).Declare(
 					this.runTimeInfo,
 					variables.functionsExecutionStack,

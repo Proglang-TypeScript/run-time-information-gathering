@@ -1,13 +1,17 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	function FunctionExit(functionsExecutionStack) {
-		this.functionsExecutionStack = functionsExecutionStack;
+(function (sandbox) {
+	function FunctionExitAnalysis() {
+		this.callbackName = "functionExit";
 
-		this.runCallback = function(iid, returnVal, wrappedExceptionVal) {
-			this.functionsExecutionStack.stopExecution();
+		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+
+		var dis = this;
+
+		this.callback = function(iid, returnVal, wrappedExceptionVal) {
+			dis.functionsExecutionStack.stopExecution();
 
 			return {
 				returnVal: returnVal,
@@ -17,6 +21,5 @@
 		};
 	}
 
-	exp.FunctionExit = FunctionExit;
-
-})(module.exports);
+	sandbox.analysis = new FunctionExitAnalysis();
+}(J$));

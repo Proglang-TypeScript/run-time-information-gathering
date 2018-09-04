@@ -16,12 +16,8 @@
 
         this.addAnalysis = function(analysis) {
             if (analysis.callbackName) {
-                this[analysis.callbackName] = analysis[analysis.callbackName];
+                this[analysis.callbackName] = analysis.callback;
             }
-        };
-
-        this.functionExit = function (iid, returnVal, wrappedExceptionVal) {
-            return callbacks.functionExit.runCallback(iid, returnVal, wrappedExceptionVal);
         };
 
         this.declare = function(iid, name, val, isArgument, argumentIndex) {

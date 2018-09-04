@@ -14,7 +14,7 @@
 
 		var dis = this;
 
-		this[this.callbackName] = function(iid, f) {
+		this.callback = function(iid, f) {
 			let functionId = dis.functionIdHandler.setFunctionId(f);
 
 			if (functionNotProcessed(f)) {

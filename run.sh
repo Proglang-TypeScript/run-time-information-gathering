@@ -42,4 +42,5 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     \
     --analysis $ROOT_PATH/analysis/analysis.js \
     --analysis $ROOT_PATH/analysis/callbacks/functionEnter.js \
+    --analysis $ROOT_PATH/analysis/callbacks/functionExit.js \
     $TARGET | tee output.json
