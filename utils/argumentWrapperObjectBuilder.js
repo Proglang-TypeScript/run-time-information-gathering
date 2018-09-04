@@ -1,8 +1,8 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
 	function ArgumentWrapperObjectBuilder() {
 		this.getOriginalTypeOfField = function() {
 			return "__ORIGINAL_TYPEOF__";
@@ -39,6 +39,10 @@
 		};
 	}
 
-	exp.ArgumentWrapperObjectBuilder = ArgumentWrapperObjectBuilder;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.argumentWrapperObjectBuilder = new ArgumentWrapperObjectBuilder();
+
+}(J$));

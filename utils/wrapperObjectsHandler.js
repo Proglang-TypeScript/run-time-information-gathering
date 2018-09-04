@@ -1,10 +1,9 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var getTypeOf = require("./getTypeOf.js").getTypeOf;
+(function (sandbox) {
+	var getTypeOf = sandbox.functions.getTypeOf;
 
 	function WrapperObjectsHandler(
 		sMemoryInterface,
@@ -72,6 +71,14 @@
 		};
 	}
 
-	exp.WrapperObjectsHandler = WrapperObjectsHandler;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.wrapperObjectsHandler = new WrapperObjectsHandler(
+		sandbox.utils.sMemoryInterface,
+		sandbox.utils.argumentWrapperObjectBuilder,
+		sandbox.utils.argumentProxyBuilder
+	);
+
+}(J$));

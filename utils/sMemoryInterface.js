@@ -30,5 +30,5 @@
 		sandbox.utils = {};
 	}
 
-    sandbox.utils.SMemoryInterface = new SMemoryInterface(sandbox.smemory);
+    sandbox.utils.sMemoryInterface = new SMemoryInterface(sandbox.smemory);
 }(J$));

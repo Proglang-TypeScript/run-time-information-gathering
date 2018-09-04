@@ -1,10 +1,9 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var Interaction = require("./interaction.js").Interaction;
+(function (sandbox) {
+	var Interaction = sandbox.utils.Interaction;
 
 	function UsedAsArgumentInteraction(currentActiveFiid, functionId, argIndex) {
 		Interaction.call(this);
@@ -19,5 +18,9 @@
 	UsedAsArgumentInteraction.prototype = Object.create(Interaction.prototype);
 	UsedAsArgumentInteraction.prototype.constructor = UsedAsArgumentInteraction;
 
-	exp.UsedAsArgumentInteraction = UsedAsArgumentInteraction;
-})(module.exports);
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
+
+	sandbox.utils.UsedAsArgumentInteraction = UsedAsArgumentInteraction;
+}(J$));

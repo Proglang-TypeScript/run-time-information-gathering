@@ -1,10 +1,9 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var getTypeOf = require("./getTypeOf.js").getTypeOf;
+(function (sandbox) {
+	var getTypeOf = sandbox.functions.getTypeOf;
 
 	function InteractionWithResultHandler(
 		interactionFinder,
@@ -70,6 +69,15 @@
 		}
 	}
 
-	exp.InteractionWithResultHandler = InteractionWithResultHandler;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.interactionWithResultHandler = new InteractionWithResultHandler(
+		sandbox.utils.interactionFinder,
+		sandbox.utils.recursiveInteractionsHandler,
+		sandbox.utils.sMemoryInterface,
+		sandbox.utils.argumentContainerFinder
+	);
+
+}(J$));

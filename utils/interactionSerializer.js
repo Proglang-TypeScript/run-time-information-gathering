@@ -1,8 +1,8 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
 	function InteractionSerializer(objectSerializer) {
 		this.objectSerializer = objectSerializer;
 
@@ -14,6 +14,9 @@
 		};
 	}
 
-	exp.InteractionSerializer = InteractionSerializer;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.interactionSerializer = new InteractionSerializer(sandbox.utils.objectSerializer);
+}(J$));

@@ -8,11 +8,8 @@
 
 (function (sandbox) {
     function Analysis() {
-        var runTimeInfo = {};
-
         var analysisBuilder = new (require("./analysisBuilder.js")).AnalysisBuilder(
-            sandbox,
-            runTimeInfo
+            sandbox
         );
 
         var callbacks = analysisBuilder.buildCallbacks();
@@ -112,7 +109,7 @@
         };
 
         this.endExecution = function() {
-            console.log(JSON.stringify(runTimeInfo, null, 4));
+            console.log(JSON.stringify(sandbox.runTimeInfo, null, 4));
         };
     }
 

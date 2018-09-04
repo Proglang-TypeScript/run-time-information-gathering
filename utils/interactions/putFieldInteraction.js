@@ -1,10 +1,9 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var ActiveInteraction = require("./activeInteraction.js").ActiveInteraction;
+(function (sandbox) {
+	var ActiveInteraction = sandbox.utils.ActiveInteraction;
 
 	function PutFieldInteraction(iid, field) {
 		ActiveInteraction.call(this);
@@ -20,6 +19,9 @@
 	PutFieldInteraction.prototype = Object.create(ActiveInteraction.prototype);
 	PutFieldInteraction.prototype.constructor = PutFieldInteraction;
 
-	exp.PutFieldInteraction = PutFieldInteraction;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.PutFieldInteraction = PutFieldInteraction;
+}(J$));

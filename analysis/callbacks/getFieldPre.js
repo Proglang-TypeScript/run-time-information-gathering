@@ -1,18 +1,20 @@
 /* global module */
-/* global require */
 
 "use strict";
 
 (function(exp) {
-	var MethodCallInteraction = require("../../utils/interactions/methodCallInteraction.js").MethodCallInteraction;
-	var GetFieldInteraction = require("../../utils/interactions/getFieldInteraction.js").GetFieldInteraction;
 
 	function GetFieldPre(
 		functionsExecutionStack,
 		sMemoryInterface,
 		functionIdHandler,
-		interactionWithResultHandler
+		interactionWithResultHandler,
+		sandbox
 	) {
+
+		var MethodCallInteraction = sandbox.utils.MethodCallInteraction;
+		var GetFieldInteraction = sandbox.utils.GetFieldInteraction;
+
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.sMemoryInterface = sMemoryInterface;
 		this.functionIdHandler = functionIdHandler;

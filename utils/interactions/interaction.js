@@ -1,12 +1,15 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
 	function Interaction() {
 		this.code = null;
 	}
 
-	exp.Interaction = Interaction;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.Interaction = Interaction;
+}(J$));

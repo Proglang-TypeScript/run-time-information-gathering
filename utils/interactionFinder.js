@@ -1,10 +1,9 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var getHashForShadowIdAndFunctionId = require("./getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
+(function (sandbox) {
+	var getHashForShadowIdAndFunctionId = sandbox.functions.getHashForShadowIdAndFunctionId;
 
 	function InteractionFinder(runTimeInfo, sMemoryInterface) {
 		this.runTimeInfo = runTimeInfo;
@@ -49,6 +48,12 @@
 		};
 	}
 
-	exp.InteractionFinder = InteractionFinder;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.interactionFinder = new InteractionFinder(
+		sandbox.runTimeInfo,
+		sandbox.utils.sMemoryInterface
+	);
+}(J$));

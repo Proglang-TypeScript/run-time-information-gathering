@@ -1,8 +1,8 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
 	function RecursiveInteractionsHandler(sMemoryInterface, interactionSerializer) {
 		this.sMemoryInterface = sMemoryInterface;
 
@@ -51,6 +51,13 @@
 		}
 	}
 
-	exp.RecursiveInteractionsHandler = RecursiveInteractionsHandler;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.recursiveInteractionsHandler = new RecursiveInteractionsHandler(
+		sandbox.utils.sMemoryInterface,
+		sandbox.utils.interactionSerializer
+	);
+
+}(J$));

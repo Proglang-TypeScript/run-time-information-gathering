@@ -1,10 +1,9 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var getTypeOfForReporting = require("./getTypeOf.js").getTypeOfForReporting;
+(function (sandbox) {
+	var getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
 
 	function FunctionContainer(f, isConstructor) {
 		this.functionId = f.functionId;
@@ -43,6 +42,9 @@
 		}
 	}
 
-	exp.FunctionContainer = FunctionContainer;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.FunctionContainer = FunctionContainer;
+}(J$));

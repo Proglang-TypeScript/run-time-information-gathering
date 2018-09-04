@@ -1,17 +1,18 @@
 /* global module */
-/* global require */
 
 "use strict";
 
 (function(exp) {
-	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
 
 	function InvokeFun(
 		runTimeInfo,
 		functionsExecutionStack,
 		argumentWrapperObjectBuilder,
-		interactionWithResultHandler
+		interactionWithResultHandler,
+		sandbox
 	) {
+		
+		var getTypeOf = sandbox.functions.getTypeOf;
 		var dis = this;
 
 		this.runTimeInfo = runTimeInfo;

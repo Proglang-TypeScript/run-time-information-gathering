@@ -1,10 +1,9 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var getRandomIdentifier = require("./getRandomIdentifier.js").getRandomIdentifier;
+(function (sandbox) {
+	var getRandomIdentifier = sandbox.functions.getRandomIdentifier;
 
 	function ArgumentProxyBuilder(sMemoryInterface) {
 		this.sMemoryInterface = sMemoryInterface;
@@ -48,6 +47,9 @@
 		};
 	}
 
-	exp.ArgumentProxyBuilder = ArgumentProxyBuilder;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.argumentProxyBuilder = new ArgumentProxyBuilder(sandbox.utils.sMemoryInterface);
+}(J$));

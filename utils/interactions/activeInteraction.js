@@ -1,11 +1,10 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var Interaction = require("./interaction.js").Interaction;
-	var getTypeOfForReporting = require("../getTypeOf.js").getTypeOfForReporting;
+(function (sandbox) {
+	var Interaction = sandbox.utils.Interaction;
+	var getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
 
 	function ActiveInteraction() {
 		Interaction.call(this);
@@ -27,6 +26,9 @@
 		this.returnTypeOf = getTypeOfForReporting(result);
 	};
 
-	exp.ActiveInteraction = ActiveInteraction;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.ActiveInteraction = ActiveInteraction;
+}(J$));

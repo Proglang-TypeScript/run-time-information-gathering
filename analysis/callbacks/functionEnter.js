@@ -1,12 +1,11 @@
 /* global module */
-/* global require */
 
 "use strict";
 
 (function(exp) {
-	var FunctionContainer = require("../../utils/functionContainer.js").FunctionContainer;
+	function FunctionEnter(runTimeInfo, functionsExecutionStack, functionIdHandler, sandbox) {
+		var FunctionContainer = sandbox.utils.FunctionContainer;
 
-	function FunctionEnter(runTimeInfo, functionsExecutionStack, functionIdHandler) {
 		this.runTimeInfo = runTimeInfo;
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.functionIdHandler = functionIdHandler;

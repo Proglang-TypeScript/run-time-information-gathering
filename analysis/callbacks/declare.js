@@ -1,16 +1,15 @@
 /* global module */
-/* global require */
 
 "use strict";
 
 (function(exp) {
-	var ArgumentContainer = require("../../utils/argumentContainer.js").ArgumentContainer;
-	var getTypeOfForReporting = require("../../utils/getTypeOf.js").getTypeOfForReporting;
-	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
+	function Declare(runTimeInfo, functionsExecutionStack, argumentContainerFinder, sMemoryInterface, sandbox) {
 
-	var InputValueInteraction = require("../../utils/interactions/inputValueInteraction.js").InputValueInteraction;
+		var ArgumentContainer = sandbox.utils.ArgumentContainer;
+		var getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
+		var getDeclarationEnclosingFunctionId = sandbox.functions.getDeclarationEnclosingFunctionId;
 
-	function Declare(runTimeInfo, functionsExecutionStack, argumentContainerFinder, sMemoryInterface) {
+		var InputValueInteraction = sandbox.utils.InputValueInteraction;
 		var dis = this;
 
 		this.runTimeInfo = runTimeInfo;

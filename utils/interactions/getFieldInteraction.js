@@ -1,10 +1,9 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var ActiveInteraction = require("./activeInteraction.js").ActiveInteraction;
+(function (sandbox) {
+	var ActiveInteraction = sandbox.utils.ActiveInteraction;
 
 	function GetFieldInteraction(iid, field) {
 		ActiveInteraction.call(this);
@@ -20,6 +19,9 @@
 	GetFieldInteraction.prototype = Object.create(ActiveInteraction.prototype);
 	GetFieldInteraction.prototype.constructor = GetFieldInteraction;
 
-	exp.GetFieldInteraction = GetFieldInteraction;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.GetFieldInteraction = GetFieldInteraction;
+}(J$));

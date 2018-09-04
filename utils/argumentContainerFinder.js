@@ -1,16 +1,15 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var getHashForShadowIdAndFunctionId = require("./getHashForShadowIdAndFunctionId.js").getHashForShadowIdAndFunctionId;
+(function (sandbox) {
+	var getHashForShadowIdAndFunctionId = sandbox.functions.getHashForShadowIdAndFunctionId;
 
 	function ArgumentContainerFinder(runTimeInfo, sMemoryInterface) {
 		this.runTimeInfo = runTimeInfo;
         this.sMemoryInterface = sMemoryInterface;
 
-		this.mapShadowIdsArgumentContainer = {};
+        this.mapShadowIdsArgumentContainer = {};
 
         this.findArgumentContainer = function(shadowId, functionId) {
             var fId = functionId;
@@ -20,6 +19,7 @@
 
             var functionContainer = null;
             while(!argumentContainer && fId) {
+
                 functionContainer = this.runTimeInfo[fId];
 
                 argumentContainer = this.mapShadowIdsArgumentContainer[
@@ -50,6 +50,12 @@
         };
 	}
 
-	exp.ArgumentContainerFinder = ArgumentContainerFinder;
+    if (sandbox.utils === undefined) {
+        sandbox.utils = {};
+    }
 
-})(module.exports);
+    sandbox.utils.argumentContainerFinder = new ArgumentContainerFinder(
+        sandbox.runTimeInfo,
+        sandbox.utils.sMemoryInterface
+    );
+}(J$));

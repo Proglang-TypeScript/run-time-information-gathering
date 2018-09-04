@@ -1,21 +1,23 @@
 /* global module */
-/* global require */
 
 "use strict";
 
 (function(exp) {
-	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
-	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
-	var addDeclarationFunctionIdToFunctionsInsideObject = require("../../utils/addDeclarationFunctionIdToFunctionsInsideObject.js").addDeclarationFunctionIdToFunctionsInsideObject;
 
-	var PutFieldInteraction = require("../../utils/interactions/putFieldInteraction.js").PutFieldInteraction;
 
 	function PutFieldPre(
 		functionsExecutionStack,
 		sMemoryInterface,
 		argumentContainerFinder,
-		interactionFinder
+		interactionFinder,
+		sandbox
 	) {
+		var getDeclarationEnclosingFunctionId = sandbox.functions.getDeclarationEnclosingFunctionId;
+		var getTypeOf = sandbox.functions.getTypeOf;
+		var addDeclarationFunctionIdToFunctionsInsideObject = sandbox.functions.addDeclarationFunctionIdToFunctionsInsideObject;
+
+		var PutFieldInteraction = sandbox.utils.PutFieldInteraction;
+	
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.sMemoryInterface = sMemoryInterface;
 		this.argumentContainerFinder = argumentContainerFinder;

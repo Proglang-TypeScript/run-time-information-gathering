@@ -1,14 +1,9 @@
 /* global module */
-/* global require */
 
 "use strict";
 
 (function(exp) {
-	var FunctionContainer = require("../../utils/functionContainer.js").FunctionContainer;
-	var getTypeOf = require("../../utils/getTypeOf.js").getTypeOf;
-	var getDeclarationEnclosingFunctionId = require("../../utils/getDeclarationEnclosingFunctionId.js").getDeclarationEnclosingFunctionId;
 
-	var UsedAsArgumentInteraction = require("../../utils/interactions/usedAsArgumentInteraction.js").UsedAsArgumentInteraction;
 
 	function InvokeFunPre(
 		runTimeInfo,
@@ -16,8 +11,14 @@
 		sMemoryInterface,
 		argumentContainerFinder,
 		functionIdHandler,
-		wrapperObjectsHandler
+		wrapperObjectsHandler,
+		sandbox
 	) {
+		var FunctionContainer = sandbox.utils.FunctionContainer;
+		var getTypeOf = sandbox.functions.getTypeOf;
+		var getDeclarationEnclosingFunctionId = sandbox.functions.getDeclarationEnclosingFunctionId;
+
+		var UsedAsArgumentInteraction = sandbox.utils.UsedAsArgumentInteraction;
 
 		var dis = this;
 

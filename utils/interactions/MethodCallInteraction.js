@@ -1,10 +1,9 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var ActiveInteraction = require("./activeInteraction.js").ActiveInteraction;
+(function (sandbox) {
+	var ActiveInteraction = sandbox.utils.ActiveInteraction;
 
 	function MethodCallInteraction(iid, methodName) {
 		ActiveInteraction.call(this);
@@ -21,6 +20,9 @@
 	MethodCallInteraction.prototype = Object.create(ActiveInteraction.prototype);
 	MethodCallInteraction.prototype.constructor = MethodCallInteraction;
 
-	exp.MethodCallInteraction = MethodCallInteraction;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.MethodCallInteraction = MethodCallInteraction;
+}(J$));

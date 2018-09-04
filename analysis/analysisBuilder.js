@@ -4,11 +4,9 @@
 "use strict";
 
 (function(exp) {
-	function AnalysisBuilder(sandbox, runTimeInfo) {
+	function AnalysisBuilder(sandbox) {
 		this.sandbox = sandbox;
-		this.runTimeInfo = runTimeInfo;
-
-		var dis = this;
+		this.runTimeInfo = sandbox.runTimeInfo;
 
 		this.buildCallbacks = function() {
 			var variables = buildVariables(sandbox);
@@ -17,7 +15,8 @@
 				functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
 					this.runTimeInfo,
 					variables.functionsExecutionStack,
-					variables.functionIdHandler
+					variables.functionIdHandler,
+					sandbox
 				),
 				functionExit: new (require("./callbacks/functionExit.js")).FunctionExit(
 					variables.functionsExecutionStack
@@ -26,7 +25,8 @@
 					this.runTimeInfo,
 					variables.functionsExecutionStack,
 					variables.argumentContainerFinder,
-					variables.sMemoryInterface
+					variables.sMemoryInterface,
+					sandbox
 				),
 				invokeFunPre: new (require("./callbacks/invokeFunPre.js")).InvokeFunPre(
 					this.runTimeInfo,
@@ -34,29 +34,34 @@
 					variables.sMemoryInterface,
 					variables.argumentContainerFinder,
 					variables.functionIdHandler,
-					variables.wrapperObjectsHandler
+					variables.wrapperObjectsHandler,
+					sandbox
 				),
 				invokeFun: new (require("./callbacks/invokeFun.js")).InvokeFun(
 					this.runTimeInfo,
 					variables.functionsExecutionStack,
 					variables.argumentWrapperObjectBuilder,
-					variables.interactionWithResultHandler
+					variables.interactionWithResultHandler,
+					sandbox
 				),
 				getFieldPre: new (require("./callbacks/getFieldPre.js")).GetFieldPre(
 					variables.functionsExecutionStack,
 					variables.sMemoryInterface,
 					variables.functionIdHandler,
-					variables.interactionWithResultHandler
+					variables.interactionWithResultHandler,
+					sandbox
 				),
 				putFieldPre: new (require("./callbacks/putFieldPre.js")).PutFieldPre(
 					variables.functionsExecutionStack,
 					variables.sMemoryInterface,
 					variables.argumentContainerFinder,
-					variables.interactionFinder
+					variables.interactionFinder,
+					sandbox
 				),
 				write: new (require("./callbacks/write.js")).Write(
 					variables.functionsExecutionStack,
-					variables.sMemoryInterface
+					variables.sMemoryInterface,
+					sandbox
 				),
 				binaryPre: new (require("./callbacks/binaryPre.js")).BinaryPre(
 					variables.wrapperObjectsHandler
@@ -70,52 +75,18 @@
 		function buildVariables(sandbox) {
 			var variables = {};
 
-			variables.functionsExecutionStack = sandbox.utils.FunctionsExecutionStack;
-			variables.sMemoryInterface = sandbox.utils.SMemoryInterface;
-
-			variables.objectSerializer = new (require("../utils/objectSerializer.js")).ObjectSerializer(
-				variables.sMemoryInterface
-			);
-
-			variables.interactionSerializer = new (require("../utils/interactionSerializer.js")).InteractionSerializer(
-				variables.objectSerializer
-			);
-
-			variables.argumentContainerFinder = new (require("../utils/argumentContainerFinder.js")).ArgumentContainerFinder(
-				dis.runTimeInfo,
-				variables.sMemoryInterface
-			);
-
-			variables.interactionFinder = new (require("../utils/interactionFinder.js")).InteractionFinder(
-				dis.runTimeInfo,
-				variables.sMemoryInterface
-			);
-
-			variables.recursiveInteractionsHandler = new (require("../utils/recursiveInteractionsHandler.js")).RecursiveInteractionsHandler(
-				variables.sMemoryInterface,
-				variables.interactionSerializer
-			);
-
-			variables.argumentProxyBuilder = new (require("../utils/argumentProxyBuilder.js")).ArgumentProxyBuilder(
-				variables.sMemoryInterface
-			);
-
-			variables.argumentWrapperObjectBuilder = new (require("../utils/argumentWrapperObjectBuilder.js")).ArgumentWrapperObjectBuilder();
-
-			variables.functionIdHandler = new (require("../utils/functionIdHandler.js")).FunctionIdHandler();
-
-			variables.interactionWithResultHandler = new (require("../utils/interactionWithResultHandler.js")).InteractionWithResultHandler(
-				variables.interactionFinder,
-				variables.recursiveInteractionsHandler,
-				variables.sMemoryInterface,
-				variables.argumentContainerFinder
-			);
-
-			variables.wrapperObjectsHandler = new (require("../utils/wrapperObjectsHandler.js")).WrapperObjectsHandler(
-				variables.sMemoryInterface,
-				variables.argumentWrapperObjectBuilder,
-				variables.argumentProxyBuilder
-			);
+			variables.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+			variables.sMemoryInterface = sandbox.utils.sMemoryInterface;
+			variables.objectSerializer = sandbox.utils.objectSerializer;
+			variables.interactionSerializer = sandbox.utils.interactionSerializer;
+			variables.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
+			variables.interactionFinder = sandbox.utils.interactionFinder;
+			variables.recursiveInteractionsHandler = sandbox.utils.recursiveInteractionsHandler;
+			variables.argumentProxyBuilder = sandbox.utils.argumentProxyBuilder;
+			variables.argumentWrapperObjectBuilder = sandbox.utils.argumentWrapperObjectBuilder;
+			variables.functionIdHandler = sandbox.utils.functionIdHandler;
+			variables.interactionWithResultHandler = sandbox.utils.interactionWithResultHandler;
+			variables.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
 
 			return variables;
 		}

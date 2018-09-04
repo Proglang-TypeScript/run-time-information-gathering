@@ -1,8 +1,8 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
 
 	function ArgumentContainer(argumentIndex, name) {
 		this.argumentIndex = argumentIndex;
@@ -15,6 +15,9 @@
 		};
 	}
 
-	exp.ArgumentContainer = ArgumentContainer;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.ArgumentContainer = ArgumentContainer;
+}(J$));

@@ -51,6 +51,6 @@
 		sandbox.utils = {};
 	}
 
-    sandbox.utils.FunctionsExecutionStack = new FunctionsExecutionStack();
+    sandbox.utils.functionsExecutionStack = new FunctionsExecutionStack();
 
 }(J$));

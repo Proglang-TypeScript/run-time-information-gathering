@@ -1,10 +1,9 @@
-/* global module */
-/* global require */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	var getTypeOf = require("./getTypeOf.js").getTypeOf;
+(function (sandbox) {
+	var getTypeOf = sandbox.functions.getTypeOf;
 
 	function ObjectSerializer(smemoryInterface) {
 		this.smemoryInterface = smemoryInterface;
@@ -27,6 +26,9 @@
 		};
 	}
 
-	exp.ObjectSerializer = ObjectSerializer;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+    sandbox.utils.objectSerializer = new ObjectSerializer(sandbox.utils.sMemoryInterface);
+}(J$));

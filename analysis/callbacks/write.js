@@ -1,12 +1,12 @@
 /* global module */
-/* global require */
 
 "use strict";
 
 (function(exp) {
-	var addDeclarationFunctionIdToFunctionsInsideObject = require("../../utils/addDeclarationFunctionIdToFunctionsInsideObject.js").addDeclarationFunctionIdToFunctionsInsideObject;
 
-	function Write(functionsExecutionStack, sMemoryInterface) {
+	function Write(functionsExecutionStack, sMemoryInterface, sandbox) {
+		var addDeclarationFunctionIdToFunctionsInsideObject = sandbox.functions.addDeclarationFunctionIdToFunctionsInsideObject;
+
 		this.functionsExecutionStack = functionsExecutionStack;
 		this.sMemoryInterface = sMemoryInterface;
 

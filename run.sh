@@ -8,8 +8,37 @@ ROOT_PATH=$SCRIPT_PATH
 
 node $JALANGI_PATH/src/js/commands/jalangi.js \
     --inlineSource --inlineIID \
+    --analysis $ROOT_PATH/utils/initialize.js \
     --analysis $ROOT_PATH/utils/sMemory/sMemory.js \
+    --analysis $ROOT_PATH/utils/functions.js \
+    \
+    \
     --analysis $ROOT_PATH/utils/functionsExecutionStack.js \
     --analysis $ROOT_PATH/utils/sMemoryInterface.js \
+    --analysis $ROOT_PATH/utils/objectSerializer.js \
+    --analysis $ROOT_PATH/utils/interactionSerializer.js \
+    --analysis $ROOT_PATH/utils/argumentContainerFinder.js \
+    --analysis $ROOT_PATH/utils/interactionFinder.js \
+    --analysis $ROOT_PATH/utils/recursiveInteractionsHandler.js \
+    --analysis $ROOT_PATH/utils/argumentProxyBuilder.js \
+    --analysis $ROOT_PATH/utils/argumentWrapperObjectBuilder.js \
+    --analysis $ROOT_PATH/utils/functionIdHandler.js \
+    --analysis $ROOT_PATH/utils/interactionWithResultHandler.js \
+    --analysis $ROOT_PATH/utils/wrapperObjectsHandler.js \
+    \
+    --analysis $ROOT_PATH/utils/argumentContainer.js \
+    --analysis $ROOT_PATH/utils/argumentContainerFinder.js \
+    --analysis $ROOT_PATH/utils/functionContainer.js \
+    \
+    \
+    --analysis $ROOT_PATH/utils/interactions/interaction.js \
+    --analysis $ROOT_PATH/utils/interactions/activeInteraction.js \
+    --analysis $ROOT_PATH/utils/interactions/getFieldInteraction.js \
+    --analysis $ROOT_PATH/utils/interactions/inputValueInteraction.js \
+    --analysis $ROOT_PATH/utils/interactions/methodCallInteraction.js \
+    --analysis $ROOT_PATH/utils/interactions/putFieldInteraction.js \
+    --analysis $ROOT_PATH/utils/interactions/usedAsArgumentInteraction.js \
+    \
+    \
     --analysis $ROOT_PATH/analysis/analysis.js \
     $TARGET | tee output.json

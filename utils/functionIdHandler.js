@@ -1,8 +1,8 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
 	function FunctionIdHandler() {
 		let counter = 1;
 		let prefix = "functionId_";
@@ -22,6 +22,9 @@
 		};
 	}
 
-	exp.FunctionIdHandler = FunctionIdHandler;
+	if (sandbox.utils === undefined) {
+		sandbox.utils = {};
+	}
 
-})(module.exports);
+	sandbox.utils.functionIdHandler = new FunctionIdHandler();
+}(J$));
