@@ -1,5 +1,4 @@
 /* global J$ */
-/* global require */
 
 // do not remove the following comment
 // JALANGI DO NOT INSTRUMENT
@@ -8,20 +7,10 @@
 
 (function (sandbox) {
     function Analysis() {
-        var analysisBuilder = new (require("./analysisBuilder.js")).AnalysisBuilder(
-            sandbox
-        );
-
-        var callbacks = analysisBuilder.buildCallbacks();
-
         this.addAnalysis = function(analysis) {
             if (analysis.callbackName) {
                 this[analysis.callbackName] = analysis.callback;
             }
-        };
-
-        this.unaryPre = function (iid, op, left) {
-            return callbacks.unaryPre.runCallback(iid, op, left);
         };
 
         this.endExecution = function() {

@@ -1,14 +1,16 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	function UnaryPre(wrapperObjectsHandler) {
-		this.wrapperObjectsHandler = wrapperObjectsHandler;
+(function (sandbox) {
+	function UnaryPreAnalysis() {
+		this.callbackName = "unaryPre";
+
+		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
 
 		var dis = this;
 
-		this.runCallback = function (iid, op, left) {
+		this.callback = function (iid, op, left) {
 			if (op === "typeof") {
 				left = replaceValueIfItIsAWrapperObject(left);
 			}
@@ -29,6 +31,6 @@
 		}
 	}
 
-	exp.UnaryPre = UnaryPre;
+	sandbox.analysis = new UnaryPreAnalysis();
 
-})(module.exports);
+}(J$));

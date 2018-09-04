@@ -50,4 +50,5 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     --analysis $ROOT_PATH/analysis/callbacks/putFieldPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/write.js \
     --analysis $ROOT_PATH/analysis/callbacks/binaryPre.js \
+    --analysis $ROOT_PATH/analysis/callbacks/unaryPre.js \
     $TARGET | tee output.json
