@@ -12,12 +12,6 @@
 			var variables = buildVariables(sandbox);
 
 			return {
-				functionEnter: new (require("./callbacks/functionEnter.js")).FunctionEnter(
-					this.runTimeInfo,
-					variables.functionsExecutionStack,
-					variables.functionIdHandler,
-					sandbox
-				),
 				functionExit: new (require("./callbacks/functionExit.js")).FunctionExit(
 					variables.functionsExecutionStack
 				),

@@ -14,8 +14,10 @@
 
         var callbacks = analysisBuilder.buildCallbacks();
 
-        this.functionEnter = function(iid, f) {
-            return callbacks.functionEnter.runCallback(iid, f);
+        this.addAnalysis = function(analysis) {
+            if (analysis.callbackName) {
+                this[analysis.callbackName] = analysis[analysis.callbackName];
+            }
         };
 
         this.functionExit = function (iid, returnVal, wrappedExceptionVal) {
@@ -112,6 +114,16 @@
             console.log(JSON.stringify(sandbox.runTimeInfo, null, 4));
         };
     }
+
+    var thisAnalysis = new Analysis();
+    Object.defineProperty(sandbox, 'analysis', {
+        get:function () {
+            return thisAnalysis;
+        },
+        set:function (a) {
+            thisAnalysis.addAnalysis(a);
+        }
+    });
 
     sandbox.analysis = new Analysis();
 }(J$));

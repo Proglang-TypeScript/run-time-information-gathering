@@ -1,28 +1,30 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
-	function FunctionEnter(runTimeInfo, functionsExecutionStack, functionIdHandler, sandbox) {
+(function (sandbox) {
+	function FunctionEnterAnalysis() {
+		this.callbackName = "functionEnter";
+
 		var FunctionContainer = sandbox.utils.FunctionContainer;
 
-		this.runTimeInfo = runTimeInfo;
-		this.functionsExecutionStack = functionsExecutionStack;
-		this.functionIdHandler = functionIdHandler;
+		this.runTimeInfo = sandbox.runTimeInfo;
+		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+		this.functionIdHandler = sandbox.utils.functionIdHandler;
 
 		var dis = this;
 
-		this.runCallback = function(iid, f) {
-			let functionId = this.functionIdHandler.setFunctionId(f);
+		this[this.callbackName] = function(iid, f) {
+			let functionId = dis.functionIdHandler.setFunctionId(f);
 
 			if (functionNotProcessed(f)) {
 				var functionContainer = new FunctionContainer(f);
 				functionContainer.functionIid = iid;
 
-				this.runTimeInfo[functionId] = functionContainer;
+				dis.runTimeInfo[functionId] = functionContainer;
 			}
 
-			this.functionsExecutionStack.addExecution(functionId);
+			dis.functionsExecutionStack.addExecution(functionId);
 		};
 
 		function functionNotProcessed(f) {
@@ -31,6 +33,6 @@
 		}
 	}
 
-	exp.FunctionEnter = FunctionEnter;
+	sandbox.analysis = new FunctionEnterAnalysis();
 
-})(module.exports);
+}(J$));
