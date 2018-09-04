@@ -1,19 +1,11 @@
-/* global module */
+/* global J$ */
 
 "use strict";
 
-(function(exp) {
+(function (sandbox) {
+	function InvokeFunPreAnalysis() {
+		this.callbackName = "invokeFunPre";
 
-
-	function InvokeFunPre(
-		runTimeInfo,
-		functionsExecutionStack,
-		sMemoryInterface,
-		argumentContainerFinder,
-		functionIdHandler,
-		wrapperObjectsHandler,
-		sandbox
-	) {
 		var FunctionContainer = sandbox.utils.FunctionContainer;
 		var getTypeOf = sandbox.functions.getTypeOf;
 		var getDeclarationEnclosingFunctionId = sandbox.functions.getDeclarationEnclosingFunctionId;
@@ -22,14 +14,14 @@
 
 		var dis = this;
 
-		this.runTimeInfo = runTimeInfo;
-		this.functionsExecutionStack = functionsExecutionStack;
-		this.sMemoryInterface = sMemoryInterface;
-		this.argumentContainerFinder = argumentContainerFinder;
-		this.functionIdHandler = functionIdHandler;
-		this.wrapperObjectsHandler = wrapperObjectsHandler;
+		this.runTimeInfo = sandbox.runTimeInfo;
+		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
+		this.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
+		this.functionIdHandler = sandbox.utils.functionIdHandler;
+		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
 
-		this.runCallback = function(
+		this.callback = function(
 			iid,
 			f,
 			base,
@@ -40,7 +32,7 @@
 		) {
 
 			if (!isConsoleLog(f)) {
-				this.functionIdHandler.setFunctionId(f);
+				dis.functionIdHandler.setFunctionId(f);
 
 				for (var argIndex in args) {
 					addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
@@ -53,7 +45,7 @@
 					var functionContainer = new FunctionContainer(f, isConstructor);
 					functionContainer.functionIid = functionIid;
 
-					this.runTimeInfo[functionContainer.functionId] = functionContainer;
+					dis.runTimeInfo[functionContainer.functionId] = functionContainer;
 				}
 			}
 
@@ -111,6 +103,6 @@
 		}
 	}
 
-	exp.InvokeFunPre = InvokeFunPre;
+	sandbox.analysis = new InvokeFunPreAnalysis();
 
-})(module.exports);
+}(J$));

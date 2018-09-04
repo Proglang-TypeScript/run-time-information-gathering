@@ -20,26 +20,6 @@
             }
         };
 
-        this.invokeFunPre = function(
-            iid,
-            f,
-            base,
-            args,
-            isConstructor,
-            isMethod,
-            functionIid
-        ) {
-            return callbacks.invokeFunPre.runCallback(
-                iid,
-                f,
-                base,
-                args,
-                isConstructor,
-                isMethod,
-                functionIid
-            );
-        };
-
         this.invokeFun = function (
             iid,
             f,

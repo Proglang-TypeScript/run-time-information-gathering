@@ -12,15 +12,6 @@
 			var variables = buildVariables(sandbox);
 
 			return {
-				invokeFunPre: new (require("./callbacks/invokeFunPre.js")).InvokeFunPre(
-					this.runTimeInfo,
-					variables.functionsExecutionStack,
-					variables.sMemoryInterface,
-					variables.argumentContainerFinder,
-					variables.functionIdHandler,
-					variables.wrapperObjectsHandler,
-					sandbox
-				),
 				invokeFun: new (require("./callbacks/invokeFun.js")).InvokeFun(
 					this.runTimeInfo,
 					variables.functionsExecutionStack,
