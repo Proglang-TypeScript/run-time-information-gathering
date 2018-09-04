@@ -12,13 +12,6 @@
 			var variables = buildVariables(sandbox);
 
 			return {
-				declare: new (require("./callbacks/declare.js")).Declare(
-					this.runTimeInfo,
-					variables.functionsExecutionStack,
-					variables.argumentContainerFinder,
-					variables.sMemoryInterface,
-					sandbox
-				),
 				invokeFunPre: new (require("./callbacks/invokeFunPre.js")).InvokeFunPre(
 					this.runTimeInfo,
 					variables.functionsExecutionStack,

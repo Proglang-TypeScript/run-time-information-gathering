@@ -20,10 +20,6 @@
             }
         };
 
-        this.declare = function(iid, name, val, isArgument, argumentIndex) {
-            return callbacks.declare.runCallback(iid, name, val, isArgument, argumentIndex);
-        };
-
         this.invokeFunPre = function(
             iid,
             f,
