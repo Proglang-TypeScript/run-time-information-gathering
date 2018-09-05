@@ -27,7 +27,6 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     --analysis $ROOT_PATH/utils/wrapperObjectsHandler.js \
     \
     --analysis $ROOT_PATH/utils/argumentContainer.js \
-    --analysis $ROOT_PATH/utils/argumentContainerFinder.js \
     --analysis $ROOT_PATH/utils/functionContainer.js \
     \
     \
