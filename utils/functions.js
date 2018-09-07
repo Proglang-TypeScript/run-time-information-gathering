@@ -23,7 +23,7 @@
 				return val[argumentWrapperObjectBuilder.getOriginalTypeOfField()];
 			}
 
-			if(val.constructor.name != "Object") {
+			if(val.constructor && val.constructor.name !== "Object") {
 				return val.constructor.name;
 			}
 		}
