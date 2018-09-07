@@ -20,9 +20,9 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     --analysis $ROOT_PATH/utils/argumentContainerFinder.js \
     --analysis $ROOT_PATH/utils/interactionFinder.js \
     --analysis $ROOT_PATH/utils/recursiveInteractionsHandler.js \
-    --analysis $ROOT_PATH/utils/argumentProxyBuilder.js \
     --analysis $ROOT_PATH/utils/argumentWrapperObjectBuilder.js \
     --analysis $ROOT_PATH/utils/functionIdHandler.js \
+    --analysis $ROOT_PATH/utils/argumentProxyBuilder.js \
     --analysis $ROOT_PATH/utils/interactionWithResultHandler.js \
     --analysis $ROOT_PATH/utils/wrapperObjectsHandler.js \
     \
