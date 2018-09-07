@@ -6,8 +6,12 @@ function f(obj) {
 	}
 }
 
-var myObj = {
-	myValue: 90
-};
+$(function() {
+	$("#button_click_me").click(function() {
+		var myObj = {
+			myValue: 90
+		};
 
-console.log(f(myObj));
+		console.log(f(myObj));
+	});
+});
