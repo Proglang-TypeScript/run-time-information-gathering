@@ -11,7 +11,7 @@
 		let shadowObjectKey = this.sMemoryInterface.getSpecialPropSObject();
 
 		this.buildProxy = function(obj) {
-			return new Proxy(
+			let p = new Proxy(
 				obj,
 				{
 					uniqueShadowObjectKey: shadowObjectKey + "__PROXY__" + getRandomIdentifier(),
@@ -29,6 +29,29 @@
 						if (property === shadowObjectKey) {
 							return receiver[this.uniqueShadowObjectKey];
 						} else {
+							if (typeof target[property] === "function" && property !== "constructor") {
+								if (!receiver[property + this.uniqueShadowObjectKey]) {
+									const origMethod = target[property];
+									var f = function() {
+										const result = origMethod.apply(target, arguments);
+										return result;
+									};
+
+									for(var key in origMethod) {
+										if (origMethod.hasOwnProperty(key)) {
+											f[key] = origMethod[key];
+										}
+									}
+
+									f.isProxy = true;
+
+									target[property + this.uniqueShadowObjectKey] = f;
+									origMethod.proxyMethod = f;
+								}
+
+								return target[property + this.uniqueShadowObjectKey];
+							}
+
 							return target[property];
 						}
 					},
@@ -44,6 +67,12 @@
 					}
 				}
 			);
+
+			if (obj instanceof RegExp) {
+				obj.exec = obj.exec.bind(obj);
+			}
+
+			return p;
 		};
 	}
 

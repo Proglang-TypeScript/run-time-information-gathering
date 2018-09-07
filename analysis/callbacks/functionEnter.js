@@ -15,14 +15,22 @@
 		var dis = this;
 
 		this.callback = function(iid, f) {
+			if (f.proxyMethod) {
+				f = f.proxyMethod;
+			}
+
 			let functionId = dis.functionIdHandler.setFunctionId(f);
+			let functionContainer;
 
 			if (functionNotProcessed(f)) {
-				var functionContainer = new FunctionContainer(f);
-				functionContainer.functionIid = iid;
+				functionContainer = new FunctionContainer(f);
 
 				dis.runTimeInfo[functionId] = functionContainer;
+			} else {
+				functionContainer = dis.runTimeInfo[functionId];
 			}
+
+			functionContainer.functionIid = iid;
 
 			dis.functionsExecutionStack.addExecution(functionId);
 		};
