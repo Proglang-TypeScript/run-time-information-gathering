@@ -17,7 +17,12 @@
 					uniqueShadowObjectKey: shadowObjectKey + "__PROXY__" + getRandomIdentifier(),
 					set: function(target, property, value, receiver) {
 						if (property === shadowObjectKey) {
-							receiver[this.uniqueShadowObjectKey] = value;
+							Object.defineProperty(receiver, this.uniqueShadowObjectKey, {
+								value: value,
+								enumerable: false,
+								configurable: true,
+								writable: true
+							});
 						}
 						else {
 							target[property] = value;
@@ -30,7 +35,7 @@
 							return receiver[this.uniqueShadowObjectKey];
 						} else {
 							if (typeof target[property] === "function" && property !== "constructor") {
-								if (!receiver[property + this.uniqueShadowObjectKey]) {
+								if (!target[getModifiedPropertyName(property)]) {
 									const origMethod = target[property];
 									var f = function() {
 										const result = origMethod.apply(target, arguments);
@@ -45,11 +50,11 @@
 
 									f.isProxy = true;
 
-									target[property + this.uniqueShadowObjectKey] = f;
+									target[getModifiedPropertyName(property)] = f;
 									origMethod.proxyMethod = f;
 								}
 
-								return target[property + this.uniqueShadowObjectKey];
+								return target[getModifiedPropertyName(property)];
 							}
 
 							return target[property];
@@ -68,12 +73,20 @@
 				}
 			);
 
-			if (obj instanceof RegExp) {
-				obj.exec = obj.exec.bind(obj);
-			}
-
 			return p;
 		};
+
+		function getModifiedPropertyName(property) {
+			let pString;
+
+			if (typeof property === "symbol") {
+				pString = property.toString();
+			} else {
+				pString = property;
+			}
+
+			return pString + "__PROXY__";
+		}
 	}
 
 	if (sandbox.utils === undefined) {
