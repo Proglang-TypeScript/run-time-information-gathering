@@ -27,6 +27,10 @@
 						return true;
 					},
 					get: function(target, property, receiver) {
+						if (property === "TARGET_PROXY") {
+							return target;
+						}
+
 						if (property === shadowObjectKey) {
 							return receiver[this.uniqueShadowObjectKey];
 						} else {
