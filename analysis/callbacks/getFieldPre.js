@@ -65,17 +65,19 @@
 		}
 
 		function processMethodCallInteraction(base, offset, isComputed, isOpAssign, iid) {
-			base[offset].methodName = offset;
+			if (base[offset] !== undefined) {
+				base[offset].methodName = offset;
 
-			var methodCallInteraction = getMethodCallInteraction(
-				base,
-				offset,
-				isComputed,
-				isOpAssign,
-				iid
-			);
+				var methodCallInteraction = getMethodCallInteraction(
+					base,
+					offset,
+					isComputed,
+					isOpAssign,
+					iid
+				);
 
-			addFunctionIdToInteraction(methodCallInteraction, base[offset]);
+				addFunctionIdToInteraction(methodCallInteraction, base[offset]);
+			}
 		}
 
 		function getMethodCallInteraction(base, offset, isComputed, isOpAssign, iid) {
