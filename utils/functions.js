@@ -59,13 +59,11 @@
 								val[key].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(functionsExecutionStack);
 							}
 
-							if (key !== sMemoryInterface.getSpecialPropActual()) { // avoid circular reference
-								doAddDeclarationFunctionIdToFunctionsInsideObject(
-									val[key],
-									functionsExecutionStack,
-									sMemoryInterface
-								);
-							}
+							doAddDeclarationFunctionIdToFunctionsInsideObject(
+								val[key],
+								functionsExecutionStack,
+								sMemoryInterface
+							);
 						}
 					}
 				}
