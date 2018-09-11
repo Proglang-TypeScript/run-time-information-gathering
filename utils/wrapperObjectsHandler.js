@@ -10,24 +10,17 @@
 		argumentWrapperObjectBuilder,
 		argumentProxyBuilder
 	) {
-		this.sMemoryInterface = sMemoryInterface;
 		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
 		this.argumentProxyBuilder = argumentProxyBuilder;
-
-		this.mapWrapperObjectsOriginalValues = {};
 
 		var dis = this;
 
 		this.objectIsWrapperObject = function(obj) {
-			let shadowId = this.sMemoryInterface.getShadowIdOfObject(obj);
-
-			return (shadowId in this.mapWrapperObjectsOriginalValues);
+			return (obj && (obj.TARGET_PROXY !== undefined));
 		};
 
 		this.getRealValueFromWrapperObject = function(obj) {
-			let shadowId = this.sMemoryInterface.getShadowIdOfObject(obj);
-
-			return this.mapWrapperObjectsOriginalValues[shadowId];
+ 			return obj.TARGET_PROXY;
 		};
 
 		this.convertToWrapperObjectIfItIsALiteral = function(originalValue) {
@@ -43,10 +36,7 @@
 					break;
 			}
 
-			if (newValue) {
-				let shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(newValue);
-				dis.mapWrapperObjectsOriginalValues[shadowIdProxy] = originalValue;
-			} else {
+			if (!newValue) {
 				newValue = originalValue;
 			}
 
@@ -58,9 +48,6 @@
 
 			if (getTypeOf(originalValue) == "object" && !(originalValue instanceof String) && !(originalValue instanceof Number)) {
 				newValue = dis.argumentProxyBuilder.buildProxy(originalValue);
-
-				var shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(newValue);
-				dis.mapWrapperObjectsOriginalValues[shadowIdProxy] = originalValue;
 			}
 
 			if (!newValue) {

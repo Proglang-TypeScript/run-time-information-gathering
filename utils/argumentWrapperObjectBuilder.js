@@ -16,6 +16,7 @@
 			let wrapperObj;
 			/* jshint ignore:start */
 			wrapperObj = new String(val);
+			wrapperObj.TARGET_PROXY = val;
 			/* jshint ignore:end */
 
 			wrapperObj[this.getOriginalTypeOfField()] = "string";
@@ -31,6 +32,7 @@
 			let wrapperObj;
 			/* jshint ignore:start */
 			wrapperObj = new Number(val);
+			wrapperObj.TARGET_PROXY = val;
 			/* jshint ignore:end */
 
 			wrapperObj[this.getOriginalTypeOfField()] = "number";
