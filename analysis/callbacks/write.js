@@ -14,7 +14,7 @@
 		var dis = this;
 
 		this.callback = function(iid, name, val) {
-			val = addDeclarationFunctionIdToFunctionsInsideObject(
+			addDeclarationFunctionIdToFunctionsInsideObject(
 				val,
 				dis.functionsExecutionStack,
 				dis.sMemoryInterface

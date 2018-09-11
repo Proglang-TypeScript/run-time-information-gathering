@@ -1,17 +1,17 @@
 "use strict";
 
-function f(obj) {
-	if (obj.myValue < 100) {
-		return true;
-	}
-}
-
 $(function() {
+	function f(obj) {
+		if (obj.myValue < 100) {
+			console.log("less than 100!");
+		}
+	}
+
 	$("#button_click_me").click(function() {
-		var myObj = {
+		var obj = {
 			myValue: 90
 		};
 
-		console.log(f(myObj));
+		f(obj);
 	});
 });

@@ -45,7 +45,9 @@ node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
     --analysis $ROOT_PATH/analysis/callbacks/declare.js \
     --analysis $ROOT_PATH/analysis/callbacks/invokeFunPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/invokeFun.js \
+    --analysis $ROOT_PATH/analysis/callbacks/getFieldPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/putFieldPre.js \
+    --analysis $ROOT_PATH/analysis/callbacks/write.js \
     --analysis $ROOT_PATH/analysis/callbacks/binaryPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/unaryPre.js \
 	--outputDir output_browser \
