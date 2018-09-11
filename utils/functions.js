@@ -46,25 +46,35 @@
 			return (description !== undefined && description.writable === true);
 		}
 
-		if (getTypeOf(val) == "object") {
-			for (var key in val) {
-				if (propertyIsWritable(val, key)) {
-					if (getTypeOf(val[key]) == "function") {
-						val[key].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(functionsExecutionStack);
-					}
+		let objects = [];
 
-					if (key !== sMemoryInterface.getSpecialPropActual()) { // avoid circular reference
-						val[key] = addDeclarationFunctionIdToFunctionsInsideObject(
-							val[key],
-							functionsExecutionStack,
-							sMemoryInterface
-						);
+		function doAddDeclarationFunctionIdToFunctionsInsideObject(val, functionsExecutionStack, sMemoryInterface) {
+			if (getTypeOf(val) == "object") {
+				if (objects.indexOf(val) === -1) {
+					objects.push(val);
+
+					for (var key in val) {
+						if (propertyIsWritable(val, key)) {
+							if (getTypeOf(val[key]) == "function") {
+								val[key].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(functionsExecutionStack);
+							}
+
+							if (key !== sMemoryInterface.getSpecialPropActual()) { // avoid circular reference
+								doAddDeclarationFunctionIdToFunctionsInsideObject(
+									val[key],
+									functionsExecutionStack,
+									sMemoryInterface
+								);
+							}
+						}
 					}
 				}
 			}
+
+			return val;
 		}
 
-		return val;
+		return doAddDeclarationFunctionIdToFunctionsInsideObject(val, functionsExecutionStack, sMemoryInterface);
 	}
 
 	function getHashForShadowIdAndFunctionId(shadowId, functionId) {
