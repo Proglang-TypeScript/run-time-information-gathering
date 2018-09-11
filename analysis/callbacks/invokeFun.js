@@ -27,27 +27,29 @@
 			result
 		) {
 
-			var functionContainer = getFunctionContainer(f);
+			if (f !== undefined) {
+				var functionContainer = getFunctionContainer(f);
 
-			if (functionContainer) {
-				functionContainer.addReturnTypeOf(result);
+				if (functionContainer) {
+					functionContainer.addReturnTypeOf(result);
 
-				if (f.lastInteraction) {
-					var interaction = f.lastInteraction;
-					interaction.setReturnTypeOf(result);
+					if (f.lastInteraction) {
+						var interaction = f.lastInteraction;
+						interaction.setReturnTypeOf(result);
 
-					result = changeResultToWrapperObjectIfItIsALiteral(result);
+						result = changeResultToWrapperObjectIfItIsALiteral(result);
 
-					this.interactionWithResultHandler.processInteractionWithResult(
-						interaction,
-						this.functionsExecutionStack.getCurrentExecutingFunction(),
-						// Let variable 'f' be the function that executed the invokeFun() callback.
-						// invokeFun() callback is executed after functionExit(),
-						// so the current executing function is the function that executed function 'f'.
+						this.interactionWithResultHandler.processInteractionWithResult(
+							interaction,
+							this.functionsExecutionStack.getCurrentExecutingFunction(),
+							// Let variable 'f' be the function that executed the invokeFun() callback.
+							// invokeFun() callback is executed after functionExit(),
+							// so the current executing function is the function that executed function 'f'.
 
-						result,
-						base
-					);
+							result,
+							base
+						);
+					}
 				}
 			}
 

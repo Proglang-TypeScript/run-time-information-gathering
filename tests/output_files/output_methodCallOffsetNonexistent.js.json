@@ -1,0 +1,44 @@
+{
+    "functionId_1": {
+        "functionId": "functionId_1",
+        "functionName": "doSomething",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "obj",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "object"
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "string"
+                    }
+                ]
+            },
+            "2": {
+                "argumentIndex": 2,
+                "argumentName": "b",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "typeof": "number"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            "undefined"
+        ],
+        "functionIid": 65
+    }
+}
