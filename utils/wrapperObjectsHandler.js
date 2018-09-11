@@ -56,7 +56,12 @@
 		this.convertToProxyIfItIsAnObject = function(originalValue) {
 			let newValue;
 
-			if (getTypeOf(originalValue) == "object" && !(originalValue instanceof String) && !(originalValue instanceof Number)) {
+			if (
+				getTypeOf(originalValue) == "object" &&
+				!(originalValue instanceof String) &&
+				!(originalValue instanceof Number)  &&
+				!((typeof Node === 'function') && originalValue instanceof Node)
+			) {
 				newValue = dis.argumentProxyBuilder.buildProxy(originalValue);
 
 				var shadowIdProxy = dis.sMemoryInterface.getShadowIdOfObject(newValue);
