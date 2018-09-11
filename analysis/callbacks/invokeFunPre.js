@@ -31,7 +31,7 @@
 			functionIid
 		) {
 
-			if (!isConsoleLog(f)) {
+			if ((f !== undefined) && !isConsoleLog(f)) {
 				dis.functionIdHandler.setFunctionId(f);
 
 				for (var argIndex in args) {
@@ -53,7 +53,7 @@
 				f: f,
 				base: base,
 				args: args,
-				skip: false
+				skip: (f === undefined)
 			};
 		};
 
