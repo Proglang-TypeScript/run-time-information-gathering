@@ -10,6 +10,10 @@
 
 		let shadowObjectKey = this.sMemoryInterface.getSpecialPropSObject();
 
+		this.proxyMethodsIdentifier = "%%PROXY_METHOD%%";
+
+		var dis = this;
+
 		this.buildProxy = function(obj) {
 			let p = new Proxy(
 				obj,
@@ -69,16 +73,16 @@
 			return p;
 		};
 
-		function getModifiedPropertyName(property) {
-			let pString;
-
+		function transformToString(property) {
 			if (typeof property === "symbol") {
-				pString = property.toString();
-			} else {
-				pString = property;
+				return property.toString();
 			}
 
-			return pString + "__PROXY__";
+			return property;
+		}
+
+		function getModifiedPropertyName(property) {
+			return transformToString(property) + dis.proxyMethodsIdentifier;
 		}
 
 		function cloneMethod(origMethod, target) {
