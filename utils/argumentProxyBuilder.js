@@ -39,20 +39,9 @@
 							return receiver[this.uniqueShadowObjectKey];
 						} else {
 							if (typeof target[property] === "function" && property !== "constructor") {
-								if (!target[getModifiedPropertyName(property)]) {
+								if (!isProxyMethod(target, property)) {
 									const origMethod = target[property];
-									var f = function() {
-										const result = origMethod.apply(target, arguments);
-										return result;
-									};
-
-									for(var key in origMethod) {
-										if (origMethod.hasOwnProperty(key)) {
-											f[key] = origMethod[key];
-										}
-									}
-
-									f.isProxy = true;
+									var f = cloneMethod(origMethod, target);
 
 									target[getModifiedPropertyName(property)] = f;
 									origMethod.proxyMethod = f;
@@ -90,6 +79,25 @@
 			}
 
 			return pString + "__PROXY__";
+		}
+
+		function cloneMethod(origMethod, target) {
+			var f = function() {
+				const result = origMethod.apply(target, arguments);
+				return result;
+			};
+
+			for(var key in origMethod) {
+				if (origMethod.hasOwnProperty(key)) {
+					f[key] = origMethod[key];
+				}
+			}
+
+			return f;
+		}
+
+		function isProxyMethod(target, property) {
+			return (target[getModifiedPropertyName(property)] !== undefined);
 		}
 	}
 
