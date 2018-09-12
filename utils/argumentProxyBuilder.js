@@ -83,8 +83,15 @@
 
 		function cloneMethod(origMethod, target) {
 			var f = function() {
-				const result = origMethod.apply(target, arguments);
-				return result;
+				try {
+					return origMethod.apply(this, arguments);
+				} catch(error) {
+					if (error instanceof TypeError) {
+						return origMethod.apply(target, arguments);
+					} else {
+						throw error;
+					}
+				}
 			};
 
 			for(var key in origMethod) {
