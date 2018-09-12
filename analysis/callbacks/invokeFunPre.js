@@ -70,7 +70,7 @@
 		}
 
 		function isConsoleLog(f) {
-			return (f.name === "bound consoleCall");
+			return ((f.name === "bound consoleCall") || ((f.name === "log") && f.toString().indexOf("native code") !== -1));
 		}
 
 		function addDeclarationEnclosingFunctionIdIfApplicable(val) {
