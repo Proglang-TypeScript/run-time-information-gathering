@@ -25,7 +25,9 @@
 		};
 
 		this.addReturnTypeOf = function(typeOf) {
-			this.returnTypeOfs.push(getTypeOfForReporting(typeOf));
+			if (this.returnTypeOfs.indexOf(typeOf) === -1) {
+				this.returnTypeOfs.push(getTypeOfForReporting(typeOf));
+			}
 		};
 
 		this.getArgumentContainer = function(argumentIndex) {
