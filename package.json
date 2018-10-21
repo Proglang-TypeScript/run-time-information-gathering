@@ -2,6 +2,8 @@
   "name": "master-mind-wp3",
   "version": "1.0.0",
   "dependencies": {
-    "jalangi2": "^0.2.5"
+    "get-stdin": "^6.0.0",
+    "jalangi2": "^0.2.5",
+    "node-html-parser": "^1.1.10"
   }
 }
