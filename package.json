@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "dependencies": {
     "get-stdin": "^6.0.0",
-    "jalangi2": "^0.2.5",
     "node-html-parser": "^1.1.10"
   }
 }
