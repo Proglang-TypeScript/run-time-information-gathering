@@ -4,10 +4,11 @@
 Clone the repository and then run:
 
 ```
-npm install
+cd [into-the-repository]
+./install.sh
 ```
 
-### Run script using test files
+### Run tests to check installation
 ```bash
-./run.sh tests/TEST_FILE.js
+./tests/runTests.sh
 ```
