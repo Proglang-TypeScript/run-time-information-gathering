@@ -29,16 +29,40 @@
 
 	function FunctionsExecutionStack() {
 		this.stack = new Stack();
+		this.bufferLastStopped = null;
+
+		let counter = 1;
 
 		this.addExecution = function(iid) {
-			this.stack.push(iid);
+			var execution = {
+				fid: iid,
+				traceId: "trace_" + counter
+			};
+
+			counter++;
+
+			this.stack.push(execution);
 		};
 
+		this.getLastStopped = function() {
+			return this.bufferLastStopped;
+		}
+
 		this.stopExecution = function() {
-			this.stack.pop();
+			this.bufferLastStopped = this.stack.pop();
 		};
 
 		this.getCurrentExecutingFunction = function() {
+			var currentExecution = this.getCurrentExecution();
+
+			if (currentExecution) {
+				return currentExecution.fid;
+			} else {
+				return currentExecution;
+			}
+		};
+
+		this.getCurrentExecution = function () {
 			return this.stack.top();
 		};
 
