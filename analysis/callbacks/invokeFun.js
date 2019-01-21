@@ -27,8 +27,6 @@
 				var functionContainer = getFunctionContainer(f);
 
 				if (functionContainer) {
-					functionContainer.addReturnTypeOf(result);
-
 					if (f.lastInteraction) {
 						var interaction = f.lastInteraction;
 						interaction.setReturnTypeOf(result);
@@ -45,7 +43,11 @@
 							base
 						);
 					}
+
+					let lastStopped = dis.functionsExecutionStack.getLastStopped();
+					functionContainer.addReturnTypeOf(result, lastStopped.traceId);
 				}
+
 			}
 
 			return {

@@ -23,10 +23,13 @@
 			}
 		};
 
-		this.addReturnTypeOf = function(typeOf) {
-			if (this.returnTypeOfs.indexOf(typeOf) === -1) {
-				this.returnTypeOfs.push(getTypeOfForReporting(typeOf));
+		this.addReturnTypeOf = function(returnValue, traceId) {
+			let returnTypeOf = {
+				typeOf: getTypeOfForReporting(returnValue),
+				traceId: traceId
 			}
+
+			this.returnTypeOfs.push(returnTypeOf);
 		};
 
 		this.getArgumentContainer = function(argumentIndex) {

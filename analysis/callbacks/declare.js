@@ -56,7 +56,13 @@
 
 		function buildArgumentContainer(argumentIndex, name, val) {
 			var argumentContainer = new ArgumentContainer(argumentIndex, name);
-			argumentContainer.addInteraction(new InputValueInteraction(getTypeOfForReporting(val)));
+
+			let interaction = new InputValueInteraction(getTypeOfForReporting(val));
+
+			let execution = dis.functionsExecutionStack.getCurrentExecution();
+			interaction.traceId = execution.traceId;
+
+			argumentContainer.addInteraction(interaction);
 
 			return argumentContainer;
 		}

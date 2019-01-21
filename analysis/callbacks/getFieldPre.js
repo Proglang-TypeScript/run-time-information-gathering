@@ -58,7 +58,11 @@
 			var interaction = new GetFieldInteraction(iid, offset);
 			interaction.isComputed = isComputed;
 			interaction.isOpAssign = isOpAssign;
-			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
+
+			let execution = dis.functionsExecutionStack.getCurrentExecution();
+			interaction.enclosingFunctionId = execution.fid;
+			interaction.traceId = execution.traceId;
+
 			interaction.setReturnTypeOf(base[offset]);
 
 			return interaction;
@@ -84,7 +88,10 @@
 			var interaction = new MethodCallInteraction(iid, offset);
 			interaction.isComputed = isComputed;
 			interaction.isOpAssign = isOpAssign;
-			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
+
+			let execution = dis.functionsExecutionStack.getCurrentExecution();
+			interaction.enclosingFunctionId = execution.fid;
+			interaction.traceId = execution.traceId;
 
 			return interaction;
 		}

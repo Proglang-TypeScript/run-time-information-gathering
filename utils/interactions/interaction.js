@@ -5,6 +5,7 @@
 (function (sandbox) {
 	function Interaction() {
 		this.code = null;
+		this.traceId = null;
 	}
 
 	if (sandbox.utils === undefined) {
