@@ -45,7 +45,7 @@
 					}
 
 					let lastStopped = dis.functionsExecutionStack.getLastStopped();
-					functionContainer.addReturnTypeOf(result, lastStopped.traceId);
+					functionContainer.addReturnTypeOf(result, lastStopped ? lastStopped.traceId : null);
 				}
 
 			}
