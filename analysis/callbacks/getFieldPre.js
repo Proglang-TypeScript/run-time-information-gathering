@@ -89,9 +89,7 @@
 			interaction.isComputed = isComputed;
 			interaction.isOpAssign = isOpAssign;
 
-			let execution = dis.functionsExecutionStack.getCurrentExecution();
-			interaction.enclosingFunctionId = execution.fid;
-			interaction.traceId = execution.traceId;
+			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 
 			return interaction;
 		}
