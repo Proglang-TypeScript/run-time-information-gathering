@@ -33,6 +33,7 @@
 
 			if ((f !== undefined) && !isConsoleLog(f)) {
 				dis.functionIdHandler.setFunctionId(f);
+				f.temporaryTraceId = dis.functionsExecutionStack.getTraceId();
 
 				for (var argIndex in args) {
 					addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
@@ -76,7 +77,6 @@
 
 		function addUsedAsArgumentInteractionIfApplicable(val, f, argIndex) {
 			let functionId = dis.functionIdHandler.getFunctionId(f);
-			f.temporaryTraceId = dis.functionsExecutionStack.getTraceId();
 
 			if (getTypeOf(val) == "object") {
 				var currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();

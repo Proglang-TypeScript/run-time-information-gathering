@@ -45,15 +45,15 @@
 
 			var execution = {
 				fid: functionId,
-				traceId: this.getTraceId()
+				traceId: null
 			};
 
 			if (f.temporaryTraceId) {
 				execution.traceId = f.temporaryTraceId;
 				delete f.temporaryTraceId;
+			} else {
+				execution.traceId = this.getTraceId();
 			}
-
-			counter++;
 
 			this.stack.push(execution);
 		};
