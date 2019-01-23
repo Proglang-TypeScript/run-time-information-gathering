@@ -10,10 +10,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -27,7 +29,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            {
+                "typeOf": "object",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 81
     },
@@ -42,10 +47,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "object"
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": true,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_3",
@@ -62,6 +69,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "string"
                     }
                 ]
@@ -69,7 +77,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            {
+                "typeOf": "object",
+                "traceId": "trace__2"
+            }
         ],
         "functionIid": 169
     },
@@ -84,10 +95,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "object"
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": true,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_5",
@@ -104,6 +117,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "string"
                     }
                 ]
@@ -111,7 +125,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            {
+                "typeOf": "object",
+                "traceId": "trace__3"
+            }
         ],
         "functionIid": 305
     }

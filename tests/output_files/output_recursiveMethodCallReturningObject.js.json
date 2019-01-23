@@ -10,38 +10,47 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__5",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__6",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__7",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__8",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__9",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__10",
                         "typeof": "number"
                     }
                 ]
@@ -52,38 +61,47 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "null"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__5",
                         "typeof": "AnotherNode"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__6",
                         "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__7",
                         "typeof": "null"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__8",
                         "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__9",
                         "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__10",
                         "typeof": "Node"
                     }
                 ]
@@ -94,38 +112,47 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "null"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "null"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "null"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__5",
                         "typeof": "null"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__6",
                         "typeof": "null"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__7",
                         "typeof": "Node"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__8",
                         "typeof": "null"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__9",
                         "typeof": "null"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__10",
                         "typeof": "null"
                     }
                 ]
@@ -133,15 +160,42 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "Node",
-            "Node",
-            "Node",
-            "Node",
-            "Node",
-            "Node",
-            "Node",
-            "Node",
-            "Node"
+            {
+                "typeOf": "Node",
+                "traceId": "trace__1"
+            },
+            {
+                "typeOf": "Node",
+                "traceId": "trace__2"
+            },
+            {
+                "typeOf": "Node",
+                "traceId": "trace__3"
+            },
+            {
+                "typeOf": "Node",
+                "traceId": "trace__5"
+            },
+            {
+                "typeOf": "Node",
+                "traceId": "trace__6"
+            },
+            {
+                "typeOf": "Node",
+                "traceId": "trace__7"
+            },
+            {
+                "typeOf": "Node",
+                "traceId": "trace__8"
+            },
+            {
+                "typeOf": "Node",
+                "traceId": "trace__9"
+            },
+            {
+                "typeOf": "Node",
+                "traceId": "trace__10"
+            }
         ],
         "functionIid": 481
     },
@@ -156,6 +210,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "number"
                     }
                 ]
@@ -166,6 +221,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "null"
                     }
                 ]
@@ -176,6 +232,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "Node"
                     }
                 ]
@@ -183,7 +240,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "AnotherNode"
+            {
+                "typeOf": "AnotherNode",
+                "traceId": "trace__4"
+            }
         ],
         "functionIid": 729
     },
@@ -198,10 +258,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__11",
                         "typeof": "Node"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__11",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_5",
@@ -212,6 +274,7 @@
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__11",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_5",
@@ -222,12 +285,14 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_5",
                         "followingInteractions": [
                             {
                                 "code": "getField",
+                                "traceId": "trace__10",
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
@@ -238,6 +303,7 @@
                             },
                             {
                                 "code": "getField",
+                                "traceId": "trace__10",
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
@@ -248,36 +314,152 @@
                             },
                             {
                                 "code": "methodCall",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
                                 "followingInteractions": [
                                     {
+                                        "code": "getField",
+                                        "traceId": "trace__9",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": "functionId_5",
+                                        "followingInteractions": [],
+                                        "iid": 97,
+                                        "field": "val",
+                                        "returnTypeOf": "number"
+                                    },
+                                    {
+                                        "code": "getField",
+                                        "traceId": "trace__9",
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": "functionId_5",
+                                        "followingInteractions": [],
+                                        "iid": 137,
+                                        "field": "useRight",
+                                        "returnTypeOf": "boolean"
+                                    },
+                                    {
                                         "code": "methodCall",
+                                        "traceId": null,
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": "functionId_5",
                                         "followingInteractions": [
                                             {
+                                                "code": "getField",
+                                                "traceId": "trace__8",
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "enclosingFunctionId": "functionId_5",
+                                                "followingInteractions": [],
+                                                "iid": 97,
+                                                "field": "val",
+                                                "returnTypeOf": "number"
+                                            },
+                                            {
+                                                "code": "getField",
+                                                "traceId": "trace__8",
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "enclosingFunctionId": "functionId_5",
+                                                "followingInteractions": [],
+                                                "iid": 137,
+                                                "field": "useRight",
+                                                "returnTypeOf": "boolean"
+                                            },
+                                            {
                                                 "code": "methodCall",
+                                                "traceId": null,
                                                 "isComputed": false,
                                                 "isOpAssign": false,
                                                 "enclosingFunctionId": "functionId_5",
                                                 "followingInteractions": [
                                                     {
+                                                        "code": "getField",
+                                                        "traceId": "trace__7",
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "enclosingFunctionId": "functionId_5",
+                                                        "followingInteractions": [],
+                                                        "iid": 97,
+                                                        "field": "val",
+                                                        "returnTypeOf": "number"
+                                                    },
+                                                    {
+                                                        "code": "getField",
+                                                        "traceId": "trace__7",
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "enclosingFunctionId": "functionId_5",
+                                                        "followingInteractions": [],
+                                                        "iid": 137,
+                                                        "field": "useRight",
+                                                        "returnTypeOf": "boolean"
+                                                    },
+                                                    {
                                                         "code": "methodCall",
+                                                        "traceId": null,
                                                         "isComputed": false,
                                                         "isOpAssign": false,
                                                         "enclosingFunctionId": "functionId_5",
                                                         "followingInteractions": [
                                                             {
+                                                                "code": "getField",
+                                                                "traceId": "trace__6",
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "enclosingFunctionId": "functionId_5",
+                                                                "followingInteractions": [],
+                                                                "iid": 97,
+                                                                "field": "val",
+                                                                "returnTypeOf": "number"
+                                                            },
+                                                            {
+                                                                "code": "getField",
+                                                                "traceId": "trace__6",
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "enclosingFunctionId": "functionId_5",
+                                                                "followingInteractions": [],
+                                                                "iid": 137,
+                                                                "field": "useRight",
+                                                                "returnTypeOf": "boolean"
+                                                            },
+                                                            {
                                                                 "code": "methodCall",
+                                                                "traceId": null,
                                                                 "isComputed": false,
                                                                 "isOpAssign": false,
                                                                 "enclosingFunctionId": "functionId_5",
                                                                 "followingInteractions": [
                                                                     {
+                                                                        "code": "getField",
+                                                                        "traceId": "trace__5",
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "enclosingFunctionId": "functionId_5",
+                                                                        "followingInteractions": [],
+                                                                        "iid": 97,
+                                                                        "field": "val",
+                                                                        "returnTypeOf": "number"
+                                                                    },
+                                                                    {
+                                                                        "code": "getField",
+                                                                        "traceId": "trace__5",
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "enclosingFunctionId": "functionId_5",
+                                                                        "followingInteractions": [],
+                                                                        "iid": 137,
+                                                                        "field": "useRight",
+                                                                        "returnTypeOf": "boolean"
+                                                                    },
+                                                                    {
                                                                         "code": "methodCall",
+                                                                        "traceId": null,
                                                                         "isComputed": false,
                                                                         "isOpAssign": false,
                                                                         "enclosingFunctionId": "functionId_5",
@@ -328,7 +510,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "number"
+            {
+                "typeOf": "number",
+                "traceId": "trace__11"
+            }
         ],
         "functionIid": 233
     },
@@ -339,7 +524,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "Node"
+            {
+                "typeOf": "Node",
+                "traceId": "trace__12"
+            }
         ],
         "functionIid": 369
     },
@@ -350,7 +538,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "Node"
+            {
+                "typeOf": "Node",
+                "traceId": "trace__13"
+            }
         ],
         "functionIid": 369
     },
@@ -361,7 +552,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "Node"
+            {
+                "typeOf": "Node",
+                "traceId": "trace__14"
+            }
         ],
         "functionIid": 369
     },
@@ -372,7 +566,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "Node"
+            {
+                "typeOf": "Node",
+                "traceId": "trace__15"
+            }
         ],
         "functionIid": 441
     },
@@ -383,7 +580,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "Node"
+            {
+                "typeOf": "Node",
+                "traceId": "trace__16"
+            }
         ],
         "functionIid": 369
     },
@@ -394,7 +594,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "AnotherNode"
+            {
+                "typeOf": "AnotherNode",
+                "traceId": "trace__17"
+            }
         ],
         "functionIid": 369
     },
@@ -405,7 +608,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_5",
         "returnTypeOfs": [
-            "null"
+            {
+                "typeOf": "null",
+                "traceId": "trace__18"
+            }
         ],
         "functionIid": 617
     }

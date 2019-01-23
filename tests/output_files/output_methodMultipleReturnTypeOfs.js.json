@@ -10,10 +10,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -24,6 +26,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -35,6 +38,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -45,6 +49,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -56,6 +61,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -66,6 +72,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -77,6 +84,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -87,6 +95,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -98,6 +107,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -108,6 +118,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -119,6 +130,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -129,6 +141,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -140,6 +153,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -150,6 +164,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -161,6 +176,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -171,6 +187,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -182,6 +199,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -192,6 +210,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -203,6 +222,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -213,6 +233,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -224,6 +245,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -234,6 +256,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -245,6 +268,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -255,6 +279,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -266,6 +291,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -276,6 +302,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -287,6 +314,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -297,6 +325,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -308,6 +337,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -318,6 +348,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -329,6 +360,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -339,6 +371,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -350,6 +383,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -360,6 +394,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -371,6 +406,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -381,6 +417,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -392,6 +429,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -402,6 +440,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -413,6 +452,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -423,6 +463,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -437,7 +478,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "undefined"
+            {
+                "typeOf": "undefined",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 161
     },
@@ -448,26 +492,86 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "string",
-            "number",
-            "function",
-            "object",
-            "string",
-            "number",
-            "function",
-            "object",
-            "string",
-            "number",
-            "function",
-            "object",
-            "string",
-            "number",
-            "function",
-            "object",
-            "string",
-            "number",
-            "function",
-            "object"
+            {
+                "typeOf": "string",
+                "traceId": "trace__2"
+            },
+            {
+                "typeOf": "number",
+                "traceId": "trace__3"
+            },
+            {
+                "typeOf": "function",
+                "traceId": "trace__4"
+            },
+            {
+                "typeOf": "object",
+                "traceId": "trace__5"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__6"
+            },
+            {
+                "typeOf": "number",
+                "traceId": "trace__7"
+            },
+            {
+                "typeOf": "function",
+                "traceId": "trace__8"
+            },
+            {
+                "typeOf": "object",
+                "traceId": "trace__9"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__10"
+            },
+            {
+                "typeOf": "number",
+                "traceId": "trace__11"
+            },
+            {
+                "typeOf": "function",
+                "traceId": "trace__12"
+            },
+            {
+                "typeOf": "object",
+                "traceId": "trace__13"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__14"
+            },
+            {
+                "typeOf": "number",
+                "traceId": "trace__15"
+            },
+            {
+                "typeOf": "function",
+                "traceId": "trace__16"
+            },
+            {
+                "typeOf": "object",
+                "traceId": "trace__17"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__18"
+            },
+            {
+                "typeOf": "number",
+                "traceId": "trace__19"
+            },
+            {
+                "typeOf": "function",
+                "traceId": "trace__20"
+            },
+            {
+                "typeOf": "object",
+                "traceId": "trace__21"
+            }
         ],
         "functionIid": 457
     }

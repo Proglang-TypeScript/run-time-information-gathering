@@ -10,34 +10,42 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "string"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "undefined"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "null"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__5",
                         "typeof": "object"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__6",
                         "typeof": "array"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__7",
                         "typeof": "boolean"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__8",
                         "typeof": "function"
                     }
                 ]
@@ -45,14 +53,38 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "string",
-            "number",
-            "undefined",
-            "null",
-            "object",
-            "array",
-            "boolean",
-            "function"
+            {
+                "typeOf": "string",
+                "traceId": "trace__1"
+            },
+            {
+                "typeOf": "number",
+                "traceId": "trace__2"
+            },
+            {
+                "typeOf": "undefined",
+                "traceId": "trace__3"
+            },
+            {
+                "typeOf": "null",
+                "traceId": "trace__4"
+            },
+            {
+                "typeOf": "object",
+                "traceId": "trace__5"
+            },
+            {
+                "typeOf": "array",
+                "traceId": "trace__6"
+            },
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__7"
+            },
+            {
+                "typeOf": "function",
+                "traceId": "trace__8"
+            }
         ],
         "functionIid": 49
     }

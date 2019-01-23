@@ -6,7 +6,10 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "AsyncObj"
+            {
+                "typeOf": "AsyncObj",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 249
     },
@@ -21,12 +24,15 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "object"
                     },
                     {
                         "code": "usedAsArgument",
+                        "traceId": null,
                         "enclosingFunctionId": "functionId_7",
                         "targetFunctionId": "functionId_9",
+                        "traceIdInTargetFunction": "trace__5",
                         "argumentIndexInTargetFunction": "0"
                     }
                 ]
@@ -34,7 +40,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "undefined"
+            {
+                "typeOf": "undefined",
+                "traceId": "trace__2"
+            }
         ],
         "functionIid": 193
     },
@@ -44,7 +53,10 @@
         "isConstructor": false,
         "args": {},
         "returnTypeOfs": [
-            "Timeout"
+            {
+                "typeOf": "Timeout",
+                "traceId": "trace__1"
+            }
         ]
     },
     "functionId_7": {
@@ -67,10 +79,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__5",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__5",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_9",
@@ -84,7 +98,10 @@
         },
         "declarationEnclosingFunctionId": "functionId_3",
         "returnTypeOfs": [
-            "boolean"
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__5"
+            }
         ],
         "functionIid": 345
     }

@@ -6,7 +6,10 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "number"
+            {
+                "typeOf": "number",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 345
     },
@@ -21,10 +24,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "object"
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_3",
@@ -39,7 +44,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "number"
+            {
+                "typeOf": "number",
+                "traceId": "trace__2"
+            }
         ],
         "functionIid": 233
     },
@@ -50,7 +58,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [
-            "undefined"
+            {
+                "typeOf": "undefined",
+                "traceId": "trace__3"
+            }
         ],
         "functionIid": 257
     },
@@ -65,6 +76,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "string"
                     }
                 ]
@@ -75,10 +87,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__4",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_7",
@@ -89,6 +103,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_7",
@@ -99,6 +114,7 @@
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__4",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_7",
@@ -112,7 +128,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "number"
+            {
+                "typeOf": "number",
+                "traceId": "trace__4"
+            }
         ],
         "functionIid": 121
     }

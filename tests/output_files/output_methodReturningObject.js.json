@@ -10,16 +10,19 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [
                             {
                                 "code": "setField",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_1",
@@ -30,6 +33,7 @@
                             },
                             {
                                 "code": "methodCall",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_1",
@@ -50,7 +54,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "string"
+            {
+                "typeOf": "string",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 121
     },
@@ -61,7 +68,10 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            {
+                "typeOf": "object",
+                "traceId": "trace__2"
+            }
         ],
         "functionIid": 225
     },
@@ -72,7 +82,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [
-            "string"
+            {
+                "typeOf": "string",
+                "traceId": "trace__3"
+            }
         ],
         "functionIid": 177
     }

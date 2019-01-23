@@ -10,10 +10,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -25,10 +27,12 @@
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "object"
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -46,22 +50,28 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "string"
                     },
                     {
                         "code": "usedAsArgument",
+                        "traceId": null,
                         "enclosingFunctionId": "functionId_1",
                         "targetFunctionId": "functionId_3",
+                        "traceIdInTargetFunction": "trace__2",
                         "argumentIndexInTargetFunction": "0"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "number"
                     },
                     {
                         "code": "usedAsArgument",
+                        "traceId": null,
                         "enclosingFunctionId": "functionId_1",
                         "targetFunctionId": "functionId_3",
+                        "traceIdInTargetFunction": "trace__4",
                         "argumentIndexInTargetFunction": "0"
                     }
                 ]
@@ -72,22 +82,28 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "number"
                     },
                     {
                         "code": "usedAsArgument",
+                        "traceId": null,
                         "enclosingFunctionId": "functionId_1",
                         "targetFunctionId": "functionId_3",
+                        "traceIdInTargetFunction": "trace__2",
                         "argumentIndexInTargetFunction": "1"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "string"
                     },
                     {
                         "code": "usedAsArgument",
+                        "traceId": null,
                         "enclosingFunctionId": "functionId_1",
                         "targetFunctionId": "functionId_3",
+                        "traceIdInTargetFunction": "trace__4",
                         "argumentIndexInTargetFunction": "1"
                     }
                 ]
@@ -95,8 +111,14 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "number",
-            "string"
+            {
+                "typeOf": "number",
+                "traceId": "trace__1"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__3"
+            }
         ],
         "functionIid": 73
     },
@@ -111,10 +133,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "string"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "number"
                     }
                 ]
@@ -125,10 +149,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "string"
                     }
                 ]
@@ -136,8 +162,14 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "number",
-            "string"
+            {
+                "typeOf": "number",
+                "traceId": "trace__2"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__4"
+            }
         ],
         "functionIid": 177
     }

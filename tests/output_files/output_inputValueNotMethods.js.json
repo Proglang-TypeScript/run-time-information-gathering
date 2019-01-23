@@ -10,22 +10,27 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "string"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "string"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "string"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__5",
                         "typeof": "number"
                     }
                 ]
@@ -36,22 +41,27 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "string"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "number"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "undefined"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__5",
                         "typeof": "undefined"
                     }
                 ]
@@ -59,11 +69,26 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "boolean",
-            "boolean",
-            "boolean",
-            "boolean",
-            "boolean"
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__1"
+            },
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__2"
+            },
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__3"
+            },
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__4"
+            },
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__5"
+            }
         ],
         "functionIid": 57
     },
@@ -78,6 +103,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__6",
                         "typeof": "number"
                     }
                 ]
@@ -88,6 +114,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__6",
                         "typeof": "number"
                     }
                 ]
@@ -98,6 +125,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__6",
                         "typeof": "number"
                     }
                 ]
@@ -105,7 +133,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "number"
+            {
+                "typeOf": "number",
+                "traceId": "trace__6"
+            }
         ],
         "functionIid": 113
     }

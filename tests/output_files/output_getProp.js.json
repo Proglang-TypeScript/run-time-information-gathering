@@ -10,10 +10,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "string"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -24,10 +26,12 @@
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__2",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -38,10 +42,12 @@
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__3",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -55,9 +61,18 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "boolean",
-            "boolean",
-            "boolean"
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__1"
+            },
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__2"
+            },
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__3"
+            }
         ],
         "functionIid": 65
     },
@@ -72,10 +87,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__4",
                         "isComputed": true,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_3",
@@ -86,10 +103,12 @@
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__5",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__5",
                         "isComputed": true,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_3",
@@ -106,10 +125,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__4",
                         "typeof": "string"
                     },
                     {
                         "code": "inputValue",
+                        "traceId": "trace__5",
                         "typeof": "string"
                     }
                 ]
@@ -117,8 +138,14 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "boolean",
-            "boolean"
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__4"
+            },
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__5"
+            }
         ],
         "functionIid": 137
     }

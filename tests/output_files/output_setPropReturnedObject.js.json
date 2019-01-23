@@ -10,22 +10,26 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [
                             {
                                 "code": "getField",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_1",
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
+                                        "traceId": null,
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": "functionId_1",
@@ -46,6 +50,7 @@
                     },
                     {
                         "code": "setField",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -62,22 +67,26 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
                         "followingInteractions": [
                             {
                                 "code": "getField",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_1",
                                 "followingInteractions": [
                                     {
                                         "code": "setField",
+                                        "traceId": null,
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": "functionId_1",
@@ -101,7 +110,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            {
+                "typeOf": "object",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 201
     }

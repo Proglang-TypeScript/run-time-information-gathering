@@ -10,10 +10,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -25,6 +27,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -36,6 +39,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -47,6 +51,7 @@
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -61,7 +66,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "undefined"
+            {
+                "typeOf": "undefined",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 121
     },
@@ -72,7 +80,10 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "string"
+            {
+                "typeOf": "string",
+                "traceId": "trace__2"
+            }
         ],
         "functionIid": 169
     },
@@ -83,7 +94,10 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "number"
+            {
+                "typeOf": "number",
+                "traceId": "trace__3"
+            }
         ],
         "functionIid": 217
     },
@@ -94,7 +108,10 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "function"
+            {
+                "typeOf": "function",
+                "traceId": "trace__4"
+            }
         ],
         "functionIid": 329
     },
@@ -105,7 +122,10 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            {
+                "typeOf": "object",
+                "traceId": "trace__5"
+            }
         ],
         "functionIid": 393
     }

@@ -11,6 +11,7 @@ true
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     }
                 ]
@@ -18,7 +19,10 @@ true
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            {
+                "typeOf": "object",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 49
     },
@@ -33,6 +37,7 @@ true
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "object"
                     }
                 ]
@@ -40,7 +45,10 @@ true
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "object"
+            {
+                "typeOf": "object",
+                "traceId": "trace__2"
+            }
         ],
         "functionIid": 97
     },
@@ -55,10 +63,12 @@ true
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__3",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_7",
@@ -75,10 +85,12 @@ true
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__3",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__3",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_7",
@@ -92,7 +104,10 @@ true
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "boolean"
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__3"
+            }
         ],
         "functionIid": 201
     }

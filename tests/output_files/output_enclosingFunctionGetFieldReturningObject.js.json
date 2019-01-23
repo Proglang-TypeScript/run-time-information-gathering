@@ -10,22 +10,26 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_3",
                         "followingInteractions": [
                             {
                                 "code": "getField",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_3",
                                 "followingInteractions": [
                                     {
                                         "code": "getField",
+                                        "traceId": null,
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": "functionId_5",
@@ -41,6 +45,7 @@
                             },
                             {
                                 "code": "getField",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
@@ -56,18 +61,21 @@
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_5",
                         "followingInteractions": [
                             {
                                 "code": "getField",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
                                 "followingInteractions": [
                                     {
                                         "code": "getField",
+                                        "traceId": null,
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": "functionId_5",
@@ -83,6 +91,7 @@
                             },
                             {
                                 "code": "setField",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
@@ -93,6 +102,7 @@
                             },
                             {
                                 "code": "getField",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
@@ -111,7 +121,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "number"
+            {
+                "typeOf": "number",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 369
     },
@@ -122,7 +135,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [
-            "number"
+            {
+                "typeOf": "number",
+                "traceId": "trace__2"
+            }
         ],
         "functionIid": 289
     },
@@ -133,7 +149,10 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_3",
         "returnTypeOfs": [
-            "number"
+            {
+                "typeOf": "number",
+                "traceId": "trace__3"
+            }
         ],
         "functionIid": 241
     }

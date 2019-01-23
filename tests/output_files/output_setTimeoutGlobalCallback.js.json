@@ -10,6 +10,7 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     }
                 ]
@@ -17,7 +18,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "undefined"
+            {
+                "typeOf": "undefined",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 105
     },
@@ -27,7 +31,10 @@
         "isConstructor": false,
         "args": {},
         "returnTypeOfs": [
-            "Timeout"
+            {
+                "typeOf": "Timeout",
+                "traceId": null
+            }
         ]
     },
     "functionId_5": {

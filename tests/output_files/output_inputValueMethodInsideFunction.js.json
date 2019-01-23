@@ -10,10 +10,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__1",
                         "typeof": "object"
                     },
                     {
                         "code": "methodCall",
+                        "traceId": null,
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -28,7 +30,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "boolean"
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__1"
+            }
         ],
         "functionIid": 97
     },
@@ -43,10 +48,12 @@
                 "interactions": [
                     {
                         "code": "inputValue",
+                        "traceId": "trace__2",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
+                        "traceId": "trace__2",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_3",
@@ -60,7 +67,10 @@
         },
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
-            "boolean"
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__2"
+            }
         ],
         "functionIid": 169
     }
