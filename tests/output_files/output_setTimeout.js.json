@@ -15,7 +15,7 @@
                     },
                     {
                         "code": "setField",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_5",
@@ -26,7 +26,7 @@
                     },
                     {
                         "code": "setField",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_7",
@@ -48,7 +48,7 @@
                     },
                     {
                         "code": "setField",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_9",
@@ -117,7 +117,7 @@
                     },
                     {
                         "code": "setField",
-                        "traceId": null,
+                        "traceId": "trace__4",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_9",

@@ -26,7 +26,7 @@
                     },
                     {
                         "code": "setField",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_7",

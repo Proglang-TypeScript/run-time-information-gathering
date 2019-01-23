@@ -104,7 +104,7 @@
                     },
                     {
                         "code": "setField",
-                        "traceId": null,
+                        "traceId": "trace__4",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_7",
