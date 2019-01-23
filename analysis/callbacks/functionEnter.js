@@ -32,7 +32,7 @@
 
 			functionContainer.functionIid = iid;
 
-			dis.functionsExecutionStack.addExecution(functionId);
+			dis.functionsExecutionStack.addExecution(f);
 		};
 
 		function functionNotProcessed(f) {

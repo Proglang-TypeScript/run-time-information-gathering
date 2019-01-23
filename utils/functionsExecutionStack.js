@@ -33,11 +33,25 @@
 
 		let counter = 1;
 
-		this.addExecution = function(iid) {
+		this.getTraceId = function() {
+			let traceId = "trace__" + counter;
+			counter++;
+
+			return traceId;
+		};
+
+		this.addExecution = function(f) {
+			let functionId = sandbox.utils.functionIdHandler.getFunctionId(f);
+
 			var execution = {
-				fid: iid,
-				traceId: "trace_" + counter
+				fid: functionId,
+				traceId: this.getTraceId()
 			};
+
+			if (f.temporaryTraceId) {
+				execution.traceId = f.temporaryTraceId;
+				delete f.temporaryTraceId;
+			}
 
 			counter++;
 

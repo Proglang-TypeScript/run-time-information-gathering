@@ -76,6 +76,7 @@
 
 		function addUsedAsArgumentInteractionIfApplicable(val, f, argIndex) {
 			let functionId = dis.functionIdHandler.getFunctionId(f);
+			f.temporaryTraceId = dis.functionsExecutionStack.getTraceId();
 
 			if (getTypeOf(val) == "object") {
 				var currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
@@ -86,7 +87,8 @@
 					var usedAsArgumentInteraction = new UsedAsArgumentInteraction(
 						currentActiveFiid,
 						functionId,
-						argIndex
+						argIndex,
+						f.temporaryTraceId
 					);
 
 					argumentContainer.addInteraction(usedAsArgumentInteraction);

@@ -5,13 +5,14 @@
 (function (sandbox) {
 	var Interaction = sandbox.utils.Interaction;
 
-	function UsedAsArgumentInteraction(currentActiveFiid, functionId, argIndex) {
+	function UsedAsArgumentInteraction(currentActiveFiid, targetFunctionId, argIndex, traceIdInTargetFunction) {
 		Interaction.call(this);
 
 		this.code = "usedAsArgument";
 
 		this.enclosingFunctionId = currentActiveFiid;
-		this.targetFunctionId = functionId;
+		this.targetFunctionId = targetFunctionId;
+		this.traceIdInTargetFunction = traceIdInTargetFunction;
 		this.argumentIndexInTargetFunction = argIndex;
 	}
 
