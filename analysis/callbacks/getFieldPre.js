@@ -59,8 +59,7 @@
 			interaction.isComputed = isComputed;
 			interaction.isOpAssign = isOpAssign;
 
-			let execution = dis.functionsExecutionStack.getCurrentExecution();
-			interaction.enclosingFunctionId = execution.fid;
+			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 
 			let traceId = dis.objectTraceIdMap.get(base);
 			if (traceId) {
@@ -94,6 +93,14 @@
 			interaction.isOpAssign = isOpAssign;
 
 			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
+
+			let traceId = dis.objectTraceIdMap.get(base);
+			if (traceId) {
+				interaction.traceId = traceId;
+			}
+
+			base[offset].temporaryTraceId = dis.functionsExecutionStack.getTraceId();
+			interaction.traceIdInTargetFunction = base[offset].temporaryTraceId;
 
 			return interaction;
 		}

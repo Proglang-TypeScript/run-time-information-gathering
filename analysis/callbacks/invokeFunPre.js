@@ -33,7 +33,10 @@
 
 			if ((f !== undefined) && !isConsoleLog(f)) {
 				dis.functionIdHandler.setFunctionId(f);
-				f.temporaryTraceId = dis.functionsExecutionStack.getTraceId();
+
+				if (!f.temporaryTraceId) {
+					f.temporaryTraceId = dis.functionsExecutionStack.getTraceId();
+				}
 
 				for (var argIndex in args) {
 					addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);

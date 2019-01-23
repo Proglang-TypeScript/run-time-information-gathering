@@ -15,6 +15,7 @@
 		
 		this.functionId = null;
 		this.returnTypeOf = null;
+		this.traceIdInTargetFunction = null;
 	}
 
 	MethodCallInteraction.prototype = Object.create(ActiveInteraction.prototype);
