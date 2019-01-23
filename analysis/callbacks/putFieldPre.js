@@ -16,6 +16,7 @@
 		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
 		this.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
 		this.interactionFinder = sandbox.utils.interactionFinder;
+		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 
 		var dis = this;
 
@@ -24,6 +25,7 @@
 
 			var interaction = getPutFieldInteracion(
 				iid,
+				base,
 				offset,
 				val,
 				isComputed,
@@ -82,13 +84,18 @@
 			return val;
 		}
 
-		function getPutFieldInteracion(iid, offset, val, isComputed, isOpAssign) {
+		function getPutFieldInteracion(iid, base, offset, val, isComputed, isOpAssign) {
 			var interaction = new PutFieldInteraction(iid, offset);
 
 			interaction.typeof = getTypeOf(val);
 			interaction.isComputed = isComputed;
 			interaction.isOpAssign = isOpAssign;
 			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
+
+			let traceId = dis.objectTraceIdMap.get(base);
+			if (traceId) {
+				interaction.traceId = traceId;
+			}
 
 			return interaction;
 		}
