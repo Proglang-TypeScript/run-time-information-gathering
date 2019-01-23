@@ -75,6 +75,5 @@
 		sandbox.utils = {};
 	}
 
-    sandbox.utils.functionsExecutionStack = new FunctionsExecutionStack();
-
+	sandbox.utils.functionsExecutionStack = new FunctionsExecutionStack();
 }(J$));

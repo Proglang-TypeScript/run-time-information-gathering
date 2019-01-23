@@ -10,9 +10,9 @@
 		var GetFieldInteraction = sandbox.utils.GetFieldInteraction;
 
 		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
-		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
 		this.functionIdHandler = sandbox.utils.functionIdHandler;
 		this.interactionWithResultHandler = sandbox.utils.interactionWithResultHandler;
+		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 
 		var dis = this;
 
@@ -61,7 +61,11 @@
 
 			let execution = dis.functionsExecutionStack.getCurrentExecution();
 			interaction.enclosingFunctionId = execution.fid;
-			interaction.traceId = execution.traceId;
+
+			let traceId = dis.objectTraceIdMap.get(base);
+			if (traceId) {
+				interaction.traceId = traceId;
+			}
 
 			interaction.setReturnTypeOf(base[offset]);
 

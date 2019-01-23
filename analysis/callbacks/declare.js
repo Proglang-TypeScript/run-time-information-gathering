@@ -15,7 +15,7 @@
 		this.runTimeInfo = sandbox.runTimeInfo;
 		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
 		this.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
-		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
+		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 
 		var dis = this;
 
@@ -63,6 +63,8 @@
 			interaction.traceId = execution.traceId;
 
 			argumentContainer.addInteraction(interaction);
+
+			dis.objectTraceIdMap.set(val, execution.traceId);
 
 			return argumentContainer;
 		}
