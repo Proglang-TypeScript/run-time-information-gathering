@@ -15,7 +15,7 @@
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -23,11 +23,12 @@
                         "iid": 35,
                         "methodName": "returnString",
                         "functionId": "functionId_3",
-                        "returnTypeOf": "string"
+                        "returnTypeOf": "string",
+                        "traceIdInTargetFunction": "trace__2"
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -35,11 +36,12 @@
                         "iid": 59,
                         "methodName": "returnNumber",
                         "functionId": "functionId_5",
-                        "returnTypeOf": "number"
+                        "returnTypeOf": "number",
+                        "traceIdInTargetFunction": "trace__3"
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -47,11 +49,12 @@
                         "iid": 83,
                         "methodName": "returnFunction",
                         "functionId": "functionId_7",
-                        "returnTypeOf": "function"
+                        "returnTypeOf": "function",
+                        "traceIdInTargetFunction": "trace__4"
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -59,7 +62,8 @@
                         "iid": 107,
                         "methodName": "returnObject",
                         "functionId": "functionId_9",
-                        "returnTypeOf": "object"
+                        "returnTypeOf": "object",
+                        "traceIdInTargetFunction": "trace__5"
                     }
                 ]
             }

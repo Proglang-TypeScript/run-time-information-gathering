@@ -15,7 +15,7 @@
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -23,7 +23,8 @@
                         "iid": 75,
                         "methodName": "executeMethod",
                         "functionId": "functionId_3",
-                        "returnTypeOf": "boolean"
+                        "returnTypeOf": "boolean",
+                        "traceIdInTargetFunction": "trace__2"
                     }
                 ]
             }

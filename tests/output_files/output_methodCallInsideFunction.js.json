@@ -15,7 +15,7 @@
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -23,7 +23,8 @@
                         "iid": 51,
                         "methodName": "myMethod",
                         "functionId": "functionId_3",
-                        "returnTypeOf": "number"
+                        "returnTypeOf": "number",
+                        "traceIdInTargetFunction": "trace__2"
                     },
                     {
                         "code": "inputValue",
@@ -32,7 +33,7 @@
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__3",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
@@ -40,7 +41,8 @@
                         "iid": 51,
                         "methodName": "myMethod",
                         "functionId": "functionId_3",
-                        "returnTypeOf": "string"
+                        "returnTypeOf": "string",
+                        "traceIdInTargetFunction": "trace__4"
                     }
                 ]
             },

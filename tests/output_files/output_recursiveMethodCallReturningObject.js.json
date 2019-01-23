@@ -285,7 +285,7 @@
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__11",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_5",
@@ -314,7 +314,7 @@
                             },
                             {
                                 "code": "methodCall",
-                                "traceId": null,
+                                "traceId": "trace__10",
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
@@ -343,7 +343,7 @@
                                     },
                                     {
                                         "code": "methodCall",
-                                        "traceId": null,
+                                        "traceId": "trace__9",
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": "functionId_5",
@@ -372,7 +372,7 @@
                                             },
                                             {
                                                 "code": "methodCall",
-                                                "traceId": null,
+                                                "traceId": "trace__8",
                                                 "isComputed": false,
                                                 "isOpAssign": false,
                                                 "enclosingFunctionId": "functionId_5",
@@ -401,7 +401,7 @@
                                                     },
                                                     {
                                                         "code": "methodCall",
-                                                        "traceId": null,
+                                                        "traceId": "trace__7",
                                                         "isComputed": false,
                                                         "isOpAssign": false,
                                                         "enclosingFunctionId": "functionId_5",
@@ -430,7 +430,7 @@
                                                             },
                                                             {
                                                                 "code": "methodCall",
-                                                                "traceId": null,
+                                                                "traceId": "trace__6",
                                                                 "isComputed": false,
                                                                 "isOpAssign": false,
                                                                 "enclosingFunctionId": "functionId_5",
@@ -459,7 +459,7 @@
                                                                     },
                                                                     {
                                                                         "code": "methodCall",
-                                                                        "traceId": null,
+                                                                        "traceId": "trace__5",
                                                                         "isComputed": false,
                                                                         "isOpAssign": false,
                                                                         "enclosingFunctionId": "functionId_5",
@@ -467,43 +467,50 @@
                                                                         "iid": 187,
                                                                         "methodName": "getLeft",
                                                                         "functionId": "functionId_19",
-                                                                        "returnTypeOf": "null"
+                                                                        "returnTypeOf": "null",
+                                                                        "traceIdInTargetFunction": "trace__18"
                                                                     }
                                                                 ],
                                                                 "iid": 187,
                                                                 "methodName": "getLeft",
                                                                 "functionId": "functionId_17",
-                                                                "returnTypeOf": "AnotherNode"
+                                                                "returnTypeOf": "AnotherNode",
+                                                                "traceIdInTargetFunction": "trace__17"
                                                             }
                                                         ],
                                                         "iid": 187,
                                                         "methodName": "getLeft",
                                                         "functionId": "functionId_15",
-                                                        "returnTypeOf": "Node"
+                                                        "returnTypeOf": "Node",
+                                                        "traceIdInTargetFunction": "trace__16"
                                                     }
                                                 ],
                                                 "iid": 155,
                                                 "methodName": "getRight",
                                                 "functionId": "functionId_13",
-                                                "returnTypeOf": "Node"
+                                                "returnTypeOf": "Node",
+                                                "traceIdInTargetFunction": "trace__15"
                                             }
                                         ],
                                         "iid": 187,
                                         "methodName": "getLeft",
                                         "functionId": "functionId_11",
-                                        "returnTypeOf": "Node"
+                                        "returnTypeOf": "Node",
+                                        "traceIdInTargetFunction": "trace__14"
                                     }
                                 ],
                                 "iid": 187,
                                 "methodName": "getLeft",
                                 "functionId": "functionId_9",
-                                "returnTypeOf": "Node"
+                                "returnTypeOf": "Node",
+                                "traceIdInTargetFunction": "trace__13"
                             }
                         ],
                         "iid": 187,
                         "methodName": "getLeft",
                         "functionId": "functionId_7",
-                        "returnTypeOf": "Node"
+                        "returnTypeOf": "Node",
+                        "traceIdInTargetFunction": "trace__12"
                     }
                 ]
             }

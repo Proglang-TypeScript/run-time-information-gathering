@@ -63,12 +63,12 @@ true
                 "interactions": [
                     {
                         "code": "inputValue",
-                        "traceId": "trace__3",
+                        "traceId": "trace__4",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
-                        "traceId": "trace__3",
+                        "traceId": "trace__4",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_7",
@@ -85,12 +85,12 @@ true
                 "interactions": [
                     {
                         "code": "inputValue",
-                        "traceId": "trace__3",
+                        "traceId": "trace__4",
                         "typeof": "object"
                     },
                     {
                         "code": "getField",
-                        "traceId": "trace__3",
+                        "traceId": "trace__4",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_7",
@@ -106,7 +106,7 @@ true
         "returnTypeOfs": [
             {
                 "typeOf": "boolean",
-                "traceId": "trace__3"
+                "traceId": "trace__4"
             }
         ],
         "functionIid": 201

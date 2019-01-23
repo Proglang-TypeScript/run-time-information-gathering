@@ -11,12 +11,12 @@ true
                 "interactions": [
                     {
                         "code": "inputValue",
-                        "traceId": "trace__1",
+                        "traceId": "trace__2",
                         "typeof": "number"
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__2",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_3",
@@ -24,11 +24,12 @@ true
                         "iid": 35,
                         "methodName": "valueOf",
                         "functionId": "functionId_5",
-                        "returnTypeOf": "number"
+                        "returnTypeOf": "number",
+                        "traceIdInTargetFunction": "trace__3"
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__2",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_3",
@@ -43,13 +44,15 @@ true
                                 "iid": 75,
                                 "methodName": "indexOf",
                                 "functionId": "functionId_9",
-                                "returnTypeOf": "number"
+                                "returnTypeOf": "number",
+                                "traceIdInTargetFunction": "trace__5"
                             }
                         ],
                         "iid": 59,
                         "methodName": "toString",
                         "functionId": "functionId_7",
-                        "returnTypeOf": "string"
+                        "returnTypeOf": "string",
+                        "traceIdInTargetFunction": "trace__4"
                     }
                 ]
             }
@@ -58,7 +61,7 @@ true
         "returnTypeOfs": [
             {
                 "typeOf": "boolean",
-                "traceId": "trace__1"
+                "traceId": "trace__2"
             }
         ],
         "functionIid": 137

@@ -11,12 +11,12 @@ true
                 "interactions": [
                     {
                         "code": "inputValue",
-                        "traceId": "trace__1",
+                        "traceId": "trace__2",
                         "typeof": "string"
                     },
                     {
                         "code": "methodCall",
-                        "traceId": null,
+                        "traceId": "trace__2",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_3",
@@ -31,17 +31,19 @@ true
                                 "iid": 99,
                                 "methodName": "toString",
                                 "functionId": "functionId_7",
-                                "returnTypeOf": "string"
+                                "returnTypeOf": "string",
+                                "traceIdInTargetFunction": "trace__4"
                             }
                         ],
                         "iid": 43,
                         "methodName": "indexOf",
                         "functionId": "functionId_5",
-                        "returnTypeOf": "number"
+                        "returnTypeOf": "number",
+                        "traceIdInTargetFunction": "trace__3"
                     },
                     {
                         "code": "getField",
-                        "traceId": "trace__1",
+                        "traceId": "trace__2",
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_3",
@@ -57,7 +59,7 @@ true
         "returnTypeOfs": [
             {
                 "typeOf": "boolean",
-                "traceId": "trace__1"
+                "traceId": "trace__2"
             }
         ],
         "functionIid": 161
