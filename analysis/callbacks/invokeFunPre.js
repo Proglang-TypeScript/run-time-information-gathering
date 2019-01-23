@@ -20,6 +20,7 @@
 		this.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
 		this.functionIdHandler = sandbox.utils.functionIdHandler;
 		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
+		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 
 		this.callback = function(
 			iid,
@@ -93,6 +94,11 @@
 						argIndex,
 						f.temporaryTraceId
 					);
+
+					let traceId = dis.objectTraceIdMap.get(val);
+					if (traceId) {
+						usedAsArgumentInteraction.traceId = traceId;
+					}
 
 					argumentContainer.addInteraction(usedAsArgumentInteraction);
 				}
