@@ -29,7 +29,7 @@
                     },
                     {
                         "code": "usedAsArgument",
-                        "traceId": null,
+                        "traceId": "trace__2",
                         "enclosingFunctionId": "functionId_7",
                         "targetFunctionId": "functionId_9",
                         "traceIdInTargetFunction": "trace__5",

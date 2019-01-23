@@ -15,7 +15,7 @@
                     },
                     {
                         "code": "usedAsArgument",
-                        "traceId": null,
+                        "traceId": "trace__1",
                         "enclosingFunctionId": "functionId_1",
                         "targetFunctionId": "functionId_3",
                         "traceIdInTargetFunction": "trace__2",
@@ -28,7 +28,7 @@
                     },
                     {
                         "code": "usedAsArgument",
-                        "traceId": null,
+                        "traceId": "trace__4",
                         "enclosingFunctionId": "functionId_1",
                         "targetFunctionId": "functionId_3",
                         "traceIdInTargetFunction": "trace__5",
@@ -123,7 +123,7 @@
                     },
                     {
                         "code": "usedAsArgument",
-                        "traceId": null,
+                        "traceId": "trace__3",
                         "enclosingFunctionId": "functionId_5",
                         "targetFunctionId": "functionId_1",
                         "traceIdInTargetFunction": "trace__4",
