@@ -75,10 +75,6 @@
 		return doAddDeclarationFunctionIdToFunctionsInsideObject(val, functionsExecutionStack, sMemoryInterface);
 	}
 
-	function getHashForShadowIdAndFunctionId(shadowId) {
-		return shadowId;
-	}
-
 	function getRandomIdentifier() {
 		var now = new Date();
 		return Math.floor((Math.random() * 1000) + 1).toString() + now.getTime();
@@ -89,7 +85,6 @@
 		getTypeOfForReporting: getTypeOfForReporting,
 		getDeclarationEnclosingFunctionId: getDeclarationEnclosingFunctionId,
 		addDeclarationFunctionIdToFunctionsInsideObject: addDeclarationFunctionIdToFunctionsInsideObject,
-		getHashForShadowIdAndFunctionId: getHashForShadowIdAndFunctionId,
 		getRandomIdentifier: getRandomIdentifier,
 	};
 }(J$));

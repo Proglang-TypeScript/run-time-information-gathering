@@ -3,8 +3,6 @@
 "use strict";
 
 (function (sandbox) {
-	var getHashForShadowIdAndFunctionId = sandbox.functions.getHashForShadowIdAndFunctionId;
-
 	function ArgumentContainerFinder(runTimeInfo, sMemoryInterface) {
 		this.runTimeInfo = runTimeInfo;
         this.sMemoryInterface = sMemoryInterface;
@@ -13,14 +11,14 @@
 
         this.findArgumentContainer = function(shadowId, functionId) {
             var fId = functionId;
-            var argumentContainer = this.mapShadowIdsArgumentContainer[getHashForShadowIdAndFunctionId(shadowId)];
+            var argumentContainer = this.mapShadowIdsArgumentContainer[shadowId];
 
             var functionContainer = null;
             while(!argumentContainer && fId) {
 
                 functionContainer = this.runTimeInfo[fId];
 
-                argumentContainer = this.mapShadowIdsArgumentContainer[getHashForShadowIdAndFunctionId(shadowId)];
+                argumentContainer = this.mapShadowIdsArgumentContainer[shadowId];
 
                 if (!functionContainer) {
                     fId = null;
@@ -36,7 +34,7 @@
             var shadowId = this.sMemoryInterface.getShadowIdOfObject(val);
 
             if (shadowId) {
-                this.mapShadowIdsArgumentContainer[getHashForShadowIdAndFunctionId(shadowId)] = functionContainer.getArgumentContainer(
+                this.mapShadowIdsArgumentContainer[shadowId] = functionContainer.getArgumentContainer(
                     argumentContainer.argumentIndex
                 );
             }

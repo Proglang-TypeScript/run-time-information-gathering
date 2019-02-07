@@ -3,8 +3,6 @@
 "use strict";
 
 (function (sandbox) {
-	var getHashForShadowIdAndFunctionId = sandbox.functions.getHashForShadowIdAndFunctionId;
-
 	function InteractionFinder(runTimeInfo, sMemoryInterface) {
 		this.runTimeInfo = runTimeInfo;
 		this.sMemoryInterface = sMemoryInterface;
@@ -13,13 +11,13 @@
 
 		this.findInteraction = function(shadowId, functionId) {
 			var fId = functionId;
-			var mappedInteraction = this.mapShadowIdsInteractions[getHashForShadowIdAndFunctionId(shadowId)];
+			var mappedInteraction = this.mapShadowIdsInteractions[shadowId];
 
 			var functionContainer = null;
 			while(!mappedInteraction && fId) {
 				functionContainer = this.runTimeInfo[fId];
 
-				mappedInteraction = this.mapShadowIdsInteractions[getHashForShadowIdAndFunctionId(shadowId)];
+				mappedInteraction = this.mapShadowIdsInteractions[shadowId];
 
 				if (!functionContainer) {
 					fId = null;
@@ -35,7 +33,7 @@
 			var shadowId = this.sMemoryInterface.getShadowIdOfObject(result);
 
 			if (shadowId && functionId) {
-				this.mapShadowIdsInteractions[getHashForShadowIdAndFunctionId(shadowId)] = interaction;
+				this.mapShadowIdsInteractions[shadowId] = interaction;
 			}
 		};
 	}
