@@ -17,5 +17,6 @@ for file in $TEST_FILES; do
 	filename=$(basename "$file")
 
 	echo "Generating output file for $filename ..."
-    $ROOT_PATH/run.sh $file > $TEST_OUTPUT_DIRECTORY/output_$filename.json
+    $ROOT_PATH/run $file
+	mv $ROOT_PATH/output.json $TEST_OUTPUT_DIRECTORY/output_$filename.json
 done
