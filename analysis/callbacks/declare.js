@@ -27,7 +27,7 @@
 					var argumentContainer = buildArgumentContainer(argumentIndex, name, val);
 					functionContainer.addArgumentContainer(argumentIndex, argumentContainer);
 
-					dis.argumentContainerFinder.addMappingForContainers(argumentContainer, functionContainer, val);
+					dis.argumentContainerFinder.addMappingForContainers(argumentContainer, val);
 				}
 			}
 

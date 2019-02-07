@@ -3,30 +3,13 @@
 "use strict";
 
 (function (sandbox) {
-	function InteractionFinder(runTimeInfo, sMemoryInterface) {
-		this.runTimeInfo = runTimeInfo;
+	function InteractionFinder(sMemoryInterface) {
 		this.sMemoryInterface = sMemoryInterface;
 
 		this.mapShadowIdsInteractions = {};
 
-		this.findInteraction = function(shadowId, functionId) {
-			var fId = functionId;
-			var mappedInteraction = this.mapShadowIdsInteractions[shadowId];
-
-			var functionContainer = null;
-			while(!mappedInteraction && fId) {
-				functionContainer = this.runTimeInfo[fId];
-
-				mappedInteraction = this.mapShadowIdsInteractions[shadowId];
-
-				if (!functionContainer) {
-					fId = null;
-				} else {
-					fId = functionContainer.declarationEnclosingFunctionId;
-				}
-			}
-
-			return mappedInteraction;
+		this.findInteraction = function(shadowId) {
+			return this.mapShadowIdsInteractions[shadowId];
 		};
 
 		this.addMapping = function(interaction, functionId, result) {
@@ -42,8 +25,5 @@
 		sandbox.utils = {};
 	}
 
-	sandbox.utils.interactionFinder = new InteractionFinder(
-		sandbox.runTimeInfo,
-		sandbox.utils.sMemoryInterface
-	);
+	sandbox.utils.interactionFinder = new InteractionFinder(sandbox.utils.sMemoryInterface);
 }(J$));

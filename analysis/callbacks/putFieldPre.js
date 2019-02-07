@@ -48,7 +48,7 @@
 			var functionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
 
-			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionId);
+			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId);
 
 			var interactionAdded = false;
 			if (functionId && argumentContainer) {
@@ -60,10 +60,7 @@
 		}
 
 		function addFollowingInteractionToMappedInteraction(interaction, base) {
-			var mappedInteraction = dis.interactionFinder.findInteraction(
-				dis.sMemoryInterface.getShadowIdOfObject(base),
-				dis.functionsExecutionStack.getCurrentExecutingFunction()
-			);
+			var mappedInteraction = dis.interactionFinder.findInteraction(dis.sMemoryInterface.getShadowIdOfObject(base));
 
 			if (mappedInteraction) {
 				mappedInteraction.addFollowingInteraction(interaction);

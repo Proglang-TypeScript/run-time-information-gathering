@@ -41,7 +41,7 @@
 		function addInteractionToArgumentContainerIfPossible(interaction, functionId, base) {
 			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
 
-			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionId);
+			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId);
 
 			var interactionAdded = false;
 			if (functionId && argumentContainer) {
@@ -53,10 +53,7 @@
 		}
 
 		function addFollowingInteraction(interaction, result, functionId, shadowIdBaseObject) {
-			var mappedInteraction = dis.interactionFinder.findInteraction(
-				shadowIdBaseObject,
-				functionId
-			);
+			var mappedInteraction = dis.interactionFinder.findInteraction(shadowIdBaseObject);
 
 			if (mappedInteraction) {
 				if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {

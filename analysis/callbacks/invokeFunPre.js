@@ -86,7 +86,7 @@
 				var currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
 				var shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
 
-				var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, currentActiveFiid);
+				var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId);
 				if (currentActiveFiid && argumentContainer) {
 					var usedAsArgumentInteraction = new UsedAsArgumentInteraction(
 						currentActiveFiid,
