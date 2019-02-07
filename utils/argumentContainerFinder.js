@@ -13,18 +13,14 @@
 
         this.findArgumentContainer = function(shadowId, functionId) {
             var fId = functionId;
-            var argumentContainer = this.mapShadowIdsArgumentContainer[
-                getHashForShadowIdAndFunctionId(shadowId, fId)
-            ];
+            var argumentContainer = this.mapShadowIdsArgumentContainer[getHashForShadowIdAndFunctionId(shadowId)];
 
             var functionContainer = null;
             while(!argumentContainer && fId) {
 
                 functionContainer = this.runTimeInfo[fId];
 
-                argumentContainer = this.mapShadowIdsArgumentContainer[
-                    getHashForShadowIdAndFunctionId(shadowId, fId)
-                ];
+                argumentContainer = this.mapShadowIdsArgumentContainer[getHashForShadowIdAndFunctionId(shadowId)];
 
                 if (!functionContainer) {
                     fId = null;
@@ -40,12 +36,9 @@
             var shadowId = this.sMemoryInterface.getShadowIdOfObject(val);
 
             if (shadowId) {
-                this.mapShadowIdsArgumentContainer[
-                    getHashForShadowIdAndFunctionId(
-                        shadowId,
-                        functionContainer.functionId
-                    )
-                ] = functionContainer.getArgumentContainer(argumentContainer.argumentIndex);
+                this.mapShadowIdsArgumentContainer[getHashForShadowIdAndFunctionId(shadowId)] = functionContainer.getArgumentContainer(
+                    argumentContainer.argumentIndex
+                );
             }
         };
 	}

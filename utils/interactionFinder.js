@@ -13,17 +13,13 @@
 
 		this.findInteraction = function(shadowId, functionId) {
 			var fId = functionId;
-			var mappedInteraction = this.mapShadowIdsInteractions[
-				getHashForShadowIdAndFunctionId(shadowId, fId)
-			];
+			var mappedInteraction = this.mapShadowIdsInteractions[getHashForShadowIdAndFunctionId(shadowId)];
 
 			var functionContainer = null;
 			while(!mappedInteraction && fId) {
 				functionContainer = this.runTimeInfo[fId];
 
-				mappedInteraction = this.mapShadowIdsInteractions[
-					getHashForShadowIdAndFunctionId(shadowId, fId)
-				];
+				mappedInteraction = this.mapShadowIdsInteractions[getHashForShadowIdAndFunctionId(shadowId)];
 
 				if (!functionContainer) {
 					fId = null;
@@ -39,11 +35,7 @@
 			var shadowId = this.sMemoryInterface.getShadowIdOfObject(result);
 
 			if (shadowId && functionId) {
-				this.mapShadowIdsInteractions[
-				getHashForShadowIdAndFunctionId(
-					shadowId,
-					functionId
-				)] = interaction;
+				this.mapShadowIdsInteractions[getHashForShadowIdAndFunctionId(shadowId)] = interaction;
 			}
 		};
 	}

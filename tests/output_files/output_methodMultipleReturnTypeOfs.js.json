@@ -25,6 +25,17 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "methodCall",
                         "traceId": "trace__1",
                         "isComputed": false,
@@ -47,6 +58,28 @@
                         "iid": 113,
                         "field": "seed",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
@@ -73,6 +106,39 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 313,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "methodCall",
                         "traceId": "trace__1",
                         "isComputed": false,
@@ -95,6 +161,39 @@
                         "iid": 113,
                         "field": "seed",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 313,
+                        "field": "seed",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
@@ -121,6 +220,17 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "methodCall",
                         "traceId": "trace__1",
                         "isComputed": false,
@@ -143,6 +253,28 @@
                         "iid": 113,
                         "field": "seed",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
@@ -169,6 +301,39 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 313,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "methodCall",
                         "traceId": "trace__1",
                         "isComputed": false,
@@ -191,6 +356,39 @@
                         "iid": 113,
                         "field": "seed",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 313,
+                        "field": "seed",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
@@ -217,6 +415,17 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "methodCall",
                         "traceId": "trace__1",
                         "isComputed": false,
@@ -239,6 +448,28 @@
                         "iid": 113,
                         "field": "seed",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
@@ -265,6 +496,39 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 313,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "methodCall",
                         "traceId": "trace__1",
                         "isComputed": false,
@@ -287,6 +551,39 @@
                         "iid": 113,
                         "field": "seed",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 313,
+                        "field": "seed",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
@@ -313,6 +610,17 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "methodCall",
                         "traceId": "trace__1",
                         "isComputed": false,
@@ -335,6 +643,28 @@
                         "iid": 113,
                         "field": "seed",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
@@ -361,6 +691,39 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 313,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "methodCall",
                         "traceId": "trace__1",
                         "isComputed": false,
@@ -383,6 +746,39 @@
                         "iid": 113,
                         "field": "seed",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 313,
+                        "field": "seed",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
@@ -409,6 +805,17 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "methodCall",
                         "traceId": "trace__1",
                         "isComputed": false,
@@ -431,6 +838,28 @@
                         "iid": 113,
                         "field": "seed",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",
@@ -457,6 +886,39 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 313,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
                         "code": "methodCall",
                         "traceId": "trace__1",
                         "isComputed": false,
@@ -479,6 +941,39 @@
                         "iid": 113,
                         "field": "seed",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 201,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 257,
+                        "field": "seed",
+                        "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [],
+                        "iid": 313,
+                        "field": "seed",
+                        "returnTypeOf": "number"
                     },
                     {
                         "code": "methodCall",

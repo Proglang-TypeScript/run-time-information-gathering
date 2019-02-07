@@ -75,8 +75,8 @@
 		return doAddDeclarationFunctionIdToFunctionsInsideObject(val, functionsExecutionStack, sMemoryInterface);
 	}
 
-	function getHashForShadowIdAndFunctionId(shadowId, functionId) {
-		return shadowId + " - " + functionId;
+	function getHashForShadowIdAndFunctionId(shadowId) {
+		return shadowId;
 	}
 
 	function getRandomIdentifier() {
