@@ -17,7 +17,7 @@
 		this.runTimeInfo = sandbox.runTimeInfo;
 		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
 		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
-		this.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
+		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
 		this.functionIdHandler = sandbox.utils.functionIdHandler;
 		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
 		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
@@ -86,7 +86,7 @@
 				let currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
 				let shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
 
-				let containerForAddingNewInteraction = dis.argumentContainerFinder.findArgumentContainer(shadowId);
+				let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(shadowId);
 				if (currentActiveFiid && containerForAddingNewInteraction) {
 					let usedAsArgumentInteraction = new UsedAsArgumentInteraction(
 						currentActiveFiid,

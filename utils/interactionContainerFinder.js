@@ -12,10 +12,10 @@
 			return this.mapShadowIdsContainers[shadowId];
 		};
 
-		this.addMapping = function(interaction, functionId, result) {
+		this.addMapping = function(interaction, result) {
 			var shadowId = this.sMemoryInterface.getShadowIdOfObject(result);
 
-			if (shadowId && functionId) {
+			if (shadowId) {
 				this.mapShadowIdsContainers[shadowId] = interaction;
 			}
 		};
@@ -25,5 +25,5 @@
 		sandbox.utils = {};
 	}
 
-	sandbox.utils.interactionFinder = new InteractionContainerFinder(sandbox.utils.sMemoryInterface);
+	sandbox.utils.interactionContainerFinder = new InteractionContainerFinder(sandbox.utils.sMemoryInterface);
 }(J$));

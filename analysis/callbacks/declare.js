@@ -14,7 +14,7 @@
 
 		this.runTimeInfo = sandbox.runTimeInfo;
 		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
-		this.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
+		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
 		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 
 		var dis = this;
@@ -27,7 +27,7 @@
 					var argumentContainer = buildArgumentContainer(argumentIndex, name, val);
 					functionContainer.addArgumentContainer(argumentIndex, argumentContainer);
 
-					dis.argumentContainerFinder.addMappingForContainers(argumentContainer, val);
+					dis.interactionContainerFinder.addMapping(argumentContainer, val);
 				}
 			}
 

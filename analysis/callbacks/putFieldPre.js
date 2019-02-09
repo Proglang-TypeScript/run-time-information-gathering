@@ -14,8 +14,7 @@
 	
 		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
 		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
-		this.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
-		this.interactionFinder = sandbox.utils.interactionFinder;
+		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
 		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 
 		var dis = this;
@@ -47,7 +46,7 @@
 		function addInteractionToContainerIfPossible(interaction, base) {
 			let shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
 
-			let containerForAddingNewInteraction = dis.argumentContainerFinder.findArgumentContainer(shadowId);
+			let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(shadowId);
 
 			let interactionAdded = false;
 			if (containerForAddingNewInteraction) {
@@ -59,7 +58,7 @@
 		}
 
 		function addFollowingInteractionToMappedInteraction(interaction, base) {
-			var containerForAddingNewInteraction = dis.interactionFinder.findInteraction(dis.sMemoryInterface.getShadowIdOfObject(base));
+			var containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(dis.sMemoryInterface.getShadowIdOfObject(base));
 
 			if (containerForAddingNewInteraction) {
 				containerForAddingNewInteraction.addInteraction(interaction);
