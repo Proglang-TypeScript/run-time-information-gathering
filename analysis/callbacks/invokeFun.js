@@ -6,12 +6,10 @@
 	function InvokeFunAnalysis() {
 		this.callbackName = "invokeFun";
 
-		var getTypeOf = sandbox.functions.getTypeOf;
-
 		this.runTimeInfo = sandbox.runTimeInfo;
 		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
-		this.argumentWrapperObjectBuilder = sandbox.utils.argumentWrapperObjectBuilder;
 		this.interactionWithResultHandler = sandbox.utils.interactionWithResultHandler;
+		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
 
 		var dis = this;
 
@@ -56,16 +54,10 @@
 		};
 
 		function changeResultToWrapperObjectIfItIsALiteral(result) {
-			switch(getTypeOf(result)) {
-				case "string":
-					return dis.argumentWrapperObjectBuilder.buildFromString(result);
+			result = dis.wrapperObjectsHandler.convertToWrapperObjectIfItIsALiteral(result);
+			result = dis.wrapperObjectsHandler.convertToProxyIfItIsAnObject(result);
 
-				case "number":
-					return dis.argumentWrapperObjectBuilder.buildFromNumber(result);
-
-				default:
-					return result;
-			}
+			return result;
 		}
 
 		function getFunctionContainer(f) {

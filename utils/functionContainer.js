@@ -19,7 +19,8 @@
 			if (!(argumentIndex in this.args)) {
 				this.args[argumentIndex] = argumentContainer;
 			} else {
-				this.args[argumentIndex].interactions = this.args[argumentIndex].interactions.concat(argumentContainer.interactions);
+				argumentContainer.interactions = this.args[argumentIndex].interactions.concat(argumentContainer.interactions);
+				this.args[argumentIndex] = argumentContainer;
 			}
 		};
 

@@ -17,8 +17,7 @@ node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
     --analysis $ROOT_PATH/utils/sMemoryInterface.js \
     --analysis $ROOT_PATH/utils/objectSerializer.js \
     --analysis $ROOT_PATH/utils/interactionSerializer.js \
-    --analysis $ROOT_PATH/utils/argumentContainerFinder.js \
-    --analysis $ROOT_PATH/utils/interactionFinder.js \
+    --analysis $ROOT_PATH/utils/interactionContainerFinder.js \
     --analysis $ROOT_PATH/utils/objectTraceIdMap.js \
     --analysis $ROOT_PATH/utils/recursiveInteractionsHandler.js \
     --analysis $ROOT_PATH/utils/argumentWrapperObjectBuilder.js \

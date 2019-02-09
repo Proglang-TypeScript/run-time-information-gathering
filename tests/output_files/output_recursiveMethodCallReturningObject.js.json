@@ -292,7 +292,7 @@
                         "followingInteractions": [
                             {
                                 "code": "getField",
-                                "traceId": "trace__10",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
@@ -303,7 +303,7 @@
                             },
                             {
                                 "code": "getField",
-                                "traceId": "trace__10",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
@@ -314,189 +314,79 @@
                             },
                             {
                                 "code": "methodCall",
-                                "traceId": "trace__10",
+                                "traceId": null,
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
                                 "followingInteractions": [
                                     {
-                                        "code": "getField",
-                                        "traceId": "trace__9",
-                                        "isComputed": false,
-                                        "isOpAssign": false,
-                                        "enclosingFunctionId": "functionId_5",
-                                        "followingInteractions": [],
-                                        "iid": 97,
-                                        "field": "val",
-                                        "returnTypeOf": "number"
-                                    },
-                                    {
-                                        "code": "getField",
-                                        "traceId": "trace__9",
-                                        "isComputed": false,
-                                        "isOpAssign": false,
-                                        "enclosingFunctionId": "functionId_5",
-                                        "followingInteractions": [],
-                                        "iid": 137,
-                                        "field": "useRight",
-                                        "returnTypeOf": "boolean"
-                                    },
-                                    {
                                         "code": "methodCall",
-                                        "traceId": "trace__9",
+                                        "traceId": null,
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": "functionId_5",
                                         "followingInteractions": [
                                             {
-                                                "code": "getField",
-                                                "traceId": "trace__8",
-                                                "isComputed": false,
-                                                "isOpAssign": false,
-                                                "enclosingFunctionId": "functionId_5",
-                                                "followingInteractions": [],
-                                                "iid": 97,
-                                                "field": "val",
-                                                "returnTypeOf": "number"
-                                            },
-                                            {
-                                                "code": "getField",
-                                                "traceId": "trace__8",
-                                                "isComputed": false,
-                                                "isOpAssign": false,
-                                                "enclosingFunctionId": "functionId_5",
-                                                "followingInteractions": [],
-                                                "iid": 137,
-                                                "field": "useRight",
-                                                "returnTypeOf": "boolean"
-                                            },
-                                            {
                                                 "code": "methodCall",
-                                                "traceId": "trace__8",
+                                                "traceId": null,
                                                 "isComputed": false,
                                                 "isOpAssign": false,
                                                 "enclosingFunctionId": "functionId_5",
                                                 "followingInteractions": [
                                                     {
-                                                        "code": "getField",
-                                                        "traceId": "trace__7",
-                                                        "isComputed": false,
-                                                        "isOpAssign": false,
-                                                        "enclosingFunctionId": "functionId_5",
-                                                        "followingInteractions": [],
-                                                        "iid": 97,
-                                                        "field": "val",
-                                                        "returnTypeOf": "number"
-                                                    },
-                                                    {
-                                                        "code": "getField",
-                                                        "traceId": "trace__7",
-                                                        "isComputed": false,
-                                                        "isOpAssign": false,
-                                                        "enclosingFunctionId": "functionId_5",
-                                                        "followingInteractions": [],
-                                                        "iid": 137,
-                                                        "field": "useRight",
-                                                        "returnTypeOf": "boolean"
-                                                    },
-                                                    {
                                                         "code": "methodCall",
-                                                        "traceId": "trace__7",
+                                                        "traceId": null,
                                                         "isComputed": false,
                                                         "isOpAssign": false,
                                                         "enclosingFunctionId": "functionId_5",
                                                         "followingInteractions": [
                                                             {
-                                                                "code": "getField",
-                                                                "traceId": "trace__6",
-                                                                "isComputed": false,
-                                                                "isOpAssign": false,
-                                                                "enclosingFunctionId": "functionId_5",
-                                                                "followingInteractions": [],
-                                                                "iid": 97,
-                                                                "field": "val",
-                                                                "returnTypeOf": "number"
-                                                            },
-                                                            {
-                                                                "code": "getField",
-                                                                "traceId": "trace__6",
-                                                                "isComputed": false,
-                                                                "isOpAssign": false,
-                                                                "enclosingFunctionId": "functionId_5",
-                                                                "followingInteractions": [],
-                                                                "iid": 137,
-                                                                "field": "useRight",
-                                                                "returnTypeOf": "boolean"
-                                                            },
-                                                            {
                                                                 "code": "methodCall",
-                                                                "traceId": "trace__6",
+                                                                "traceId": null,
                                                                 "isComputed": false,
                                                                 "isOpAssign": false,
                                                                 "enclosingFunctionId": "functionId_5",
                                                                 "followingInteractions": [
                                                                     {
-                                                                        "code": "getField",
-                                                                        "traceId": "trace__5",
-                                                                        "isComputed": false,
-                                                                        "isOpAssign": false,
-                                                                        "enclosingFunctionId": "functionId_5",
-                                                                        "followingInteractions": [],
-                                                                        "iid": 97,
-                                                                        "field": "val",
-                                                                        "returnTypeOf": "number"
-                                                                    },
-                                                                    {
-                                                                        "code": "getField",
-                                                                        "traceId": "trace__5",
-                                                                        "isComputed": false,
-                                                                        "isOpAssign": false,
-                                                                        "enclosingFunctionId": "functionId_5",
-                                                                        "followingInteractions": [],
-                                                                        "iid": 137,
-                                                                        "field": "useRight",
-                                                                        "returnTypeOf": "boolean"
-                                                                    },
-                                                                    {
                                                                         "code": "methodCall",
-                                                                        "traceId": "trace__5",
+                                                                        "traceId": null,
                                                                         "isComputed": false,
                                                                         "isOpAssign": false,
                                                                         "enclosingFunctionId": "functionId_5",
                                                                         "followingInteractions": [],
                                                                         "iid": 187,
                                                                         "methodName": "getLeft",
-                                                                        "functionId": "functionId_19",
+                                                                        "functionId": "functionId_29",
                                                                         "returnTypeOf": "null",
-                                                                        "traceIdInTargetFunction": "trace__18"
+                                                                        "traceIdInTargetFunction": "trace__23"
                                                                     }
                                                                 ],
                                                                 "iid": 187,
                                                                 "methodName": "getLeft",
-                                                                "functionId": "functionId_17",
+                                                                "functionId": "functionId_25",
                                                                 "returnTypeOf": "AnotherNode",
-                                                                "traceIdInTargetFunction": "trace__17"
+                                                                "traceIdInTargetFunction": "trace__21"
                                                             }
                                                         ],
                                                         "iid": 187,
                                                         "methodName": "getLeft",
-                                                        "functionId": "functionId_15",
+                                                        "functionId": "functionId_21",
                                                         "returnTypeOf": "Node",
-                                                        "traceIdInTargetFunction": "trace__16"
+                                                        "traceIdInTargetFunction": "trace__19"
                                                     }
                                                 ],
                                                 "iid": 155,
                                                 "methodName": "getRight",
-                                                "functionId": "functionId_13",
+                                                "functionId": "functionId_17",
                                                 "returnTypeOf": "Node",
-                                                "traceIdInTargetFunction": "trace__15"
+                                                "traceIdInTargetFunction": "trace__17"
                                             }
                                         ],
                                         "iid": 187,
                                         "methodName": "getLeft",
-                                        "functionId": "functionId_11",
+                                        "functionId": "functionId_13",
                                         "returnTypeOf": "Node",
-                                        "traceIdInTargetFunction": "trace__14"
+                                        "traceIdInTargetFunction": "trace__15"
                                     }
                                 ],
                                 "iid": 187,
@@ -547,41 +437,21 @@
         "returnTypeOfs": [
             {
                 "typeOf": "Node",
-                "traceId": "trace__13"
+                "traceId": "trace__14"
             }
-        ],
-        "functionIid": 369
+        ]
     },
     "functionId_11": {
         "functionId": "functionId_11",
-        "functionName": "getLeft",
+        "functionName": "f",
         "isConstructor": false,
         "args": {},
-        "declarationEnclosingFunctionId": "functionId_5",
-        "returnTypeOfs": [
-            {
-                "typeOf": "Node",
-                "traceId": "trace__14"
-            }
-        ],
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [],
         "functionIid": 369
     },
     "functionId_13": {
         "functionId": "functionId_13",
-        "functionName": "getRight",
-        "isConstructor": false,
-        "args": {},
-        "declarationEnclosingFunctionId": "functionId_5",
-        "returnTypeOfs": [
-            {
-                "typeOf": "Node",
-                "traceId": "trace__15"
-            }
-        ],
-        "functionIid": 441
-    },
-    "functionId_15": {
-        "functionId": "functionId_15",
         "functionName": "getLeft",
         "isConstructor": false,
         "args": {},
@@ -591,11 +461,63 @@
                 "typeOf": "Node",
                 "traceId": "trace__16"
             }
-        ],
+        ]
+    },
+    "functionId_15": {
+        "functionId": "functionId_15",
+        "functionName": "f",
+        "isConstructor": false,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [],
         "functionIid": 369
     },
     "functionId_17": {
         "functionId": "functionId_17",
+        "functionName": "getRight",
+        "isConstructor": false,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_5",
+        "returnTypeOfs": [
+            {
+                "typeOf": "Node",
+                "traceId": "trace__18"
+            }
+        ]
+    },
+    "functionId_19": {
+        "functionId": "functionId_19",
+        "functionName": "f",
+        "isConstructor": false,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [],
+        "functionIid": 441
+    },
+    "functionId_21": {
+        "functionId": "functionId_21",
+        "functionName": "getLeft",
+        "isConstructor": false,
+        "args": {},
+        "declarationEnclosingFunctionId": "functionId_5",
+        "returnTypeOfs": [
+            {
+                "typeOf": "Node",
+                "traceId": "trace__20"
+            }
+        ]
+    },
+    "functionId_23": {
+        "functionId": "functionId_23",
+        "functionName": "f",
+        "isConstructor": false,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [],
+        "functionIid": 369
+    },
+    "functionId_25": {
+        "functionId": "functionId_25",
         "functionName": "getLeft",
         "isConstructor": false,
         "args": {},
@@ -603,13 +525,21 @@
         "returnTypeOfs": [
             {
                 "typeOf": "AnotherNode",
-                "traceId": "trace__17"
+                "traceId": "trace__22"
             }
-        ],
+        ]
+    },
+    "functionId_27": {
+        "functionId": "functionId_27",
+        "functionName": "f",
+        "isConstructor": false,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [],
         "functionIid": 369
     },
-    "functionId_19": {
-        "functionId": "functionId_19",
+    "functionId_29": {
+        "functionId": "functionId_29",
         "functionName": "getLeft",
         "isConstructor": false,
         "args": {},
@@ -617,9 +547,17 @@
         "returnTypeOfs": [
             {
                 "typeOf": "null",
-                "traceId": "trace__18"
+                "traceId": "trace__24"
             }
-        ],
+        ]
+    },
+    "functionId_31": {
+        "functionId": "functionId_31",
+        "functionName": "f",
+        "isConstructor": false,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [],
         "functionIid": 617
     }
 }

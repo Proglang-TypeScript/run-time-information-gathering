@@ -1,0 +1,37 @@
+{
+    "functionId_1": {
+        "functionId": "functionId_1",
+        "functionName": "f",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__1",
+                        "typeof": "object"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__1"
+            }
+        ],
+        "functionIid": 41
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "f",
+        "isConstructor": false,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [],
+        "functionIid": 121
+    }
+}

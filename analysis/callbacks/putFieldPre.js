@@ -14,8 +14,7 @@
 	
 		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
 		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
-		this.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
-		this.interactionFinder = sandbox.utils.interactionFinder;
+		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
 		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 
 		var dis = this;
@@ -32,7 +31,7 @@
 				isOpAssign
 			);
 
-			if (!addInteractionToArgumentContainerIfPossible(interaction, base)) {
+			if (!addInteractionToContainerIfPossible(interaction, base)) {
 				addFollowingInteractionToMappedInteraction(interaction, base);
 			}
 
@@ -44,15 +43,14 @@
 			};
 		};
 
-		function addInteractionToArgumentContainerIfPossible(interaction, base) {
-			var functionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
-			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
+		function addInteractionToContainerIfPossible(interaction, base) {
+			let shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
 
-			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionId);
+			let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(shadowId);
 
-			var interactionAdded = false;
-			if (functionId && argumentContainer) {
-				argumentContainer.addInteraction(interaction);
+			let interactionAdded = false;
+			if (containerForAddingNewInteraction) {
+				containerForAddingNewInteraction.addInteraction(interaction);
 				interactionAdded = true;
 			}
 
@@ -60,13 +58,10 @@
 		}
 
 		function addFollowingInteractionToMappedInteraction(interaction, base) {
-			var mappedInteraction = dis.interactionFinder.findInteraction(
-				dis.sMemoryInterface.getShadowIdOfObject(base),
-				dis.functionsExecutionStack.getCurrentExecutingFunction()
-			);
+			var containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(dis.sMemoryInterface.getShadowIdOfObject(base));
 
-			if (mappedInteraction) {
-				mappedInteraction.addFollowingInteraction(interaction);
+			if (containerForAddingNewInteraction) {
+				containerForAddingNewInteraction.addInteraction(interaction);
 			}
 		}
 

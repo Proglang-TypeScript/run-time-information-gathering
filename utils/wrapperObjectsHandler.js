@@ -47,10 +47,10 @@
 			let newValue;
 
 			if (
-				getTypeOf(originalValue) == "object" &&
-				!(originalValue instanceof String) &&
-				!(originalValue instanceof Number)  &&
-				!((typeof Node === 'function') && originalValue instanceof Node)
+				getTypeOf(originalValue) == "object"
+				&& !(originalValue instanceof String)
+				&& !(originalValue instanceof Number)
+				&& !((typeof Node === 'function') && originalValue instanceof Node)
 			) {
 				newValue = dis.argumentProxyBuilder.buildProxy(originalValue);
 			}

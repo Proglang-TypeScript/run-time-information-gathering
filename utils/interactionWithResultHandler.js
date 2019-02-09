@@ -6,65 +6,40 @@
 	var getTypeOf = sandbox.functions.getTypeOf;
 
 	function InteractionWithResultHandler(
-		interactionFinder,
+		interactionContainerFinder,
 		recursiveInteractionsHandler,
-		sMemoryInterface,
-		argumentContainerFinder
+		sMemoryInterface
 	) {
 
-		this.interactionFinder = interactionFinder;
+		this.interactionContainerFinder = interactionContainerFinder;
 		this.recursiveInteractionsHandler = recursiveInteractionsHandler;
 		this.sMemoryInterface = sMemoryInterface;
-		this.argumentContainerFinder = argumentContainerFinder;
 
 		var dis = this;
 
 		this.processInteractionWithResult = function(interaction, functionId, result, base) {
 			if (getTypeOf(result) == "object") {
-				dis.interactionFinder.addMapping(interaction, functionId, result);
+				dis.interactionContainerFinder.addMapping(interaction, result);
 				dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(
 					interaction,
 					result
 				);
 			}
 
-			if (!addInteractionToArgumentContainerIfPossible(interaction, functionId, base)) {
-				addFollowingInteraction(
-					interaction,
-					result,
-					functionId,
-					dis.sMemoryInterface.getShadowIdOfObject(base)
-				);
-			}
+			addInteractionToContainer(interaction, base, result);
 		};
 
-		function addInteractionToArgumentContainerIfPossible(interaction, functionId, base) {
-			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
+		function addInteractionToContainer(interaction, base, result) {
+			let shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
+			let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(shadowId);
 
-			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, functionId);
-
-			var interactionAdded = false;
-			if (functionId && argumentContainer) {
-				argumentContainer.addInteraction(interaction);
-				interactionAdded = true;
-			}
-
-			return interactionAdded;
-		}
-
-		function addFollowingInteraction(interaction, result, functionId, shadowIdBaseObject) {
-			var mappedInteraction = dis.interactionFinder.findInteraction(
-				shadowIdBaseObject,
-				functionId
-			);
-
-			if (mappedInteraction) {
-				if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {
-					mappedInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
-					mappedInteraction.addFollowingInteraction(interaction);
-
-					dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
-				}
+			if (
+				containerForAddingNewInteraction &&
+				!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)
+			) {
+				containerForAddingNewInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(containerForAddingNewInteraction);
+				containerForAddingNewInteraction.addInteraction(interaction);
+				dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
 			}
 		}
 	}
@@ -74,10 +49,9 @@
 	}
 
 	sandbox.utils.interactionWithResultHandler = new InteractionWithResultHandler(
-		sandbox.utils.interactionFinder,
+		sandbox.utils.interactionContainerFinder,
 		sandbox.utils.recursiveInteractionsHandler,
-		sandbox.utils.sMemoryInterface,
-		sandbox.utils.argumentContainerFinder
+		sandbox.utils.sMemoryInterface
 	);
 
 }(J$));

@@ -17,7 +17,7 @@
 		this.runTimeInfo = sandbox.runTimeInfo;
 		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
 		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
-		this.argumentContainerFinder = sandbox.utils.argumentContainerFinder;
+		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
 		this.functionIdHandler = sandbox.utils.functionIdHandler;
 		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
 		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
@@ -83,12 +83,12 @@
 			let functionId = dis.functionIdHandler.getFunctionId(f);
 
 			if (getTypeOf(val) == "object") {
-				var currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
-				var shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
+				let currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
+				let shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
 
-				var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId, currentActiveFiid);
-				if (currentActiveFiid && argumentContainer) {
-					var usedAsArgumentInteraction = new UsedAsArgumentInteraction(
+				let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(shadowId);
+				if (currentActiveFiid && containerForAddingNewInteraction) {
+					let usedAsArgumentInteraction = new UsedAsArgumentInteraction(
 						currentActiveFiid,
 						functionId,
 						argIndex,
@@ -100,7 +100,7 @@
 						usedAsArgumentInteraction.traceId = traceId;
 					}
 
-					argumentContainer.addInteraction(usedAsArgumentInteraction);
+					containerForAddingNewInteraction.addInteraction(usedAsArgumentInteraction);
 				}
 			}
 		}

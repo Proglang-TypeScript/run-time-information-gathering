@@ -18,7 +18,7 @@
 	ActiveInteraction.prototype = Object.create(Interaction.prototype);
 	ActiveInteraction.prototype.constructor = ActiveInteraction;
 
-	ActiveInteraction.prototype.addFollowingInteraction = function(followingInteraction) {
+	ActiveInteraction.prototype.addInteraction = function(followingInteraction) {
 		this.followingInteractions.push(followingInteraction);
 	};
 
