@@ -83,12 +83,12 @@
 			let functionId = dis.functionIdHandler.getFunctionId(f);
 
 			if (getTypeOf(val) == "object") {
-				var currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
-				var shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
+				let currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
+				let shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
 
-				var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId);
-				if (currentActiveFiid && argumentContainer) {
-					var usedAsArgumentInteraction = new UsedAsArgumentInteraction(
+				let containerForAddingNewInteraction = dis.argumentContainerFinder.findArgumentContainer(shadowId);
+				if (currentActiveFiid && containerForAddingNewInteraction) {
+					let usedAsArgumentInteraction = new UsedAsArgumentInteraction(
 						currentActiveFiid,
 						functionId,
 						argIndex,
@@ -100,7 +100,7 @@
 						usedAsArgumentInteraction.traceId = traceId;
 					}
 
-					argumentContainer.addInteraction(usedAsArgumentInteraction);
+					containerForAddingNewInteraction.addInteraction(usedAsArgumentInteraction);
 				}
 			}
 		}

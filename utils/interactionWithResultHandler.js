@@ -28,37 +28,36 @@
 				);
 			}
 
-			if (!addInteractionToArgumentContainerIfPossible(interaction, functionId, base)) {
+			if (!addInteractionToContainerIfPossible(interaction, base)) {
 				addFollowingInteraction(
 					interaction,
 					result,
-					functionId,
 					dis.sMemoryInterface.getShadowIdOfObject(base)
 				);
 			}
 		};
 
-		function addInteractionToArgumentContainerIfPossible(interaction, functionId, base) {
-			var shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
+		function addInteractionToContainerIfPossible(interaction, base) {
+			let shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
 
-			var argumentContainer = dis.argumentContainerFinder.findArgumentContainer(shadowId);
+			let containerForAddingNewInteraction = dis.argumentContainerFinder.findArgumentContainer(shadowId);
 
-			var interactionAdded = false;
-			if (functionId && argumentContainer) {
-				argumentContainer.addInteraction(interaction);
+			let interactionAdded = false;
+			if (containerForAddingNewInteraction) {
+				containerForAddingNewInteraction.addInteraction(interaction);
 				interactionAdded = true;
 			}
 
 			return interactionAdded;
 		}
 
-		function addFollowingInteraction(interaction, result, functionId, shadowIdBaseObject) {
-			var mappedInteraction = dis.interactionFinder.findInteraction(shadowIdBaseObject);
+		function addFollowingInteraction(interaction, result, shadowIdBaseObject) {
+			var containerForAddingNewInteraction = dis.interactionFinder.findInteraction(shadowIdBaseObject);
 
-			if (mappedInteraction) {
+			if (containerForAddingNewInteraction) {
 				if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {
-					mappedInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(mappedInteraction);
-					mappedInteraction.addFollowingInteraction(interaction);
+					containerForAddingNewInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(containerForAddingNewInteraction);
+					containerForAddingNewInteraction.addFollowingInteraction(interaction);
 
 					dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
 				}
