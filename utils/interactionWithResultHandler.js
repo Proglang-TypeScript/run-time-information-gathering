@@ -57,7 +57,7 @@
 			if (containerForAddingNewInteraction) {
 				if (!dis.recursiveInteractionsHandler.interactionAlreadyUsed(interaction, result)) {
 					containerForAddingNewInteraction = dis.recursiveInteractionsHandler.getMainInteractionForCurrentInteraction(containerForAddingNewInteraction);
-					containerForAddingNewInteraction.addFollowingInteraction(interaction);
+					containerForAddingNewInteraction.addInteraction(interaction);
 
 					dis.recursiveInteractionsHandler.reportUsedInteraction(interaction, result);
 				}

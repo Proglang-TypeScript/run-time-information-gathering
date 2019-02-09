@@ -62,7 +62,7 @@
 			var containerForAddingNewInteraction = dis.interactionFinder.findInteraction(dis.sMemoryInterface.getShadowIdOfObject(base));
 
 			if (containerForAddingNewInteraction) {
-				containerForAddingNewInteraction.addFollowingInteraction(interaction);
+				containerForAddingNewInteraction.addInteraction(interaction);
 			}
 		}
 
