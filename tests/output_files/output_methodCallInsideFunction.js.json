@@ -139,9 +139,23 @@
                         "typeof": "string"
                     },
                     {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "convertedTo": "number",
+                        "isNaN": true,
+                        "toPrimitive": null
+                    },
+                    {
                         "code": "inputValue",
                         "traceId": "trace__4",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__4",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null
                     }
                 ]
             },
@@ -155,9 +169,23 @@
                         "typeof": "number"
                     },
                     {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null
+                    },
+                    {
                         "code": "inputValue",
                         "traceId": "trace__4",
                         "typeof": "string"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__4",
+                        "convertedTo": "number",
+                        "isNaN": true,
+                        "toPrimitive": null
                     }
                 ]
             }

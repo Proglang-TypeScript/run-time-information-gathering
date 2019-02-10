@@ -7,6 +7,10 @@
 		this.callbackName = "binaryPre";
 
 		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
+		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
+		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
+		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
+		this.operatorsTypeCoercionAnalyzer = sandbox.utils.operatorsTypeCoercionAnalyzer;
 
 		var dis = this;
 
@@ -20,40 +24,15 @@
 			let originalLeft = getOriginalValueIfItIsAProxy(left);
 			let originalRight = getOriginalValueIfItIsAProxy(right);
 
-			if (op === "<") {
-				let originalLeftPrimitive = toPrimitive(originalLeft, Number);
-				let originalRightPrimitive = toPrimitive(originalRight, Number);
+			let typeCoercion = dis.operatorsTypeCoercionAnalyzer.analyzeTypeCoercion(
+				op,
+				originalLeft,
+				originalRight
+			);
 
-				let leftConvertedTo = {};
-				let rightConvertedTo = {};
-
-				if (originalLeftPrimitive !== originalLeft) {
-					leftConvertedTo.toPrimitive = {
-						hint: "number",
-						typeOfResult: sandbox.functions.getTypeOf(originalLeftPrimitive)
-					};
-				}
-
-				if (originalRightPrimitive !== originalRight) {
-					rightConvertedTo.toPrimitive = {
-						hint: "number",
-						typeOfResult: sandbox.functions.getTypeOf(originalRightPrimitive)
-					};
-				}
-
-				let typeOfLeft = sandbox.functions.getTypeOf(originalLeft);
-				let typeOfRight = sandbox.functions.getTypeOf(originalRight);
-
-				if (!(typeOfLeft === "string" && typeOfRight === "string")) {
-					leftConvertedTo.convertedTo = "number";
-					leftConvertedTo.isNaN = isNaN(originalLeft);
-
-					rightConvertedTo.convertedTo = "number";
-					rightConvertedTo.isNaN = isNaN(originalRight);
-				} else {
-					leftConvertedTo.convertedTo = "string";
-					rightConvertedTo = "string";
-				}
+			if (typeCoercion !== null) {
+				addInteractionIfNecessary(typeCoercion.left, left);
+				addInteractionIfNecessary(typeCoercion.right, right);
 			}
 
 			let equalityOperations = [
@@ -75,51 +54,19 @@
 				skip: false
 			};
 		};
+	
+		function addInteractionIfNecessary(interaction, operand) {
+			let interactionContainer = dis.interactionContainerFinder.findInteraction(
+				dis.sMemoryInterface.getShadowIdOfObject(operand)
+			);
 
-		function isPrimitive(value) {
-			return value !== Object(value);
-		}
-
-		function toPrimitive(input, preferredType) {
-			if (typeof input !== "object" || input === null) {
-				return input;
-			}
-
-			switch (preferredType) {
-				case Number:
-					return toNumber(input);
-				case String:
-					return toString(input);
-				default:
-					if (input instanceof Date) {
-						return toString(input);
-					} else {
-						return toNumber(input);
-					}
-			}
-
-			function toString(input) {
-				if (isPrimitive(input.toString())) {
-					return input.toString();
+			if (interactionContainer) {
+				let traceId = dis.objectTraceIdMap.get(operand);
+				if (traceId) {
+					interaction.traceId = traceId;
 				}
 
-				if (isPrimitive(input.valueOf())) {
-					return input.valueOf();
-				}
-
-				throw new TypeError("Cannot convert object to primitive value");
-			}
-
-			function toNumber(input) {
-				if (isPrimitive(input.valueOf())) {
-					return input.valueOf();
-				}
-
-				if (isPrimitive(input.toString())) {
-					return input.toString();
-				}
-
-				throw new TypeError("Cannot convert object to primitive value");
+				interactionContainer.addInteraction(interaction);
 			}
 		}
 

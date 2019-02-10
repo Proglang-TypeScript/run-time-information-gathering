@@ -12,6 +12,16 @@
                         "code": "inputValue",
                         "traceId": "trace__1",
                         "typeof": "object"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__1",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": {
+                            "hint": "number",
+                            "typeOfResult": "string"
+                        }
                     }
                 ]
             }
@@ -27,7 +37,7 @@
     },
     "functionId_3": {
         "functionId": "functionId_3",
-        "functionName": "f",
+        "functionName": "",
         "isConstructor": false,
         "args": {},
         "declarationEnclosingFunctionId": -1,

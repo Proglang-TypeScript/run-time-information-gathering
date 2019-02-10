@@ -14,9 +14,23 @@
                         "typeof": "string"
                     },
                     {
+                        "code": "convertedTo",
+                        "traceId": "trace__1",
+                        "convertedTo": "string",
+                        "isNaN": false,
+                        "toPrimitive": null
+                    },
+                    {
                         "code": "inputValue",
                         "traceId": "trace__2",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null
                     },
                     {
                         "code": "inputValue",
@@ -24,14 +38,35 @@
                         "typeof": "string"
                     },
                     {
+                        "code": "convertedTo",
+                        "traceId": "trace__3",
+                        "convertedTo": "number",
+                        "isNaN": true,
+                        "toPrimitive": null
+                    },
+                    {
                         "code": "inputValue",
                         "traceId": "trace__4",
                         "typeof": "string"
                     },
                     {
+                        "code": "convertedTo",
+                        "traceId": "trace__4",
+                        "convertedTo": "number",
+                        "isNaN": true,
+                        "toPrimitive": null
+                    },
+                    {
                         "code": "inputValue",
                         "traceId": "trace__5",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__5",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null
                     }
                 ]
             },
@@ -45,14 +80,35 @@
                         "typeof": "string"
                     },
                     {
+                        "code": "convertedTo",
+                        "traceId": "trace__1",
+                        "convertedTo": "string",
+                        "isNaN": false,
+                        "toPrimitive": null
+                    },
+                    {
                         "code": "inputValue",
                         "traceId": "trace__2",
                         "typeof": "number"
                     },
                     {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null
+                    },
+                    {
                         "code": "inputValue",
                         "traceId": "trace__3",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__3",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null
                     },
                     {
                         "code": "inputValue",
