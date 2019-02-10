@@ -12,7 +12,7 @@
 
 		this.callback = function (iid, op, left) {
 			if (op === "typeof") {
-				left = replaceValueIfItIsAWrapperObject(left);
+				left = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(left);
 			}
 
 			return {
@@ -21,14 +21,6 @@
 				skip: false
 			};
 		};
-
-		function replaceValueIfItIsAWrapperObject(val) {
-			if (dis.wrapperObjectsHandler.objectIsWrapperObject(val)) {
-				return dis.wrapperObjectsHandler.getRealValueFromWrapperObject(val);
-			} else {
-				return val;
-			}
-		}
 	}
 
 	sandbox.analysis = new UnaryPreAnalysis();

@@ -16,7 +16,7 @@
 		var dis = this;
 
 		this.objectIsWrapperObject = function(obj) {
-			return (obj && (obj.IS_WRAPPER_OBJECT === true));
+			return !!(obj && (obj.IS_WRAPPER_OBJECT === true));
 		};
 
 		this.getRealValueFromWrapperObject = function(obj) {

@@ -21,8 +21,8 @@
 			right
 		) {
 
-			let originalLeft = getOriginalValueIfItIsAProxy(left);
-			let originalRight = getOriginalValueIfItIsAProxy(right);
+			let originalLeft = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(left);
+			let originalRight = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(right)
 
 			let typeCoercion = dis.operatorsTypeCoercionAnalyzer.analyzeTypeCoercion(
 				op,
@@ -68,24 +68,6 @@
 
 				interactionContainer.addInteraction(interaction);
 			}
-		}
-
-		function getOriginalValueIfItIsAProxy(val) {
-			if (dis.wrapperObjectsHandler.objectIsWrapperObject(val)) {
-				return getRealObjectFromProxy(val);
-			} else {
-				return val;
-			}
-		}
-
-		function getRealObjectFromProxy(val) {
-			var targetObjectFromProxy = dis.wrapperObjectsHandler.getRealValueFromWrapperObject(val);
-
-			if (dis.wrapperObjectsHandler.objectIsWrapperObject(targetObjectFromProxy)) {
-				return getRealObjectFromProxy(targetObjectFromProxy);
-			}
-
-			return targetObjectFromProxy;
 		}
 	}
 
