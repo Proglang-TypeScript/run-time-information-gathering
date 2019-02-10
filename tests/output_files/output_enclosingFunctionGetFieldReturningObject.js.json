@@ -69,6 +69,28 @@
                                 "iid": 97,
                                 "field": "anotherValue",
                                 "returnTypeOf": "number"
+                            },
+                            {
+                                "code": "setField",
+                                "traceId": null,
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": "functionId_5",
+                                "followingInteractions": [],
+                                "iid": 193,
+                                "field": "anotherValue",
+                                "typeof": "number"
+                            },
+                            {
+                                "code": "getField",
+                                "traceId": null,
+                                "isComputed": false,
+                                "isOpAssign": false,
+                                "enclosingFunctionId": "functionId_5",
+                                "followingInteractions": [],
+                                "iid": 217,
+                                "field": "anotherValue",
+                                "returnTypeOf": "number"
                             }
                         ],
                         "iid": 33,
@@ -112,28 +134,6 @@
                                 "iid": 153,
                                 "field": "anotherInsideObj",
                                 "returnTypeOf": "object"
-                            },
-                            {
-                                "code": "setField",
-                                "traceId": null,
-                                "isComputed": false,
-                                "isOpAssign": false,
-                                "enclosingFunctionId": "functionId_5",
-                                "followingInteractions": [],
-                                "iid": 193,
-                                "field": "anotherValue",
-                                "typeof": "number"
-                            },
-                            {
-                                "code": "getField",
-                                "traceId": null,
-                                "isComputed": false,
-                                "isOpAssign": false,
-                                "enclosingFunctionId": "functionId_5",
-                                "followingInteractions": [],
-                                "iid": 217,
-                                "field": "anotherValue",
-                                "returnTypeOf": "number"
                             }
                         ],
                         "iid": 145,

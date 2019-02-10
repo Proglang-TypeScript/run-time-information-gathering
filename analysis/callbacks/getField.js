@@ -33,7 +33,7 @@
 				processMethodCallInteraction(base, offset, isComputed, isOpAssign, iid);
 			} else {
 				result = dis.wrapperObjectsHandler.convertToWrapperObjectIfItIsALiteral(result);
-				// result = dis.wrapperObjectsHandler.convertToProxyIfItIsAnObject(result);
+				result = dis.wrapperObjectsHandler.convertToProxyIfItIsAnObject(result);
 				processGetFieldInteraction(base, offset, isComputed, isOpAssign, iid, result);
 			}
 

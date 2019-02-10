@@ -1,0 +1,29 @@
+undefined
+{
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "f",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__2",
+                        "typeof": "undefined"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "string",
+                "traceId": "trace__2"
+            }
+        ],
+        "functionIid": 41
+    }
+}
