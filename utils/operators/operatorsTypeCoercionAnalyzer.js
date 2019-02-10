@@ -5,7 +5,8 @@
 (function (sandbox) {
 	function OperatorsTypeCoercionAnalyzer() {
 		let operatorsTypeCoercion = [
-			sandbox.utils.RelationalComparisonOperatorTypeCoercion
+			sandbox.utils.relationalComparisonOperatorTypeCoercion,
+			sandbox.utils.sumOperatorTypeCoercion
 		];
 
 		this.mapOperatorsTypeCoercion = {};

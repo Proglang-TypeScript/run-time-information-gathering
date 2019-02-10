@@ -27,6 +27,7 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     --analysis $ROOT_PATH/utils/wrapperObjectsHandler.js \
     --analysis $ROOT_PATH/utils/toPrimitive.js \
     --analysis $ROOT_PATH/utils/operators/relationalComparisonOperatorTypeCoercion.js \
+    --analysis $ROOT_PATH/utils/operators/sumOperatorTypeCoercion.js \
     --analysis $ROOT_PATH/utils/operators/operatorsTypeCoercionAnalyzer.js \
     \
     --analysis $ROOT_PATH/utils/argumentContainer.js \
