@@ -54,10 +54,7 @@
 		};
 
 		function changeResultToWrapperObjectIfItIsALiteral(result) {
-			result = dis.wrapperObjectsHandler.convertToWrapperObjectIfItIsALiteral(result);
-			result = dis.wrapperObjectsHandler.convertToProxyIfItIsAnObject(result);
-
-			return result;
+			return dis.wrapperObjectsHandler.convertToWrapperObject(result);
 		}
 
 		function getFunctionContainer(f) {

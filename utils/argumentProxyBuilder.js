@@ -35,6 +35,10 @@
 						return true;
 					},
 					get: function(target, property, receiver) {
+						if (property === "IS_WRAPPER_OBJECT") {
+							return true;
+						}
+
 						if (property === "TARGET_PROXY") {
 							return target;
 						}

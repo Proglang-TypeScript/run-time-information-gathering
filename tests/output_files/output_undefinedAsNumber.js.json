@@ -1,4 +1,4 @@
-undefined
+NaN
 {
     "functionId_3": {
         "functionId": "functionId_3",
@@ -17,8 +17,8 @@ undefined
                     {
                         "code": "convertedTo",
                         "traceId": "trace__2",
-                        "convertedTo": "string",
-                        "isNaN": false,
+                        "convertedTo": "number",
+                        "isNaN": true,
                         "toPrimitive": null
                     }
                 ]
@@ -27,7 +27,7 @@ undefined
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             {
-                "typeOf": "string",
+                "typeOf": "number",
                 "traceId": "trace__2"
             }
         ],

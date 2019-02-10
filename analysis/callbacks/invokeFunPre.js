@@ -42,8 +42,7 @@
 				for (var argIndex in args) {
 					addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
 					addUsedAsArgumentInteractionIfApplicable(args[argIndex], f, argIndex);
-					convertToWrapperObjectIfItIsALiteral(args, argIndex);
-					convertToProxyIfItIsAnObject(args, argIndex);
+					convertToWrapperObject(args, argIndex);
 				}
 
 				if (functionNotProcessed(f)) {
@@ -105,12 +104,8 @@
 			}
 		}
 
-		function convertToWrapperObjectIfItIsALiteral(args, argIndex) {
-			args[argIndex] = dis.wrapperObjectsHandler.convertToWrapperObjectIfItIsALiteral(args[argIndex]);
-		}
-
-		function convertToProxyIfItIsAnObject(args, argIndex) {
-			args[argIndex] = dis.wrapperObjectsHandler.convertToProxyIfItIsAnObject(args[argIndex]);
+		function convertToWrapperObject(args, argIndex) {
+			args[argIndex] = dis.wrapperObjectsHandler.convertToWrapperObject(args[argIndex]);
 		}
 	}
 

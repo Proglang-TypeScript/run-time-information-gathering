@@ -38,7 +38,15 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_1",
-                        "followingInteractions": [],
+                        "followingInteractions": [
+                            {
+                                "code": "convertedTo",
+                                "traceId": null,
+                                "convertedTo": "string",
+                                "isNaN": false,
+                                "toPrimitive": null
+                            }
+                        ],
                         "iid": 33,
                         "field": "anotherThing",
                         "returnTypeOf": "undefined"

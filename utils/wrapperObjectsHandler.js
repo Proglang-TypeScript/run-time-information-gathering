@@ -16,12 +16,26 @@
 		var dis = this;
 
 		this.objectIsWrapperObject = function(obj) {
-			return (obj && (obj.TARGET_PROXY !== undefined));
+			return (obj && (obj.IS_WRAPPER_OBJECT === true));
 		};
 
 		this.getRealValueFromWrapperObject = function(obj) {
  			return obj.TARGET_PROXY;
 		};
+
+		this.getFinalRealObjectFromProxy = function(val) {
+			if (this.objectIsWrapperObject(val) === false) {
+				return val;
+			}
+
+			let targetObjectFromProxy = this.getRealValueFromWrapperObject(val);
+
+			if (this.objectIsWrapperObject(targetObjectFromProxy)) {
+				return this.getFinalRealObjectFromProxy(targetObjectFromProxy);
+			}
+
+			return targetObjectFromProxy;
+		}
 
 		this.convertToWrapperObjectIfItIsALiteral = function(originalValue) {
 			let newValue;
@@ -34,6 +48,10 @@
 				case "number":
 					newValue = dis.argumentWrapperObjectBuilder.buildFromNumber(originalValue);
 					break;
+				
+				case "undefined":
+					newValue = dis.argumentWrapperObjectBuilder.buildFromUndefined(originalValue);
+					break;
 			}
 
 			if (!newValue) {
@@ -42,6 +60,15 @@
 
 			return newValue;
 		};
+
+		this.convertToWrapperObject = function(originalValue) {
+			let newValue = originalValue;
+
+			newValue = this.convertToWrapperObjectIfItIsALiteral(newValue);
+			newValue = this.convertToProxyIfItIsAnObject(newValue);
+
+			return newValue;
+		}
 
 		this.convertToProxyIfItIsAnObject = function(originalValue) {
 			let newValue;
