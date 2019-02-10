@@ -1,12 +1,12 @@
 {
     "functionId_1": {
         "functionId": "functionId_1",
-        "functionName": "myFunction",
+        "functionName": "f",
         "isConstructor": false,
         "args": {
             "0": {
                 "argumentIndex": 0,
-                "argumentName": "myObj",
+                "argumentName": "a",
                 "interactions": [
                     {
                         "code": "inputValue",
@@ -23,14 +23,25 @@
                             {
                                 "code": "convertedTo",
                                 "traceId": null,
-                                "convertedTo": "number",
+                                "convertedTo": "string",
                                 "isNaN": false,
                                 "toPrimitive": null
                             }
                         ],
-                        "iid": 89,
-                        "field": "someValue",
-                        "returnTypeOf": "number"
+                        "iid": 17,
+                        "field": "something",
+                        "returnTypeOf": "string"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_1",
+                        "followingInteractions": [],
+                        "iid": 33,
+                        "field": "anotherThing",
+                        "returnTypeOf": "undefined"
                     }
                 ]
             }
@@ -38,36 +49,10 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [
             {
-                "typeOf": "boolean",
+                "typeOf": "string",
                 "traceId": "trace__1"
             }
         ],
-        "functionIid": 145
-    },
-    "functionId_3": {
-        "functionId": "functionId_3",
-        "functionName": "myFunction2",
-        "isConstructor": false,
-        "args": {
-            "0": {
-                "argumentIndex": 0,
-                "argumentName": "myObj",
-                "interactions": [
-                    {
-                        "code": "inputValue",
-                        "traceId": "trace__2",
-                        "typeof": "object"
-                    }
-                ]
-            }
-        },
-        "declarationEnclosingFunctionId": -1,
-        "returnTypeOfs": [
-            {
-                "typeOf": "boolean",
-                "traceId": "trace__2"
-            }
-        ],
-        "functionIid": 297
+        "functionIid": 57
     }
 }

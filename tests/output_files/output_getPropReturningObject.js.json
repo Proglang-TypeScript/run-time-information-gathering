@@ -26,7 +26,15 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_1",
-                                "followingInteractions": [],
+                                "followingInteractions": [
+                                    {
+                                        "code": "convertedTo",
+                                        "traceId": null,
+                                        "convertedTo": "number",
+                                        "isNaN": false,
+                                        "toPrimitive": null
+                                    }
+                                ],
                                 "iid": 41,
                                 "field": "someValue",
                                 "returnTypeOf": "number"
@@ -56,7 +64,15 @@
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": "functionId_1",
-                                        "followingInteractions": [],
+                                        "followingInteractions": [
+                                            {
+                                                "code": "convertedTo",
+                                                "traceId": null,
+                                                "convertedTo": "number",
+                                                "isNaN": false,
+                                                "toPrimitive": null
+                                            }
+                                        ],
                                         "iid": 81,
                                         "field": "anotherValue",
                                         "returnTypeOf": "number"

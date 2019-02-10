@@ -13,6 +13,7 @@
 		this.functionIdHandler = sandbox.utils.functionIdHandler;
 		this.interactionWithResultHandler = sandbox.utils.interactionWithResultHandler;
 		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
+		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
 
 		var dis = this;
 
@@ -25,14 +26,23 @@
             isOpAssign,
             isMethodCall
 		) {
+
+			let result = val;
+
 			if (isMethodCall === true) {
 				processMethodCallInteraction(base, offset, isComputed, isOpAssign, iid);
 			} else {
-				processGetFieldInteraction(base, offset, isComputed, isOpAssign, iid);
+				result = dis.wrapperObjectsHandler.convertToWrapperObjectIfItIsALiteral(result);
+				// result = dis.wrapperObjectsHandler.convertToProxyIfItIsAnObject(result);
+				processGetFieldInteraction(base, offset, isComputed, isOpAssign, iid, result);
 			}
+
+			return {
+				result: result
+			};
 		};
 
-		function processGetFieldInteraction(base, offset, isComputed, isOpAssign, iid) {
+		function processGetFieldInteraction(base, offset, isComputed, isOpAssign, iid, result) {
 			var getFieldInteraction = getGetFieldInteraction(
 				base,
 				offset,
@@ -44,7 +54,7 @@
 			dis.interactionWithResultHandler.processInteractionWithResult(
 				getFieldInteraction,
 				dis.functionsExecutionStack.getCurrentExecutingFunction(),
-				base[offset],
+				result,
 				base
 			);
 		}
