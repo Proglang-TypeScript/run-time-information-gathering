@@ -4,7 +4,7 @@
 
 (function (sandbox) {
 	function GetFieldPreAnalysis() {
-		this.callbackName = "getFieldPre";
+		this.callbackName = "getField";
 
 		var MethodCallInteraction = sandbox.utils.MethodCallInteraction;
 		var GetFieldInteraction = sandbox.utils.GetFieldInteraction;
@@ -19,7 +19,8 @@
 		this.callback = function(
             iid,
             base,
-            offset,
+			offset,
+			val,
             isComputed,
             isOpAssign,
             isMethodCall
@@ -29,12 +30,6 @@
 			} else {
 				processGetFieldInteraction(base, offset, isComputed, isOpAssign, iid);
 			}
-
-			return {
-				skip: false,
-				base: base,
-				offset: offset
-			};
 		};
 
 		function processGetFieldInteraction(base, offset, isComputed, isOpAssign, iid) {
