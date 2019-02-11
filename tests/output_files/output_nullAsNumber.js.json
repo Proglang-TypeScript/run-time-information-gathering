@@ -1,0 +1,36 @@
+1
+{
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "f",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__2",
+                        "typeof": "null"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "number",
+                "traceId": "trace__2"
+            }
+        ],
+        "functionIid": 41
+    }
+}

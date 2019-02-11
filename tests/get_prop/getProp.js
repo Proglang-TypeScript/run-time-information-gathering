@@ -22,7 +22,7 @@ var objWithoutSomeValue = {
 someValueLessThan100(objWithoutSomeValue);
 
 var obj = {
-	someValue: 1000,
+	someValue: null,
 	anotherValue: 100
 };
 variableValueLessThan100(obj, "someValue");

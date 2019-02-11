@@ -62,6 +62,27 @@
 
 			return undefinedObj;
 		};
+
+		this.buildFromNull = function (val) {
+			if (val !== null) {
+				return val;
+			}
+
+			let nullObj = {};
+			nullObj.valueOf = function () {
+				return null;
+			};
+
+			nullObj.toString = function () {
+				return String(null);
+			};
+
+			nullObj[this.getOriginalTypeOfField()] = "null";
+			nullObj.TARGET_PROXY = null;
+			nullObj.IS_WRAPPER_OBJECT = true;
+
+			return nullObj;
+		};
 	}
 
 	if (sandbox.utils === undefined) {

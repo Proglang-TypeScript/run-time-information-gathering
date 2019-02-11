@@ -131,7 +131,7 @@
                         ],
                         "iid": 105,
                         "field": "someValue",
-                        "returnTypeOf": "number"
+                        "returnTypeOf": "null"
                     },
                     {
                         "code": "inputValue",

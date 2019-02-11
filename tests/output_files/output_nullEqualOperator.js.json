@@ -1,0 +1,56 @@
+true
+true
+{
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "looseEquality",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__2",
+                        "typeof": "null"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__2"
+            }
+        ],
+        "functionIid": 41
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "strictEquality",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__4",
+                        "typeof": "null"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__4"
+            }
+        ],
+        "functionIid": 97
+    }
+}

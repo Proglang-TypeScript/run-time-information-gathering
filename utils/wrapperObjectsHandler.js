@@ -52,6 +52,10 @@
 				case "undefined":
 					newValue = dis.argumentWrapperObjectBuilder.buildFromUndefined(originalValue);
 					break;
+				
+				case "null":
+					newValue = dis.argumentWrapperObjectBuilder.buildFromNull(originalValue);
+					break;
 			}
 
 			if (!newValue) {
