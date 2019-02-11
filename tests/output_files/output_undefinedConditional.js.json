@@ -1,0 +1,137 @@
+false
+true
+undefined
+true
+false
+{
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "ifUndefined",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__2",
+                        "typeof": "undefined"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__2"
+            }
+        ],
+        "functionIid": 65
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "denyUndefined",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__4",
+                        "typeof": "undefined"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__4"
+            }
+        ],
+        "functionIid": 113
+    },
+    "functionId_7": {
+        "functionId": "functionId_7",
+        "functionName": "andUndefined",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__6",
+                        "typeof": "undefined"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "undefined",
+                "traceId": "trace__6"
+            }
+        ],
+        "functionIid": 169
+    },
+    "functionId_9": {
+        "functionId": "functionId_9",
+        "functionName": "orUndefined",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__8",
+                        "typeof": "undefined"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__8"
+            }
+        ],
+        "functionIid": 225
+    },
+    "functionId_11": {
+        "functionId": "functionId_11",
+        "functionName": "negationUndefined",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__10",
+                        "typeof": "undefined"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "boolean",
+                "traceId": "trace__10"
+            }
+        ],
+        "functionIid": 273
+    }
+}
