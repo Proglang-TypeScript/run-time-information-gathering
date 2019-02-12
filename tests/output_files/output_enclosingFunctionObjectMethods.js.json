@@ -25,7 +25,8 @@
                                 "traceId": null,
                                 "convertedTo": "number",
                                 "isNaN": true,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "<"
                             }
                         ],
                         "iid": 177,
@@ -44,7 +45,8 @@
                                 "traceId": null,
                                 "convertedTo": "number",
                                 "isNaN": true,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "<"
                             }
                         ],
                         "iid": 289,
@@ -63,7 +65,8 @@
                                 "traceId": null,
                                 "convertedTo": "number",
                                 "isNaN": true,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "<"
                             }
                         ],
                         "iid": 577,
@@ -82,7 +85,8 @@
                                 "traceId": null,
                                 "convertedTo": "number",
                                 "isNaN": true,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "<"
                             }
                         ],
                         "iid": 441,

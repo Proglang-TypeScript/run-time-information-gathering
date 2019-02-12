@@ -25,7 +25,8 @@
                                 "traceId": null,
                                 "convertedTo": "number",
                                 "isNaN": false,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "<"
                             }
                         ],
                         "iid": 89,

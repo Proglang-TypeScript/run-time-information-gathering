@@ -19,7 +19,8 @@
                         "traceId": "trace__2",
                         "convertedTo": "number",
                         "isNaN": false,
-                        "toPrimitive": null
+                        "toPrimitive": null,
+                        "operator": "+"
                     }
                 ]
             }

@@ -19,7 +19,8 @@ NaN
                         "traceId": "trace__2",
                         "convertedTo": "number",
                         "isNaN": true,
-                        "toPrimitive": null
+                        "toPrimitive": null,
+                        "operator": "+"
                     }
                 ]
             }

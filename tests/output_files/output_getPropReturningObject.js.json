@@ -32,7 +32,8 @@
                                         "traceId": null,
                                         "convertedTo": "number",
                                         "isNaN": false,
-                                        "toPrimitive": null
+                                        "toPrimitive": null,
+                                        "operator": "<"
                                     }
                                 ],
                                 "iid": 41,
@@ -70,7 +71,8 @@
                                                 "traceId": null,
                                                 "convertedTo": "number",
                                                 "isNaN": false,
-                                                "toPrimitive": null
+                                                "toPrimitive": null,
+                                                "operator": "<"
                                             }
                                         ],
                                         "iid": 81,

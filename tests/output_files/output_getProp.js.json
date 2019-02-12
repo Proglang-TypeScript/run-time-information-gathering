@@ -25,7 +25,8 @@
                                 "traceId": null,
                                 "convertedTo": "number",
                                 "isNaN": true,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "<"
                             }
                         ],
                         "iid": 33,
@@ -49,7 +50,8 @@
                                 "traceId": null,
                                 "convertedTo": "number",
                                 "isNaN": true,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "<"
                             }
                         ],
                         "iid": 33,
@@ -73,7 +75,8 @@
                                 "traceId": null,
                                 "convertedTo": "number",
                                 "isNaN": false,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "<"
                             }
                         ],
                         "iid": 33,
@@ -126,7 +129,8 @@
                                 "traceId": null,
                                 "convertedTo": "number",
                                 "isNaN": false,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "<"
                             }
                         ],
                         "iid": 105,
@@ -150,7 +154,8 @@
                                 "traceId": null,
                                 "convertedTo": "number",
                                 "isNaN": false,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "<"
                             }
                         ],
                         "iid": 105,

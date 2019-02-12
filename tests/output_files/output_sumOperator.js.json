@@ -18,7 +18,8 @@
                         "traceId": "trace__1",
                         "convertedTo": "number",
                         "isNaN": false,
-                        "toPrimitive": null
+                        "toPrimitive": null,
+                        "operator": "+"
                     },
                     {
                         "code": "inputValue",
@@ -30,7 +31,8 @@
                         "traceId": "trace__2",
                         "convertedTo": "string",
                         "isNaN": false,
-                        "toPrimitive": null
+                        "toPrimitive": null,
+                        "operator": "+"
                     },
                     {
                         "code": "inputValue",
@@ -45,7 +47,8 @@
                         "toPrimitive": {
                             "hint": "default",
                             "typeOfResult": "string"
-                        }
+                        },
+                        "operator": "+"
                     }
                 ]
             },
@@ -63,7 +66,8 @@
                         "traceId": "trace__1",
                         "convertedTo": "number",
                         "isNaN": false,
-                        "toPrimitive": null
+                        "toPrimitive": null,
+                        "operator": "+"
                     },
                     {
                         "code": "inputValue",
@@ -75,7 +79,8 @@
                         "traceId": "trace__2",
                         "convertedTo": "string",
                         "isNaN": false,
-                        "toPrimitive": null
+                        "toPrimitive": null,
+                        "operator": "+"
                     },
                     {
                         "code": "inputValue",
@@ -87,7 +92,8 @@
                         "traceId": "trace__3",
                         "convertedTo": "string",
                         "isNaN": false,
-                        "toPrimitive": null
+                        "toPrimitive": null,
+                        "operator": "+"
                     }
                 ]
             }

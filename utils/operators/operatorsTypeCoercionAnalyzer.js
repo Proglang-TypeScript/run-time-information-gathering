@@ -26,7 +26,17 @@
 				return null;
 			}
 
-			return this.mapOperatorsTypeCoercion[operator].getTypeCoercion(left, right);
+			let typeCoercion = this.mapOperatorsTypeCoercion[operator].getTypeCoercion(left, right);
+
+			if (typeCoercion.left) {
+				typeCoercion.left.operator = operator;
+			}
+
+			if (typeCoercion.right) {
+				typeCoercion.right.operator = operator;
+			}
+
+			return typeCoercion;
 		}
 	}
 

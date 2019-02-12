@@ -21,7 +21,8 @@
                         "toPrimitive": {
                             "hint": "number",
                             "typeOfResult": "string"
-                        }
+                        },
+                        "operator": "<"
                     }
                 ]
             }

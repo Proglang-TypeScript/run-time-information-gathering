@@ -273,7 +273,8 @@
                                 "traceId": "trace__10",
                                 "convertedTo": "number",
                                 "isNaN": false,
-                                "toPrimitive": null
+                                "toPrimitive": null,
+                                "operator": "+"
                             }
                         ],
                         "iid": 97,
@@ -310,7 +311,8 @@
                                         "traceId": "trace__9",
                                         "convertedTo": "number",
                                         "isNaN": false,
-                                        "toPrimitive": null
+                                        "toPrimitive": null,
+                                        "operator": "+"
                                     }
                                 ],
                                 "iid": 97,

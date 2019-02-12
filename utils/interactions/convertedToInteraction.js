@@ -13,6 +13,7 @@
 		this.convertedTo = "";
 		this.isNaN = false;
 		this.toPrimitive = null;
+		this.operator = "";
 
 		this.addToPrimitive = function(hint, typeOfResult) {
 			this.toPrimitive = {
