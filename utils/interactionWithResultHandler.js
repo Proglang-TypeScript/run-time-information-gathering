@@ -18,13 +18,11 @@
 		var dis = this;
 
 		this.processInteractionWithResult = function(interaction, functionId, result, base) {
-			if (getTypeOf(result) == "object") {
-				dis.interactionContainerFinder.addMapping(interaction, result);
-				dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(
-					interaction,
-					result
-				);
-			}
+			dis.interactionContainerFinder.addMapping(interaction, result);
+			dis.recursiveInteractionsHandler.associateMainInteractionToCurrentInteraction(
+				interaction,
+				result
+			);
 
 			addInteractionToContainer(interaction, base, result);
 		};
