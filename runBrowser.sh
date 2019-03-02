@@ -1,10 +1,10 @@
 #!/bin/bash
 
 TARGET=$1
-JALANGI_PATH=$(npm explore jalangi2 -- pwd 2>/dev/null)
-
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
 ROOT_PATH=$SCRIPT_PATH
+
+JALANGI_PATH=$(npm explore jalangi2 --prefix $ROOT_PATH -- pwd 2>/dev/null)
 
 node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
 	-i --inlineJalangi \
@@ -25,6 +25,10 @@ node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
     --analysis $ROOT_PATH/utils/argumentProxyBuilder.js \
     --analysis $ROOT_PATH/utils/interactionWithResultHandler.js \
     --analysis $ROOT_PATH/utils/wrapperObjectsHandler.js \
+    --analysis $ROOT_PATH/utils/toPrimitive.js \
+    --analysis $ROOT_PATH/utils/operators/relationalComparisonOperatorTypeCoercion.js \
+    --analysis $ROOT_PATH/utils/operators/sumOperatorTypeCoercion.js \
+    --analysis $ROOT_PATH/utils/operators/operatorsTypeCoercionAnalyzer.js \
     \
     --analysis $ROOT_PATH/utils/argumentContainer.js \
     --analysis $ROOT_PATH/utils/functionContainer.js \
@@ -37,6 +41,7 @@ node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
     --analysis $ROOT_PATH/utils/interactions/methodCallInteraction.js \
     --analysis $ROOT_PATH/utils/interactions/putFieldInteraction.js \
     --analysis $ROOT_PATH/utils/interactions/usedAsArgumentInteraction.js \
+    --analysis $ROOT_PATH/utils/interactions/convertedToInteraction.js \
     \
     \
     --analysis $ROOT_PATH/analysis/analysis.js \
@@ -45,10 +50,11 @@ node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
     --analysis $ROOT_PATH/analysis/callbacks/declare.js \
     --analysis $ROOT_PATH/analysis/callbacks/invokeFunPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/invokeFun.js \
-    --analysis $ROOT_PATH/analysis/callbacks/getFieldPre.js \
+    --analysis $ROOT_PATH/analysis/callbacks/getField.js \
     --analysis $ROOT_PATH/analysis/callbacks/putFieldPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/write.js \
     --analysis $ROOT_PATH/analysis/callbacks/binaryPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/unaryPre.js \
+    --analysis $ROOT_PATH/analysis/callbacks/conditional.js \
 	--outputDir output_browser \
 	$TARGET
