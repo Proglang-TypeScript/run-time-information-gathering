@@ -2,13 +2,12 @@
 
 TARGET=$1
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
-ROOT_PATH=$SCRIPT_PATH
+ROOT_PATH=$SCRIPT_PATH/..
 
 JALANGI_PATH=$(npm explore jalangi2 --prefix $ROOT_PATH -- pwd 2>/dev/null)
 
-
-node $JALANGI_PATH/src/js/commands/jalangi.js \
-    --inlineSource --inlineIID \
+node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
+	-i --inlineJalangi \
     --analysis $ROOT_PATH/utils/initialize.js \
     --analysis $ROOT_PATH/utils/sMemory/sMemory.js \
     --analysis $ROOT_PATH/utils/functions.js \
@@ -57,4 +56,5 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     --analysis $ROOT_PATH/analysis/callbacks/binaryPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/unaryPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/conditional.js \
-    $TARGET > output.json
+	--outputDir output_browser \
+	$TARGET
