@@ -32,7 +32,7 @@
 			functionIid
 		) {
 
-			if ((f !== undefined) && !isConsoleLog(f)) {
+			if ((f !== undefined) && !isConsoleLog(f) && f.name !== "require") {
 				dis.functionIdHandler.setFunctionId(f);
 
 				if (!f.temporaryTraceId) {
