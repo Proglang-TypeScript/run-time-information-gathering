@@ -1,41 +1,41 @@
 ## Master Mind - Work Package 3
 
 ### Installation
-Clone the repository and then run:
+#### Docker
+Install Docker.
+https://docs.docker.com/install/
 
-```
-cd [into-the-repository]
-./install.sh
+#### Build Docker image
+
+```shell
+git clone https://fcristiani@bitbucket.org/fcristiani/master-mind-wp3.git
 ```
 
-### Run tests
-```bash
-./tests/runTests.sh
+```shell
+cd master-mind-wp3
 ```
+
+```shell
+./build/build.sh
+```
+
+This will build an image called 'master-mind-wp3' on your local machine.
 
 ### Usage
-#### Instrumentation of a single file
-Run the instrumentation script.
-```bash
-./run.sh [FILE]
+#### Get runtime information from one JS file
+Run the docker container mounting your file on /tmp/file.js.
+
+```shell
+docker run -it \
+	-a stdout \
+	-v ABS_PATH_TO_YOUR_FILE:/tmp/file.js  \
+	master-mind-wp3
 ```
 
-The output will be saved to the file `output.json`.
+The runtime information will be printed to stdout. 
 
-Example:
-```bash
-./run.sh tests/get_prop/getProp.js
-```
+#### Example
 
-#### Browser instrumentation
-Run the browser instrumentation script.
-```bash
-./run.sh [ROOT_BROWSER_APP_DIRECTORY]
-```
-
-The output will be saved to the directroy `output_browser`.
-
-Example:
-```bash
-./runBrowser.sh browser
+```shell
+docker run -it -a stdout -v $(pwd)/tests/calculator.js:/tmp/file.js master-mind-wp3
 ```

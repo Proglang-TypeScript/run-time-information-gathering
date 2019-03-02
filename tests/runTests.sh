@@ -11,7 +11,7 @@ failing_tests=()
 for file in $TEST_FILES; do
 	filename=$(basename "$file")
 
-    $ROOT_PATH/bin/run $file
+    $ROOT_PATH/bin/run $file > /dev/null
 	mv $ROOT_PATH/output.json $ROOT_PATH/output_test_tmp.json
 
     output_test_filename="$TEST_OUTPUT_DIRECTORY/output_$filename.json"

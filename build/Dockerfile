@@ -12,4 +12,4 @@ RUN sh ./build/install.sh
 
 RUN ./tests/runTests.sh
 
-ENTRYPOINT [ "./bin/run" ]
+ENTRYPOINT [ "./bin/run", "/tmp/file.js" ]
