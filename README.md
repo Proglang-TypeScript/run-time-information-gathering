@@ -37,5 +37,5 @@ The runtime information will be printed to stdout.
 #### Example
 
 ```shell
-docker run -it -a stdout -v $(pwd)/tests/calculator.js:/tmp/file.js master-mind-wp3
+docker run -it -a stdout -v $(pwd)/tests/calculator/calculator.js:/tmp/calculator.js master-mind-wp3 /tmp/calculator.js
 ```
