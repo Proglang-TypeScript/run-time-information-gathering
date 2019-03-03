@@ -1,0 +1,68 @@
+{
+    "functionId_1": {
+        "functionId": "functionId_1",
+        "functionName": "",
+        "isConstructor": true,
+        "args": {},
+        "returnTypeOfs": [
+            {
+                "typeOf": "",
+                "traceId": "trace__1"
+            }
+        ],
+        "functionIid": 105
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "sum",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__2",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null,
+                        "operator": "+"
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "b",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__2",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null,
+                        "operator": "+"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "number",
+                "traceId": "trace__2"
+            }
+        ],
+        "functionIid": 49
+    }
+}
