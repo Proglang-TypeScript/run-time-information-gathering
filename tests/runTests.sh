@@ -11,7 +11,7 @@ failing_tests=()
 for file in $TEST_FILES; do
 	filename=$(basename "$file")
 
-    $ROOT_PATH/run $file
+    $ROOT_PATH/bin/run $file > /dev/null
 	mv $ROOT_PATH/output.json $ROOT_PATH/output_test_tmp.json
 
     output_test_filename="$TEST_OUTPUT_DIRECTORY/output_$filename.json"
@@ -29,8 +29,11 @@ done
 
 echo ""
 
+rm output_test_tmp.json
+
 if [ ${#failing_tests[@]} -eq 0 ]; then
 	echo "Passed!"
+	exit 0
 else
 	echo "NOT passed!"
 	echo "Failing tests:"
@@ -38,7 +41,6 @@ else
 	for failing_test in ${failing_tests[@]}; do
 		echo "- $failing_test"
 	done
+
+	exit 1
 fi
-
-
-rm output_test_tmp.json
