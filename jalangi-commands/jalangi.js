@@ -96,7 +96,12 @@ if (args.analysis) {
     });
 }
 
+var logFile = "/tmp/jalangi.log";
+fs.writeFileSync(logFile, "");
+
 Module._extensions['.js'] = function (module, filename) {
+    fs.appendFileSync(logFile, filename + "\n");
+
     var code = fs.readFileSync(filename, 'utf8');
 
     var regexCapturingModuleName = /\/node_modules\/(.*)\/.*js/g;
@@ -108,8 +113,10 @@ Module._extensions['.js'] = function (module, filename) {
     }
 
     if (blacklistedModules.indexOf(extractedModuleFromFilename) !== -1) {
+        fs.appendFileSync(logFile, "skipped\n");
         module._compile(code, filename);
     } else {
+        fs.appendFileSync(logFile, "instrumented\n");
         var instFilename = makeInstCodeFileName(filename);
         var instCodeAndData = J$.instrumentCode({
             code: code,
@@ -125,6 +132,8 @@ Module._extensions['.js'] = function (module, filename) {
         fs.writeFileSync(instFilename, instCodeAndData.code, "utf8");
         module._compile(instCodeAndData.code, filename);
     }
+
+    fs.appendFileSync(logFile, "-------------------\n");
 };
 
 function startProgram() {

@@ -11,6 +11,6 @@ mv jalangi2 node_modules
 
 JALANGI_PATH=$(npm explore jalangi2 --prefix $ROOT_PATH -- pwd 2>/dev/null)
 
-cp $ROOT_PATH/jalangi-commands/jalangi.js $JALANGI_PATH/src/js/commands/jalangi.js
+$ROOT_PATH/jalangi-commands/updateCommands.sh
 
 echo "Installation complete!"
