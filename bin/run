@@ -60,3 +60,5 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     --analysis $ROOT_PATH/analysis/callbacks/unaryPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/conditional.js \
     $TARGET > output.json
+
+    cat output.json
