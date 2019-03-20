@@ -33,6 +33,7 @@
 
 			if (typeof val == "function") {
 				val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(dis.functionsExecutionStack);
+				val.isInstrumented = true;
 			}
 
 			return {

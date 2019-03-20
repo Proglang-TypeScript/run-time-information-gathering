@@ -1,0 +1,10 @@
+{
+    "functionId_1": {
+        "functionId": "functionId_1",
+        "functionName": "readFileSync",
+        "isConstructor": false,
+        "args": {},
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": []
+    }
+}

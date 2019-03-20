@@ -56,5 +56,6 @@ node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
     --analysis $ROOT_PATH/analysis/callbacks/binaryPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/unaryPre.js \
     --analysis $ROOT_PATH/analysis/callbacks/conditional.js \
+    --analysis $ROOT_PATH/analysis/callbacks/literal.js \
 	--outputDir output_browser \
 	$TARGET

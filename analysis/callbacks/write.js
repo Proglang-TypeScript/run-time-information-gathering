@@ -20,6 +20,10 @@
 				dis.sMemoryInterface
 			);
 
+			if (typeof val === "function") {
+				val.isInstrumented = true;
+			}
+
 			return {
 				result: val
 			};

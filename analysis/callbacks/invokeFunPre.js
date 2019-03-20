@@ -42,7 +42,10 @@
 				for (var argIndex in args) {
 					addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
 					addUsedAsArgumentInteractionIfApplicable(args[argIndex], f, argIndex);
-					convertToWrapperObject(args, argIndex);
+
+					if (f.isInstrumented === true) {
+						convertToWrapperObject(args, argIndex);
+					}
 				}
 
 				if (functionNotProcessed(f)) {
