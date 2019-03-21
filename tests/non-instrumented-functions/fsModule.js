@@ -1,8 +1,8 @@
-var fs = require('fs');
+var readFileSync = require('fs').readFileSync;
 
 function f(a) {
 	try {
-		fs.readFileSync(a);
+		readFileSync(a);
 	} catch (error) {
 		if (error.code !== "ENOENT") {
 			throw error;
