@@ -1,6 +1,40 @@
 {
     "functionId_1": {
         "functionId": "functionId_1",
+        "functionName": "f",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__1",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "usedAsArgument",
+                        "traceId": "trace__1",
+                        "enclosingFunctionId": "functionId_1",
+                        "targetFunctionId": "functionId_3",
+                        "traceIdInTargetFunction": "trace__2",
+                        "argumentIndexInTargetFunction": "0"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "undefined",
+                "traceId": "trace__1"
+            }
+        ],
+        "functionIid": 137
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
         "functionName": "readFileSync",
         "isConstructor": false,
         "args": {},

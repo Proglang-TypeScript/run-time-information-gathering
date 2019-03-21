@@ -45,6 +45,8 @@
 
 					if (f.isInstrumented === true) {
 						convertToWrapperObject(args, argIndex);
+					} else {
+						convertToOriginalObject(args, argIndex);
 					}
 				}
 
@@ -109,6 +111,10 @@
 
 		function convertToWrapperObject(args, argIndex) {
 			args[argIndex] = dis.wrapperObjectsHandler.convertToWrapperObject(args[argIndex]);
+		}
+
+		function convertToOriginalObject(args, argIndex) {
+			args[argIndex] = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(args[argIndex]);
 		}
 	}
 

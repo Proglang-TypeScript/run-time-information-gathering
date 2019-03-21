@@ -1,9 +1,13 @@
 var fs = require('fs');
 
-try {
-	fs.readFileSync("hello");
-} catch (error) {
-	if (error.code !== "ENOENT") {
-		throw error;
+function f(a) {
+	try {
+		fs.readFileSync(a);
+	} catch (error) {
+		if (error.code !== "ENOENT") {
+			throw error;
+		}
 	}
 }
+
+f("hello");
