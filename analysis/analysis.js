@@ -14,6 +14,7 @@
         };
 
         this.endExecution = function() {
+            console.log("")
             console.log(JSON.stringify(sandbox.runTimeInfo, null, 4));
         };
     }
