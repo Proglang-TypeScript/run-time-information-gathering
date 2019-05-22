@@ -19,7 +19,9 @@
 				});
 
 				objSerialized = JSON.stringify(objKeys);
-				objSerialized += "__constructorName__: " + obj.constructor.name;
+
+				var constructorName = obj.constructor ? obj.constructor.name : "";
+				objSerialized += "__constructorName__: " + constructorName;
 			}
 
 			return objSerialized;
