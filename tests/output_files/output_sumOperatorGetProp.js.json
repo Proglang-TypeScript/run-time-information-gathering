@@ -64,6 +64,8 @@
                 "traceId": "trace__1"
             }
         ],
-        "functionIid": 57
+        "functionIid": 57,
+        "requiredModule": null,
+        "isExported": null
     }
 }

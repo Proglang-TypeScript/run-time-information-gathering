@@ -74,7 +74,9 @@ true
                 "traceId": "trace__2"
             }
         ],
-        "functionIid": 137
+        "functionIid": 137,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -86,7 +88,9 @@ true
                 "typeOf": "number",
                 "traceId": null
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_7": {
         "functionId": "functionId_7",
@@ -98,7 +102,9 @@ true
                 "typeOf": "string",
                 "traceId": null
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_9": {
         "functionId": "functionId_9",
@@ -110,6 +116,8 @@ true
                 "typeOf": "number",
                 "traceId": null
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     }
 }

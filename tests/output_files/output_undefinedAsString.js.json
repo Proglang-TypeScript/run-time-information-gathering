@@ -33,6 +33,8 @@ undefined
                 "traceId": "trace__2"
             }
         ],
-        "functionIid": 41
+        "functionIid": 41,
+        "requiredModule": null,
+        "isExported": null
     }
 }

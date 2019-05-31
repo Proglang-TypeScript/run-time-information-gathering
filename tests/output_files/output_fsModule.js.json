@@ -32,13 +32,17 @@
                 "traceId": "trace__1"
             }
         ],
-        "functionIid": 145
+        "functionIid": 145,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_3": {
         "functionId": "functionId_3",
         "functionName": "readFileSync",
         "isConstructor": false,
         "args": {},
-        "returnTypeOfs": []
+        "returnTypeOfs": [],
+        "requiredModule": "fs",
+        "isExported": null
     }
 }

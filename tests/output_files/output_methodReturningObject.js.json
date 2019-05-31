@@ -62,7 +62,9 @@
                 "traceId": "trace__1"
             }
         ],
-        "functionIid": 121
+        "functionIid": 121,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -76,7 +78,9 @@
                 "traceId": "trace__2"
             }
         ],
-        "functionIid": 225
+        "functionIid": 225,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -90,6 +94,8 @@
                 "traceId": "trace__3"
             }
         ],
-        "functionIid": 177
+        "functionIid": 177,
+        "requiredModule": null,
+        "isExported": null
     }
 }

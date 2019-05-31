@@ -72,7 +72,9 @@ true
                 "traceId": "trace__2"
             }
         ],
-        "functionIid": 161
+        "functionIid": 161,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -84,7 +86,9 @@ true
                 "typeOf": "number",
                 "traceId": null
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_7": {
         "functionId": "functionId_7",
@@ -96,6 +100,8 @@ true
                 "typeOf": "string",
                 "traceId": null
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     }
 }

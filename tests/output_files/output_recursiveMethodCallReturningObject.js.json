@@ -198,7 +198,9 @@
                 "traceId": "trace__10"
             }
         ],
-        "functionIid": 481
+        "functionIid": 481,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -246,7 +248,9 @@
                 "traceId": "trace__4"
             }
         ],
-        "functionIid": 729
+        "functionIid": 729,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -431,7 +435,9 @@
                 "traceId": "trace__11"
             }
         ],
-        "functionIid": 233
+        "functionIid": 233,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_7": {
         "functionId": "functionId_7",
@@ -445,7 +451,9 @@
                 "traceId": "trace__12"
             }
         ],
-        "functionIid": 369
+        "functionIid": 369,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_9": {
         "functionId": "functionId_9",
@@ -458,7 +466,9 @@
                 "typeOf": "Node",
                 "traceId": "trace__14"
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_11": {
         "functionId": "functionId_11",
@@ -467,7 +477,9 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [],
-        "functionIid": 369
+        "functionIid": 369,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_13": {
         "functionId": "functionId_13",
@@ -480,7 +492,9 @@
                 "typeOf": "Node",
                 "traceId": "trace__16"
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_15": {
         "functionId": "functionId_15",
@@ -489,7 +503,9 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [],
-        "functionIid": 369
+        "functionIid": 369,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_17": {
         "functionId": "functionId_17",
@@ -502,7 +518,9 @@
                 "typeOf": "Node",
                 "traceId": "trace__18"
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_19": {
         "functionId": "functionId_19",
@@ -511,7 +529,9 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [],
-        "functionIid": 441
+        "functionIid": 441,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_21": {
         "functionId": "functionId_21",
@@ -524,7 +544,9 @@
                 "typeOf": "Node",
                 "traceId": "trace__20"
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_23": {
         "functionId": "functionId_23",
@@ -533,7 +555,9 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [],
-        "functionIid": 369
+        "functionIid": 369,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_25": {
         "functionId": "functionId_25",
@@ -546,7 +570,9 @@
                 "typeOf": "AnotherNode",
                 "traceId": "trace__22"
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_27": {
         "functionId": "functionId_27",
@@ -555,7 +581,9 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [],
-        "functionIid": 369
+        "functionIid": 369,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_29": {
         "functionId": "functionId_29",
@@ -568,7 +596,9 @@
                 "typeOf": "null",
                 "traceId": "trace__24"
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_31": {
         "functionId": "functionId_31",
@@ -577,6 +607,8 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [],
-        "functionIid": 617
+        "functionIid": 617,
+        "requiredModule": null,
+        "isExported": null
     }
 }

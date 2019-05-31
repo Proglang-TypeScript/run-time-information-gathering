@@ -32,7 +32,9 @@
                 "traceId": "trace__1"
             }
         ],
-        "functionIid": 217
+        "functionIid": 217,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -44,7 +46,9 @@
                 "typeOf": "Timeout",
                 "traceId": null
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -53,7 +57,9 @@
         "args": {},
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [],
-        "functionIid": 169
+        "functionIid": 169,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_7": {
         "functionId": "functionId_7",
@@ -99,6 +105,8 @@
                 "traceId": "trace__4"
             }
         ],
-        "functionIid": 97
+        "functionIid": 97,
+        "requiredModule": null,
+        "isExported": null
     }
 }

@@ -46,6 +46,23 @@
 					functionContainer.addReturnTypeOf(result, lastStopped ? lastStopped.traceId : null);
 				}
 
+				if (f.name === "require") {
+					let requiredModule = result;
+					let nameOfRequiredModule = args[0];
+
+					if (typeof requiredModule === "function") {
+						requiredModule["__IS_EXPORTED_FUNCTION__"] = true;
+						requiredModule["__REQUIRED_MODULE__"] = nameOfRequiredModule;
+					} else if (typeof requiredModule === "object") {
+						Object.getOwnPropertyNames(requiredModule).forEach(key => {
+							let value = requiredModule[key];
+
+							if (typeof value === "function") {
+								value["__REQUIRED_MODULE__"] = nameOfRequiredModule;
+							}
+						});
+					}
+				}
 			}
 
 			return {

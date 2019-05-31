@@ -11,7 +11,9 @@
                 "traceId": "trace__1"
             }
         ],
-        "functionIid": 105
+        "functionIid": 105,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -64,6 +66,8 @@
                 "traceId": "trace__2"
             }
         ],
-        "functionIid": 49
+        "functionIid": 49,
+        "requiredModule": null,
+        "isExported": null
     }
 }

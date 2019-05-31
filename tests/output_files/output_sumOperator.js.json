@@ -114,6 +114,8 @@
                 "traceId": "trace__3"
             }
         ],
-        "functionIid": 41
+        "functionIid": 41,
+        "requiredModule": null,
+        "isExported": null
     }
 }

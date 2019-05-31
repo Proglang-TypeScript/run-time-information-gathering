@@ -24,7 +24,9 @@
                 "traceId": "trace__1"
             }
         ],
-        "functionIid": 105
+        "functionIid": 105,
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -36,7 +38,9 @@
                 "typeOf": "Timeout",
                 "traceId": null
             }
-        ]
+        ],
+        "requiredModule": null,
+        "isExported": null
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -45,6 +49,8 @@
         "args": {},
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [],
-        "functionIid": 49
+        "functionIid": 49,
+        "requiredModule": null,
+        "isExported": null
     }
 }
