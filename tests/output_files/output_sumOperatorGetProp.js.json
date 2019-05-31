@@ -65,7 +65,7 @@
             }
         ],
         "functionIid": 57,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }

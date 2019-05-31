@@ -36,8 +36,8 @@
             }
         ],
         "functionIid": 41,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -47,7 +47,7 @@
         "declarationEnclosingFunctionId": -1,
         "returnTypeOfs": [],
         "functionIid": 121,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }

@@ -14,9 +14,8 @@
 		this.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
 		this.returnTypeOfs = [];
 		this.functionIid = null;
-		this.requiredModule = f["__REQUIRED_MODULE__"] ? f["__REQUIRED_MODULE__"] : null;
-		this.isExported = f["__IS_EXPORTED_FUNCTION__"] ? f["__IS_EXPORTED_FUNCTION__"] : null;
-
+		this.requiredModule = f["__REQUIRED_MODULE__"] ? f["__REQUIRED_MODULE__"] : "";
+		this.isExported = (f["__IS_EXPORTED_FUNCTION__"] === true);
 
 		this.addArgumentContainer = function(argumentIndex, argumentContainer) {
 			if (!(argumentIndex in this.args)) {

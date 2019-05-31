@@ -13,8 +13,8 @@
             }
         ],
         "functionIid": 345,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -54,8 +54,8 @@
             }
         ],
         "functionIid": 233,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -70,8 +70,8 @@
             }
         ],
         "functionIid": 257,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_7": {
         "functionId": "functionId_7",
@@ -151,7 +151,7 @@
             }
         ],
         "functionIid": 121,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }

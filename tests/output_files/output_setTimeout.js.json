@@ -78,8 +78,8 @@
             }
         ],
         "functionIid": 425,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -92,8 +92,8 @@
                 "traceId": null
             }
         ],
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -103,8 +103,8 @@
         "declarationEnclosingFunctionId": "functionId_1",
         "returnTypeOfs": [],
         "functionIid": 345,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_7": {
         "functionId": "functionId_7",
@@ -162,8 +162,8 @@
             }
         ],
         "functionIid": 273,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_9": {
         "functionId": "functionId_9",
@@ -178,7 +178,7 @@
             }
         ],
         "functionIid": 233,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }

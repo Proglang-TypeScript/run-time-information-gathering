@@ -45,8 +45,8 @@
             }
         ],
         "functionIid": 145,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -73,7 +73,7 @@
             }
         ],
         "functionIid": 297,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }

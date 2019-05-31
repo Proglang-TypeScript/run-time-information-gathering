@@ -50,8 +50,8 @@
             }
         ],
         "functionIid": 161,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -127,8 +127,8 @@
             }
         ],
         "functionIid": 97,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -163,7 +163,7 @@
             }
         ],
         "functionIid": 225,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }

@@ -27,8 +27,8 @@ true
             }
         ],
         "functionIid": 41,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -55,7 +55,7 @@ true
             }
         ],
         "functionIid": 97,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }

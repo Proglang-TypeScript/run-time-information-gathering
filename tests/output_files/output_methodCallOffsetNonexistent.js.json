@@ -47,7 +47,7 @@
             }
         ],
         "functionIid": 65,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }

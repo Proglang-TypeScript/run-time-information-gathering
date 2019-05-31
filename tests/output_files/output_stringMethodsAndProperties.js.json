@@ -73,8 +73,8 @@ true
             }
         ],
         "functionIid": 161,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -87,8 +87,8 @@ true
                 "traceId": null
             }
         ],
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_7": {
         "functionId": "functionId_7",
@@ -101,7 +101,7 @@ true
                 "traceId": null
             }
         ],
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }

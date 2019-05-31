@@ -45,8 +45,8 @@
             }
         ],
         "functionIid": 273,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -61,8 +61,8 @@
             }
         ],
         "functionIid": 225,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -75,8 +75,8 @@
                 "traceId": null
             }
         ],
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_7": {
         "functionId": "functionId_7",
@@ -86,7 +86,7 @@
         "declarationEnclosingFunctionId": "functionId_3",
         "returnTypeOfs": [],
         "functionIid": 177,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }

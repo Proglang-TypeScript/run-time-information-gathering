@@ -30,8 +30,8 @@ false
             }
         ],
         "functionIid": 65,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -58,8 +58,8 @@ false
             }
         ],
         "functionIid": 113,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_7": {
         "functionId": "functionId_7",
@@ -86,8 +86,8 @@ false
             }
         ],
         "functionIid": 169,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_9": {
         "functionId": "functionId_9",
@@ -114,8 +114,8 @@ false
             }
         ],
         "functionIid": 225,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     },
     "functionId_11": {
         "functionId": "functionId_11",
@@ -142,7 +142,7 @@ false
             }
         ],
         "functionIid": 273,
-        "requiredModule": null,
-        "isExported": null
+        "requiredModule": "",
+        "isExported": false
     }
 }
