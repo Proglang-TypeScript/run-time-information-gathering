@@ -15,8 +15,18 @@
 			result
 		) {
 
+			let newResult = result;
+
+			if (dis.wrapperObjectsHandler.objectIsWrapperObject(result)) {
+				let finalRealValueFromWrapperObject = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result);
+
+				if ((finalRealValueFromWrapperObject === undefined) || (finalRealValueFromWrapperObject === null)) {
+					newResult = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result);
+				}
+			}
+
 			return {
-				result: dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result)
+				result: newResult
 			}
 		};
 	}
