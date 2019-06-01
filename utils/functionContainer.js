@@ -6,6 +6,8 @@
 	var getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
 
 	function FunctionContainer(f, isConstructor) {
+		let dis = this;
+
 		this.functionId = f.functionId;
 		this.functionName = getFunctionName(f);
 
@@ -14,8 +16,12 @@
 		this.declarationEnclosingFunctionId = f.declarationEnclosingFunctionId;
 		this.returnTypeOfs = [];
 		this.functionIid = null;
-		this.requiredModule = f["__REQUIRED_MODULE__"] ? f["__REQUIRED_MODULE__"] : "";
+		this.requiredModule = getRequiredModule(f);
 		this.isExported = (f["__IS_EXPORTED_FUNCTION__"] === true);
+
+		function getRequiredModule(f) {
+			return f["__REQUIRED_MODULE__"] ? f["__REQUIRED_MODULE__"] : ""
+		}
 
 		this.addArgumentContainer = function(argumentIndex, argumentContainer) {
 			if (!(argumentIndex in this.args)) {
@@ -46,7 +52,21 @@
 				functionName = f.methodName;
 			}
 
+			if (!functionName) {
+				functionName = convertToCamelCase(getRequiredModule(f));
+			}
+
 			return functionName;
+		}
+
+		function convertToCamelCase(m) {
+			let moduleName = m.replace(/^.*[\/]/, '').replace(/\.[^/.]+$/, "");
+
+			return moduleName.replace(/([-_][a-z])/ig, ($1) => {
+				return $1.toUpperCase()
+					.replace('-', '')
+					.replace('_', '');
+			});
 		}
 	}
 
