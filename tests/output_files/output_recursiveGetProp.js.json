@@ -59,6 +59,14 @@
                         "code": "inputValue",
                         "traceId": "trace__11",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__11",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null,
+                        "operator": "+"
                     }
                 ]
             }
@@ -123,6 +131,14 @@
                         "code": "inputValue",
                         "traceId": "trace__4",
                         "typeof": "number"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__4",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null,
+                        "operator": "+"
                     }
                 ]
             }
@@ -158,16 +174,7 @@
                         "isComputed": false,
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_5",
-                        "followingInteractions": [
-                            {
-                                "code": "convertedTo",
-                                "traceId": "trace__1",
-                                "convertedTo": "number",
-                                "isNaN": false,
-                                "toPrimitive": null,
-                                "operator": "+"
-                            }
-                        ],
+                        "followingInteractions": [],
                         "iid": 97,
                         "field": "val",
                         "returnTypeOf": "number"
@@ -196,16 +203,7 @@
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_5",
-                                "followingInteractions": [
-                                    {
-                                        "code": "convertedTo",
-                                        "traceId": "trace__2",
-                                        "convertedTo": "number",
-                                        "isNaN": false,
-                                        "toPrimitive": null,
-                                        "operator": "+"
-                                    }
-                                ],
+                                "followingInteractions": [],
                                 "iid": 97,
                                 "field": "val",
                                 "returnTypeOf": "number"

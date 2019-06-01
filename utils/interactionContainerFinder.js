@@ -16,7 +16,9 @@
 			var shadowId = this.sMemoryInterface.getShadowIdOfObject(result);
 
 			if (shadowId) {
-				this.mapShadowIdsContainers[shadowId] = interaction;
+				if (this.mapShadowIdsContainers[shadowId] === undefined) {
+					this.mapShadowIdsContainers[shadowId] = interaction;
+				}
 			}
 		};
 	}

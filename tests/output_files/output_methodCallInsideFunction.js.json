@@ -65,6 +65,14 @@
                         "argumentIndexInTargetFunction": "0"
                     },
                     {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "convertedTo": "number",
+                        "isNaN": true,
+                        "toPrimitive": null,
+                        "operator": "<"
+                    },
+                    {
                         "code": "inputValue",
                         "traceId": "trace__3",
                         "typeof": "number"
@@ -76,6 +84,14 @@
                         "targetFunctionId": "functionId_3",
                         "traceIdInTargetFunction": "trace__4",
                         "argumentIndexInTargetFunction": "0"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__4",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null,
+                        "operator": "<"
                     }
                 ]
             },
@@ -97,6 +113,14 @@
                         "argumentIndexInTargetFunction": "1"
                     },
                     {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null,
+                        "operator": "<"
+                    },
+                    {
                         "code": "inputValue",
                         "traceId": "trace__3",
                         "typeof": "string"
@@ -108,6 +132,14 @@
                         "targetFunctionId": "functionId_3",
                         "traceIdInTargetFunction": "trace__4",
                         "argumentIndexInTargetFunction": "1"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__4",
+                        "convertedTo": "number",
+                        "isNaN": true,
+                        "toPrimitive": null,
+                        "operator": "<"
                     }
                 ]
             }
@@ -142,25 +174,9 @@
                         "typeof": "string"
                     },
                     {
-                        "code": "convertedTo",
-                        "traceId": "trace__2",
-                        "convertedTo": "number",
-                        "isNaN": true,
-                        "toPrimitive": null,
-                        "operator": "<"
-                    },
-                    {
                         "code": "inputValue",
                         "traceId": "trace__4",
                         "typeof": "number"
-                    },
-                    {
-                        "code": "convertedTo",
-                        "traceId": "trace__4",
-                        "convertedTo": "number",
-                        "isNaN": false,
-                        "toPrimitive": null,
-                        "operator": "<"
                     }
                 ]
             },
@@ -174,25 +190,9 @@
                         "typeof": "number"
                     },
                     {
-                        "code": "convertedTo",
-                        "traceId": "trace__2",
-                        "convertedTo": "number",
-                        "isNaN": false,
-                        "toPrimitive": null,
-                        "operator": "<"
-                    },
-                    {
                         "code": "inputValue",
                         "traceId": "trace__4",
                         "typeof": "string"
-                    },
-                    {
-                        "code": "convertedTo",
-                        "traceId": "trace__4",
-                        "convertedTo": "number",
-                        "isNaN": true,
-                        "toPrimitive": null,
-                        "operator": "<"
                     }
                 ]
             }

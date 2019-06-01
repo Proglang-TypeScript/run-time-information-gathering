@@ -32,7 +32,10 @@
 			if (isMethodCall === true) {
 				processMethodCallInteraction(base, offset, isComputed, isOpAssign, iid);
 			} else {
-				result = dis.wrapperObjectsHandler.convertToWrapperObject(result);
+				if (dis.wrapperObjectsHandler.objectIsWrapperObject(result) !== true) {
+					result = dis.wrapperObjectsHandler.convertToWrapperObject(result);
+				}
+
 				processGetFieldInteraction(base, offset, isComputed, isOpAssign, iid, result);
 			}
 
