@@ -35,6 +35,7 @@
         ],
         "functionIid": 41,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     }
 }

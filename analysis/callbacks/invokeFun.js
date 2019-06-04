@@ -44,6 +44,16 @@
 
 					let lastStopped = dis.functionsExecutionStack.getLastStopped();
 					functionContainer.addReturnTypeOf(result, lastStopped ? lastStopped.traceId : null);
+
+					if (functionContainer.isConstructor === true) {
+						iterateObjectProperties(result, function(key, obj) {
+							let value = obj[key];
+
+							if (typeof value === "function") {
+								value["__CONSTRUCTED_BY__"] = functionContainer.functionId;
+							}
+						});
+					}
 				}
 
 				if (f.name === "require") {
@@ -54,8 +64,8 @@
 						requiredModule["__IS_EXPORTED_FUNCTION__"] = true;
 						requiredModule["__REQUIRED_MODULE__"] = nameOfRequiredModule;
 					} else if (typeof requiredModule === "object") {
-						Object.getOwnPropertyNames(requiredModule).forEach(key => {
-							let value = requiredModule[key];
+						iterateObjectProperties(result, function (key, obj) {
+							let value = obj[key];
 
 							if (typeof value === "function") {
 								value["__REQUIRED_MODULE__"] = nameOfRequiredModule;
@@ -76,6 +86,12 @@
 
 		function getFunctionContainer(f) {
 			return dis.runTimeInfo[f.functionId];
+		}
+
+		function iterateObjectProperties(obj, f) {
+			for (const key in obj) {
+				f(key, obj);
+			}
 		}
 	}
 

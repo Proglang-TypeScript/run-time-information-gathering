@@ -66,6 +66,7 @@
         ],
         "functionIid": 57,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     }
 }

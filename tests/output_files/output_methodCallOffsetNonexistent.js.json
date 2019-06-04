@@ -48,6 +48,7 @@
         ],
         "functionIid": 65,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     }
 }

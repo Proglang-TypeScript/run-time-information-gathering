@@ -37,7 +37,8 @@
         ],
         "functionIid": 41,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -48,6 +49,7 @@
         "returnTypeOfs": [],
         "functionIid": 121,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     }
 }

@@ -14,7 +14,8 @@
         ],
         "functionIid": 249,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -50,7 +51,8 @@
         ],
         "functionIid": 193,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": "functionId_1"
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -64,7 +66,8 @@
             }
         ],
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     },
     "functionId_7": {
         "functionId": "functionId_7",
@@ -75,7 +78,8 @@
         "returnTypeOfs": [],
         "functionIid": 145,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     },
     "functionId_9": {
         "functionId": "functionId_9",
@@ -123,6 +127,7 @@
         ],
         "functionIid": 345,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     }
 }

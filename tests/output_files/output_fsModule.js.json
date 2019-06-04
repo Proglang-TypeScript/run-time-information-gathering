@@ -34,7 +34,8 @@
         ],
         "functionIid": 145,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -43,6 +44,7 @@
         "args": {},
         "returnTypeOfs": [],
         "requiredModule": "fs",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     }
 }

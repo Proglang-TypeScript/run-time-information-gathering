@@ -18,6 +18,7 @@
 		this.functionIid = null;
 		this.requiredModule = getRequiredModule(f);
 		this.isExported = (f["__IS_EXPORTED_FUNCTION__"] === true);
+		this.constructedBy = f["__CONSTRUCTED_BY__"] ? f["__CONSTRUCTED_BY__"] : ""
 
 		function getRequiredModule(f) {
 			return f["__REQUIRED_MODULE__"] ? f["__REQUIRED_MODULE__"] : ""

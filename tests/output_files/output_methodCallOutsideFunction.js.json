@@ -115,7 +115,8 @@
         ],
         "functionIid": 169,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -168,6 +169,7 @@
         ],
         "functionIid": 89,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     }
 }

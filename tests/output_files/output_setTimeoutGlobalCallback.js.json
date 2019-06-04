@@ -26,7 +26,8 @@
         ],
         "functionIid": 105,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -40,7 +41,8 @@
             }
         ],
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     },
     "functionId_5": {
         "functionId": "functionId_5",
@@ -51,6 +53,7 @@
         "returnTypeOfs": [],
         "functionIid": 49,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     }
 }

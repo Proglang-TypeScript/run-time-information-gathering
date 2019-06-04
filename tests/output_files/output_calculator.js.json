@@ -13,7 +13,8 @@
         ],
         "functionIid": 105,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": ""
     },
     "functionId_3": {
         "functionId": "functionId_3",
@@ -68,6 +69,7 @@
         ],
         "functionIid": 49,
         "requiredModule": "",
-        "isExported": false
+        "isExported": false,
+        "constructedBy": "functionId_1"
     }
 }
