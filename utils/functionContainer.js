@@ -9,7 +9,7 @@
 		let dis = this;
 
 		this.functionId = f.functionId;
-		this.functionName = getFunctionName(f);
+		this.functionName = getFunctionName(f, isConstructor);
 
 		this.isConstructor = (isConstructor === true);
 		this.args = {};
@@ -46,7 +46,7 @@
 			return this.args[argumentIndex];
 		};
 
-		function getFunctionName(f) {
+		function getFunctionName(f, isConstructor) {
 			var functionName = f.name;
 
 			if (f.methodName) {
@@ -54,20 +54,26 @@
 			}
 
 			if (!functionName) {
-				functionName = convertToCamelCase(getRequiredModule(f));
+				functionName = convertToCamelCase(getRequiredModule(f), isConstructor);
 			}
 
 			return functionName;
 		}
 
-		function convertToCamelCase(m) {
+		function convertToCamelCase(m, isConstructor) {
 			let moduleName = m.replace(/^.*[\/]/, '').replace(/\.[^/.]+$/, "");
 
-			return moduleName.replace(/([-_][a-z])/ig, ($1) => {
+			let converted = moduleName.replace(/([-_][a-z])/ig, ($1) => {
 				return $1.toUpperCase()
 					.replace('-', '')
 					.replace('_', '');
 			});
+
+			if (isConstructor === true) {
+				converted = converted.charAt(0).toUpperCase() + converted.slice(1)
+			}
+
+			return converted;
 		}
 	}
 
