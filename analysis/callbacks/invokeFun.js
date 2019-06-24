@@ -68,6 +68,7 @@
 							let value = obj[key];
 
 							if (typeof value === "function") {
+								value["__IS_EXPORTED_FUNCTION__"] = false;
 								value["__REQUIRED_MODULE__"] = nameOfRequiredModule;
 							}
 						});
