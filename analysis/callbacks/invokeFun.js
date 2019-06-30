@@ -63,16 +63,16 @@
 					if (typeof requiredModule === "function") {
 						requiredModule["__IS_EXPORTED_FUNCTION__"] = true;
 						requiredModule["__REQUIRED_MODULE__"] = nameOfRequiredModule;
-					} else if (typeof requiredModule === "object") {
-						iterateObjectProperties(result, function (key, obj) {
-							let value = obj[key];
-
-							if (typeof value === "function") {
-								value["__IS_EXPORTED_FUNCTION__"] = false;
-								value["__REQUIRED_MODULE__"] = nameOfRequiredModule;
-							}
-						});
 					}
+
+					iterateObjectProperties(requiredModule, function (key, obj) {
+						let value = obj[key];
+
+						if (typeof value === "function" && value !== requiredModule) {
+							value["__IS_EXPORTED_FUNCTION__"] = false;
+							value["__REQUIRED_MODULE__"] = nameOfRequiredModule;
+						}
+					});
 				}
 			}
 
