@@ -3,7 +3,7 @@
 "use strict";
 
 (function (sandbox) {
-	function SumOperatorTypeCoercion() {
+	function SumOperatorTypeCoercion(getTypeOf) {
 		this.toPrimitive = sandbox.utils.toPrimitive;
 		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
 		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
@@ -17,7 +17,9 @@
 			let rightPrimitive = this.toPrimitive(right);
 		
 			let leftConvertedTo = new ConvertedToInteraction();
+			leftConvertedTo.originalTypeof = getTypeOf(left);
 			let rightConvertedTo = new ConvertedToInteraction();
+			rightConvertedTo.originalTypeof = getTypeOf(left);
 		
 			if (leftPrimitive !== left) {
 				leftConvertedTo.addToPrimitive("default", sandbox.functions.getTypeOf(leftPrimitive));
@@ -29,8 +31,8 @@
 				right = rightPrimitive;
 			}
 		
-			let typeOfLeft = sandbox.functions.getTypeOf(left);
-			let typeOfRight = sandbox.functions.getTypeOf(right);
+			let typeOfLeft = getTypeOf(left);
+			let typeOfRight = getTypeOf(right);
 		
 			if (typeOfLeft === "string" || typeOfRight === "string") {
 				leftConvertedTo.convertedTo = "string";
@@ -54,5 +56,5 @@
 		sandbox.utils = {};
 	}
 
-	sandbox.utils.sumOperatorTypeCoercion = new SumOperatorTypeCoercion();
+	sandbox.utils.sumOperatorTypeCoercion = new SumOperatorTypeCoercion(sandbox.functions.getTypeOf);
 }(J$));

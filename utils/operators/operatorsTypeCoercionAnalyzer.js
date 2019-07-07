@@ -37,7 +37,7 @@
 			}
 
 			return typeCoercion;
-		}
+		};
 	}
 
 	if (sandbox.utils === undefined) {

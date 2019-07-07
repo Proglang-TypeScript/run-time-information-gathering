@@ -14,6 +14,7 @@
 		this.isNaN = false;
 		this.toPrimitive = null;
 		this.operator = "";
+		this.originalTypeof = "";
 
 		this.addToPrimitive = function(hint, typeOfResult) {
 			this.toPrimitive = {

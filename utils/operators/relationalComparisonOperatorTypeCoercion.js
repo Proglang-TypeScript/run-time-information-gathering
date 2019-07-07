@@ -3,7 +3,7 @@
 "use strict";
 
 (function (sandbox) {
-	function RelationalComparisonOperatorTypeCoercion() {
+	function RelationalComparisonOperatorTypeCoercion(getTypeOf) {
 		this.toPrimitive = sandbox.utils.toPrimitive;
 		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
 		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
@@ -16,9 +16,11 @@
 		
 			let leftPrimitive = this.toPrimitive(left, Number);
 			let rightPrimitive = this.toPrimitive(right, Number);
-		
+
 			let leftConvertedTo = new ConvertedToInteraction();
+			leftConvertedTo.originalTypeof = getTypeOf(left);
 			let rightConvertedTo = new ConvertedToInteraction();
+			rightConvertedTo.originalTypeof = getTypeOf(right);
 		
 			if (leftPrimitive !== left) {
 				leftConvertedTo.addToPrimitive("number", sandbox.functions.getTypeOf(leftPrimitive));
@@ -55,5 +57,5 @@
 		sandbox.utils = {};
 	}
 
-	sandbox.utils.relationalComparisonOperatorTypeCoercion = new RelationalComparisonOperatorTypeCoercion();
+	sandbox.utils.relationalComparisonOperatorTypeCoercion = new RelationalComparisonOperatorTypeCoercion(sandbox.functions.getTypeOf);
 }(J$));
