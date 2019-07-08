@@ -21,7 +21,22 @@ undefined
                         "convertedTo": "string",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "+"
+                        "operator": "+",
+                        "originalTypeof": "undefined"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "leftType": "undefined",
+                        "rightType": "string",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "undefined",
+                        "rightToPrimitiveType": "string",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "left"
                     }
                 ]
             }

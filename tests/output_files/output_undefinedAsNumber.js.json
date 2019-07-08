@@ -21,7 +21,22 @@ NaN
                         "convertedTo": "number",
                         "isNaN": true,
                         "toPrimitive": null,
-                        "operator": "+"
+                        "operator": "+",
+                        "originalTypeof": "undefined"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "leftType": "undefined",
+                        "rightType": "number",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "undefined",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "left"
                     }
                 ]
             }

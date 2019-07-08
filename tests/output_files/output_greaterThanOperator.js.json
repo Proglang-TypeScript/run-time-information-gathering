@@ -23,7 +23,22 @@
                             "hint": "number",
                             "typeOfResult": "string"
                         },
-                        "operator": ">"
+                        "operator": ">",
+                        "originalTypeof": "object"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__1",
+                        "leftType": "number",
+                        "rightType": "object",
+                        "leftIsNaN": false,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "string",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": ">",
+                        "operandForInteraction": "right"
                     }
                 ]
             }

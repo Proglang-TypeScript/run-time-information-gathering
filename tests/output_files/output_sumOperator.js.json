@@ -20,7 +20,22 @@
                         "convertedTo": "number",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "+"
+                        "operator": "+",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__1",
+                        "leftType": "number",
+                        "rightType": "number",
+                        "leftIsNaN": false,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "left"
                     },
                     {
                         "code": "inputValue",
@@ -33,7 +48,22 @@
                         "convertedTo": "string",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "+"
+                        "operator": "+",
+                        "originalTypeof": "string"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "leftType": "string",
+                        "rightType": "number",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "left"
                     },
                     {
                         "code": "inputValue",
@@ -49,7 +79,22 @@
                             "hint": "default",
                             "typeOfResult": "string"
                         },
-                        "operator": "+"
+                        "operator": "+",
+                        "originalTypeof": "object"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__3",
+                        "leftType": "object",
+                        "rightType": "number",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "left"
                     }
                 ]
             },
@@ -68,7 +113,22 @@
                         "convertedTo": "number",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "+"
+                        "operator": "+",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__1",
+                        "leftType": "number",
+                        "rightType": "number",
+                        "leftIsNaN": false,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "right"
                     },
                     {
                         "code": "inputValue",
@@ -81,7 +141,22 @@
                         "convertedTo": "string",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "+"
+                        "operator": "+",
+                        "originalTypeof": "string"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "leftType": "string",
+                        "rightType": "number",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "right"
                     },
                     {
                         "code": "inputValue",
@@ -94,7 +169,22 @@
                         "convertedTo": "string",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "+"
+                        "operator": "+",
+                        "originalTypeof": "object"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__3",
+                        "leftType": "object",
+                        "rightType": "number",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "right"
                     }
                 ]
             }

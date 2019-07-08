@@ -20,7 +20,22 @@
                         "convertedTo": "string",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "string"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__1",
+                        "leftType": "string",
+                        "rightType": "string",
+                        "leftIsNaN": true,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "string",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "<",
+                        "operandForInteraction": "left"
                     },
                     {
                         "code": "inputValue",
@@ -33,7 +48,22 @@
                         "convertedTo": "number",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "leftType": "number",
+                        "rightType": "number",
+                        "leftIsNaN": false,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "<",
+                        "operandForInteraction": "left"
                     },
                     {
                         "code": "inputValue",
@@ -46,7 +76,22 @@
                         "convertedTo": "number",
                         "isNaN": true,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "string"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__3",
+                        "leftType": "string",
+                        "rightType": "number",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "<",
+                        "operandForInteraction": "left"
                     },
                     {
                         "code": "inputValue",
@@ -59,7 +104,22 @@
                         "convertedTo": "number",
                         "isNaN": true,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "string"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__4",
+                        "leftType": "string",
+                        "rightType": "undefined",
+                        "leftIsNaN": true,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "undefined",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "<",
+                        "operandForInteraction": "left"
                     },
                     {
                         "code": "inputValue",
@@ -72,7 +132,22 @@
                         "convertedTo": "number",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__5",
+                        "leftType": "number",
+                        "rightType": "undefined",
+                        "leftIsNaN": false,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "undefined",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "<",
+                        "operandForInteraction": "left"
                     }
                 ]
             },
@@ -91,7 +166,22 @@
                         "convertedTo": "string",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "string"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__1",
+                        "leftType": "string",
+                        "rightType": "string",
+                        "leftIsNaN": true,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "string",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "<",
+                        "operandForInteraction": "right"
                     },
                     {
                         "code": "inputValue",
@@ -104,7 +194,22 @@
                         "convertedTo": "number",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "leftType": "number",
+                        "rightType": "number",
+                        "leftIsNaN": false,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "<",
+                        "operandForInteraction": "right"
                     },
                     {
                         "code": "inputValue",
@@ -117,7 +222,22 @@
                         "convertedTo": "number",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__3",
+                        "leftType": "string",
+                        "rightType": "number",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "<",
+                        "operandForInteraction": "right"
                     },
                     {
                         "code": "inputValue",

@@ -86,12 +86,41 @@ true
                                 "convertedTo": "number",
                                 "isNaN": false,
                                 "toPrimitive": null,
-                                "operator": "<"
+                                "operator": "<",
+                                "originalTypeof": "number"
+                            },
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "number",
+                                "rightType": "number",
+                                "leftIsNaN": false,
+                                "rightIsNan": false,
+                                "leftToPrimitiveType": "number",
+                                "rightToPrimitiveType": "number",
+                                "leftToPrimitiveIsNaN": false,
+                                "rightToPrimitiveIsNaN": false,
+                                "operator": "<",
+                                "operandForInteraction": "left"
                             }
                         ],
                         "iid": 129,
                         "field": "myValue",
                         "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__4",
+                        "leftType": "object",
+                        "rightType": "object",
+                        "leftIsNaN": true,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "string",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "==",
+                        "operandForInteraction": "left"
                     }
                 ]
             },
@@ -117,12 +146,41 @@ true
                                 "convertedTo": "number",
                                 "isNaN": false,
                                 "toPrimitive": null,
-                                "operator": "<"
+                                "operator": "<",
+                                "originalTypeof": "number"
+                            },
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "number",
+                                "rightType": "number",
+                                "leftIsNaN": false,
+                                "rightIsNan": false,
+                                "leftToPrimitiveType": "number",
+                                "rightToPrimitiveType": "number",
+                                "leftToPrimitiveIsNaN": false,
+                                "rightToPrimitiveIsNaN": false,
+                                "operator": "<",
+                                "operandForInteraction": "left"
                             }
                         ],
                         "iid": 153,
                         "field": "myOtherValue",
                         "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__4",
+                        "leftType": "object",
+                        "rightType": "object",
+                        "leftIsNaN": true,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "string",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "==",
+                        "operandForInteraction": "right"
                     }
                 ]
             }

@@ -28,7 +28,22 @@ true
                                 "isComputed": false,
                                 "isOpAssign": false,
                                 "enclosingFunctionId": "functionId_3",
-                                "followingInteractions": [],
+                                "followingInteractions": [
+                                    {
+                                        "code": "operator",
+                                        "traceId": null,
+                                        "leftType": "string",
+                                        "rightType": "string",
+                                        "leftIsNaN": false,
+                                        "rightIsNan": false,
+                                        "leftToPrimitiveType": "string",
+                                        "rightToPrimitiveType": "string",
+                                        "leftToPrimitiveIsNaN": false,
+                                        "rightToPrimitiveIsNaN": false,
+                                        "operator": "!==",
+                                        "operandForInteraction": "left"
+                                    }
+                                ],
                                 "iid": 99,
                                 "methodName": "toString",
                                 "functionId": "functionId_7",
@@ -55,12 +70,41 @@ true
                                 "convertedTo": "number",
                                 "isNaN": false,
                                 "toPrimitive": null,
-                                "operator": "<"
+                                "operator": "<",
+                                "originalTypeof": "number"
+                            },
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "number",
+                                "rightType": "number",
+                                "leftIsNaN": false,
+                                "rightIsNan": false,
+                                "leftToPrimitiveType": "number",
+                                "rightToPrimitiveType": "number",
+                                "leftToPrimitiveIsNaN": false,
+                                "rightToPrimitiveIsNaN": false,
+                                "operator": "<",
+                                "operandForInteraction": "left"
                             }
                         ],
                         "iid": 73,
                         "field": "length",
                         "returnTypeOf": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "leftType": "string",
+                        "rightType": "string",
+                        "leftIsNaN": true,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "string",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "===",
+                        "operandForInteraction": "left"
                     }
                 ]
             }

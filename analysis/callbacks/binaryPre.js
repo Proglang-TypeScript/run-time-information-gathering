@@ -12,6 +12,8 @@
 		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 		this.operatorsTypeCoercionAnalyzer = sandbox.utils.operatorsTypeCoercionAnalyzer;
 
+		this.operatorInteractionBuilder = sandbox.utils.operatorInteractionBuilder;
+
 		var dis = this;
 
 		this.callback = function(
@@ -33,6 +35,26 @@
 			if (typeCoercion !== null) {
 				addInteractionIfNecessary(typeCoercion.left, left);
 				addInteractionIfNecessary(typeCoercion.right, right);
+			}
+
+			let leftOperatorInteraction = dis.operatorInteractionBuilder.build(
+				op,
+				originalLeft,
+				originalRight
+			);
+
+			if (addInteractionIfNecessary(leftOperatorInteraction, left) === true) {
+				leftOperatorInteraction.operandForInteraction = "left";
+			}
+
+			let rightOperatorInteraction = dis.operatorInteractionBuilder.build(
+				op,
+				originalLeft,
+				originalRight
+			);
+
+			if (addInteractionIfNecessary(rightOperatorInteraction, right) === true) {
+				rightOperatorInteraction.operandForInteraction = "right";
 			}
 
 			let equalityOperations = [
@@ -67,6 +89,10 @@
 				}
 
 				interactionContainer.addInteraction(interaction);
+
+				return true;
+			} else {
+				return false;
 			}
 		}
 	}

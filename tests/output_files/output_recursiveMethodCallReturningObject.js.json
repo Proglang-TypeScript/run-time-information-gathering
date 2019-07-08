@@ -60,7 +60,22 @@
                         "convertedTo": "number",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "+"
+                        "operator": "+",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__10",
+                        "leftType": "number",
+                        "rightType": "number",
+                        "leftIsNaN": false,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "right"
                     }
                 ]
             },
@@ -231,7 +246,22 @@
                         "convertedTo": "number",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "+"
+                        "operator": "+",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__4",
+                        "leftType": "number",
+                        "rightType": "number",
+                        "leftIsNaN": false,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "right"
                     }
                 ]
             },
@@ -285,6 +315,20 @@
                         "typeof": "Node"
                     },
                     {
+                        "code": "operator",
+                        "traceId": "trace__11",
+                        "leftType": "object",
+                        "rightType": "null",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "null",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "!==",
+                        "operandForInteraction": "left"
+                    },
+                    {
                         "code": "getField",
                         "traceId": "trace__11",
                         "isComputed": false,
@@ -313,6 +357,20 @@
                         "isOpAssign": false,
                         "enclosingFunctionId": "functionId_5",
                         "followingInteractions": [
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "object",
+                                "rightType": "null",
+                                "leftIsNaN": true,
+                                "rightIsNan": false,
+                                "leftToPrimitiveType": "string",
+                                "rightToPrimitiveType": "null",
+                                "leftToPrimitiveIsNaN": true,
+                                "rightToPrimitiveIsNaN": false,
+                                "operator": "!==",
+                                "operandForInteraction": "left"
+                            },
                             {
                                 "code": "getField",
                                 "traceId": null,
@@ -343,12 +401,40 @@
                                 "enclosingFunctionId": "functionId_5",
                                 "followingInteractions": [
                                     {
+                                        "code": "operator",
+                                        "traceId": null,
+                                        "leftType": "object",
+                                        "rightType": "null",
+                                        "leftIsNaN": true,
+                                        "rightIsNan": false,
+                                        "leftToPrimitiveType": "string",
+                                        "rightToPrimitiveType": "null",
+                                        "leftToPrimitiveIsNaN": true,
+                                        "rightToPrimitiveIsNaN": false,
+                                        "operator": "!==",
+                                        "operandForInteraction": "left"
+                                    },
+                                    {
                                         "code": "methodCall",
                                         "traceId": null,
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": "functionId_5",
                                         "followingInteractions": [
+                                            {
+                                                "code": "operator",
+                                                "traceId": null,
+                                                "leftType": "object",
+                                                "rightType": "null",
+                                                "leftIsNaN": true,
+                                                "rightIsNan": false,
+                                                "leftToPrimitiveType": "string",
+                                                "rightToPrimitiveType": "null",
+                                                "leftToPrimitiveIsNaN": true,
+                                                "rightToPrimitiveIsNaN": false,
+                                                "operator": "!==",
+                                                "operandForInteraction": "left"
+                                            },
                                             {
                                                 "code": "methodCall",
                                                 "traceId": null,
@@ -357,12 +443,40 @@
                                                 "enclosingFunctionId": "functionId_5",
                                                 "followingInteractions": [
                                                     {
+                                                        "code": "operator",
+                                                        "traceId": null,
+                                                        "leftType": "object",
+                                                        "rightType": "null",
+                                                        "leftIsNaN": true,
+                                                        "rightIsNan": false,
+                                                        "leftToPrimitiveType": "string",
+                                                        "rightToPrimitiveType": "null",
+                                                        "leftToPrimitiveIsNaN": true,
+                                                        "rightToPrimitiveIsNaN": false,
+                                                        "operator": "!==",
+                                                        "operandForInteraction": "left"
+                                                    },
+                                                    {
                                                         "code": "methodCall",
                                                         "traceId": null,
                                                         "isComputed": false,
                                                         "isOpAssign": false,
                                                         "enclosingFunctionId": "functionId_5",
                                                         "followingInteractions": [
+                                                            {
+                                                                "code": "operator",
+                                                                "traceId": null,
+                                                                "leftType": "object",
+                                                                "rightType": "null",
+                                                                "leftIsNaN": true,
+                                                                "rightIsNan": false,
+                                                                "leftToPrimitiveType": "string",
+                                                                "rightToPrimitiveType": "null",
+                                                                "leftToPrimitiveIsNaN": true,
+                                                                "rightToPrimitiveIsNaN": false,
+                                                                "operator": "!==",
+                                                                "operandForInteraction": "left"
+                                                            },
                                                             {
                                                                 "code": "methodCall",
                                                                 "traceId": null,
@@ -371,12 +485,41 @@
                                                                 "enclosingFunctionId": "functionId_5",
                                                                 "followingInteractions": [
                                                                     {
+                                                                        "code": "operator",
+                                                                        "traceId": null,
+                                                                        "leftType": "object",
+                                                                        "rightType": "null",
+                                                                        "leftIsNaN": true,
+                                                                        "rightIsNan": false,
+                                                                        "leftToPrimitiveType": "string",
+                                                                        "rightToPrimitiveType": "null",
+                                                                        "leftToPrimitiveIsNaN": true,
+                                                                        "rightToPrimitiveIsNaN": false,
+                                                                        "operator": "!==",
+                                                                        "operandForInteraction": "left"
+                                                                    },
+                                                                    {
                                                                         "code": "methodCall",
                                                                         "traceId": null,
                                                                         "isComputed": false,
                                                                         "isOpAssign": false,
                                                                         "enclosingFunctionId": "functionId_5",
-                                                                        "followingInteractions": [],
+                                                                        "followingInteractions": [
+                                                                            {
+                                                                                "code": "operator",
+                                                                                "traceId": null,
+                                                                                "leftType": "null",
+                                                                                "rightType": "null",
+                                                                                "leftIsNaN": false,
+                                                                                "rightIsNan": false,
+                                                                                "leftToPrimitiveType": "null",
+                                                                                "rightToPrimitiveType": "null",
+                                                                                "leftToPrimitiveIsNaN": false,
+                                                                                "rightToPrimitiveIsNaN": false,
+                                                                                "operator": "!==",
+                                                                                "operandForInteraction": "left"
+                                                                            }
+                                                                        ],
                                                                         "iid": 187,
                                                                         "methodName": "getLeft",
                                                                         "functionId": "functionId_29",

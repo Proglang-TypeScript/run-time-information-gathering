@@ -15,6 +15,20 @@ true
                         "code": "inputValue",
                         "traceId": "trace__2",
                         "typeof": "undefined"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "leftType": "undefined",
+                        "rightType": "undefined",
+                        "leftIsNaN": true,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "undefined",
+                        "rightToPrimitiveType": "undefined",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "==",
+                        "operandForInteraction": "left"
                     }
                 ]
             }
@@ -44,6 +58,20 @@ true
                         "code": "inputValue",
                         "traceId": "trace__4",
                         "typeof": "undefined"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__4",
+                        "leftType": "undefined",
+                        "rightType": "undefined",
+                        "leftIsNaN": true,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "undefined",
+                        "rightToPrimitiveType": "undefined",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "===",
+                        "operandForInteraction": "left"
                     }
                 ]
             }

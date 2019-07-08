@@ -108,7 +108,22 @@
                                 "convertedTo": "number",
                                 "isNaN": false,
                                 "toPrimitive": null,
-                                "operator": "<"
+                                "operator": "<",
+                                "originalTypeof": "number"
+                            },
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "number",
+                                "rightType": "number",
+                                "leftIsNaN": false,
+                                "rightIsNan": false,
+                                "leftToPrimitiveType": "number",
+                                "rightToPrimitiveType": "number",
+                                "leftToPrimitiveIsNaN": false,
+                                "rightToPrimitiveIsNaN": false,
+                                "operator": "<",
+                                "operandForInteraction": "left"
                             }
                         ],
                         "iid": 313,

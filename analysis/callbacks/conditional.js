@@ -7,6 +7,12 @@
 		this.callbackName = "conditional";
 
 		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
+		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
+		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
+		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
+		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
+
+		this.operatorInteractionBuilder = sandbox.utils.operatorInteractionBuilder;
 
 		var dis = this;
 
@@ -25,10 +31,39 @@
 				}
 			}
 
+			let leftOperatorInteraction = dis.operatorInteractionBuilder.build(
+				"conditional",
+				dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result),
+				undefined
+			);
+
+			if (addInteractionIfNecessary(leftOperatorInteraction, result) === true) {
+				leftOperatorInteraction.operandForInteraction = "left";
+			}
+
 			return {
 				result: newResult
-			}
+			};
 		};
+
+		function addInteractionIfNecessary(interaction, operand) {
+			let interactionContainer = dis.interactionContainerFinder.findInteraction(
+				dis.sMemoryInterface.getShadowIdOfObject(operand)
+			);
+
+			if (interactionContainer) {
+				let traceId = dis.objectTraceIdMap.get(operand);
+				if (traceId) {
+					interaction.traceId = traceId;
+				}
+
+				interactionContainer.addInteraction(interaction);
+
+				return true;
+			} else {
+				return false;
+			}
+		}
 	}
 
 	sandbox.analysis = new ConditionalAnalysis();

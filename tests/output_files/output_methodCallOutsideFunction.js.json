@@ -28,7 +28,22 @@
                         "convertedTo": "number",
                         "isNaN": true,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "string"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "leftType": "string",
+                        "rightType": "number",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "<",
+                        "operandForInteraction": "left"
                     },
                     {
                         "code": "inputValue",
@@ -49,7 +64,22 @@
                         "convertedTo": "number",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__4",
+                        "leftType": "number",
+                        "rightType": "string",
+                        "leftIsNaN": false,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "string",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "<",
+                        "operandForInteraction": "left"
                     }
                 ]
             },
@@ -76,7 +106,22 @@
                         "convertedTo": "number",
                         "isNaN": false,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "leftType": "string",
+                        "rightType": "number",
+                        "leftIsNaN": true,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "string",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": true,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "<",
+                        "operandForInteraction": "right"
                     },
                     {
                         "code": "inputValue",
@@ -97,7 +142,22 @@
                         "convertedTo": "number",
                         "isNaN": true,
                         "toPrimitive": null,
-                        "operator": "<"
+                        "operator": "<",
+                        "originalTypeof": "string"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__4",
+                        "leftType": "number",
+                        "rightType": "string",
+                        "leftIsNaN": false,
+                        "rightIsNan": true,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "string",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": true,
+                        "operator": "<",
+                        "operandForInteraction": "right"
                     }
                 ]
             }

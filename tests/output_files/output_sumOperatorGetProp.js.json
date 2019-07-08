@@ -27,7 +27,22 @@
                                 "convertedTo": "string",
                                 "isNaN": false,
                                 "toPrimitive": null,
-                                "operator": "+"
+                                "operator": "+",
+                                "originalTypeof": "string"
+                            },
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "string",
+                                "rightType": "undefined",
+                                "leftIsNaN": true,
+                                "rightIsNan": true,
+                                "leftToPrimitiveType": "string",
+                                "rightToPrimitiveType": "undefined",
+                                "leftToPrimitiveIsNaN": true,
+                                "rightToPrimitiveIsNaN": true,
+                                "operator": "+",
+                                "operandForInteraction": "left"
                             }
                         ],
                         "iid": 17,
@@ -47,7 +62,22 @@
                                 "convertedTo": "string",
                                 "isNaN": false,
                                 "toPrimitive": null,
-                                "operator": "+"
+                                "operator": "+",
+                                "originalTypeof": "string"
+                            },
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "string",
+                                "rightType": "undefined",
+                                "leftIsNaN": true,
+                                "rightIsNan": true,
+                                "leftToPrimitiveType": "string",
+                                "rightToPrimitiveType": "undefined",
+                                "leftToPrimitiveIsNaN": true,
+                                "rightToPrimitiveIsNaN": true,
+                                "operator": "+",
+                                "operandForInteraction": "right"
                             }
                         ],
                         "iid": 33,
