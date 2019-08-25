@@ -7,19 +7,13 @@ https://docs.docker.com/install/
 
 #### Build Docker image
 
-```shell
-git clone https://fcristiani@bitbucket.org/fcristiani/master-mind-wp3.git
-```
-
-```shell
-cd master-mind-wp3
-```
+Clone this repository and then run:
 
 ```shell
 ./build/build.sh
 ```
 
-This will build an image called 'master-mind-wp3' on your local machine.
+This will build an image called `master-mind-wp3` on your local machine.
 
 ### Usage
 #### Get runtime information from one JS file
