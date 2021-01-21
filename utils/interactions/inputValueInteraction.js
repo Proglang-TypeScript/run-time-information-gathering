@@ -1,23 +1,23 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	var Interaction = sandbox.utils.Interaction;
+  var Interaction = sandbox.utils.Interaction;
 
-	function InputValueInteraction(type_of) {
-		Interaction.call(this);
+  function InputValueInteraction(type_of) {
+    Interaction.call(this);
 
-		this.code = "inputValue";
-		this.typeof = type_of;
-	}
+    this.code = 'inputValue';
+    this.typeof = type_of;
+  }
 
-	InputValueInteraction.prototype = Object.create(Interaction.prototype);
-	InputValueInteraction.prototype.constructor = InputValueInteraction;
+  InputValueInteraction.prototype = Object.create(Interaction.prototype);
+  InputValueInteraction.prototype.constructor = InputValueInteraction;
 
-	if (sandbox.utils === undefined) {
-		sandbox.utils = {};
-	}
+  if (sandbox.utils === undefined) {
+    sandbox.utils = {};
+  }
 
-	sandbox.utils.InputValueInteraction = InputValueInteraction;
-}(J$));
+  sandbox.utils.InputValueInteraction = InputValueInteraction;
+})(J$);

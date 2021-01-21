@@ -1,24 +1,23 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	function LiteralAnalysis() {
-		this.callbackName = "literal";
+  function LiteralAnalysis() {
+    this.callbackName = 'literal';
 
-		var dis = this;
+    var dis = this;
 
-		this.callback = function (iid, val, hasGetterSetter) {
-			if (typeof val === "function") {
-				val.isInstrumented = true;
-			}
+    this.callback = function (iid, val, hasGetterSetter) {
+      if (typeof val === 'function') {
+        val.isInstrumented = true;
+      }
 
-			return {
-				result: val
-			};
-		};
-	}
+      return {
+        result: val,
+      };
+    };
+  }
 
-	sandbox.analysis = new LiteralAnalysis();
-
-}(J$));
+  sandbox.analysis = new LiteralAnalysis();
+})(J$);

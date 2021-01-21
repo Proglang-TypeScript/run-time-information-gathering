@@ -1,31 +1,31 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	function WriteAnalysis() {
-		this.callbackName = "write";
+  function WriteAnalysis() {
+    this.callbackName = 'write';
 
-		var addDeclarationFunctionIdToFunctionsInsideObject = sandbox.functions.addDeclarationFunctionIdToFunctionsInsideObject;
+    var addDeclarationFunctionIdToFunctionsInsideObject =
+      sandbox.functions.addDeclarationFunctionIdToFunctionsInsideObject;
 
-		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
-		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
+    this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+    this.sMemoryInterface = sandbox.utils.sMemoryInterface;
 
-		var dis = this;
+    var dis = this;
 
-		this.callback = function(iid, name, val) {
-			addDeclarationFunctionIdToFunctionsInsideObject(
-				val,
-				dis.functionsExecutionStack,
-				dis.sMemoryInterface
-			);
+    this.callback = function (iid, name, val) {
+      addDeclarationFunctionIdToFunctionsInsideObject(
+        val,
+        dis.functionsExecutionStack,
+        dis.sMemoryInterface,
+      );
 
-			return {
-				result: val
-			};
-		};
-	}
+      return {
+        result: val,
+      };
+    };
+  }
 
-	sandbox.analysis = new WriteAnalysis();
-
-}(J$));
+  sandbox.analysis = new WriteAnalysis();
+})(J$);

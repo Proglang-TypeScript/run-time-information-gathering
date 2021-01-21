@@ -1,8 +1,7 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	sandbox.runTimeInfo = {};
-
-}(J$));
+  sandbox.runTimeInfo = {};
+})(J$);

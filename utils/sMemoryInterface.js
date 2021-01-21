@@ -1,34 +1,34 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	function SMemoryInterface(sMemory) {
-		this.sMemory = sMemory;
+  function SMemoryInterface(sMemory) {
+    this.sMemory = sMemory;
 
-		this.getShadowIdOfObject = function(obj) {
-			var shadowObj = this.sMemory.getShadowObjectOfObject(obj);
-			var shadowId = this.sMemory.getIDFromShadowObjectOrFrame(shadowObj);
+    this.getShadowIdOfObject = function (obj) {
+      var shadowObj = this.sMemory.getShadowObjectOfObject(obj);
+      var shadowId = this.sMemory.getIDFromShadowObjectOrFrame(shadowObj);
 
-			if (shadowId === undefined) {
-				return null;
-			}
+      if (shadowId === undefined) {
+        return null;
+      }
 
-			return shadowId;
-		};
+      return shadowId;
+    };
 
-		this.getSpecialPropActual = function() {
-			return this.sMemory.getSpecialPropActual();
-		};
+    this.getSpecialPropActual = function () {
+      return this.sMemory.getSpecialPropActual();
+    };
 
-		this.getSpecialPropSObject = function() {
-			return this.sMemory.getSpecialPropSObject();
-		};
-	}
+    this.getSpecialPropSObject = function () {
+      return this.sMemory.getSpecialPropSObject();
+    };
+  }
 
-	if (sandbox.utils === undefined) {
-		sandbox.utils = {};
-	}
+  if (sandbox.utils === undefined) {
+    sandbox.utils = {};
+  }
 
-    sandbox.utils.sMemoryInterface = new SMemoryInterface(sandbox.smemory);
-}(J$));
+  sandbox.utils.sMemoryInterface = new SMemoryInterface(sandbox.smemory);
+})(J$);

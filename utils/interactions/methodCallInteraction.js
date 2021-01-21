@@ -1,29 +1,29 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	var ActiveInteraction = sandbox.utils.ActiveInteraction;
+  var ActiveInteraction = sandbox.utils.ActiveInteraction;
 
-	function MethodCallInteraction(iid, methodName) {
-		ActiveInteraction.call(this);
+  function MethodCallInteraction(iid, methodName) {
+    ActiveInteraction.call(this);
 
-		this.iid = iid;
-		this.methodName = methodName;
+    this.iid = iid;
+    this.methodName = methodName;
 
-		this.code = 'methodCall';
-		
-		this.functionId = null;
-		this.returnTypeOf = null;
-		this.traceIdInTargetFunction = null;
-	}
+    this.code = 'methodCall';
 
-	MethodCallInteraction.prototype = Object.create(ActiveInteraction.prototype);
-	MethodCallInteraction.prototype.constructor = MethodCallInteraction;
+    this.functionId = null;
+    this.returnTypeOf = null;
+    this.traceIdInTargetFunction = null;
+  }
 
-	if (sandbox.utils === undefined) {
-		sandbox.utils = {};
-	}
+  MethodCallInteraction.prototype = Object.create(ActiveInteraction.prototype);
+  MethodCallInteraction.prototype.constructor = MethodCallInteraction;
 
-	sandbox.utils.MethodCallInteraction = MethodCallInteraction;
-}(J$));
+  if (sandbox.utils === undefined) {
+    sandbox.utils = {};
+  }
+
+  sandbox.utils.MethodCallInteraction = MethodCallInteraction;
+})(J$);

@@ -1,31 +1,33 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	function InteractionContainerFinder(sMemoryInterface) {
-		this.sMemoryInterface = sMemoryInterface;
+  function InteractionContainerFinder(sMemoryInterface) {
+    this.sMemoryInterface = sMemoryInterface;
 
-		this.mapShadowIdsContainers = {};
+    this.mapShadowIdsContainers = {};
 
-		this.findInteraction = function(shadowId) {
-			return this.mapShadowIdsContainers[shadowId];
-		};
+    this.findInteraction = function (shadowId) {
+      return this.mapShadowIdsContainers[shadowId];
+    };
 
-		this.addMapping = function(interaction, result) {
-			var shadowId = this.sMemoryInterface.getShadowIdOfObject(result);
+    this.addMapping = function (interaction, result) {
+      var shadowId = this.sMemoryInterface.getShadowIdOfObject(result);
 
-			if (shadowId) {
-				if (this.mapShadowIdsContainers[shadowId] === undefined) {
-					this.mapShadowIdsContainers[shadowId] = interaction;
-				}
-			}
-		};
-	}
+      if (shadowId) {
+        if (this.mapShadowIdsContainers[shadowId] === undefined) {
+          this.mapShadowIdsContainers[shadowId] = interaction;
+        }
+      }
+    };
+  }
 
-	if (sandbox.utils === undefined) {
-		sandbox.utils = {};
-	}
+  if (sandbox.utils === undefined) {
+    sandbox.utils = {};
+  }
 
-	sandbox.utils.interactionContainerFinder = new InteractionContainerFinder(sandbox.utils.sMemoryInterface);
-}(J$));
+  sandbox.utils.interactionContainerFinder = new InteractionContainerFinder(
+    sandbox.utils.sMemoryInterface,
+  );
+})(J$);

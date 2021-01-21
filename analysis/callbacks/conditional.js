@@ -1,71 +1,71 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	function ConditionalAnalysis() {
-		this.callbackName = "conditional";
+  function ConditionalAnalysis() {
+    this.callbackName = 'conditional';
 
-		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
-		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
-		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
-		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
-		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
+    this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
+    this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
+    this.sMemoryInterface = sandbox.utils.sMemoryInterface;
+    this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
+    this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 
-		this.operatorInteractionBuilder = sandbox.utils.operatorInteractionBuilder;
+    this.operatorInteractionBuilder = sandbox.utils.operatorInteractionBuilder;
 
-		var dis = this;
+    var dis = this;
 
-		this.callback = function(
-			iid,
-			result
-		) {
+    this.callback = function (iid, result) {
+      let newResult = result;
 
-			let newResult = result;
+      if (dis.wrapperObjectsHandler.objectIsWrapperObject(result)) {
+        let finalRealValueFromWrapperObject = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(
+          result,
+        );
 
-			if (dis.wrapperObjectsHandler.objectIsWrapperObject(result)) {
-				let finalRealValueFromWrapperObject = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result);
+        if (
+          finalRealValueFromWrapperObject === undefined ||
+          finalRealValueFromWrapperObject === null
+        ) {
+          newResult = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result);
+        }
+      }
 
-				if ((finalRealValueFromWrapperObject === undefined) || (finalRealValueFromWrapperObject === null)) {
-					newResult = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result);
-				}
-			}
+      let leftOperatorInteraction = dis.operatorInteractionBuilder.build(
+        'conditional',
+        dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result),
+        undefined,
+      );
 
-			let leftOperatorInteraction = dis.operatorInteractionBuilder.build(
-				"conditional",
-				dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result),
-				undefined
-			);
+      if (addInteractionIfNecessary(leftOperatorInteraction, result) === true) {
+        leftOperatorInteraction.operandForInteraction = 'left';
+      }
 
-			if (addInteractionIfNecessary(leftOperatorInteraction, result) === true) {
-				leftOperatorInteraction.operandForInteraction = "left";
-			}
+      return {
+        result: newResult,
+      };
+    };
 
-			return {
-				result: newResult
-			};
-		};
+    function addInteractionIfNecessary(interaction, operand) {
+      let interactionContainer = dis.interactionContainerFinder.findInteraction(
+        dis.sMemoryInterface.getShadowIdOfObject(operand),
+      );
 
-		function addInteractionIfNecessary(interaction, operand) {
-			let interactionContainer = dis.interactionContainerFinder.findInteraction(
-				dis.sMemoryInterface.getShadowIdOfObject(operand)
-			);
+      if (interactionContainer) {
+        let traceId = dis.objectTraceIdMap.get(operand);
+        if (traceId) {
+          interaction.traceId = traceId;
+        }
 
-			if (interactionContainer) {
-				let traceId = dis.objectTraceIdMap.get(operand);
-				if (traceId) {
-					interaction.traceId = traceId;
-				}
+        interactionContainer.addInteraction(interaction);
 
-				interactionContainer.addInteraction(interaction);
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
 
-				return true;
-			} else {
-				return false;
-			}
-		}
-	}
-
-	sandbox.analysis = new ConditionalAnalysis();
-
-}(J$));
+  sandbox.analysis = new ConditionalAnalysis();
+})(J$);

@@ -1,101 +1,100 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	function PutFieldPreAnalysis() {
-		this.callbackName = "putFieldPre";
+  function PutFieldPreAnalysis() {
+    this.callbackName = 'putFieldPre';
 
-		var getDeclarationEnclosingFunctionId = sandbox.functions.getDeclarationEnclosingFunctionId;
-		var getTypeOf = sandbox.functions.getTypeOf;
-		var addDeclarationFunctionIdToFunctionsInsideObject = sandbox.functions.addDeclarationFunctionIdToFunctionsInsideObject;
+    var getDeclarationEnclosingFunctionId = sandbox.functions.getDeclarationEnclosingFunctionId;
+    var getTypeOf = sandbox.functions.getTypeOf;
+    var addDeclarationFunctionIdToFunctionsInsideObject =
+      sandbox.functions.addDeclarationFunctionIdToFunctionsInsideObject;
 
-		var PutFieldInteraction = sandbox.utils.PutFieldInteraction;
-	
-		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
-		this.sMemoryInterface = sandbox.utils.sMemoryInterface;
-		this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
-		this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
+    var PutFieldInteraction = sandbox.utils.PutFieldInteraction;
 
-		var dis = this;
+    this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+    this.sMemoryInterface = sandbox.utils.sMemoryInterface;
+    this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
+    this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 
-		this.callback = function(iid, base, offset, val, isComputed, isOpAssign) {
-			val = addDeclarationEnclosingFunctionId(val);
+    var dis = this;
 
-			var interaction = getPutFieldInteracion(
-				iid,
-				base,
-				offset,
-				val,
-				isComputed,
-				isOpAssign
-			);
+    this.callback = function (iid, base, offset, val, isComputed, isOpAssign) {
+      val = addDeclarationEnclosingFunctionId(val);
 
-			if (!addInteractionToContainerIfPossible(interaction, base)) {
-				addFollowingInteractionToMappedInteraction(interaction, base);
-			}
+      var interaction = getPutFieldInteracion(iid, base, offset, val, isComputed, isOpAssign);
 
-			return {
-				base: base,
-				offset: offset,
-				val: val,
-				skip: false
-			};
-		};
+      if (!addInteractionToContainerIfPossible(interaction, base)) {
+        addFollowingInteractionToMappedInteraction(interaction, base);
+      }
 
-		function addInteractionToContainerIfPossible(interaction, base) {
-			let shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
+      return {
+        base: base,
+        offset: offset,
+        val: val,
+        skip: false,
+      };
+    };
 
-			let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(shadowId);
+    function addInteractionToContainerIfPossible(interaction, base) {
+      let shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
 
-			let interactionAdded = false;
-			if (containerForAddingNewInteraction) {
-				containerForAddingNewInteraction.addInteraction(interaction);
-				interactionAdded = true;
-			}
+      let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(
+        shadowId,
+      );
 
-			return interactionAdded;
-		}
+      let interactionAdded = false;
+      if (containerForAddingNewInteraction) {
+        containerForAddingNewInteraction.addInteraction(interaction);
+        interactionAdded = true;
+      }
 
-		function addFollowingInteractionToMappedInteraction(interaction, base) {
-			var containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(dis.sMemoryInterface.getShadowIdOfObject(base));
+      return interactionAdded;
+    }
 
-			if (containerForAddingNewInteraction) {
-				containerForAddingNewInteraction.addInteraction(interaction);
-			}
-		}
+    function addFollowingInteractionToMappedInteraction(interaction, base) {
+      var containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(
+        dis.sMemoryInterface.getShadowIdOfObject(base),
+      );
 
-		function addDeclarationEnclosingFunctionId(val) {
-			if (getTypeOf(val) == "function") {
-				val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(dis.functionsExecutionStack);
-			} else {
-				val = addDeclarationFunctionIdToFunctionsInsideObject(
-					val,
-					dis.functionsExecutionStack,
-					dis.sMemoryInterface
-				);
-			}
+      if (containerForAddingNewInteraction) {
+        containerForAddingNewInteraction.addInteraction(interaction);
+      }
+    }
 
-			return val;
-		}
+    function addDeclarationEnclosingFunctionId(val) {
+      if (getTypeOf(val) == 'function') {
+        val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(
+          dis.functionsExecutionStack,
+        );
+      } else {
+        val = addDeclarationFunctionIdToFunctionsInsideObject(
+          val,
+          dis.functionsExecutionStack,
+          dis.sMemoryInterface,
+        );
+      }
 
-		function getPutFieldInteracion(iid, base, offset, val, isComputed, isOpAssign) {
-			var interaction = new PutFieldInteraction(iid, offset);
+      return val;
+    }
 
-			interaction.typeof = getTypeOf(val);
-			interaction.isComputed = isComputed;
-			interaction.isOpAssign = isOpAssign;
-			interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
+    function getPutFieldInteracion(iid, base, offset, val, isComputed, isOpAssign) {
+      var interaction = new PutFieldInteraction(iid, offset);
 
-			let traceId = dis.objectTraceIdMap.get(base);
-			if (traceId) {
-				interaction.traceId = traceId;
-			}
+      interaction.typeof = getTypeOf(val);
+      interaction.isComputed = isComputed;
+      interaction.isOpAssign = isOpAssign;
+      interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 
-			return interaction;
-		}
-	}
+      let traceId = dis.objectTraceIdMap.get(base);
+      if (traceId) {
+        interaction.traceId = traceId;
+      }
 
-	sandbox.analysis = new PutFieldPreAnalysis();
+      return interaction;
+    }
+  }
 
-}(J$));
+  sandbox.analysis = new PutFieldPreAnalysis();
+})(J$);

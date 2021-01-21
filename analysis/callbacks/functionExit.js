@@ -1,25 +1,25 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	function FunctionExitAnalysis() {
-		this.callbackName = "functionExit";
+  function FunctionExitAnalysis() {
+    this.callbackName = 'functionExit';
 
-		this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
+    this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
 
-		var dis = this;
+    var dis = this;
 
-		this.callback = function(iid, returnVal, wrappedExceptionVal) {
-			dis.functionsExecutionStack.stopExecution();
+    this.callback = function (iid, returnVal, wrappedExceptionVal) {
+      dis.functionsExecutionStack.stopExecution();
 
-			return {
-				returnVal: returnVal,
-				wrappedExceptionVal: wrappedExceptionVal,
-				isBacktrack: false
-			};
-		};
-	}
+      return {
+        returnVal: returnVal,
+        wrappedExceptionVal: wrappedExceptionVal,
+        isBacktrack: false,
+      };
+    };
+  }
 
-	sandbox.analysis = new FunctionExitAnalysis();
-}(J$));
+  sandbox.analysis = new FunctionExitAnalysis();
+})(J$);

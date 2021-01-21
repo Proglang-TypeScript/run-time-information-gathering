@@ -1,107 +1,106 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	var getTypeOf = sandbox.functions.getTypeOf;
+  var getTypeOf = sandbox.functions.getTypeOf;
 
-	function WrapperObjectsHandler(
-		sMemoryInterface,
-		argumentWrapperObjectBuilder,
-		argumentProxyBuilder
-	) {
-		this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
-		this.argumentProxyBuilder = argumentProxyBuilder;
+  function WrapperObjectsHandler(
+    sMemoryInterface,
+    argumentWrapperObjectBuilder,
+    argumentProxyBuilder,
+  ) {
+    this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
+    this.argumentProxyBuilder = argumentProxyBuilder;
 
-		var dis = this;
+    var dis = this;
 
-		this.objectIsWrapperObject = function(obj) {
-			return !!(obj && (obj.IS_WRAPPER_OBJECT === true));
-		};
+    this.objectIsWrapperObject = function (obj) {
+      return !!(obj && obj.IS_WRAPPER_OBJECT === true);
+    };
 
-		this.getRealValueFromWrapperObject = function(obj) {
- 			return obj.TARGET_PROXY;
-		};
+    this.getRealValueFromWrapperObject = function (obj) {
+      return obj.TARGET_PROXY;
+    };
 
-		this.getFinalRealObjectFromProxy = function(val) {
-			if (this.objectIsWrapperObject(val) === false) {
-				return val;
-			}
+    this.getFinalRealObjectFromProxy = function (val) {
+      if (this.objectIsWrapperObject(val) === false) {
+        return val;
+      }
 
-			let targetObjectFromProxy = this.getRealValueFromWrapperObject(val);
+      let targetObjectFromProxy = this.getRealValueFromWrapperObject(val);
 
-			if (this.objectIsWrapperObject(targetObjectFromProxy)) {
-				return this.getFinalRealObjectFromProxy(targetObjectFromProxy);
-			}
+      if (this.objectIsWrapperObject(targetObjectFromProxy)) {
+        return this.getFinalRealObjectFromProxy(targetObjectFromProxy);
+      }
 
-			return targetObjectFromProxy;
-		}
+      return targetObjectFromProxy;
+    };
 
-		this.convertToWrapperObjectIfItIsALiteral = function(originalValue) {
-			let newValue;
+    this.convertToWrapperObjectIfItIsALiteral = function (originalValue) {
+      let newValue;
 
-			switch(getTypeOf(originalValue)) {
-				case "string":
-					newValue = dis.argumentWrapperObjectBuilder.buildFromString(originalValue);
-					break;
+      switch (getTypeOf(originalValue)) {
+        case 'string':
+          newValue = dis.argumentWrapperObjectBuilder.buildFromString(originalValue);
+          break;
 
-				case "number":
-					newValue = dis.argumentWrapperObjectBuilder.buildFromNumber(originalValue);
-					break;
-				
-				case "undefined":
-					newValue = dis.argumentWrapperObjectBuilder.buildFromUndefined(originalValue);
-					break;
-				
-				case "null":
-					newValue = dis.argumentWrapperObjectBuilder.buildFromNull(originalValue);
-					break;
-			}
+        case 'number':
+          newValue = dis.argumentWrapperObjectBuilder.buildFromNumber(originalValue);
+          break;
 
-			if (!newValue) {
-				newValue = originalValue;
-			}
+        case 'undefined':
+          newValue = dis.argumentWrapperObjectBuilder.buildFromUndefined(originalValue);
+          break;
 
-			return newValue;
-		};
+        case 'null':
+          newValue = dis.argumentWrapperObjectBuilder.buildFromNull(originalValue);
+          break;
+      }
 
-		this.convertToWrapperObject = function(originalValue) {
-			let newValue = originalValue;
+      if (!newValue) {
+        newValue = originalValue;
+      }
 
-			newValue = this.convertToWrapperObjectIfItIsALiteral(newValue);
-			newValue = this.convertToProxyIfItIsAnObject(newValue);
+      return newValue;
+    };
 
-			return newValue;
-		}
+    this.convertToWrapperObject = function (originalValue) {
+      let newValue = originalValue;
 
-		this.convertToProxyIfItIsAnObject = function(originalValue) {
-			let newValue;
+      newValue = this.convertToWrapperObjectIfItIsALiteral(newValue);
+      newValue = this.convertToProxyIfItIsAnObject(newValue);
 
-			if (
-				getTypeOf(originalValue) == "object"
-				&& !(originalValue instanceof String)
-				&& !(originalValue instanceof Number)
-				&& !((typeof Node === 'function') && originalValue instanceof Node)
-			) {
-				newValue = dis.argumentProxyBuilder.buildProxy(originalValue);
-			}
+      return newValue;
+    };
 
-			if (!newValue) {
-				newValue = originalValue;
-			}
+    this.convertToProxyIfItIsAnObject = function (originalValue) {
+      let newValue;
 
-			return newValue;
-		};
-	}
+      if (
+        getTypeOf(originalValue) == 'object' &&
+        !(originalValue instanceof String) &&
+        !(originalValue instanceof Number) &&
+        !(typeof Node === 'function' && originalValue instanceof Node)
+      ) {
+        newValue = dis.argumentProxyBuilder.buildProxy(originalValue);
+      }
 
-	if (sandbox.utils === undefined) {
-		sandbox.utils = {};
-	}
+      if (!newValue) {
+        newValue = originalValue;
+      }
 
-	sandbox.utils.wrapperObjectsHandler = new WrapperObjectsHandler(
-		sandbox.utils.sMemoryInterface,
-		sandbox.utils.argumentWrapperObjectBuilder,
-		sandbox.utils.argumentProxyBuilder
-	);
+      return newValue;
+    };
+  }
 
-}(J$));
+  if (sandbox.utils === undefined) {
+    sandbox.utils = {};
+  }
+
+  sandbox.utils.wrapperObjectsHandler = new WrapperObjectsHandler(
+    sandbox.utils.sMemoryInterface,
+    sandbox.utils.argumentWrapperObjectBuilder,
+    sandbox.utils.argumentProxyBuilder,
+  );
+})(J$);

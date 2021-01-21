@@ -1,33 +1,29 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	function UnaryPreAnalysis() {
-		this.callbackName = "unaryPre";
+  function UnaryPreAnalysis() {
+    this.callbackName = 'unaryPre';
 
-		this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
+    this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
 
-		var dis = this;
+    var dis = this;
 
-		this.callback = function (iid, op, left) {
-			let operatorsToRestoreOriginalValue = [
-				"typeof",
-				"!"
-			];
+    this.callback = function (iid, op, left) {
+      let operatorsToRestoreOriginalValue = ['typeof', '!'];
 
-			if (operatorsToRestoreOriginalValue.indexOf(op) !== -1) {
-				left = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(left);
-			}
+      if (operatorsToRestoreOriginalValue.indexOf(op) !== -1) {
+        left = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(left);
+      }
 
-			return {
-				op: op,
-				left: left,
-				skip: false
-			};
-		};
-	}
+      return {
+        op: op,
+        left: left,
+        skip: false,
+      };
+    };
+  }
 
-	sandbox.analysis = new UnaryPreAnalysis();
-
-}(J$));
+  sandbox.analysis = new UnaryPreAnalysis();
+})(J$);

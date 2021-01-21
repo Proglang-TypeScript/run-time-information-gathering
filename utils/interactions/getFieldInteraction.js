@@ -1,27 +1,27 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	var ActiveInteraction = sandbox.utils.ActiveInteraction;
+  var ActiveInteraction = sandbox.utils.ActiveInteraction;
 
-	function GetFieldInteraction(iid, field) {
-		ActiveInteraction.call(this);
+  function GetFieldInteraction(iid, field) {
+    ActiveInteraction.call(this);
 
-		this.iid = iid;
-		this.field = field;
+    this.iid = iid;
+    this.field = field;
 
-		this.code = 'getField';
-		
-		this.returnTypeOf = null;
-	}
+    this.code = 'getField';
 
-	GetFieldInteraction.prototype = Object.create(ActiveInteraction.prototype);
-	GetFieldInteraction.prototype.constructor = GetFieldInteraction;
+    this.returnTypeOf = null;
+  }
 
-	if (sandbox.utils === undefined) {
-		sandbox.utils = {};
-	}
+  GetFieldInteraction.prototype = Object.create(ActiveInteraction.prototype);
+  GetFieldInteraction.prototype.constructor = GetFieldInteraction;
 
-	sandbox.utils.GetFieldInteraction = GetFieldInteraction;
-}(J$));
+  if (sandbox.utils === undefined) {
+    sandbox.utils = {};
+  }
+
+  sandbox.utils.GetFieldInteraction = GetFieldInteraction;
+})(J$);

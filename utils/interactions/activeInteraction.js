@@ -1,34 +1,34 @@
 /* global J$ */
 
-"use strict";
+'use strict';
 
 (function (sandbox) {
-	var Interaction = sandbox.utils.Interaction;
-	var getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
+  var Interaction = sandbox.utils.Interaction;
+  var getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
 
-	function ActiveInteraction() {
-		Interaction.call(this);
+  function ActiveInteraction() {
+    Interaction.call(this);
 
-		this.isComputed = null;
-		this.isOpAssign = null;
-		this.enclosingFunctionId = null;
-		this.followingInteractions = [];
-	}
+    this.isComputed = null;
+    this.isOpAssign = null;
+    this.enclosingFunctionId = null;
+    this.followingInteractions = [];
+  }
 
-	ActiveInteraction.prototype = Object.create(Interaction.prototype);
-	ActiveInteraction.prototype.constructor = ActiveInteraction;
+  ActiveInteraction.prototype = Object.create(Interaction.prototype);
+  ActiveInteraction.prototype.constructor = ActiveInteraction;
 
-	ActiveInteraction.prototype.addInteraction = function(followingInteraction) {
-		this.followingInteractions.push(followingInteraction);
-	};
+  ActiveInteraction.prototype.addInteraction = function (followingInteraction) {
+    this.followingInteractions.push(followingInteraction);
+  };
 
-	ActiveInteraction.prototype.setReturnTypeOf = function(result) {
-		this.returnTypeOf = getTypeOfForReporting(result);
-	};
+  ActiveInteraction.prototype.setReturnTypeOf = function (result) {
+    this.returnTypeOf = getTypeOfForReporting(result);
+  };
 
-	if (sandbox.utils === undefined) {
-		sandbox.utils = {};
-	}
+  if (sandbox.utils === undefined) {
+    sandbox.utils = {};
+  }
 
-	sandbox.utils.ActiveInteraction = ActiveInteraction;
-}(J$));
+  sandbox.utils.ActiveInteraction = ActiveInteraction;
+})(J$);
