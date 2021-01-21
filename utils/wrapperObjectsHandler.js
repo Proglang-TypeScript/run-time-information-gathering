@@ -81,6 +81,7 @@
         getTypeOf(originalValue) == 'object' &&
         !(originalValue instanceof String) &&
         !(originalValue instanceof Number) &&
+        // eslint-disable-next-line no-undef
         !(typeof Node === 'function' && originalValue instanceof Node)
       ) {
         newValue = dis.argumentProxyBuilder.buildProxy(originalValue);

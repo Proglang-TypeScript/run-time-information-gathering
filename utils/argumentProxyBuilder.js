@@ -98,7 +98,7 @@
       };
 
       for (var key in origMethod) {
-        if (origMethod.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(origMethod, key)) {
           f[key] = origMethod[key];
         }
       }

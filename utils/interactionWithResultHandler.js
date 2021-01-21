@@ -3,8 +3,6 @@
 'use strict';
 
 (function (sandbox) {
-  var getTypeOf = sandbox.functions.getTypeOf;
-
   function InteractionWithResultHandler(
     interactionContainerFinder,
     recursiveInteractionsHandler,

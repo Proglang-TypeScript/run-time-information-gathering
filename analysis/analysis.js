@@ -14,7 +14,9 @@
     };
 
     this.endExecution = function () {
+      // eslint-disable-next-line no-console
       console.log('');
+      // eslint-disable-next-line no-console
       console.log(JSON.stringify(sandbox.runTimeInfo, null, 4));
     };
   }
@@ -30,6 +32,7 @@
   });
 
   if (sandbox.Constants.isBrowser) {
+    // eslint-disable-next-line no-undef
     window.addEventListener('keydown', function (e) {
       // keyboard shortcut is Alt-Shift-T for now
       if (e.altKey && e.shiftKey && e.keyCode === 84) {

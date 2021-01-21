@@ -6,8 +6,6 @@
   var getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
 
   function FunctionContainer(f, isConstructor) {
-    let dis = this;
-
     this.functionId = f.functionId;
     this.functionName = getFunctionName(f, isConstructor);
 
@@ -63,7 +61,7 @@
     }
 
     function convertToCamelCase(m, isConstructor) {
-      let moduleName = m.replace(/^.*[\/]/, '').replace(/\.[^/.]+$/, '');
+      let moduleName = m.replace(/^.*[/]/, '').replace(/\.[^/.]+$/, '');
 
       let converted = moduleName.replace(/([-_][a-z])/gi, ($1) => {
         return $1.toUpperCase().replace('-', '').replace('_', '');

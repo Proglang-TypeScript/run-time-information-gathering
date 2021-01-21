@@ -20,9 +20,9 @@ for file in $TEST_FILES; do
 
 		if [ -n "$diff" ]; then
 			failing_tests+=($filename)
-			echo -n "F"
+			echo "F"
 	    else
-			echo -n "."
+			echo "."
 		fi
 	fi
 done

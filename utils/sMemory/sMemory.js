@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * @file A library to associate shadow objects and unique ids to JavaScript objects and activation frames.
  * @author  Koushik Sen (Main contribution)

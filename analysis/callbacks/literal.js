@@ -6,9 +6,7 @@
   function LiteralAnalysis() {
     this.callbackName = 'literal';
 
-    var dis = this;
-
-    this.callback = function (iid, val, hasGetterSetter) {
+    this.callback = function (iid, val) {
       if (typeof val === 'function') {
         val.isInstrumented = true;
       }
