@@ -3,24 +3,18 @@
 'use strict';
 
 (function (sandbox) {
-  function ObjectTraceIdMap(sMemoryInterface) {
-    this.sMemoryInterface = sMemoryInterface;
-
-    let dis = this;
-    let myMap = new Map();
+  function ObjectTraceIdMap() {
+    const map = new WeakMap();
 
     this.set = function (obj, traceId) {
-      let shadowId = dis.sMemoryInterface.getShadowIdOfObject(obj);
-
-      if (shadowId) {
-        myMap.set(shadowId, traceId);
-      }
+      try {
+        map.set(obj, traceId);
+        // eslint-disable-next-line no-empty
+      } catch (error) {}
     };
 
     this.get = function (obj) {
-      let shadowId = dis.sMemoryInterface.getShadowIdOfObject(obj);
-
-      return myMap.get(shadowId);
+      return map.get(obj);
     };
   }
 
@@ -28,5 +22,5 @@
     sandbox.utils = {};
   }
 
-  sandbox.utils.objectTraceIdMap = new ObjectTraceIdMap(sandbox.utils.sMemoryInterface);
+  sandbox.utils.objectTraceIdMap = new ObjectTraceIdMap();
 })(J$);
