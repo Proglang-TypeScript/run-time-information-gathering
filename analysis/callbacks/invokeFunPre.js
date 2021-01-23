@@ -16,7 +16,6 @@
 
     this.runTimeInfo = sandbox.runTimeInfo;
     this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
-    this.sMemoryInterface = sandbox.utils.sMemoryInterface;
     this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
     this.functionIdHandler = sandbox.utils.functionIdHandler;
     this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;

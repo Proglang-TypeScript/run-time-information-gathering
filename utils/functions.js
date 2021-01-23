@@ -39,11 +39,7 @@
     return functionsExecutionStack.getCurrentExecutingFunction();
   }
 
-  function addDeclarationFunctionIdToFunctionsInsideObject(
-    val,
-    functionsExecutionStack,
-    sMemoryInterface,
-  ) {
+  function addDeclarationFunctionIdToFunctionsInsideObject(val, functionsExecutionStack) {
     function propertyIsWritable(obj, key) {
       let description = Object.getOwnPropertyDescriptor(obj, key);
 
@@ -52,11 +48,7 @@
 
     let objects = [];
 
-    function doAddDeclarationFunctionIdToFunctionsInsideObject(
-      val,
-      functionsExecutionStack,
-      sMemoryInterface,
-    ) {
+    function doAddDeclarationFunctionIdToFunctionsInsideObject(val, functionsExecutionStack) {
       if (getTypeOf(val) == 'object') {
         if (objects.indexOf(val) === -1) {
           objects.push(val);
@@ -69,11 +61,7 @@
                 );
               }
 
-              doAddDeclarationFunctionIdToFunctionsInsideObject(
-                val[key],
-                functionsExecutionStack,
-                sMemoryInterface,
-              );
+              doAddDeclarationFunctionIdToFunctionsInsideObject(val[key], functionsExecutionStack);
             }
           }
         }
@@ -82,11 +70,7 @@
       return val;
     }
 
-    return doAddDeclarationFunctionIdToFunctionsInsideObject(
-      val,
-      functionsExecutionStack,
-      sMemoryInterface,
-    );
+    return doAddDeclarationFunctionIdToFunctionsInsideObject(val, functionsExecutionStack);
   }
 
   function getRandomIdentifier() {

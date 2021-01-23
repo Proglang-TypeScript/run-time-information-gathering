@@ -10,16 +10,11 @@
       sandbox.functions.addDeclarationFunctionIdToFunctionsInsideObject;
 
     this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
-    this.sMemoryInterface = sandbox.utils.sMemoryInterface;
 
     var dis = this;
 
     this.callback = function (iid, name, val) {
-      addDeclarationFunctionIdToFunctionsInsideObject(
-        val,
-        dis.functionsExecutionStack,
-        dis.sMemoryInterface,
-      );
+      addDeclarationFunctionIdToFunctionsInsideObject(val, dis.functionsExecutionStack);
 
       return {
         result: val,

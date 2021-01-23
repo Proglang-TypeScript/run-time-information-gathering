@@ -6,7 +6,6 @@
   function RelationalComparisonOperatorTypeCoercion(getTypeOf) {
     this.toPrimitive = sandbox.utils.toPrimitive;
     this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
-    this.sMemoryInterface = sandbox.utils.sMemoryInterface;
 
     this.operators = ['<', '>', '<=', '>='];
 

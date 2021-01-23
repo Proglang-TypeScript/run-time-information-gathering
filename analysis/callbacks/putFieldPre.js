@@ -14,7 +14,6 @@
     var PutFieldInteraction = sandbox.utils.PutFieldInteraction;
 
     this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
-    this.sMemoryInterface = sandbox.utils.sMemoryInterface;
     this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
     this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 
@@ -63,11 +62,7 @@
           dis.functionsExecutionStack,
         );
       } else {
-        val = addDeclarationFunctionIdToFunctionsInsideObject(
-          val,
-          dis.functionsExecutionStack,
-          dis.sMemoryInterface,
-        );
+        val = addDeclarationFunctionIdToFunctionsInsideObject(val, dis.functionsExecutionStack);
       }
 
       return val;

@@ -3,14 +3,9 @@
 'use strict';
 
 (function (sandbox) {
-  function InteractionWithResultHandler(
-    interactionContainerFinder,
-    recursiveInteractionsHandler,
-    sMemoryInterface,
-  ) {
+  function InteractionWithResultHandler(interactionContainerFinder, recursiveInteractionsHandler) {
     this.interactionContainerFinder = interactionContainerFinder;
     this.recursiveInteractionsHandler = recursiveInteractionsHandler;
-    this.sMemoryInterface = sMemoryInterface;
 
     var dis = this;
 
@@ -47,6 +42,5 @@
   sandbox.utils.interactionWithResultHandler = new InteractionWithResultHandler(
     sandbox.utils.interactionContainerFinder,
     sandbox.utils.recursiveInteractionsHandler,
-    sandbox.utils.sMemoryInterface,
   );
 })(J$);

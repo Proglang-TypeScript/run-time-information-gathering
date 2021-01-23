@@ -8,7 +8,6 @@
 
     this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
     this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
-    this.sMemoryInterface = sandbox.utils.sMemoryInterface;
     this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
     this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
 

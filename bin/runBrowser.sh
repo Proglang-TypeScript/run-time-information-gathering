@@ -13,7 +13,6 @@ node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
     \
     \
     --analysis $ROOT_PATH/utils/functionsExecutionStack.js \
-    --analysis $ROOT_PATH/utils/sMemoryInterface.js \
     --analysis $ROOT_PATH/utils/objectSerializer.js \
     --analysis $ROOT_PATH/utils/interactionSerializer.js \
     --analysis $ROOT_PATH/utils/interactionContainerFinder.js \

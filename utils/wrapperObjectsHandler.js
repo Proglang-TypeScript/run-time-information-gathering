@@ -5,11 +5,7 @@
 (function (sandbox) {
   var getTypeOf = sandbox.functions.getTypeOf;
 
-  function WrapperObjectsHandler(
-    sMemoryInterface,
-    argumentWrapperObjectBuilder,
-    argumentProxyBuilder,
-  ) {
+  function WrapperObjectsHandler(argumentWrapperObjectBuilder, argumentProxyBuilder) {
     this.argumentWrapperObjectBuilder = argumentWrapperObjectBuilder;
     this.argumentProxyBuilder = argumentProxyBuilder;
 
@@ -100,7 +96,6 @@
   }
 
   sandbox.utils.wrapperObjectsHandler = new WrapperObjectsHandler(
-    sandbox.utils.sMemoryInterface,
     sandbox.utils.argumentWrapperObjectBuilder,
     sandbox.utils.argumentProxyBuilder,
   );

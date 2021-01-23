@@ -3,9 +3,7 @@
 'use strict';
 
 (function (sandbox) {
-  function InteractionContainerFinder(sMemoryInterface) {
-    this.sMemoryInterface = sMemoryInterface;
-
+  function InteractionContainerFinder() {
     const map = new WeakMap();
 
     this.findInteraction = function (obj) {
@@ -27,7 +25,5 @@
     sandbox.utils = {};
   }
 
-  sandbox.utils.interactionContainerFinder = new InteractionContainerFinder(
-    sandbox.utils.sMemoryInterface,
-  );
+  sandbox.utils.interactionContainerFinder = new InteractionContainerFinder();
 })(J$);

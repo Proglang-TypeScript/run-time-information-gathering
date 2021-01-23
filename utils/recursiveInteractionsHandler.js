@@ -3,20 +3,17 @@
 'use strict';
 
 (function (sandbox) {
-  function RecursiveInteractionsHandler(sMemoryInterface, interactionSerializer) {
-    this.sMemoryInterface = sMemoryInterface;
-
+  function RecursiveInteractionsHandler(interactionSerializer) {
     this.usedInteractions = {};
-    this.mapRecursiveMainInteractions = {};
+    this.mapRecursiveMainInteractions = new WeakMap();
 
     this.interactionSerializer = interactionSerializer;
 
     var dis = this;
 
     this.getMainInteractionForCurrentInteraction = function (interaction) {
-      var shadowIdInteraction = this.sMemoryInterface.getShadowIdOfObject(interaction);
-      if (shadowIdInteraction && shadowIdInteraction in this.mapRecursiveMainInteractions) {
-        return this.mapRecursiveMainInteractions[shadowIdInteraction];
+      if (this.mapRecursiveMainInteractions.has(interaction)) {
+        return this.mapRecursiveMainInteractions.get(interaction);
       }
 
       return interaction;
@@ -24,12 +21,9 @@
 
     this.associateMainInteractionToCurrentInteraction = function (interaction, result) {
       if (this.interactionAlreadyUsed(interaction, result)) {
-        var shadowIdInteraction = this.sMemoryInterface.getShadowIdOfObject(interaction);
         var interactionKey = getInteractionKey(interaction, result);
 
-        this.mapRecursiveMainInteractions[shadowIdInteraction] = this.usedInteractions[
-          interactionKey
-        ];
+        this.mapRecursiveMainInteractions.set(interaction, this.usedInteractions[interactionKey]);
       }
     };
 
@@ -55,7 +49,6 @@
   }
 
   sandbox.utils.recursiveInteractionsHandler = new RecursiveInteractionsHandler(
-    sandbox.utils.sMemoryInterface,
     sandbox.utils.interactionSerializer,
   );
 })(J$);
