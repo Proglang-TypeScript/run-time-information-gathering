@@ -9,8 +9,9 @@
     this.set = function (obj, traceId) {
       try {
         map.set(obj, traceId);
-        // eslint-disable-next-line no-empty
-      } catch (error) {}
+      } catch (error) {
+        // Do nothing if obj is not an object
+      }
     };
 
     this.get = function (obj) {

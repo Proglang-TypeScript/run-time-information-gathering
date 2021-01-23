@@ -6,18 +6,18 @@
   function InteractionContainerFinder(sMemoryInterface) {
     this.sMemoryInterface = sMemoryInterface;
 
-    this.mapShadowIdsContainers = {};
+    const map = new WeakMap();
 
-    this.findInteraction = function (shadowId) {
-      return this.mapShadowIdsContainers[shadowId];
+    this.findInteraction = function (obj) {
+      return map.get(obj);
     };
 
     this.addMapping = function (interaction, result) {
-      var shadowId = this.sMemoryInterface.getShadowIdOfObject(result);
-
-      if (shadowId) {
-        if (this.mapShadowIdsContainers[shadowId] === undefined) {
-          this.mapShadowIdsContainers[shadowId] = interaction;
+      if (!map.has(result)) {
+        try {
+          map.set(result, interaction);
+        } catch (error) {
+          // Do nothing if result is not an object
         }
       }
     };

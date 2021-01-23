@@ -84,11 +84,8 @@
 
       if (getTypeOf(val) == 'object') {
         let currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
-        let shadowId = dis.sMemoryInterface.getShadowIdOfObject(val);
 
-        let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(
-          shadowId,
-        );
+        let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(val);
         if (currentActiveFiid && containerForAddingNewInteraction) {
           let usedAsArgumentInteraction = new UsedAsArgumentInteraction(
             currentActiveFiid,

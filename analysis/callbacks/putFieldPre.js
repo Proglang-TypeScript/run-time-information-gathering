@@ -38,11 +38,7 @@
     };
 
     function addInteractionToContainerIfPossible(interaction, base) {
-      let shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
-
-      let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(
-        shadowId,
-      );
+      let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(base);
 
       let interactionAdded = false;
       if (containerForAddingNewInteraction) {
@@ -54,9 +50,7 @@
     }
 
     function addFollowingInteractionToMappedInteraction(interaction, base) {
-      var containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(
-        dis.sMemoryInterface.getShadowIdOfObject(base),
-      );
+      var containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(base);
 
       if (containerForAddingNewInteraction) {
         containerForAddingNewInteraction.addInteraction(interaction);

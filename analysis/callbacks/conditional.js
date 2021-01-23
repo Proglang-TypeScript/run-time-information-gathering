@@ -48,12 +48,11 @@
     };
 
     function addInteractionIfNecessary(interaction, operand) {
-      let interactionContainer = dis.interactionContainerFinder.findInteraction(
-        dis.sMemoryInterface.getShadowIdOfObject(operand),
-      );
+      let interactionContainer = dis.interactionContainerFinder.findInteraction(operand);
 
       if (interactionContainer) {
         let traceId = dis.objectTraceIdMap.get(operand);
+
         if (traceId) {
           interaction.traceId = traceId;
         }

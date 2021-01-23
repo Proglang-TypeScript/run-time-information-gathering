@@ -25,10 +25,7 @@
     };
 
     function addInteractionToContainer(interaction, base, result) {
-      let shadowId = dis.sMemoryInterface.getShadowIdOfObject(base);
-      let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(
-        shadowId,
-      );
+      let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(base);
 
       if (
         containerForAddingNewInteraction &&
