@@ -5,20 +5,12 @@
 (function (sandbox) {
   var getTypeOf = sandbox.functions.getTypeOf;
 
-  function ObjectSerializer(smemoryInterface) {
-    this.smemoryInterface = smemoryInterface;
-
-    var dis = this;
-
+  function ObjectSerializer() {
     this.serializeStructure = function (obj) {
       var objSerialized = '';
 
       if (getTypeOf(obj) == 'object') {
-        var objKeys = Object.keys(obj)
-          .sort()
-          .filter(function (elem) {
-            return !elem.startsWith(dis.smemoryInterface.getSpecialPropSObject());
-          });
+        var objKeys = Object.keys(obj).sort();
 
         objSerialized = JSON.stringify(objKeys);
 
@@ -34,5 +26,5 @@
     sandbox.utils = {};
   }
 
-  sandbox.utils.objectSerializer = new ObjectSerializer(sandbox.utils.sMemoryInterface);
+  sandbox.utils.objectSerializer = new ObjectSerializer();
 })(J$);

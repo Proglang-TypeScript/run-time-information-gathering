@@ -3,35 +3,14 @@
 'use strict';
 
 (function (sandbox) {
-  var getRandomIdentifier = sandbox.functions.getRandomIdentifier;
-
-  function ArgumentProxyBuilder(sMemoryInterface) {
-    this.sMemoryInterface = sMemoryInterface;
-
-    let shadowObjectKey = this.sMemoryInterface.getSpecialPropSObject();
-
+  function ArgumentProxyBuilder() {
     this.proxyMethodsIdentifier = '%%PROXY_METHOD%%';
 
     var dis = this;
 
     this.buildProxy = function (obj) {
-      let p = new Proxy(obj, {
-        uniqueShadowObjectKey: shadowObjectKey + '__PROXY__' + getRandomIdentifier(),
-        set: function (target, property, value, receiver) {
-          if (property === shadowObjectKey) {
-            Object.defineProperty(receiver, this.uniqueShadowObjectKey, {
-              value: value,
-              enumerable: false,
-              configurable: true,
-              writable: true,
-            });
-          } else {
-            target[property] = value;
-          }
-
-          return true;
-        },
-        get: function (target, property, receiver) {
+      return new Proxy(obj, {
+        get: function (target, property) {
           if (property === 'IS_WRAPPER_OBJECT') {
             return true;
           }
@@ -40,36 +19,21 @@
             return target;
           }
 
-          if (property === shadowObjectKey) {
-            return receiver[this.uniqueShadowObjectKey];
-          } else {
-            if (typeof target[property] === 'function' && property !== 'constructor') {
-              if (!isProxyMethod(target, property)) {
-                const origMethod = target[property];
-                var f = cloneMethod(origMethod, target);
+          if (typeof target[property] === 'function' && property !== 'constructor') {
+            if (!isProxyMethod(target, property)) {
+              const origMethod = target[property];
+              var f = cloneMethod(origMethod, target);
 
-                target[getModifiedPropertyName(property)] = f;
-                origMethod.proxyMethod = f;
-              }
-
-              return target[getModifiedPropertyName(property)];
+              target[getModifiedPropertyName(property)] = f;
+              origMethod.proxyMethod = f;
             }
 
-            return target[property];
+            return target[getModifiedPropertyName(property)];
           }
-        },
-        getOwnPropertyDescriptor: function (target, property) {
-          if (property === shadowObjectKey) {
-            var description = Object.getOwnPropertyDescriptor(target, this.uniqueShadowObjectKey);
 
-            return description;
-          } else {
-            return Object.getOwnPropertyDescriptor(target, property);
-          }
+          return target[property];
         },
       });
-
-      return p;
     };
 
     function transformToString(property) {
@@ -115,5 +79,5 @@
     sandbox.utils = {};
   }
 
-  sandbox.utils.argumentProxyBuilder = new ArgumentProxyBuilder(sandbox.utils.sMemoryInterface);
+  sandbox.utils.argumentProxyBuilder = new ArgumentProxyBuilder();
 })(J$);

@@ -12,7 +12,6 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     --blacklistedModules $BLACKLIST \
     --inlineSource --inlineIID \
     --analysis $ROOT_PATH/utils/initialize.js \
-    --analysis $ROOT_PATH/utils/sMemory/sMemory.js \
     --analysis $ROOT_PATH/utils/functions.js \
     \
     \

@@ -1,28 +1,23 @@
 /* global J$ */
 
-'use strict';
+const nanoId = require('nanoid').nanoid;
+
+('use strict');
 
 (function (sandbox) {
-  function SMemoryInterface(sMemory) {
-    this.sMemory = sMemory;
+  function SMemoryInterface() {
+    this.shadowObjectsMap = new WeakMap();
 
     this.getShadowIdOfObject = function (obj) {
-      var shadowObj = this.sMemory.getShadowObjectOfObject(obj);
-      var shadowId = this.sMemory.getIDFromShadowObjectOrFrame(shadowObj);
-
-      if (shadowId === undefined) {
-        return null;
+      if (!this.shadowObjectsMap.has(obj)) {
+        try {
+          this.shadowObjectsMap.set(obj, nanoId());
+        } catch (error) {
+          return null;
+        }
       }
 
-      return shadowId;
-    };
-
-    this.getSpecialPropActual = function () {
-      return this.sMemory.getSpecialPropActual();
-    };
-
-    this.getSpecialPropSObject = function () {
-      return this.sMemory.getSpecialPropSObject();
+      return this.shadowObjectsMap.get(obj) || null;
     };
   }
 
@@ -30,5 +25,5 @@
     sandbox.utils = {};
   }
 
-  sandbox.utils.sMemoryInterface = new SMemoryInterface(sandbox.smemory);
+  sandbox.utils.sMemoryInterface = new SMemoryInterface();
 })(J$);

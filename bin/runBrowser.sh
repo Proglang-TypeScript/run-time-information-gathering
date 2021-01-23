@@ -9,7 +9,6 @@ JALANGI_PATH=$(npm explore jalangi2 --prefix $ROOT_PATH -- pwd 2>/dev/null)
 node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
 	-i --inlineJalangi \
     --analysis $ROOT_PATH/utils/initialize.js \
-    --analysis $ROOT_PATH/utils/sMemory/sMemory.js \
     --analysis $ROOT_PATH/utils/functions.js \
     \
     \
