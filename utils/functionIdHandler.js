@@ -5,19 +5,15 @@
 (function (sandbox) {
   function FunctionIdHandler() {
     let counter = 1;
-    let prefix = 'functionId_';
-    let functionIdField = 'functionId';
+    const prefix = 'functionId_';
+    const functionIdField = 'functionId';
 
-    this.setFunctionId = function (f) {
-      if (!f[functionIdField]) {
+    this.getFunctionId = function (f) {
+      if (f[functionIdField] === undefined) {
         f[functionIdField] = prefix + counter.toString();
         counter += 2;
       }
 
-      return f[functionIdField];
-    };
-
-    this.getFunctionId = function (f) {
       return f[functionIdField];
     };
   }

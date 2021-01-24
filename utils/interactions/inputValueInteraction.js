@@ -3,13 +3,20 @@
 'use strict';
 
 (function (sandbox) {
-  var Interaction = sandbox.utils.Interaction;
+  const Interaction = sandbox.utils.Interaction;
+  const getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
+  const functionIdHandler = sandbox.utils.functionIdHandler;
 
-  function InputValueInteraction(type_of) {
+  function InputValueInteraction(val) {
     Interaction.call(this);
 
     this.code = 'inputValue';
-    this.typeof = type_of;
+    this.typeof = getTypeOfForReporting(val);
+    this.functionId = undefined;
+
+    if (this.typeof === 'function') {
+      this.functionId = functionIdHandler.getFunctionId(val);
+    }
   }
 
   InputValueInteraction.prototype = Object.create(Interaction.prototype);

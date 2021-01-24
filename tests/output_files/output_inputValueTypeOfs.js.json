@@ -47,7 +47,8 @@
                     {
                         "code": "inputValue",
                         "traceId": "trace__8",
-                        "typeof": "function"
+                        "typeof": "function",
+                        "functionId": "functionId_3"
                     }
                 ]
             }

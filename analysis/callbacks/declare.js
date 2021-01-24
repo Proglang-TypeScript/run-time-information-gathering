@@ -7,7 +7,6 @@
     this.callbackName = 'declare';
 
     var ArgumentContainer = sandbox.utils.ArgumentContainer;
-    var getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
     var getDeclarationEnclosingFunctionId = sandbox.functions.getDeclarationEnclosingFunctionId;
 
     var InputValueInteraction = sandbox.utils.InputValueInteraction;
@@ -59,7 +58,7 @@
     function buildArgumentContainer(argumentIndex, name, val) {
       var argumentContainer = new ArgumentContainer(argumentIndex, name);
 
-      let interaction = new InputValueInteraction(getTypeOfForReporting(val));
+      let interaction = new InputValueInteraction(val);
 
       let execution = dis.functionsExecutionStack.getCurrentExecution();
       interaction.traceId = execution.traceId;

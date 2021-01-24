@@ -19,7 +19,7 @@
         f = f.proxyMethod;
       }
 
-      let functionId = dis.functionIdHandler.setFunctionId(f);
+      let functionId = dis.functionIdHandler.getFunctionId(f);
       let functionContainer;
 
       if (functionNotProcessed(f)) {

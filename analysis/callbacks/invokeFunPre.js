@@ -23,8 +23,6 @@
 
     this.callback = function (iid, f, base, args, isConstructor, isMethod, functionIid) {
       if (f !== undefined && !isConsoleLog(f) && f.name !== 'require') {
-        dis.functionIdHandler.setFunctionId(f);
-
         if (!f.temporaryTraceId) {
           f.temporaryTraceId = dis.functionsExecutionStack.getTraceId();
         }

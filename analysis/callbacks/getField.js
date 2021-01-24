@@ -98,7 +98,7 @@
     }
 
     function addFunctionIdToInteraction(interaction, f) {
-      let functionId = dis.functionIdHandler.setFunctionId(f);
+      let functionId = dis.functionIdHandler.getFunctionId(f);
 
       interaction.functionId = functionId;
       f.lastInteraction = interaction;
