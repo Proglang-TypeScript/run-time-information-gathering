@@ -415,6 +415,28 @@
                                         "operandForInteraction": "left"
                                     },
                                     {
+                                        "code": "getField",
+                                        "traceId": null,
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": "functionId_5",
+                                        "followingInteractions": [],
+                                        "iid": 97,
+                                        "field": "val",
+                                        "returnTypeOf": "number"
+                                    },
+                                    {
+                                        "code": "getField",
+                                        "traceId": null,
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": "functionId_5",
+                                        "followingInteractions": [],
+                                        "iid": 137,
+                                        "field": "useRight",
+                                        "returnTypeOf": "boolean"
+                                    },
+                                    {
                                         "code": "methodCall",
                                         "traceId": null,
                                         "isComputed": false,
@@ -434,6 +456,28 @@
                                                 "rightToPrimitiveIsNaN": false,
                                                 "operator": "!==",
                                                 "operandForInteraction": "left"
+                                            },
+                                            {
+                                                "code": "getField",
+                                                "traceId": null,
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "enclosingFunctionId": "functionId_5",
+                                                "followingInteractions": [],
+                                                "iid": 97,
+                                                "field": "val",
+                                                "returnTypeOf": "number"
+                                            },
+                                            {
+                                                "code": "getField",
+                                                "traceId": null,
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "enclosingFunctionId": "functionId_5",
+                                                "followingInteractions": [],
+                                                "iid": 137,
+                                                "field": "useRight",
+                                                "returnTypeOf": "boolean"
                                             },
                                             {
                                                 "code": "methodCall",
@@ -457,6 +501,28 @@
                                                         "operandForInteraction": "left"
                                                     },
                                                     {
+                                                        "code": "getField",
+                                                        "traceId": null,
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "enclosingFunctionId": "functionId_5",
+                                                        "followingInteractions": [],
+                                                        "iid": 97,
+                                                        "field": "val",
+                                                        "returnTypeOf": "number"
+                                                    },
+                                                    {
+                                                        "code": "getField",
+                                                        "traceId": null,
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "enclosingFunctionId": "functionId_5",
+                                                        "followingInteractions": [],
+                                                        "iid": 137,
+                                                        "field": "useRight",
+                                                        "returnTypeOf": "boolean"
+                                                    },
+                                                    {
                                                         "code": "methodCall",
                                                         "traceId": null,
                                                         "isComputed": false,
@@ -478,6 +544,28 @@
                                                                 "operandForInteraction": "left"
                                                             },
                                                             {
+                                                                "code": "getField",
+                                                                "traceId": null,
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "enclosingFunctionId": "functionId_5",
+                                                                "followingInteractions": [],
+                                                                "iid": 97,
+                                                                "field": "val",
+                                                                "returnTypeOf": "number"
+                                                            },
+                                                            {
+                                                                "code": "getField",
+                                                                "traceId": null,
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "enclosingFunctionId": "functionId_5",
+                                                                "followingInteractions": [],
+                                                                "iid": 137,
+                                                                "field": "useRight",
+                                                                "returnTypeOf": "boolean"
+                                                            },
+                                                            {
                                                                 "code": "methodCall",
                                                                 "traceId": null,
                                                                 "isComputed": false,
@@ -497,6 +585,28 @@
                                                                         "rightToPrimitiveIsNaN": false,
                                                                         "operator": "!==",
                                                                         "operandForInteraction": "left"
+                                                                    },
+                                                                    {
+                                                                        "code": "getField",
+                                                                        "traceId": null,
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "enclosingFunctionId": "functionId_5",
+                                                                        "followingInteractions": [],
+                                                                        "iid": 97,
+                                                                        "field": "val",
+                                                                        "returnTypeOf": "number"
+                                                                    },
+                                                                    {
+                                                                        "code": "getField",
+                                                                        "traceId": null,
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "enclosingFunctionId": "functionId_5",
+                                                                        "followingInteractions": [],
+                                                                        "iid": 137,
+                                                                        "field": "useRight",
+                                                                        "returnTypeOf": "boolean"
                                                                     },
                                                                     {
                                                                         "code": "methodCall",

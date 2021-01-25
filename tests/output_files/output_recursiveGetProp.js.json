@@ -306,6 +306,28 @@
                                         "isComputed": false,
                                         "isOpAssign": false,
                                         "enclosingFunctionId": "functionId_5",
+                                        "followingInteractions": [],
+                                        "iid": 97,
+                                        "field": "val",
+                                        "returnTypeOf": "number"
+                                    },
+                                    {
+                                        "code": "getField",
+                                        "traceId": null,
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": "functionId_5",
+                                        "followingInteractions": [],
+                                        "iid": 137,
+                                        "field": "useRight",
+                                        "returnTypeOf": "boolean"
+                                    },
+                                    {
+                                        "code": "getField",
+                                        "traceId": null,
+                                        "isComputed": false,
+                                        "isOpAssign": false,
+                                        "enclosingFunctionId": "functionId_5",
                                         "followingInteractions": [
                                             {
                                                 "code": "operator",
@@ -320,63 +342,395 @@
                                                 "rightToPrimitiveIsNaN": false,
                                                 "operator": "!==",
                                                 "operandForInteraction": "left"
+                                            },
+                                            {
+                                                "code": "getField",
+                                                "traceId": null,
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "enclosingFunctionId": "functionId_5",
+                                                "followingInteractions": [],
+                                                "iid": 97,
+                                                "field": "val",
+                                                "returnTypeOf": "number"
+                                            },
+                                            {
+                                                "code": "getField",
+                                                "traceId": null,
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "enclosingFunctionId": "functionId_5",
+                                                "followingInteractions": [],
+                                                "iid": 137,
+                                                "field": "useRight",
+                                                "returnTypeOf": "boolean"
+                                            },
+                                            {
+                                                "code": "getField",
+                                                "traceId": null,
+                                                "isComputed": false,
+                                                "isOpAssign": false,
+                                                "enclosingFunctionId": "functionId_5",
+                                                "followingInteractions": [
+                                                    {
+                                                        "code": "operator",
+                                                        "traceId": null,
+                                                        "leftType": "object",
+                                                        "rightType": "null",
+                                                        "leftIsNaN": true,
+                                                        "rightIsNan": false,
+                                                        "leftToPrimitiveType": "string",
+                                                        "rightToPrimitiveType": "null",
+                                                        "leftToPrimitiveIsNaN": true,
+                                                        "rightToPrimitiveIsNaN": false,
+                                                        "operator": "!==",
+                                                        "operandForInteraction": "left"
+                                                    },
+                                                    {
+                                                        "code": "getField",
+                                                        "traceId": null,
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "enclosingFunctionId": "functionId_5",
+                                                        "followingInteractions": [],
+                                                        "iid": 97,
+                                                        "field": "val",
+                                                        "returnTypeOf": "number"
+                                                    },
+                                                    {
+                                                        "code": "getField",
+                                                        "traceId": null,
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "enclosingFunctionId": "functionId_5",
+                                                        "followingInteractions": [],
+                                                        "iid": 137,
+                                                        "field": "useRight",
+                                                        "returnTypeOf": "boolean"
+                                                    },
+                                                    {
+                                                        "code": "getField",
+                                                        "traceId": null,
+                                                        "isComputed": false,
+                                                        "isOpAssign": false,
+                                                        "enclosingFunctionId": "functionId_5",
+                                                        "followingInteractions": [
+                                                            {
+                                                                "code": "operator",
+                                                                "traceId": null,
+                                                                "leftType": "object",
+                                                                "rightType": "null",
+                                                                "leftIsNaN": true,
+                                                                "rightIsNan": false,
+                                                                "leftToPrimitiveType": "string",
+                                                                "rightToPrimitiveType": "null",
+                                                                "leftToPrimitiveIsNaN": true,
+                                                                "rightToPrimitiveIsNaN": false,
+                                                                "operator": "!==",
+                                                                "operandForInteraction": "left"
+                                                            },
+                                                            {
+                                                                "code": "getField",
+                                                                "traceId": null,
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "enclosingFunctionId": "functionId_5",
+                                                                "followingInteractions": [],
+                                                                "iid": 97,
+                                                                "field": "val",
+                                                                "returnTypeOf": "number"
+                                                            },
+                                                            {
+                                                                "code": "getField",
+                                                                "traceId": null,
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "enclosingFunctionId": "functionId_5",
+                                                                "followingInteractions": [],
+                                                                "iid": 137,
+                                                                "field": "useRight",
+                                                                "returnTypeOf": "boolean"
+                                                            },
+                                                            {
+                                                                "code": "getField",
+                                                                "traceId": null,
+                                                                "isComputed": false,
+                                                                "isOpAssign": false,
+                                                                "enclosingFunctionId": "functionId_5",
+                                                                "followingInteractions": [
+                                                                    {
+                                                                        "code": "operator",
+                                                                        "traceId": null,
+                                                                        "leftType": "object",
+                                                                        "rightType": "null",
+                                                                        "leftIsNaN": true,
+                                                                        "rightIsNan": false,
+                                                                        "leftToPrimitiveType": "string",
+                                                                        "rightToPrimitiveType": "null",
+                                                                        "leftToPrimitiveIsNaN": true,
+                                                                        "rightToPrimitiveIsNaN": false,
+                                                                        "operator": "!==",
+                                                                        "operandForInteraction": "left"
+                                                                    },
+                                                                    {
+                                                                        "code": "getField",
+                                                                        "traceId": null,
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "enclosingFunctionId": "functionId_5",
+                                                                        "followingInteractions": [],
+                                                                        "iid": 97,
+                                                                        "field": "val",
+                                                                        "returnTypeOf": "number"
+                                                                    },
+                                                                    {
+                                                                        "code": "getField",
+                                                                        "traceId": null,
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "enclosingFunctionId": "functionId_5",
+                                                                        "followingInteractions": [],
+                                                                        "iid": 137,
+                                                                        "field": "useRight",
+                                                                        "returnTypeOf": "boolean"
+                                                                    },
+                                                                    {
+                                                                        "code": "getField",
+                                                                        "traceId": null,
+                                                                        "isComputed": false,
+                                                                        "isOpAssign": false,
+                                                                        "enclosingFunctionId": "functionId_5",
+                                                                        "followingInteractions": [
+                                                                            {
+                                                                                "code": "operator",
+                                                                                "traceId": null,
+                                                                                "leftType": "object",
+                                                                                "rightType": "null",
+                                                                                "leftIsNaN": true,
+                                                                                "rightIsNan": false,
+                                                                                "leftToPrimitiveType": "string",
+                                                                                "rightToPrimitiveType": "null",
+                                                                                "leftToPrimitiveIsNaN": true,
+                                                                                "rightToPrimitiveIsNaN": false,
+                                                                                "operator": "!==",
+                                                                                "operandForInteraction": "left"
+                                                                            },
+                                                                            {
+                                                                                "code": "getField",
+                                                                                "traceId": null,
+                                                                                "isComputed": false,
+                                                                                "isOpAssign": false,
+                                                                                "enclosingFunctionId": "functionId_5",
+                                                                                "followingInteractions": [],
+                                                                                "iid": 97,
+                                                                                "field": "val",
+                                                                                "returnTypeOf": "number"
+                                                                            },
+                                                                            {
+                                                                                "code": "getField",
+                                                                                "traceId": null,
+                                                                                "isComputed": false,
+                                                                                "isOpAssign": false,
+                                                                                "enclosingFunctionId": "functionId_5",
+                                                                                "followingInteractions": [],
+                                                                                "iid": 137,
+                                                                                "field": "useRight",
+                                                                                "returnTypeOf": "boolean"
+                                                                            },
+                                                                            {
+                                                                                "code": "getField",
+                                                                                "traceId": null,
+                                                                                "isComputed": false,
+                                                                                "isOpAssign": false,
+                                                                                "enclosingFunctionId": "functionId_5",
+                                                                                "followingInteractions": [
+                                                                                    {
+                                                                                        "code": "operator",
+                                                                                        "traceId": null,
+                                                                                        "leftType": "object",
+                                                                                        "rightType": "null",
+                                                                                        "leftIsNaN": true,
+                                                                                        "rightIsNan": false,
+                                                                                        "leftToPrimitiveType": "string",
+                                                                                        "rightToPrimitiveType": "null",
+                                                                                        "leftToPrimitiveIsNaN": true,
+                                                                                        "rightToPrimitiveIsNaN": false,
+                                                                                        "operator": "!==",
+                                                                                        "operandForInteraction": "left"
+                                                                                    },
+                                                                                    {
+                                                                                        "code": "getField",
+                                                                                        "traceId": null,
+                                                                                        "isComputed": false,
+                                                                                        "isOpAssign": false,
+                                                                                        "enclosingFunctionId": "functionId_5",
+                                                                                        "followingInteractions": [],
+                                                                                        "iid": 97,
+                                                                                        "field": "val",
+                                                                                        "returnTypeOf": "number"
+                                                                                    },
+                                                                                    {
+                                                                                        "code": "getField",
+                                                                                        "traceId": null,
+                                                                                        "isComputed": false,
+                                                                                        "isOpAssign": false,
+                                                                                        "enclosingFunctionId": "functionId_5",
+                                                                                        "followingInteractions": [],
+                                                                                        "iid": 137,
+                                                                                        "field": "useRight",
+                                                                                        "returnTypeOf": "boolean"
+                                                                                    },
+                                                                                    {
+                                                                                        "code": "getField",
+                                                                                        "traceId": null,
+                                                                                        "isComputed": false,
+                                                                                        "isOpAssign": false,
+                                                                                        "enclosingFunctionId": "functionId_5",
+                                                                                        "followingInteractions": [
+                                                                                            {
+                                                                                                "code": "operator",
+                                                                                                "traceId": null,
+                                                                                                "leftType": "object",
+                                                                                                "rightType": "null",
+                                                                                                "leftIsNaN": true,
+                                                                                                "rightIsNan": false,
+                                                                                                "leftToPrimitiveType": "string",
+                                                                                                "rightToPrimitiveType": "null",
+                                                                                                "leftToPrimitiveIsNaN": true,
+                                                                                                "rightToPrimitiveIsNaN": false,
+                                                                                                "operator": "!==",
+                                                                                                "operandForInteraction": "left"
+                                                                                            },
+                                                                                            {
+                                                                                                "code": "getField",
+                                                                                                "traceId": null,
+                                                                                                "isComputed": false,
+                                                                                                "isOpAssign": false,
+                                                                                                "enclosingFunctionId": "functionId_5",
+                                                                                                "followingInteractions": [],
+                                                                                                "iid": 97,
+                                                                                                "field": "val",
+                                                                                                "returnTypeOf": "number"
+                                                                                            },
+                                                                                            {
+                                                                                                "code": "getField",
+                                                                                                "traceId": null,
+                                                                                                "isComputed": false,
+                                                                                                "isOpAssign": false,
+                                                                                                "enclosingFunctionId": "functionId_5",
+                                                                                                "followingInteractions": [],
+                                                                                                "iid": 137,
+                                                                                                "field": "useRight",
+                                                                                                "returnTypeOf": "boolean"
+                                                                                            },
+                                                                                            {
+                                                                                                "code": "getField",
+                                                                                                "traceId": null,
+                                                                                                "isComputed": false,
+                                                                                                "isOpAssign": false,
+                                                                                                "enclosingFunctionId": "functionId_5",
+                                                                                                "followingInteractions": [
+                                                                                                    {
+                                                                                                        "code": "operator",
+                                                                                                        "traceId": null,
+                                                                                                        "leftType": "object",
+                                                                                                        "rightType": "null",
+                                                                                                        "leftIsNaN": true,
+                                                                                                        "rightIsNan": false,
+                                                                                                        "leftToPrimitiveType": "string",
+                                                                                                        "rightToPrimitiveType": "null",
+                                                                                                        "leftToPrimitiveIsNaN": true,
+                                                                                                        "rightToPrimitiveIsNaN": false,
+                                                                                                        "operator": "!==",
+                                                                                                        "operandForInteraction": "left"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "code": "getField",
+                                                                                                        "traceId": null,
+                                                                                                        "isComputed": false,
+                                                                                                        "isOpAssign": false,
+                                                                                                        "enclosingFunctionId": "functionId_5",
+                                                                                                        "followingInteractions": [],
+                                                                                                        "iid": 97,
+                                                                                                        "field": "val",
+                                                                                                        "returnTypeOf": "number"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "code": "getField",
+                                                                                                        "traceId": null,
+                                                                                                        "isComputed": false,
+                                                                                                        "isOpAssign": false,
+                                                                                                        "enclosingFunctionId": "functionId_5",
+                                                                                                        "followingInteractions": [],
+                                                                                                        "iid": 137,
+                                                                                                        "field": "useRight",
+                                                                                                        "returnTypeOf": "boolean"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "code": "getField",
+                                                                                                        "traceId": null,
+                                                                                                        "isComputed": false,
+                                                                                                        "isOpAssign": false,
+                                                                                                        "enclosingFunctionId": "functionId_5",
+                                                                                                        "followingInteractions": [
+                                                                                                            {
+                                                                                                                "code": "operator",
+                                                                                                                "traceId": null,
+                                                                                                                "leftType": "null",
+                                                                                                                "rightType": "null",
+                                                                                                                "leftIsNaN": false,
+                                                                                                                "rightIsNan": false,
+                                                                                                                "leftToPrimitiveType": "null",
+                                                                                                                "rightToPrimitiveType": "null",
+                                                                                                                "leftToPrimitiveIsNaN": false,
+                                                                                                                "rightToPrimitiveIsNaN": false,
+                                                                                                                "operator": "!==",
+                                                                                                                "operandForInteraction": "left"
+                                                                                                            }
+                                                                                                        ],
+                                                                                                        "iid": 185,
+                                                                                                        "field": "left",
+                                                                                                        "returnTypeOf": "null"
+                                                                                                    }
+                                                                                                ],
+                                                                                                "iid": 185,
+                                                                                                "field": "left",
+                                                                                                "returnTypeOf": "Node"
+                                                                                            }
+                                                                                        ],
+                                                                                        "iid": 185,
+                                                                                        "field": "left",
+                                                                                        "returnTypeOf": "Node"
+                                                                                    }
+                                                                                ],
+                                                                                "iid": 185,
+                                                                                "field": "left",
+                                                                                "returnTypeOf": "Node"
+                                                                            }
+                                                                        ],
+                                                                        "iid": 153,
+                                                                        "field": "right",
+                                                                        "returnTypeOf": "Node"
+                                                                    }
+                                                                ],
+                                                                "iid": 185,
+                                                                "field": "left",
+                                                                "returnTypeOf": "Node"
+                                                            }
+                                                        ],
+                                                        "iid": 185,
+                                                        "field": "left",
+                                                        "returnTypeOf": "Node"
+                                                    }
+                                                ],
+                                                "iid": 185,
+                                                "field": "left",
+                                                "returnTypeOf": "Node"
                                             }
                                         ],
                                         "iid": 185,
                                         "field": "left",
                                         "returnTypeOf": "AnotherNode"
-                                    },
-                                    {
-                                        "code": "getField",
-                                        "traceId": null,
-                                        "isComputed": false,
-                                        "isOpAssign": false,
-                                        "enclosingFunctionId": "functionId_5",
-                                        "followingInteractions": [
-                                            {
-                                                "code": "operator",
-                                                "traceId": null,
-                                                "leftType": "object",
-                                                "rightType": "null",
-                                                "leftIsNaN": true,
-                                                "rightIsNan": false,
-                                                "leftToPrimitiveType": "string",
-                                                "rightToPrimitiveType": "null",
-                                                "leftToPrimitiveIsNaN": true,
-                                                "rightToPrimitiveIsNaN": false,
-                                                "operator": "!==",
-                                                "operandForInteraction": "left"
-                                            }
-                                        ],
-                                        "iid": 153,
-                                        "field": "right",
-                                        "returnTypeOf": "Node"
-                                    },
-                                    {
-                                        "code": "getField",
-                                        "traceId": null,
-                                        "isComputed": false,
-                                        "isOpAssign": false,
-                                        "enclosingFunctionId": "functionId_5",
-                                        "followingInteractions": [
-                                            {
-                                                "code": "operator",
-                                                "traceId": null,
-                                                "leftType": "null",
-                                                "rightType": "null",
-                                                "leftIsNaN": false,
-                                                "rightIsNan": false,
-                                                "leftToPrimitiveType": "null",
-                                                "rightToPrimitiveType": "null",
-                                                "leftToPrimitiveIsNaN": false,
-                                                "rightToPrimitiveIsNaN": false,
-                                                "operator": "!==",
-                                                "operandForInteraction": "left"
-                                            }
-                                        ],
-                                        "iid": 185,
-                                        "field": "left",
-                                        "returnTypeOf": "null"
                                     }
                                 ],
                                 "iid": 185,
