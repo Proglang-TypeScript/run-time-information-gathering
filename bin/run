@@ -16,11 +16,8 @@ node $JALANGI_PATH/src/js/commands/jalangi.js \
     \
     \
     --analysis $ROOT_PATH/utils/functionsExecutionStack.js \
-    --analysis $ROOT_PATH/utils/objectSerializer.js \
-    --analysis $ROOT_PATH/utils/interactionSerializer.js \
     --analysis $ROOT_PATH/utils/interactionContainerFinder.js \
     --analysis $ROOT_PATH/utils/objectTraceIdMap.js \
-    --analysis $ROOT_PATH/utils/recursiveInteractionsHandler.js \
     --analysis $ROOT_PATH/utils/argumentWrapperObjectBuilder.js \
     --analysis $ROOT_PATH/utils/functionIdHandler.js \
     --analysis $ROOT_PATH/utils/argumentProxyBuilder.js \
