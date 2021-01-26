@@ -40,7 +40,6 @@
 
       dis.interactionWithResultHandler.processInteractionWithResult(
         getFieldInteraction,
-        dis.functionsExecutionStack.getCurrentExecutingFunction(),
         result,
         base,
       );

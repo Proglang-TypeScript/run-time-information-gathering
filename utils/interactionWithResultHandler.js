@@ -8,7 +8,7 @@
 
     var dis = this;
 
-    this.processInteractionWithResult = function (interaction, functionId, result, base) {
+    this.processInteractionWithResult = function (interaction, result, base) {
       dis.interactionContainerFinder.addMapping(interaction, result);
 
       const containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(base);
