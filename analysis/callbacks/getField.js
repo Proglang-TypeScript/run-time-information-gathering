@@ -14,6 +14,7 @@
     this.interactionWithResultHandler = sandbox.utils.interactionWithResultHandler;
     this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
     this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
+    this.metadataStore = sandbox.utils.metadataStore;
 
     var dis = this;
 
@@ -100,7 +101,8 @@
       let functionId = dis.functionIdHandler.getFunctionId(f);
 
       interaction.functionId = functionId;
-      f.lastInteraction = interaction;
+
+      dis.metadataStore.set(f, 'lastInteraction', interaction);
     }
   }
 

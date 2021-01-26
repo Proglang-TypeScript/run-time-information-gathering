@@ -10,6 +10,7 @@
     this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
     this.interactionWithResultHandler = sandbox.utils.interactionWithResultHandler;
     this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
+    this.metadataStore = sandbox.utils.metadataStore;
 
     var dis = this;
 
@@ -18,8 +19,8 @@
         var functionContainer = getFunctionContainer(f);
 
         if (functionContainer) {
-          if (f.lastInteraction) {
-            var interaction = f.lastInteraction;
+          if (dis.metadataStore.get(f, 'lastInteraction')) {
+            var interaction = dis.metadataStore.get(f, 'lastInteraction');
             interaction.setReturnTypeOf(result);
 
             result = changeResultToWrapperObjectIfItIsALiteral(result);

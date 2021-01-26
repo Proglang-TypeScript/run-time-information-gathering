@@ -12,6 +12,7 @@ node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
     --analysis $ROOT_PATH/utils/functions.js \
     \
     \
+    --analysis $ROOT_PATH/utils/metadataStore.js \
     --analysis $ROOT_PATH/utils/functionsExecutionStack.js \
     --analysis $ROOT_PATH/utils/interactionContainerFinder.js \
     --analysis $ROOT_PATH/utils/objectTraceIdMap.js \
