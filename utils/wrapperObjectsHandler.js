@@ -71,23 +71,23 @@
     };
 
     this.convertToProxyIfItIsAnObject = function (originalValue) {
-      let newValue;
+      if (originalValue instanceof String) {
+        return dis.argumentWrapperObjectBuilder.buildFromString(originalValue);
+      }
+
+      if (originalValue instanceof Number) {
+        return dis.argumentWrapperObjectBuilder.buildFromNumber(originalValue);
+      }
 
       if (
         getTypeOf(originalValue) == 'object' &&
-        !(originalValue instanceof String) &&
-        !(originalValue instanceof Number) &&
         // eslint-disable-next-line no-undef
         !(typeof Node === 'function' && originalValue instanceof Node)
       ) {
-        newValue = dis.argumentProxyBuilder.buildProxy(originalValue);
+        return dis.argumentProxyBuilder.buildProxy(originalValue);
       }
 
-      if (!newValue) {
-        newValue = originalValue;
-      }
-
-      return newValue;
+      return originalValue;
     };
   }
 
