@@ -1,0 +1,215 @@
+
+{
+    "functionId_1": {
+        "functionId": "functionId_1",
+        "functionName": "doSomethingWithCallback",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__1",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_1",
+                        "followingInteractions": [
+                            {
+                                "code": "usedAsArgument",
+                                "traceId": null,
+                                "enclosingFunctionId": "functionId_1",
+                                "targetFunctionId": "functionId_3",
+                                "traceIdInTargetFunction": "trace__2",
+                                "argumentIndexInTargetFunction": "0"
+                            }
+                        ],
+                        "iid": 25,
+                        "field": "firstName",
+                        "returnTypeOf": "string"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__1",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_1",
+                        "followingInteractions": [
+                            {
+                                "code": "usedAsArgument",
+                                "traceId": null,
+                                "enclosingFunctionId": "functionId_1",
+                                "targetFunctionId": "functionId_3",
+                                "traceIdInTargetFunction": "trace__4",
+                                "argumentIndexInTargetFunction": "0"
+                            }
+                        ],
+                        "iid": 65,
+                        "field": "lastName",
+                        "returnTypeOf": "string"
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "cb",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__1",
+                        "typeof": "function",
+                        "functionId": "functionId_3"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "string",
+                "traceId": "trace__1"
+            }
+        ],
+        "functionIid": 97,
+        "requiredModule": "",
+        "isExported": false,
+        "constructedBy": ""
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "s",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__2",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "methodCall",
+                        "traceId": "trace__2",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [
+                            {
+                                "code": "convertedTo",
+                                "traceId": null,
+                                "convertedTo": "string",
+                                "isNaN": false,
+                                "toPrimitive": null,
+                                "operator": "+",
+                                "originalTypeof": "string"
+                            },
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "string",
+                                "rightType": "string",
+                                "leftIsNaN": true,
+                                "rightIsNan": false,
+                                "leftToPrimitiveType": "string",
+                                "rightToPrimitiveType": "string",
+                                "leftToPrimitiveIsNaN": true,
+                                "rightToPrimitiveIsNaN": false,
+                                "operator": "+",
+                                "operandForInteraction": "left"
+                            }
+                        ],
+                        "iid": 171,
+                        "methodName": "toUpperCase",
+                        "functionId": "functionId_5",
+                        "returnTypeOf": "string",
+                        "traceIdInTargetFunction": "trace__3"
+                    },
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__4",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "methodCall",
+                        "traceId": "trace__4",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [
+                            {
+                                "code": "convertedTo",
+                                "traceId": null,
+                                "convertedTo": "string",
+                                "isNaN": false,
+                                "toPrimitive": null,
+                                "operator": "+",
+                                "originalTypeof": "string"
+                            },
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "string",
+                                "rightType": "string",
+                                "leftIsNaN": true,
+                                "rightIsNan": true,
+                                "leftToPrimitiveType": "string",
+                                "rightToPrimitiveType": "string",
+                                "leftToPrimitiveIsNaN": true,
+                                "rightToPrimitiveIsNaN": true,
+                                "operator": "+",
+                                "operandForInteraction": "right"
+                            }
+                        ],
+                        "iid": 171,
+                        "methodName": "toUpperCase",
+                        "functionId": "functionId_5",
+                        "returnTypeOf": "string",
+                        "traceIdInTargetFunction": "trace__5"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": "functionId_1",
+        "returnTypeOfs": [
+            {
+                "typeOf": "string",
+                "traceId": "trace__2"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__4"
+            }
+        ],
+        "functionIid": 193,
+        "requiredModule": "",
+        "isExported": false,
+        "constructedBy": ""
+    },
+    "functionId_5": {
+        "functionId": "functionId_5",
+        "functionName": "toUpperCase",
+        "isConstructor": false,
+        "args": {},
+        "returnTypeOfs": [
+            {
+                "typeOf": "string",
+                "traceId": null
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__2"
+            }
+        ],
+        "requiredModule": "",
+        "isExported": false,
+        "constructedBy": ""
+    }
+}
