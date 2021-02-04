@@ -15,6 +15,7 @@
     this.functionsExecutionStack = sandbox.utils.functionsExecutionStack;
     this.interactionContainerFinder = sandbox.utils.interactionContainerFinder;
     this.objectTraceIdMap = sandbox.utils.objectTraceIdMap;
+    this.metadataStore = sandbox.utils.metadataStore;
 
     var dis = this;
 
@@ -35,6 +36,8 @@
           dis.functionsExecutionStack,
         );
         val.isInstrumented = true;
+
+        dis.metadataStore.set(val, 'declarationTraceId', dis.objectTraceIdMap.get(val));
       }
 
       return {

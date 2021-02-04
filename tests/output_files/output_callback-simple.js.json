@@ -53,6 +53,51 @@
                         "iid": 65,
                         "field": "lastName",
                         "returnTypeOf": "string"
+                    },
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__6",
+                        "typeof": "object"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__6",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_1",
+                        "followingInteractions": [
+                            {
+                                "code": "usedAsArgument",
+                                "traceId": null,
+                                "enclosingFunctionId": "functionId_1",
+                                "targetFunctionId": "functionId_3",
+                                "traceIdInTargetFunction": "trace__7",
+                                "argumentIndexInTargetFunction": "0"
+                            }
+                        ],
+                        "iid": 25,
+                        "field": "firstName",
+                        "returnTypeOf": "string"
+                    },
+                    {
+                        "code": "getField",
+                        "traceId": "trace__6",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_1",
+                        "followingInteractions": [
+                            {
+                                "code": "usedAsArgument",
+                                "traceId": null,
+                                "enclosingFunctionId": "functionId_1",
+                                "targetFunctionId": "functionId_3",
+                                "traceIdInTargetFunction": "trace__9",
+                                "argumentIndexInTargetFunction": "0"
+                            }
+                        ],
+                        "iid": 65,
+                        "field": "lastName",
+                        "returnTypeOf": "string"
                     }
                 ]
             },
@@ -65,6 +110,12 @@
                         "traceId": "trace__1",
                         "typeof": "function",
                         "functionId": "functionId_3"
+                    },
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__6",
+                        "typeof": "function",
+                        "functionId": "functionId_3"
                     }
                 ]
             }
@@ -74,6 +125,10 @@
             {
                 "typeOf": "string",
                 "traceId": "trace__1"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__6"
             }
         ],
         "functionIid": 97,
@@ -83,7 +138,7 @@
     },
     "functionId_3": {
         "functionId": "functionId_3",
-        "functionName": "",
+        "functionName": "f",
         "isConstructor": false,
         "args": {
             "0": {
@@ -126,7 +181,7 @@
                                 "operandForInteraction": "left"
                             }
                         ],
-                        "iid": 171,
+                        "iid": 139,
                         "methodName": "toUpperCase",
                         "functionId": "functionId_5",
                         "returnTypeOf": "string",
@@ -168,11 +223,95 @@
                                 "operandForInteraction": "right"
                             }
                         ],
-                        "iid": 171,
+                        "iid": 139,
                         "methodName": "toUpperCase",
                         "functionId": "functionId_5",
                         "returnTypeOf": "string",
                         "traceIdInTargetFunction": "trace__5"
+                    },
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__7",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "methodCall",
+                        "traceId": "trace__7",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [
+                            {
+                                "code": "convertedTo",
+                                "traceId": null,
+                                "convertedTo": "string",
+                                "isNaN": false,
+                                "toPrimitive": null,
+                                "operator": "+",
+                                "originalTypeof": "string"
+                            },
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "string",
+                                "rightType": "string",
+                                "leftIsNaN": true,
+                                "rightIsNan": false,
+                                "leftToPrimitiveType": "string",
+                                "rightToPrimitiveType": "string",
+                                "leftToPrimitiveIsNaN": true,
+                                "rightToPrimitiveIsNaN": false,
+                                "operator": "+",
+                                "operandForInteraction": "left"
+                            }
+                        ],
+                        "iid": 139,
+                        "methodName": "toUpperCase",
+                        "functionId": "functionId_5",
+                        "returnTypeOf": "string",
+                        "traceIdInTargetFunction": "trace__8"
+                    },
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__9",
+                        "typeof": "string"
+                    },
+                    {
+                        "code": "methodCall",
+                        "traceId": "trace__9",
+                        "isComputed": false,
+                        "isOpAssign": false,
+                        "enclosingFunctionId": "functionId_3",
+                        "followingInteractions": [
+                            {
+                                "code": "convertedTo",
+                                "traceId": null,
+                                "convertedTo": "string",
+                                "isNaN": false,
+                                "toPrimitive": null,
+                                "operator": "+",
+                                "originalTypeof": "string"
+                            },
+                            {
+                                "code": "operator",
+                                "traceId": null,
+                                "leftType": "string",
+                                "rightType": "string",
+                                "leftIsNaN": true,
+                                "rightIsNan": true,
+                                "leftToPrimitiveType": "string",
+                                "rightToPrimitiveType": "string",
+                                "leftToPrimitiveIsNaN": true,
+                                "rightToPrimitiveIsNaN": true,
+                                "operator": "+",
+                                "operandForInteraction": "right"
+                            }
+                        ],
+                        "iid": 139,
+                        "methodName": "toUpperCase",
+                        "functionId": "functionId_5",
+                        "returnTypeOf": "string",
+                        "traceIdInTargetFunction": "trace__10"
                     }
                 ]
             }
@@ -181,14 +320,26 @@
         "returnTypeOfs": [
             {
                 "typeOf": "string",
-                "traceId": "trace__2"
+                "traceId": "trace__2",
+                "declarationTraceId": "trace__1"
             },
             {
                 "typeOf": "string",
-                "traceId": "trace__4"
+                "traceId": "trace__4",
+                "declarationTraceId": "trace__1"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__7",
+                "declarationTraceId": "trace__6"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__9",
+                "declarationTraceId": "trace__6"
             }
         ],
-        "functionIid": 193,
+        "functionIid": 161,
         "requiredModule": "",
         "isExported": false,
         "constructedBy": ""
@@ -206,6 +357,14 @@
             {
                 "typeOf": "string",
                 "traceId": "trace__2"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__1"
+            },
+            {
+                "typeOf": "string",
+                "traceId": "trace__7"
             }
         ],
         "requiredModule": "",

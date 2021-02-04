@@ -33,7 +33,11 @@
           }
 
           let lastStopped = dis.functionsExecutionStack.getLastStopped();
-          functionContainer.addReturnTypeOf(result, lastStopped ? lastStopped.traceId : null);
+          functionContainer.addReturnTypeOf(
+            result,
+            lastStopped ? lastStopped.traceId : null,
+            dis.metadataStore.get(f, 'declarationTraceId'),
+          );
 
           if (functionContainer.isConstructor === true) {
             iterateObjectProperties(result, function (key, obj) {

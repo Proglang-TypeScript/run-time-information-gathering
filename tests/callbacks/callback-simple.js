@@ -2,8 +2,12 @@ function doSomethingWithCallback(a, cb) {
   return cb(a.firstName) + ' ' + cb(a.lastName);
 }
 
-doSomethingWithCallback({ firstName: 'John', lastName: 'Doe' }, function (s) {
+function f(s) {
   return s.toUpperCase();
-});
+}
+
+doSomethingWithCallback({ firstName: 'John', lastName: 'Doe' }, f);
+
+doSomethingWithCallback({ firstName: 'John', lastName: 'Doe' }, f);
 
 // 'JOHN DOE'

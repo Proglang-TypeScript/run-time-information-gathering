@@ -3,7 +3,7 @@
 'use strict';
 
 (function (sandbox) {
-  var getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
+  const getTypeOfForReporting = sandbox.functions.getTypeOfForReporting;
 
   function FunctionContainer(f, isConstructor) {
     this.functionId = f.functionId;
@@ -33,10 +33,11 @@
       }
     };
 
-    this.addReturnTypeOf = function (returnValue, traceId) {
+    this.addReturnTypeOf = function (returnValue, traceId, declarationTraceId) {
       let returnTypeOf = {
         typeOf: getTypeOfForReporting(returnValue),
-        traceId: traceId,
+        traceId,
+        declarationTraceId,
       };
 
       this.returnTypeOfs.push(returnTypeOf);
