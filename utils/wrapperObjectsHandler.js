@@ -24,7 +24,7 @@
         return val;
       }
 
-      let targetObjectFromProxy = this.getRealValueFromWrapperObject(val);
+      const targetObjectFromProxy = this.getRealValueFromWrapperObject(val);
 
       if (this.objectIsWrapperObject(targetObjectFromProxy)) {
         return this.getFinalRealObjectFromProxy(targetObjectFromProxy);

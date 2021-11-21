@@ -16,10 +16,10 @@
     var dis = this;
 
     this.callback = function (iid, op, left, right) {
-      let originalLeft = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(left);
-      let originalRight = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(right);
+      const originalLeft = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(left);
+      const originalRight = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(right);
 
-      let typeCoercion = dis.operatorsTypeCoercionAnalyzer.analyzeTypeCoercion(
+      const typeCoercion = dis.operatorsTypeCoercionAnalyzer.analyzeTypeCoercion(
         op,
         originalLeft,
         originalRight,
@@ -30,7 +30,7 @@
         addInteractionIfNecessary(typeCoercion.right, right);
       }
 
-      let leftOperatorInteraction = dis.operatorInteractionBuilder.build(
+      const leftOperatorInteraction = dis.operatorInteractionBuilder.build(
         op,
         originalLeft,
         originalRight,
@@ -40,7 +40,7 @@
         leftOperatorInteraction.operandForInteraction = 'left';
       }
 
-      let rightOperatorInteraction = dis.operatorInteractionBuilder.build(
+      const rightOperatorInteraction = dis.operatorInteractionBuilder.build(
         op,
         originalLeft,
         originalRight,
@@ -50,7 +50,7 @@
         rightOperatorInteraction.operandForInteraction = 'right';
       }
 
-      let equalityOperations = ['==', '!=', '===', '!=='];
+      const equalityOperations = ['==', '!=', '===', '!=='];
 
       if (equalityOperations.indexOf(op) !== -1) {
         left = originalLeft;
@@ -66,10 +66,10 @@
     };
 
     function addInteractionIfNecessary(interaction, operand) {
-      let interactionContainer = dis.interactionContainerFinder.findInteraction(operand);
+      const interactionContainer = dis.interactionContainerFinder.findInteraction(operand);
 
       if (interactionContainer) {
-        let traceId = dis.objectTraceIdMap.get(operand);
+        const traceId = dis.objectTraceIdMap.get(operand);
         if (traceId) {
           interaction.traceId = traceId;
         }

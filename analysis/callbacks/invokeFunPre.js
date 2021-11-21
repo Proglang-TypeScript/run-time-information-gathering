@@ -55,7 +55,7 @@
     };
 
     function functionNotProcessed(f) {
-      let functionId = dis.functionIdHandler.getFunctionId(f);
+      const functionId = dis.functionIdHandler.getFunctionId(f);
       return functionId && !(functionId in dis.runTimeInfo);
     }
 
@@ -77,21 +77,23 @@
     }
 
     function addUsedAsArgumentInteractionIfApplicable(val, f, argIndex) {
-      let functionId = dis.functionIdHandler.getFunctionId(f);
+      const functionId = dis.functionIdHandler.getFunctionId(f);
 
       if (getTypeOf(val) == 'object') {
-        let currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
+        const currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
 
-        let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(val);
+        const containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(
+          val,
+        );
         if (currentActiveFiid && containerForAddingNewInteraction) {
-          let usedAsArgumentInteraction = new UsedAsArgumentInteraction(
+          const usedAsArgumentInteraction = new UsedAsArgumentInteraction(
             currentActiveFiid,
             functionId,
             argIndex,
             f.temporaryTraceId,
           );
 
-          let traceId = dis.objectTraceIdMap.get(val);
+          const traceId = dis.objectTraceIdMap.get(val);
           if (traceId) {
             usedAsArgumentInteraction.traceId = traceId;
           }

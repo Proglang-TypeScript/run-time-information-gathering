@@ -19,7 +19,7 @@
       let newResult = result;
 
       if (dis.wrapperObjectsHandler.objectIsWrapperObject(result)) {
-        let finalRealValueFromWrapperObject = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(
+        const finalRealValueFromWrapperObject = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(
           result,
         );
 
@@ -31,7 +31,7 @@
         }
       }
 
-      let leftOperatorInteraction = dis.operatorInteractionBuilder.build(
+      const leftOperatorInteraction = dis.operatorInteractionBuilder.build(
         'conditional',
         dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result),
         undefined,
@@ -47,10 +47,10 @@
     };
 
     function addInteractionIfNecessary(interaction, operand) {
-      let interactionContainer = dis.interactionContainerFinder.findInteraction(operand);
+      const interactionContainer = dis.interactionContainerFinder.findInteraction(operand);
 
       if (interactionContainer) {
-        let traceId = dis.objectTraceIdMap.get(operand);
+        const traceId = dis.objectTraceIdMap.get(operand);
 
         if (traceId) {
           interaction.traceId = traceId;

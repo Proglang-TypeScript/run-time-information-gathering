@@ -53,7 +53,7 @@
 
       interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 
-      let traceId = dis.objectTraceIdMap.get(base);
+      const traceId = dis.objectTraceIdMap.get(base);
       if (traceId) {
         interaction.traceId = traceId;
       }
@@ -86,7 +86,7 @@
 
       interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 
-      let traceId = dis.objectTraceIdMap.get(base);
+      const traceId = dis.objectTraceIdMap.get(base);
       if (traceId) {
         interaction.traceId = traceId;
       }
@@ -98,7 +98,7 @@
     }
 
     function addFunctionIdToInteraction(interaction, f) {
-      let functionId = dis.functionIdHandler.getFunctionId(f);
+      const functionId = dis.functionIdHandler.getFunctionId(f);
 
       interaction.functionId = functionId;
 

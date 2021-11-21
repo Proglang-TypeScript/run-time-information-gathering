@@ -34,14 +34,14 @@
     let counter = 1;
 
     this.getTraceId = function () {
-      let traceId = 'trace__' + counter;
+      const traceId = 'trace__' + counter;
       counter++;
 
       return traceId;
     };
 
     this.addExecution = function (f) {
-      let functionId = sandbox.utils.functionIdHandler.getFunctionId(f);
+      const functionId = sandbox.utils.functionIdHandler.getFunctionId(f);
 
       var execution = {
         fid: functionId,

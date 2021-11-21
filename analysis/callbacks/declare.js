@@ -54,16 +54,16 @@
     }
 
     function getFunctionContainer() {
-      let functionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
+      const functionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
       return dis.runTimeInfo[functionId];
     }
 
     function buildArgumentContainer(argumentIndex, name, val) {
       var argumentContainer = new ArgumentContainer(argumentIndex, name);
 
-      let interaction = new InputValueInteraction(val);
+      const interaction = new InputValueInteraction(val);
 
-      let execution = dis.functionsExecutionStack.getCurrentExecution();
+      const execution = dis.functionsExecutionStack.getCurrentExecution();
       interaction.traceId = execution.traceId;
 
       argumentContainer.addInteraction(interaction);

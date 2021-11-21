@@ -32,7 +32,7 @@
             );
           }
 
-          let lastStopped = dis.functionsExecutionStack.getLastStopped();
+          const lastStopped = dis.functionsExecutionStack.getLastStopped();
           functionContainer.addReturnTypeOf(
             result,
             lastStopped ? lastStopped.traceId : null,
@@ -41,7 +41,7 @@
 
           if (functionContainer.isConstructor === true) {
             iterateObjectProperties(result, function (key, obj) {
-              let value = obj[key];
+              const value = obj[key];
 
               if (typeof value === 'function') {
                 value['__CONSTRUCTED_BY__'] = functionContainer.functionId;
@@ -51,8 +51,8 @@
         }
 
         if (f.name === 'require') {
-          let requiredModule = result;
-          let nameOfRequiredModule = args[0];
+          const requiredModule = result;
+          const nameOfRequiredModule = args[0];
 
           if (typeof requiredModule === 'function') {
             requiredModule['__IS_EXPORTED_FUNCTION__'] = true;
@@ -60,7 +60,7 @@
           }
 
           iterateObjectProperties(requiredModule, function (key, obj) {
-            let value = obj[key];
+            const value = obj[key];
 
             if (typeof value === 'function' && value !== requiredModule) {
               value['__IS_EXPORTED_FUNCTION__'] = false;

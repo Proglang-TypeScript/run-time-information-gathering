@@ -34,7 +34,7 @@
     };
 
     this.addReturnTypeOf = function (returnValue, traceId, declarationTraceId) {
-      let returnTypeOf = {
+      const returnTypeOf = {
         typeOf: getTypeOfForReporting(returnValue),
         traceId,
         declarationTraceId,
@@ -62,7 +62,7 @@
     }
 
     function convertToCamelCase(m, isConstructor) {
-      let moduleName = m.replace(/^.*[/]/, '').replace(/\.[^/.]+$/, '');
+      const moduleName = m.replace(/^.*[/]/, '').replace(/\.[^/.]+$/, '');
 
       let converted = moduleName.replace(/([-_][a-z])/gi, ($1) => {
         return $1.toUpperCase().replace('-', '').replace('_', '');

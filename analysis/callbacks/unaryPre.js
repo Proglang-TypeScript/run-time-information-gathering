@@ -11,7 +11,7 @@
     var dis = this;
 
     this.callback = function (iid, op, left) {
-      let operatorsToRestoreOriginalValue = ['typeof', '!'];
+      const operatorsToRestoreOriginalValue = ['typeof', '!'];
 
       if (operatorsToRestoreOriginalValue.indexOf(op) !== -1) {
         left = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(left);
