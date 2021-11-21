@@ -7,7 +7,7 @@
     "node-html-parser": "^1.1.10"
   },
   "scripts": {
-    "prettier": "prettier --write 'analysis/**/*.js' 'utils/**/*.js'",
+    "prettier": "prettier --write 'analysis/**/*.js' 'utils/**/*.js' 'tests/**/*.js'",
     "lint": "eslint --max-warnings 0 'analysis/**/*.js' 'utils/**/*.js'"
   },
   "husky": {

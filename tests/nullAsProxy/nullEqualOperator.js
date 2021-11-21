@@ -1,9 +1,9 @@
 function looseEquality(a) {
-	return a == null;
+  return a == null;
 }
 
 function strictEquality(a) {
-	return a === null;
+  return a === null;
 }
 
 console.log(looseEquality(null));

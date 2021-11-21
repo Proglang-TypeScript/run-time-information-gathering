@@ -1,8 +1,10 @@
 function f(a) {
-	return 5 > a;
+  return 5 > a;
 }
 
 var a = {};
-a.toString = function() { return "3"; }
+a.toString = function () {
+  return '3';
+};
 
 f(a);

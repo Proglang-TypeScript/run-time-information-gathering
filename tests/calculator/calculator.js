@@ -1,7 +1,7 @@
-Calculator = function() {
-    this.sum = function(a, b) {
-        return a + b;
-    };
+Calculator = function () {
+  this.sum = function (a, b) {
+    return a + b;
+  };
 };
 
 var calculator = new Calculator();

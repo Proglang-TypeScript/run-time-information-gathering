@@ -1,9 +1,9 @@
 function looseEquality(a) {
-	return a == undefined;
+  return a == undefined;
 }
 
 function strictEquality(a) {
-	return a === undefined;
+  return a === undefined;
 }
 
 console.log(looseEquality(undefined));

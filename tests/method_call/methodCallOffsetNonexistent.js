@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
 function doSomething(obj, a, b) {
-	obj.anotherMethod(a, b);
+  obj.anotherMethod(a, b);
 }
 
 var a = {};
 
-doSomething(a, "hello", 100);
+doSomething(a, 'hello', 100);

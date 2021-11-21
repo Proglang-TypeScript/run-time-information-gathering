@@ -1,5 +1,5 @@
 function f(a) {
-	return a + "";
+  return a + '';
 }
 
 console.log(f(null));

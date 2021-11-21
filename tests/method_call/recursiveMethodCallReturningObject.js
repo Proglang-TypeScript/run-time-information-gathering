@@ -1,46 +1,46 @@
-"use strict";
+'use strict';
 
 function traverse(a) {
-	var l = a;
-	var sum = 0;
+  var l = a;
+  var sum = 0;
 
-	while(l !== null) {
-		sum += l.val;
+  while (l !== null) {
+    sum += l.val;
 
-		if (l.useRight) {
-			l = l.getRight();
-		} else {
-			l = l.getLeft();
-		}
-	}
+    if (l.useRight) {
+      l = l.getRight();
+    } else {
+      l = l.getLeft();
+    }
+  }
 
-	return sum;
+  return sum;
 }
 
 function Node(val, left, right) {
-	this.val = val;
-	this.useRight = false;
+  this.val = val;
+  this.useRight = false;
 
-	this.getLeft = function() {
-		return left;
-	};
+  this.getLeft = function () {
+    return left;
+  };
 
-	this.getRight = function() {
-		return right;
-	};
+  this.getRight = function () {
+    return right;
+  };
 }
 
 function AnotherNode(val, left, right) {
-	this.val = val;
-	this.useRight = false;
+  this.val = val;
+  this.useRight = false;
 
-	this.getLeft = function() {
-		return left;
-	};
+  this.getLeft = function () {
+    return left;
+  };
 
-	this.getRight = function() {
-		return right;
-	};
+  this.getRight = function () {
+    return right;
+  };
 }
 
 var a10 = new Node(10, null, null);

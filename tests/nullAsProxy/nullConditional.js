@@ -1,25 +1,25 @@
 function ifNull(a) {
-	if (a) {
-		return true;
-	} else {
-		return false;
-	}
+  if (a) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function denyNull(a) {
-	return !a;
+  return !a;
 }
 
 function andNull(a) {
-	return a && true;
+  return a && true;
 }
 
 function orNull(a) {
-	return a || true;
+  return a || true;
 }
 
 function negationNull(a) {
-	return !!a;
+  return !!a;
 }
 
 console.log(ifNull(null));
