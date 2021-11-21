@@ -17,7 +17,7 @@
       // eslint-disable-next-line no-console
       console.log('');
       // eslint-disable-next-line no-console
-      console.log(JSON.stringify(sandbox.runTimeInfo, null, 4));
+      // console.log(JSON.stringify(sandbox.runTimeInfo, null, 4));
     };
   }
 
