@@ -29,12 +29,7 @@
       } else {
         functionContainer = dis.runTimeInfo[functionId];
       }
-
       functionContainer.functionIid = iid;
-
-      console.log(`Producing message - ${new Date().toISOString()}:`);
-      console.log(JSON.stringify(dis.runTimeInfo));
-      console.log('');
 
       dis.functionsExecutionStack.addExecution(f);
     };

@@ -2,6 +2,8 @@
 
 'use strict';
 
+const { nanoid } = require('nanoid');
+
 (function (sandbox) {
   function InvokeFunPreAnalysis() {
     this.callbackName = 'invokeFunPre';
@@ -43,6 +45,22 @@
           functionContainer.functionIid = functionIid;
 
           dis.runTimeInfo[functionContainer.functionId] = functionContainer;
+
+          // This command is equivalent to executing the
+          // method `addFunctionContainer(functionId, functionContainer)`.
+          // eslint-disable-next-line no-console
+          console.log({
+            id: nanoid(),
+            command: 'add-function-container',
+            data: {
+              functionId: functionContainer.functionId,
+              functionContainer: JSON.stringify(functionContainer),
+            },
+            timestamp: new Date().toISOString(),
+          });
+
+          // eslint-disable-next-line no-console
+          console.log('');
         }
       }
 

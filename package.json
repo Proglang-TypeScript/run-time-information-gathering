@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "dependencies": {
     "get-stdin": "^6.0.0",
-    "nanoid": "^3.1.20",
+    "nanoid": "^3.1.30",
     "node-html-parser": "^1.1.10"
   },
   "scripts": {
