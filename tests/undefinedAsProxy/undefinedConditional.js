@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 function ifUndefined(a) {
   if (a) {
     return true;

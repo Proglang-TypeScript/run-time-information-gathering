@@ -1,8 +1,8 @@
-Calculator = function () {
+function Calculator() {
   this.sum = function (a, b) {
     return a + b;
   };
-};
+}
 
 var calculator = new Calculator();
 

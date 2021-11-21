@@ -27,4 +27,5 @@ var b = {
   },
 };
 
+// eslint-disable-next-line no-unused-vars
 a = setSomeValue(a, b);

@@ -4,6 +4,7 @@ function f() {
   return 'hello';
 }
 
+// eslint-disable-next-line no-unused-vars
 function getPropTimeout(a) {
   setTimeout(f, 500);
 }

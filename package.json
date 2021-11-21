@@ -8,7 +8,7 @@
   },
   "scripts": {
     "prettier": "prettier --write 'analysis/**/*.js' 'utils/**/*.js' 'tests/**/*.js'",
-    "lint": "eslint --max-warnings 0 'analysis/**/*.js' 'utils/**/*.js'"
+    "lint": "eslint --max-warnings 0 'analysis/**/*.js' 'utils/**/*.js' 'tests/**/*.js'"
   },
   "husky": {
     "hooks": {

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 function looseEquality(a) {
   return a == null;
 }

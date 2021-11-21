@@ -1,3 +1,4 @@
+/* eslint-disable no-redeclare */
 'use strict';
 
 function someValueLessThan100(myObj) {

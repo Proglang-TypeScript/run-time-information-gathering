@@ -32,4 +32,5 @@ var a = {
   },
 };
 
+// eslint-disable-next-line no-unused-vars
 a = f1(a);

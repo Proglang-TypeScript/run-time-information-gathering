@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 function ifNull(a) {
   if (a) {
     return true;
