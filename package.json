@@ -10,7 +10,8 @@
     "generate": "sh ./bin/run",
     "instrument": "sh bin/instrument.sh",
     "prettier": "prettier --write 'analysis/**/*.js' 'utils/**/*.js' 'tests/**/*.js'",
-    "lint": "eslint --max-warnings 0 'analysis/**/*.js' 'utils/**/*.js' 'tests/**/*.js'"
+    "lint": "eslint --max-warnings 0 'analysis/**/*.js' 'utils/**/*.js' 'tests/**/*.js'",
+    "postinstall": "sh build/install.sh"
   },
   "husky": {
     "hooks": {

@@ -1,8 +1,9 @@
-function Calculator() {
+/* eslint-disable no-undef */
+Calculator = function () {
   this.sum = function (a, b) {
     return a + b;
   };
-}
+};
 
 var calculator = new Calculator();
 
