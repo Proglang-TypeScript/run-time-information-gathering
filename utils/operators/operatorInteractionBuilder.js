@@ -9,14 +9,14 @@
 
   function OperatorInteractionBuilder() {
     this.build = function (operator, left, right) {
-      let operatorInteraction = new OperatorInteraction();
+      const operatorInteraction = new OperatorInteraction();
       operatorInteraction.leftType = getTypeOf(left);
       operatorInteraction.rightType = getTypeOf(right);
       operatorInteraction.leftIsNaN = isNaN(left);
       operatorInteraction.rightIsNan = isNaN(right);
 
-      let leftToPrimitive = toPrimitive(left);
-      let rightToPrimitive = toPrimitive(right);
+      const leftToPrimitive = toPrimitive(left);
+      const rightToPrimitive = toPrimitive(right);
       operatorInteraction.leftToPrimitiveType = getTypeOf(leftToPrimitive);
       operatorInteraction.rightToPrimitiveType = getTypeOf(rightToPrimitive);
       operatorInteraction.operator = operator;

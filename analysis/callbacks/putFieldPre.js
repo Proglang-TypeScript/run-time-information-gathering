@@ -37,7 +37,7 @@
     };
 
     function addInteractionToContainerIfPossible(interaction, base) {
-      let containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(base);
+      const containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(base);
 
       let interactionAdded = false;
       if (containerForAddingNewInteraction) {
@@ -76,7 +76,7 @@
       interaction.isOpAssign = isOpAssign;
       interaction.enclosingFunctionId = dis.functionsExecutionStack.getCurrentExecutingFunction();
 
-      let traceId = dis.objectTraceIdMap.get(base);
+      const traceId = dis.objectTraceIdMap.get(base);
       if (traceId) {
         interaction.traceId = traceId;
       }

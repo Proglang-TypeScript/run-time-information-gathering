@@ -10,14 +10,14 @@
     this.operators = ['<', '>', '<=', '>='];
 
     this.getTypeCoercion = function (left, right) {
-      let ConvertedToInteraction = sandbox.utils.ConvertedToInteraction;
+      const ConvertedToInteraction = sandbox.utils.ConvertedToInteraction;
 
-      let leftPrimitive = this.toPrimitive(left, Number);
-      let rightPrimitive = this.toPrimitive(right, Number);
+      const leftPrimitive = this.toPrimitive(left, Number);
+      const rightPrimitive = this.toPrimitive(right, Number);
 
-      let leftConvertedTo = new ConvertedToInteraction();
+      const leftConvertedTo = new ConvertedToInteraction();
       leftConvertedTo.originalTypeof = getTypeOf(left);
-      let rightConvertedTo = new ConvertedToInteraction();
+      const rightConvertedTo = new ConvertedToInteraction();
       rightConvertedTo.originalTypeof = getTypeOf(right);
 
       if (leftPrimitive !== left) {
@@ -30,8 +30,8 @@
         right = rightPrimitive;
       }
 
-      let typeOfLeft = sandbox.functions.getTypeOf(left);
-      let typeOfRight = sandbox.functions.getTypeOf(right);
+      const typeOfLeft = sandbox.functions.getTypeOf(left);
+      const typeOfRight = sandbox.functions.getTypeOf(right);
 
       if (!(typeOfLeft === 'string' && typeOfRight === 'string')) {
         leftConvertedTo.convertedTo = 'number';

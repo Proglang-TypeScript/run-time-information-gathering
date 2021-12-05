@@ -41,12 +41,12 @@
 
   function addDeclarationFunctionIdToFunctionsInsideObject(val, functionsExecutionStack) {
     function propertyIsWritable(obj, key) {
-      let description = Object.getOwnPropertyDescriptor(obj, key);
+      const description = Object.getOwnPropertyDescriptor(obj, key);
 
       return description !== undefined && description.writable === true;
     }
 
-    let objects = [];
+    const objects = [];
 
     function doAddDeclarationFunctionIdToFunctionsInsideObject(val, functionsExecutionStack) {
       if (getTypeOf(val) == 'object') {

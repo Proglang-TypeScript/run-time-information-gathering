@@ -8,34 +8,20 @@
       return '__ORIGINAL_TYPEOF__';
     };
 
-    this.buildFromString = function (
-      /* jshint ignore:start */
-      val,
-      /* jshint ignore:end */
-    ) {
-      let wrapperObj;
-      /* jshint ignore:start */
-      wrapperObj = new String(val);
+    this.buildFromString = function (val) {
+      const wrapperObj = new String(val);
       wrapperObj.TARGET_PROXY = val;
       wrapperObj.IS_WRAPPER_OBJECT = true;
-      /* jshint ignore:end */
 
       wrapperObj[this.getOriginalTypeOfField()] = 'string';
 
       return wrapperObj;
     };
 
-    this.buildFromNumber = function (
-      /* jshint ignore:start */
-      val,
-      /* jshint ignore:end */
-    ) {
-      let wrapperObj;
-      /* jshint ignore:start */
-      wrapperObj = new Number(val);
+    this.buildFromNumber = function (val) {
+      const wrapperObj = new Number(val);
       wrapperObj.TARGET_PROXY = val;
       wrapperObj.IS_WRAPPER_OBJECT = true;
-      /* jshint ignore:end */
 
       wrapperObj[this.getOriginalTypeOfField()] = 'number';
 
@@ -47,7 +33,7 @@
         return val;
       }
 
-      let undefinedObj = {};
+      const undefinedObj = {};
       undefinedObj.valueOf = function () {
         return undefined;
       };
@@ -68,7 +54,7 @@
         return val;
       }
 
-      let nullObj = {};
+      const nullObj = {};
       nullObj.valueOf = function () {
         return null;
       };

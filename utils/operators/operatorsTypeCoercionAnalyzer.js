@@ -4,7 +4,7 @@
 
 (function (sandbox) {
   function OperatorsTypeCoercionAnalyzer() {
-    let operatorsTypeCoercion = [
+    const operatorsTypeCoercion = [
       sandbox.utils.relationalComparisonOperatorTypeCoercion,
       sandbox.utils.sumOperatorTypeCoercion,
     ];
@@ -28,7 +28,7 @@
         return null;
       }
 
-      let typeCoercion = this.mapOperatorsTypeCoercion[operator].getTypeCoercion(left, right);
+      const typeCoercion = this.mapOperatorsTypeCoercion[operator].getTypeCoercion(left, right);
 
       if (typeCoercion.left) {
         typeCoercion.left.operator = operator;
