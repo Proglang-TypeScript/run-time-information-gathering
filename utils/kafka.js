@@ -1,9 +1,9 @@
 const { Kafka } = require('kafkajs');
 const { nanoid } = require('nanoid');
-const { KAFKA_BROKER, KAFKA_TOPIC } = require('./config');
+const { KAFKA_BROKER, KAFKA_TOPIC, KAFKA_CLIENT_ID } = require('./config');
 
 const kafka = new Kafka({
-  clientId: 'kafkajs-getting-started-app',
+  clientId: KAFKA_CLIENT_ID,
   brokers: [KAFKA_BROKER],
 });
 
