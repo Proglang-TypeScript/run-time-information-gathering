@@ -2,7 +2,9 @@
   "name": "master-mind-wp3",
   "version": "1.1.0",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "get-stdin": "^6.0.0",
+    "kafkajs": "^1.15.0",
     "nanoid": "^3.1.30",
     "node-html-parser": "^1.1.10"
   },

@@ -2,7 +2,7 @@
 
 'use strict';
 
-const { nanoid } = require('nanoid');
+const { produceMessage } = require('../../utils/kafka');
 
 (function (sandbox) {
   function InvokeFunPreAnalysis() {
@@ -48,19 +48,16 @@ const { nanoid } = require('nanoid');
 
           // This command is equivalent to executing the
           // method `addFunctionContainer(functionId, functionContainer)`.
-          // eslint-disable-next-line no-console
-          console.log({
-            id: nanoid(),
+          const message = {
             command: 'add-function-container',
             data: {
               functionId: functionContainer.functionId,
               functionContainer: JSON.stringify(functionContainer),
             },
-            timestamp: new Date().toISOString(),
-          });
+          };
 
           // eslint-disable-next-line no-console
-          console.log('');
+          produceMessage(message).catch((err) => console.log(err));
         }
       }
 
