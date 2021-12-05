@@ -168,7 +168,6 @@ function startProgram() {
   // this assumes that the endExecution() callback of the analysis
   // does not make any asynchronous calls
   process.on('exit', function () {
-    console.log('exit end execution');
     J$.endExecution();
   });
   Module.Module.runMain(script, null, true);
