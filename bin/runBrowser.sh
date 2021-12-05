@@ -38,6 +38,10 @@ node $JALANGI_PATH/src/js/commands/instrument.js --inlineIID --inlineSource \
     --analysis $ROOT_PATH/utils/interactions/putFieldInteraction.js \
     --analysis $ROOT_PATH/utils/interactions/usedAsArgumentInteraction.js \
     --analysis $ROOT_PATH/utils/interactions/convertedToInteraction.js \
+    --analysis $ROOT_PATH/utils/interactions/operatorInteraction.js \
+    \
+    \
+    --analysis $ROOT_PATH/utils/operators/operatorInteractionBuilder.js \
     \
     \
     --analysis $ROOT_PATH/analysis/analysis.js \
