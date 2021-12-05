@@ -25,28 +25,47 @@
 var argparse = require('argparse');
 var instUtil = require('../instrument/instUtil');
 var parser = new argparse.ArgumentParser({
-    addHelp: true,
-    description: "Command-line utility to perform Jalangi2's instrumentation and analysis"
+  addHelp: true,
+  description: "Command-line utility to perform Jalangi2's instrumentation and analysis",
 });
-parser.addArgument(['--analysis'], {help: "absolute path to analysis file to run", action: 'append'});
-parser.addArgument(['--initParam'], { help: "initialization parameter for analysis, specified as key:value", action:'append'});
-parser.addArgument(['--inlineIID'], {help: "Inline IID to (beginLineNo, beginColNo, endLineNo, endColNo) in J$.iids in the instrumented file", action: 'storeTrue'});
-parser.addArgument(['--inlineSource'], {help: "Inline original source as string in J$.iids.code in the instrumented file", action: 'storeTrue'});
-parser.addArgument(['--astHandlerModule'], {help: "Path to a node module that exports a function to be used for additional AST handling after instrumentation"});
-parser.addArgument(['--blacklistedModules'], { help: "Path to a JSON file defining an array of blacklisted node modules that should not be analyzed" });
+parser.addArgument(['--analysis'], {
+  help: 'absolute path to analysis file to run',
+  action: 'append',
+});
+parser.addArgument(['--initParam'], {
+  help: 'initialization parameter for analysis, specified as key:value',
+  action: 'append',
+});
+parser.addArgument(['--inlineIID'], {
+  help:
+    'Inline IID to (beginLineNo, beginColNo, endLineNo, endColNo) in J$.iids in the instrumented file',
+  action: 'storeTrue',
+});
+parser.addArgument(['--inlineSource'], {
+  help: 'Inline original source as string in J$.iids.code in the instrumented file',
+  action: 'storeTrue',
+});
+parser.addArgument(['--astHandlerModule'], {
+  help:
+    'Path to a node module that exports a function to be used for additional AST handling after instrumentation',
+});
+parser.addArgument(['--blacklistedModules'], {
+  help:
+    'Path to a JSON file defining an array of blacklisted node modules that should not be analyzed',
+});
 parser.addArgument(['script_and_args'], {
-    help: "script to record and CLI arguments for that script",
-    nargs: argparse.Const.REMAINDER
+  help: 'script to record and CLI arguments for that script',
+  nargs: argparse.Const.REMAINDER,
 });
 var args = parser.parseArgs();
 var astHandler = null;
 if (args.astHandlerModule) {
-    astHandler = require(args.astHandlerModule);
+  astHandler = require(args.astHandlerModule);
 }
 
 if (args.script_and_args.length === 0) {
-    console.error("must provide script to record");
-    process.exit(1);
+  console.error('must provide script to record');
+  process.exit(1);
 }
 // we shift here so we can use the rest of the array later when
 // hacking process.argv; see below
@@ -56,100 +75,107 @@ var Module = require('module');
 var path = require('path');
 var fs = require('fs');
 var originalLoader = Module._extensions['.js'];
-var FILESUFFIX1 = "_jalangi_";
+var FILESUFFIX1 = '_jalangi_';
 
 var blacklistedModules = [];
 if (args.blacklistedModules && fs.existsSync(args.blacklistedModules)) {
-    var jsonFile = fs.readFileSync(args.blacklistedModules);
-    blacklistedModules = JSON.parse(jsonFile.toString());
+  var jsonFile = fs.readFileSync(args.blacklistedModules);
+  blacklistedModules = JSON.parse(jsonFile.toString());
 }
 
 function makeInstCodeFileName(name) {
-    return name.replace(/.js$/, FILESUFFIX1 + ".js").replace(/.html$/, FILESUFFIX1 + ".html");
+  return name.replace(/.js$/, FILESUFFIX1 + '.js').replace(/.html$/, FILESUFFIX1 + '.html');
 }
 
 function makeSMapFileName(name) {
-    return name.replace(/.js$/, ".json");
+  return name.replace(/.js$/, '.json');
 }
 
-acorn = require("acorn");
-esotope = require("esotope");
+acorn = require('acorn');
+esotope = require('esotope');
 require('../headers').headerSources.forEach(function (header) {
-    require("./../../../" + header);
+  require('./../../../' + header);
 });
 
 var initParam = null;
 if (args.initParam) {
-    initParam = {};
-    args.initParam.forEach(function (keyVal) {
-        var split = keyVal.split(':');
-        if (split.length !== 2) {
-            throw new Error("invalid initParam " + keyVal);
-        }
-        initParam[split[0]] = split[1];
-    });
+  initParam = {};
+  args.initParam.forEach(function (keyVal) {
+    var split = keyVal.split(':');
+    if (split.length !== 2) {
+      throw new Error('invalid initParam ' + keyVal);
+    }
+    initParam[split[0]] = split[1];
+  });
 }
 J$.initParams = initParam || {};
 if (args.analysis) {
-    args.analysis.forEach(function (src) {
-        require(path.resolve(src));
-    });
+  args.analysis.forEach(function (src) {
+    require(path.resolve(src));
+  });
 }
 
-var logFile = "/tmp/jalangi.log";
-fs.writeFileSync(logFile, "");
+var logFile = '/tmp/jalangi.log';
+fs.writeFileSync(logFile, '');
 
 Module._extensions['.js'] = function (module, filename) {
-    fs.appendFileSync(logFile, filename + "\n");
+  fs.appendFileSync(logFile, filename + '\n');
 
-    var code = fs.readFileSync(filename, 'utf8');
+  var code = fs.readFileSync(filename, 'utf8');
 
-    var regexCapturingModuleName = /\/node_modules\/(.*)\/.*js/g;
-    var matches = regexCapturingModuleName.exec(filename);
-    var extractedModuleFromFilename = "";
+  var regexCapturingModuleName = /\/node_modules\/(.*)\/.*js/g;
+  var matches = regexCapturingModuleName.exec(filename);
+  var extractedModuleFromFilename = '';
 
-    if (matches !== null) {
-        extractedModuleFromFilename = matches[1];
-    }
+  if (matches !== null) {
+    extractedModuleFromFilename = matches[1];
+  }
 
-    if (blacklistedModules.indexOf(extractedModuleFromFilename) !== -1) {
-        fs.appendFileSync(logFile, "skipped\n");
-        module._compile(code, filename);
-    } else {
-        fs.appendFileSync(logFile, "instrumented\n");
-        var instFilename = makeInstCodeFileName(filename);
-        var instCodeAndData = J$.instrumentCode({
-            code: code,
-            isEval: false,
-            origCodeFileName: filename,
-            instCodeFileName: instFilename,
-            inlineSourceMap: !!args.inlineIID,
-            inlineSource: !!args.inlineSource
-        });
-    
-        instUtil.applyASTHandler(instCodeAndData, astHandler, J$);
-        fs.writeFileSync(makeSMapFileName(instFilename), instCodeAndData.sourceMapString, "utf8");
-        fs.writeFileSync(instFilename, instCodeAndData.code, "utf8");
-        module._compile(instCodeAndData.code, filename);
-    }
+  if (
+    blacklistedModules.some((blacklistedModule) =>
+      extractedModuleFromFilename.startsWith(blacklistedModule),
+    )
+  ) {
+    fs.appendFileSync(logFile, 'skipped\n');
+    module._compile(code, filename);
+  } else {
+    fs.appendFileSync(logFile, 'instrumented\n');
+    var instFilename = makeInstCodeFileName(filename);
+    var instCodeAndData = J$.instrumentCode({
+      code: code,
+      isEval: false,
+      origCodeFileName: filename,
+      instCodeFileName: instFilename,
+      inlineSourceMap: !!args.inlineIID,
+      inlineSource: !!args.inlineSource,
+    });
 
-    fs.appendFileSync(logFile, "-------------------\n");
+    instUtil.applyASTHandler(instCodeAndData, astHandler, J$);
+    fs.writeFileSync(makeSMapFileName(instFilename), instCodeAndData.sourceMapString, 'utf8');
+    fs.writeFileSync(instFilename, instCodeAndData.code, 'utf8');
+    module._compile(instCodeAndData.code, filename);
+  }
+
+  fs.appendFileSync(logFile, '-------------------\n');
 };
 
 function startProgram() {
-    // hack process.argv for the child script
-    script = path.resolve(script);
-    var newArgs = [process.argv[0], script];
-    newArgs = newArgs.concat(args.script_and_args);
-    process.argv = newArgs;
-    // this assumes that the endExecution() callback of the analysis
-    // does not make any asynchronous calls
-    process.on('exit', function () { J$.endExecution(); });
-    Module.Module.runMain(script, null, true);
+  // hack process.argv for the child script
+  script = path.resolve(script);
+  var newArgs = [process.argv[0], script];
+  newArgs = newArgs.concat(args.script_and_args);
+  process.argv = newArgs;
+  // this assumes that the endExecution() callback of the analysis
+  // does not make any asynchronous calls
+  process.on('exit', function () {
+    console.log('exit end execution');
+    J$.endExecution();
+  });
+  Module.Module.runMain(script, null, true);
 }
 
 if (J$.analysis && J$.analysis.onReady) {
-    J$.analysis.onReady(startProgram);
+  J$.analysis.onReady(startProgram);
 } else {
-    startProgram();
+  startProgram();
 }
