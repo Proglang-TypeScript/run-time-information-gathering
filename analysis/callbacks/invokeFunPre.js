@@ -52,7 +52,7 @@ const { produceMessage } = require('../../utils/kafka');
             command: 'add-function-container',
             data: {
               functionId: functionContainer.functionId,
-              functionContainer: JSON.stringify(functionContainer),
+              functionContainer,
             },
           };
 
