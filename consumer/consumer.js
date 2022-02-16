@@ -6,7 +6,7 @@ const kafka = new Kafka({
   brokers: ['localhost:9092'],
 });
 
-var processedMessage = {};
+const processedMessage = {};
 
 const consumeMessages = async () => {
   const consumer = kafka.consumer({ groupId: 'test-group' });
@@ -42,25 +42,28 @@ const addFunctionContainer = (message) => {
 };
 
 const addArgumentContainer = (message) => {
-  argumentIndex = message.value.data.argumentIndex;
-  functionId = message.value.data.functionId;
-  // processedMessage[functionId].args[argumentIndex] = message.value.data.argumentContainer;
+  const argumentIndex = message.value.data.argumentIndex;
+  const functionId = message.value.data.functionId;
+  if (processedMessage[functionId]) {
+    processedMessage[functionId].args[argumentIndex] = message.value.data.argumentContainer;
+  }
   console.log(processedMessage[functionId]);
-  console.log(argumentIndex);
-  console.log(functionId);
+  // console.log(argumentIndex);
+  // console.log(functionId);
 };
 
 const writeOutFile = (data) => {
   out = JSON.stringify(data, null, 4);
-  fs.writeFile('out.JSON', out, (err) => {
+  fs.writeFile('out-consumer.JSON', out, (err) => {
     if (err) console.error(err);
   });
 };
 
 process.on('SIGINT', () => {
   out = JSON.stringify(processedMessage, null, 4);
-  fs.writeFileSync('out.JSON', out);
-  console.log(processedMessage.functionId_3.args);
-  // console.dir(processedMessage, { depth: null});
+  fs.writeFileSync('out-consumer.JSON', out);
+  // console.log(processedMessage.functionId_3.args);
+  console.log(out);
+  //console.dir(processedMessage, { depth: null});
   process.exit();
 });
