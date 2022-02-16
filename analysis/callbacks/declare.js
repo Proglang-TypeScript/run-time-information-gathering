@@ -2,6 +2,8 @@
 
 'use strict';
 
+const { produceMessage } = require('../../utils/kafka');
+
 (function (sandbox) {
   function DeclareAnalysis() {
     this.callbackName = 'declare';
@@ -26,6 +28,17 @@
         if (functionContainer) {
           var argumentContainer = buildArgumentContainer(argumentIndex, name, val);
           functionContainer.addArgumentContainer(argumentIndex, argumentContainer);
+
+          const message = {
+            command: 'add-argument-container',
+            data: {
+              argumentIndex,
+              argumentContainer,
+              functionId: functionContainer.functionId,
+            },
+          };
+
+          produceMessage(message).catch((err) => console.log(err));
 
           dis.interactionContainerFinder.addMapping(argumentContainer, val);
         }
