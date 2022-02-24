@@ -7,6 +7,9 @@ const kafka = new Kafka({
 });
 
 const processedMessage = {};
+var messageChanged = false;
+var out = '';
+const outputFileName = 'output-consumer.JSON';
 
 const consumeMessages = async () => {
   const consumer = kafka.consumer({ groupId: 'test-group' });
@@ -35,6 +38,7 @@ const runCommand = (message) => {
       break;
   }
   writeOutFile(processedMessage);
+  messageChanged = true;
 };
 
 const addFunctionContainer = (message) => {
@@ -47,23 +51,25 @@ const addArgumentContainer = (message) => {
   if (processedMessage[functionId]) {
     processedMessage[functionId].args[argumentIndex] = message.value.data.argumentContainer;
   }
-  console.log(processedMessage[functionId]);
-  // console.log(argumentIndex);
-  // console.log(functionId);
 };
 
 const writeOutFile = (data) => {
   out = JSON.stringify(data, null, 4);
-  fs.writeFile('out-consumer.JSON', out, (err) => {
+  fs.writeFile(outputFileName, out, (err) => {
     if (err) console.error(err);
   });
 };
 
+setInterval(function () {
+  if (messageChanged) {
+    writeOutFile(processedMessage);
+    messageChanged = false;
+  }
+}, 2000);
+
 process.on('SIGINT', () => {
   out = JSON.stringify(processedMessage, null, 4);
-  fs.writeFileSync('out-consumer.JSON', out);
-  // console.log(processedMessage.functionId_3.args);
+  fs.writeFileSync(outputFileName, out);
   console.log(out);
-  //console.dir(processedMessage, { depth: null});
   process.exit();
 });
