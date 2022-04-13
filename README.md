@@ -1,7 +1,6 @@
-# dts-runtime
+# dts-runtime-asynchronous
 
-Gathers runtime information from JavaScript code. This tool is a core component of [dts-generate](https://github.com/proglang/ts-declaration-file-generator). Check our paper [Generation of TypeScript Declaration Files from
-JavaScript Code](https://dl.acm.org/doi/pdf/10.1145/3475738.3480941) for more details.
+This is an asynchronous implementation of [dts-runtime](https://github.com/proglang/run-time-information-gathering). Implements a Message Queue via KafkaJS to send, receive and store the data, produced by dts-runtime.
 
 ## Install
 
@@ -9,6 +8,7 @@ JavaScript Code](https://dl.acm.org/doi/pdf/10.1145/3475738.3480941) for more de
 $ git clone [THIS-REPO] dts-runtime
 $ cd dts-runtime
 $ npm i
+$ npm install kafkajs
 ```
 
 ### Docker
@@ -23,18 +23,31 @@ This will build an image called `master-mind-wp3` on your local machine.
 
 ### Get runtime information from one JS file
 
-This command will both instrument the JS code and then execute the instrumented code. The JSON representing the collected runtime information will be printed by stdout. Additionally, the output will be saved in a file `./output.json`
+This command will both instrument the JS code and then execute the instrumented code. The JSON representing the collected runtime information will be printed by stdout. Additionally, the output will be saved in a file `./output.json`. The Message Queue output will be saved in a file `./output-consumer.json`. Also the consumer will print the output on key interrupt (CTRL + C).
+
+#### Starting the consumer
+
+Split the terminal into (A) and (B).
+(A):
+
+```bash
+$ npm run start:consumer
+```
 
 #### Command
 
+(B):
+
 ```bash
-$ npm run --silent generate -- [JS-FILE]
+$ npm run --silent generate -- [JS-FILE] blacklisted.json
 ```
 
 #### Example
 
+(B):
+
 ```bash
-$ npm run --silent generate -- tests/calculator/calculator.js
+$ npm run --silent generate -- tests/calculator/calculator.js blacklisted.json
 ```
 
 #### Docker
@@ -47,7 +60,7 @@ docker run -v $(pwd)/tests/calculator/calculator.js:/tmp/calculator.js master-mi
 
 #### Blacklisted node modules
 
-You can specify a JSON file that contains an array of blacklisted node modules which you don't want to instrument.
+You can specify a JSON file that contains an array of blacklisted node modules which you don't want to instrument. For the asynchronous implementation to work, this needs to contain 'kafkajs'.
 
 ```bash
 $ npm run --silent generate -- tests/calculator/calculator.js ./example-blacklist.json
@@ -56,7 +69,7 @@ $ npm run --silent generate -- tests/calculator/calculator.js ./example-blacklis
 example-blacklist.json:
 
 ```json
-["lodash"]
+["kafkajs"]
 ```
 
 #### Docker

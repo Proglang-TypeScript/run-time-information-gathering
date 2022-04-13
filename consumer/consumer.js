@@ -1,8 +1,16 @@
 const { Kafka } = require('kafkajs');
 var fs = require('fs');
+const {
+  KAFKA_BROKER,
+  KAFKA_TOPIC,
+  KAFKA_CLIENT_ID,
+  KAFKA_CLIENT_ID_CONSUMER,
+  KAFKA_GROUP_ID,
+} = require('../utils/config');
 
 const kafka = new Kafka({
-  clientId: 'my-app',
+  // kafka clientId
+  clientId: KAFKA_CLIENT_ID_CONSUMER,
   brokers: ['localhost:9092'],
 });
 
@@ -12,9 +20,9 @@ var out = '';
 const outputFileName = 'output-consumer.JSON';
 
 const consumeMessages = async () => {
-  const consumer = kafka.consumer({ groupId: 'test-group' });
+  const consumer = kafka.consumer({ groupId: KAFKA_GROUP_ID });
   await consumer.connect();
-  await consumer.subscribe({ topic: 'topicTest.v1' });
+  await consumer.subscribe({ topic: KAFKA_TOPIC });
 
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
