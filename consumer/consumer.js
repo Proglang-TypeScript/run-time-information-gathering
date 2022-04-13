@@ -11,7 +11,7 @@ const {
 const kafka = new Kafka({
   // kafka clientId
   clientId: KAFKA_CLIENT_ID_CONSUMER,
-  brokers: ['localhost:9092'],
+  brokers: [KAFKA_BROKER],
 });
 
 const processedMessage = {};
