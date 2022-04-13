@@ -25,6 +25,14 @@ This will build an image called `master-mind-wp3` on your local machine.
 
 This command will both instrument the JS code and then execute the instrumented code. The JSON representing the collected runtime information will be printed by stdout. Additionally, the output will be saved in a file `./output.json`. The Message Queue output will be saved in a file `./output-consumer.json`. Also the consumer will print the output on key interrupt (CTRL + C).
 
+#### docker-compose
+
+Run the docker container.
+
+```bash
+$ docker-compose up -d
+```
+
 #### Starting the consumer
 
 Split the terminal into (A) and (B).
