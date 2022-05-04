@@ -1,11 +1,6 @@
 const { Kafka } = require('kafkajs');
 const { nanoid } = require('nanoid');
-const {
-  KAFKA_BROKER,
-  KAFKA_TOPIC,
-  KAFKA_CLIENT_ID,
-  KAFKA_CLIENT_ID_PRODUCER,
-} = require('./config');
+const { KAFKA_BROKER, KAFKA_TOPIC, KAFKA_CLIENT_ID_PRODUCER } = require('./config');
 
 const kafka = new Kafka({
   clientId: KAFKA_CLIENT_ID_PRODUCER,

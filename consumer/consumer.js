@@ -9,7 +9,6 @@ const {
 } = require('../utils/config');
 
 const kafka = new Kafka({
-  // kafka clientId
   clientId: KAFKA_CLIENT_ID_CONSUMER,
   brokers: [KAFKA_BROKER],
 });
