@@ -2,6 +2,8 @@
 
 'use strict';
 
+const { produceMessage } = require('../../utils/kafka');
+
 (function (sandbox) {
   function InvokeFunAnalysis() {
     this.callbackName = 'invokeFun';
@@ -68,6 +70,16 @@
             }
           });
         }
+        const message = {
+          command: 'add-function-container',
+          data: {
+            functionId: functionContainer.functionId,
+            functionContainer,
+          },
+        };
+
+        // eslint-disable-next-line no-console
+        produceMessage(message).catch((err) => console.log(err));
       }
 
       return {

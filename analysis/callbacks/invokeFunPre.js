@@ -2,6 +2,8 @@
 
 'use strict';
 
+const { produceMessage } = require('../../utils/kafka');
+
 (function (sandbox) {
   function InvokeFunPreAnalysis() {
     this.callbackName = 'invokeFunPre';
@@ -43,6 +45,19 @@
           functionContainer.functionIid = functionIid;
 
           dis.runTimeInfo[functionContainer.functionId] = functionContainer;
+
+          // This command is equivalent to executing the
+          // method `addFunctionContainer(functionId, functionContainer)`.
+          const message = {
+            command: 'add-function-container',
+            data: {
+              functionId: functionContainer.functionId,
+              functionContainer,
+            },
+          };
+
+          // eslint-disable-next-line no-console
+          produceMessage(message).catch((err) => console.log(err));
         }
       }
 
