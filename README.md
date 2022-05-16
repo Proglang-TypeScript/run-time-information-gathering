@@ -8,7 +8,6 @@ This is an asynchronous implementation of [dts-runtime](https://github.com/progl
 $ git clone [THIS-REPO] dts-runtime
 $ cd dts-runtime
 $ npm i
-$ npm install kafkajs
 ```
 
 ### Docker
