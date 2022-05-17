@@ -3,7 +3,6 @@ var fs = require('fs');
 const {
   KAFKA_BROKER,
   KAFKA_TOPIC,
-  KAFKA_CLIENT_ID,
   KAFKA_CLIENT_ID_CONSUMER,
   KAFKA_GROUP_ID,
 } = require('../utils/config');
