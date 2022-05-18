@@ -1,6 +1,6 @@
 const { Kafka } = require('kafkajs');
 const { nanoid } = require('nanoid');
-const { KAFKA_BROKER, KAFKA_TOPIC, KAFKA_CLIENT_ID_PRODUCER } = require('./config');
+const { KAFKA_BROKER, KAFKA_TOPIC, KAFKA_CLIENT_ID_PRODUCER, KAFKA_ENABLED } = require('./config');
 
 const kafka = new Kafka({
   clientId: KAFKA_CLIENT_ID_PRODUCER,
@@ -8,8 +8,11 @@ const kafka = new Kafka({
 });
 
 const produceMessage = async (message) => {
-  const producer = kafka.producer();
+  if (!KAFKA_ENABLED) {
+    return;
+  }
 
+  const producer = kafka.producer();
   await producer.connect();
   await producer.send({
     topic: KAFKA_TOPIC,
@@ -17,7 +20,6 @@ const produceMessage = async (message) => {
       { value: JSON.stringify({ ...message, id: nanoid(), timestamp: new Date().toISOString() }) },
     ],
   });
-
   await producer.disconnect();
 };
 

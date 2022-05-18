@@ -33,7 +33,7 @@ npm run --silent generate -- tests/calculator/calculator.js blacklisted.json
 
 The Message Queue output will be saved in a file `./output-consumer.json`. Also the consumer will print the output on key interrupt (CTRL + C).
 
-Check your `.env` file and modify the Kafka env variables accordingly if needed.
+Check your `.env` file and modify the Kafka env variables accordingly if needed. You'll have to set `KAFKA_ENABLED=true`.
 
 Initialize Kafka:
 
