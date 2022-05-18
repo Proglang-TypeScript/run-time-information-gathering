@@ -2,6 +2,8 @@
 
 'use strict';
 
+const { produceMessage } = require('../../utils/kafka');
+
 (function (sandbox) {
   function FunctionEnterAnalysis() {
     this.callbackName = 'functionEnter';
@@ -26,10 +28,20 @@
         functionContainer = new FunctionContainer(f);
 
         dis.runTimeInfo[functionId] = functionContainer;
+
+        const message = {
+          command: 'add-function-container',
+          data: {
+            functionId: functionContainer.functionId,
+            functionContainer,
+          },
+        };
+
+        // eslint-disable-next-line no-console
+        produceMessage(message).catch((err) => console.log(err));
       } else {
         functionContainer = dis.runTimeInfo[functionId];
       }
-
       functionContainer.functionIid = iid;
 
       dis.functionsExecutionStack.addExecution(f);

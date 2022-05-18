@@ -1,0 +1,44 @@
+version: '3.5'
+
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - '2181:2181'
+
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - '${KAFKA_PORT}:9092'
+    depends_on:
+      - zookeeper
+    environment:
+      # Explained in https://rmoff.net/2018/08/02/kafka-listeners-explained/
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: '${KAFKA_TOPIC}:1:1'
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_LISTENERS: INSIDE://kafka:29092,OUTSIDE://kafka:9092
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:29092,OUTSIDE://${KAFKA_HOST}:${KAFKA_PORT}
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    links:
+      - zookeeper
+
+  akhq:
+    image: tchiotludo/akhq
+    environment:
+      AKHQ_CONFIGURATION: |
+        akhq:
+          connections:
+            docker-kafka-server:
+              properties:
+                bootstrap.servers: "kafka:29092"
+    ports:
+      - 4001:8080
+    depends_on:
+      - kafka
+      - zookeeper
+    links:
+      - kafka
