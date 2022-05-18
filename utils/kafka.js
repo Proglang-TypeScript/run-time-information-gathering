@@ -7,12 +7,13 @@ const kafka = new Kafka({
   brokers: [KAFKA_BROKER],
 });
 
+const producer = kafka.producer();
+
 const produceMessage = async (message) => {
   if (!KAFKA_ENABLED) {
     return;
   }
 
-  const producer = kafka.producer();
   await producer.connect();
   await producer.send({
     topic: KAFKA_TOPIC,
