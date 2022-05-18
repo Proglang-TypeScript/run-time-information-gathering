@@ -15,7 +15,7 @@ const kafka = new Kafka({
 const processedMessage = {};
 var messageChanged = false;
 var out = '';
-const outputFileName = 'output-consumer.JSON';
+const outputFileName = 'output-consumer.json';
 
 const consumeMessages = async () => {
   const consumer = kafka.consumer({ groupId: KAFKA_GROUP_ID });
@@ -23,7 +23,7 @@ const consumeMessages = async () => {
   await consumer.subscribe({ topic: KAFKA_TOPIC });
 
   await consumer.run({
-    eachMessage: async ({ topic, partition, message }) => {
+    eachMessage: async ({ message }) => {
       message.value = JSON.parse(message.value.toString());
       runCommand(message);
     },
