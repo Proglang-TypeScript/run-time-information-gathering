@@ -14,7 +14,8 @@
     "prettier": "prettier --write 'analysis/**/*.js' 'utils/**/*.js' 'tests/**/*.js'",
     "lint": "eslint --max-warnings 0 'analysis/**/*.js' 'utils/**/*.js' 'tests/**/*.js'",
     "postinstall": "sh build/install.sh",
-    "start:consumer": "node consumer/consumer.js"
+    "start:consumer": "node consumer/consumer.js",
+    "env": "cp .env.example .env"
   },
   "husky": {
     "hooks": {
