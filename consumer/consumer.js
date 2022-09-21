@@ -92,6 +92,6 @@ setInterval(function () {
 process.on('SIGINT', () => {
   out = JSON.stringify(processedMessage, null, 4);
   fs.writeFileSync(outputFileName, out);
-  // console.log(out);
+  console.log(out);
   process.exit();
 });
