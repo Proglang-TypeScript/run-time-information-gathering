@@ -13,6 +13,7 @@ const kafka = new Kafka({
 });
 
 const processedMessage = {};
+const argumentContainerDictionary = {};
 var messageChanged = false;
 var out = '';
 const outputFileName = 'output-consumer.json';
@@ -42,6 +43,9 @@ const runCommand = (message) => {
     case 'add-argument-container':
       addArgumentContainer(message);
       break;
+    case 'add-interaction':
+      addInteractionArgumentContainer(message);
+      break;
   }
   writeOutFile(processedMessage);
   messageChanged = true;
@@ -49,6 +53,9 @@ const runCommand = (message) => {
 
 const addFunctionContainer = (message) => {
   processedMessage[message.value.data.functionId] = message.value.data.functionContainer;
+  for (const argId in message.value.data.functionContainer.args) {
+    argumentContainerDictionary[message.value.data.functionContainer.args[argId].argumentId] = message.value.data.functionContainer.args[argId];
+  }
 };
 
 const addArgumentContainer = (message) => {
@@ -56,6 +63,15 @@ const addArgumentContainer = (message) => {
   const functionId = message.value.data.functionId;
   if (processedMessage[functionId]) {
     processedMessage[functionId].args[argumentIndex] = message.value.data.argumentContainer;
+  }
+  argumentContainerDictionary[message.value.data.argumentContainer.argumentId] = message.value.data.argumentContainer;
+};
+
+const addInteractionArgumentContainer = (message) => {
+  const argumentId = message.value.data.argumentId;
+  const argumentContainer = argumentContainerDictionary[argumentId];
+  if (argumentContainer) {
+    argumentContainer.interactions.push(message.value.data.interaction);
   }
 };
 
@@ -76,6 +92,6 @@ setInterval(function () {
 process.on('SIGINT', () => {
   out = JSON.stringify(processedMessage, null, 4);
   fs.writeFileSync(outputFileName, out);
-  console.log(out);
+  // console.log(out);
   process.exit();
 });
