@@ -71,7 +71,10 @@ const addInteractionArgumentContainer = (message) => {
   const argumentId = message.value.data.argumentId;
   const argumentContainer = argumentContainerDictionary[argumentId];
   if (argumentContainer) {
-    argumentContainer.interactions.push(message.value.data.interaction);
+    const interactionIds = new Set(argumentContainer.interactions.map(interaction => interaction.interactionId));
+    if (!interactionIds.has(message.value.data.interaction.interactionId)) {
+      argumentContainer.interactions.push(message.value.data.interaction);
+    }  
   }
 };
 
@@ -92,6 +95,6 @@ setInterval(function () {
 process.on('SIGINT', () => {
   out = JSON.stringify(processedMessage, null, 4);
   fs.writeFileSync(outputFileName, out);
-  console.log(out);
+  // console.log(out);
   process.exit();
 });
