@@ -1,4 +1,4 @@
-const fs = require('fs');
+
 
 
 //FILE FOR COMPARING output.json TO output-consumer.json FOR ALL TEST FILES IN TEST FOLDER
@@ -38,10 +38,6 @@ const fs = require('fs');
 
 // console.log(tests);
 
-// function func(value) {
-//     // tester = 'npm run --silent generate -- tests/' + value + '.js blacklisted.json';
-//     console.log(value);
-// }
 
 // process.argv.forEach(function (val, index, array) {
 //     console.log(index + ': ' + val);
@@ -53,56 +49,25 @@ var args = process.argv.slice(2); //only 1 argument at time since must reset Kaf
 // PIECE FOR LOOPING THROUGH LIST OF TEST FILE NAMES
 // const tests = ['tests/asynchronism/callbackAsObjectMethod'];
 const tests = ['tests/asynchronism/callbackAsObjectMethod', 'tests/asynchronism/setTimeout', 'tests/asynchronism/setTimeoutChain',
-//     'asynchronism/setTimeoutGlobalCallback', 'asynchronism/setTimeoutGlobalChain', 'calculator/calculator', 
-//     'callbacks/callback-simple', 'converted_to/greaterThanOperator', 'converted_to/lessThanOperator',
-//     'converted_to/sumOperator', 'converted_to/sumOperatorGetProp', 'enclosing-function/enclosingFunctionGetFieldReturningObject',
-//     'enclosing-function/enclosingFunctionGlobalFunctions', 'enclosing-function/enclosingFunctionObjectMethods', 
-//     'enclosing-function/enclosingFunctions', 'get_prop/getProp', 'get_prop/getPropNotArgument', 'get_prop/getPropReturningObject',
-//     'get_prop/getPropSameObjectForTwoArguments', 'get_prop/recursiveGetProp', 
-//     'input_value/inputValueMethod', 'input_value/inputValueMethodInsideFunction', 'input_value/inputValueNotMethods',
-//     'input_value/inputValueTypeOfs', 'method_call/methodCallInsideFunction', 'method_call/methodCallOffsetNonexistent',
-//     'method_call/methodCallOutsideFunction', 'method_call/methodReturningObject', 'method_call/recursiveMethodCallReturningObject',
-//     'method_returning_typeof/methodMultipleReturnTypeOfs', 'method_returning_typeof/methodSimpleReturnTypeOf',
-//     'non-instrumented-functions/fsModule', 'nullAsProxy/nullAsNumber', 'nullAsProxy/nullAsString', 'nullAsProxy/nullConditional',
-//     'nullAsProxy/nullEqualOperator', 'numbers/numberMethodsAndProperties', 'operators/operators', 'set_prop/setProp',
-//     'set_prop/setPropReturnedObject', 'strings/stringMethodsAndProperties', 'undefinedAsProxy/undefinedAsNumber', 
-//     'undefinedAsProxy/undefinedAsString', 'undefinedAsProxy/undefinedConditional', 'undefinedAsProxy/undefinedEqualOperator',
+    'tests/asynchronism/setTimeoutGlobalCallback', 'tests/asynchronism/setTimeoutGlobalChain', 'tests/calculator/calculator', 
+    'tests/callbacks/callback-simple', 'tests/converted_to/greaterThanOperator', 'tests/converted_to/lessThanOperator',
+    'tests/converted_to/sumOperator', 'tests/converted_to/sumOperatorGetProp', 'tests/enclosing-function/enclosingFunctionGetFieldReturningObject',
+    'tests/enclosing-function/enclosingFunctionGlobalFunctions', 'tests/enclosing-function/enclosingFunctionObjectMethods', 
+    'tests/enclosing-function/enclosingFunctions', 'tests/get_prop/getProp', 'tests/get_prop/getPropNotArgument', 'tests/get_prop/getPropReturningObject',
+    'tests/get_prop/getPropSameObjectForTwoArguments', 'tests/get_prop/recursiveGetProp', 
+    'tests/input_value/inputValueMethod', 'tests/input_value/inputValueMethodInsideFunction', 'tests/input_value/inputValueNotMethods',
+    'tests/input_value/inputValueTypeOfs', 'tests/method_call/methodCallInsideFunction', 'tests/method_call/methodCallOffsetNonexistent',
+    'tests/method_call/methodCallOutsideFunction', 'tests/method_call/methodReturningObject', 'tests/method_call/recursiveMethodCallReturningObject',
+    'tests/method_returning_typeof/methodMultipleReturnTypeOfs', 'tests/method_returning_typeof/methodSimpleReturnTypeOf',
+    'tests/non-instrumented-functions/fsModule', 'tests/nullAsProxy/nullAsNumber', 'tests/nullAsProxy/nullAsString', 'tests/nullAsProxy/nullConditional',
+    'tests/nullAsProxy/nullEqualOperator', 'tests/numbers/numberMethodsAndProperties', 'tests/operators/operators', 'tests/set_prop/setProp',
+    'tests/set_prop/setPropReturnedObject', 'tests/strings/stringMethodsAndProperties', 'tests/undefinedAsProxy/undefinedAsNumber', 
+    'tests/undefinedAsProxy/undefinedAsString', 'tests/undefinedAsProxy/undefinedConditional', 'tests/undefinedAsProxy/undefinedEqualOperator',
     'tests/used_as_argument/usedAsArgument', 'tests/used_as_argument/usedAsArgumentWithTimeout'];
 // args.forEach(func);
-// tests.forEach(func);
 
-// function func(value) {
-//     tester = 'npm run --silent generate -- ' + value + ' blacklisted.json';
-//     // console.log(tester);
 
-//     // // RESTART CONSUMER HERE
-//     const exec = require('child_process').exec;
-//     const execSync = require('child_process').execSync; // import { execSync } from 'child_process' 
-//     var consumer = exec('npm run start:consumer');
-//     console.log("Consumer started");
-
-//     setTimeout(function(){
-//         // //RUN COMMAND FOR A FILE, WILL LATER GO INSIDE LOOP
-           
-//         const output = execSync(tester, { encoding: 'utf-8' }); // the default is 'buffer'
-        
-//         // //CHECK IF TWO FILES ARE THE SAME
-//         var fs = require('fs'); 
-//         var file1 = fs.readFileSync('output.json');
-//         var file1Clean = '{' + file1.toString().split('\n{\n').slice(1).join('{');
-//         var file2 = fs.readFileSync('output-consumer.json');
-//         file1 = JSON.stringify(JSON.parse(file1Clean), null, 4);
-//         file2 = JSON.stringify(JSON.parse(file2.toString()), null, 4);
-//         if (file1 === file2) {
-//             console.log(value + ": They are the same");
-//         }
-//         else {
-//             console.log(value + ": They are different");
-//         }
-//         process.kill(consumer.pid);
-//     }, 45000);
-// }
-
+const fs = require('fs');
 const exec = require('child_process').exec;
 const execSync = require('child_process').execSync;
 var isTimeout = false;
@@ -120,13 +85,14 @@ const wait = (fileName) => {
             console.log("Timed out");
             isTimeout = true;
             resolve();
-        }, 45000);
+        }, 60000);
 
         fs.watchFile(fileName, function () {
             fs.unwatchFile(fileName);
             console.log("File Updated");  
             clearTimeout(timer);
-            resolve();
+            setTimeout(resolve, 500);
+            // resolve();
         });
     });
 };
@@ -134,6 +100,8 @@ const wait = (fileName) => {
 
 const runTest = async () => {
     for(test of tests) {
+        //CHECK THAT TEST FILE EXISTS
+
         tester = 'npm run --silent generate -- ' + test + ' blacklisted.json';
 
         // RESTART CONSUMER HERE
@@ -146,15 +114,14 @@ const runTest = async () => {
 
         process.kill(consumer.pid);
 
-        //KILL LOOP IF WAIT TIMES OUT
+        //END LOOP IF WAIT TIMED OUT TO AVOID BUGS
         if (isTimeout) {
             out += test + ": Timeout\n";
+            fs.writeFileSync('test-results.txt', out);
             break;
         }
-
-         
-        // CHECK IF TWO FILES ARE THE SAME
-        
+       
+        // CHECK IF TWO FILES ARE THE SAME       
         var file1 = fs.readFileSync('output.json');
         var file1Clean = '{' + file1.toString().split('\n{\n').slice(1).join('{');
         var file2 = fs.readFileSync('output-consumer.json');
@@ -162,17 +129,17 @@ const runTest = async () => {
         file2 = JSON.stringify(JSON.parse(file2.toString()), null, 4);
         if (file1 === file2) {
             out += test + ": They are the same\n";
-            // fs.writeFileSync('test-results.txt', out);
+            fs.writeFileSync('test-results.txt', out);
             console.log(test + ": They are the same");
         }
         else {
             out += test + ": They are different\n";
-            
+            fs.writeFileSync('test-results.txt', out);
             console.log(test + ": They are different");
         }
 
     }
-    fs.writeFileSync('test-results.txt', out);
+    // fs.writeFileSync('test-results.txt', out);
 };
 
 runTest();
