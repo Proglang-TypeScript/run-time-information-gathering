@@ -18,7 +18,7 @@ const produceMessage = async (message) => {
   await producer.send({
     topic: KAFKA_TOPIC,
     messages: [
-      { value: JSON.stringify({ ...message, id: nanoid(), timestamp: new Date().toISOString() }) },
+      { value: JSON.stringify({ ...message, id: nanoid(), timestamp: new Date().toISOString(), outputId: process.argv[1] }) },
     ],
   });
   await producer.disconnect();
