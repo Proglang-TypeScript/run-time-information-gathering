@@ -17,7 +17,9 @@
       // eslint-disable-next-line no-console
       console.log('');
       // eslint-disable-next-line no-console
-      console.log(JSON.stringify(sandbox.runTimeInfo, null, 4));
+      var collator = new Intl.Collator(undefined, {numeric: true});
+      const sorted = Object.keys(sandbox.runTimeInfo).sort(collator.compare).reduce((dict, key) => (dict[key] = sandbox.runTimeInfo[key], dict), {});
+      console.log(JSON.stringify(sorted, null, 4));
     };
   }
 
