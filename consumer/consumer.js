@@ -12,8 +12,9 @@ const kafka = new Kafka({
   brokers: [KAFKA_BROKER],
 });
 
-const processedMessage = {};
-var messageChanged = false;
+var processedMessage = {};
+const argumentContainerDictionary = {};
+const fileDictionary = {};
 var out = '';
 const outputFileName = 'output-consumer.json';
 
@@ -35,6 +36,10 @@ const consumeMessages = async () => {
 })();
 
 const runCommand = (message) => {
+  const outputId = message.value.outputId.split('/').slice(-2).join('/');
+  if (fileDictionary[outputId]) {
+    processedMessage = fileDictionary[outputId];
+  }
   switch (message.value.command) {
     case 'add-function-container':
       addFunctionContainer(message);
@@ -42,40 +47,52 @@ const runCommand = (message) => {
     case 'add-argument-container':
       addArgumentContainer(message);
       break;
+    case 'add-interaction':
+      addInteractionArgumentContainer(message);
+      break;
   }
-  writeOutFile(processedMessage);
-  messageChanged = true;
+  var collator = new Intl.Collator(undefined, {numeric: true});
+  const sortedMessage = Object.keys(processedMessage).sort(collator.compare).reduce((dict, key) => (dict[key] = processedMessage[key], dict), {});
+  fileDictionary[outputId] = sortedMessage;
+  writeOutFile(fileDictionary[outputId], 'test-results/'+outputId.split('.').slice(0,-1).join('.')+'-output-consumer.json');
+  processedMessage = {};
 };
 
 const addFunctionContainer = (message) => {
   processedMessage[message.value.data.functionId] = message.value.data.functionContainer;
+  for (const argId in message.value.data.functionContainer.args) {
+    argumentContainerDictionary[message.value.data.functionContainer.args[argId].argumentId] = message.value.data.functionContainer.args[argId];
+  }
 };
 
 const addArgumentContainer = (message) => {
-  const argumentIndex = message.value.data.argumentIndex;
   const functionId = message.value.data.functionId;
   if (processedMessage[functionId]) {
-    processedMessage[functionId].args[argumentIndex] = message.value.data.argumentContainer;
+    processedMessage[functionId].args[message.value.data.argumentIndex] = message.value.data.argumentContainer;
+  }
+  argumentContainerDictionary[message.value.data.argumentContainer.argumentId] = message.value.data.argumentContainer;
+};
+
+const addInteractionArgumentContainer = (message) => {
+  const argumentContainer = argumentContainerDictionary[message.value.data.argumentId];
+  if (argumentContainer) {
+    const interactionIds = new Set(argumentContainer.interactions.map(interaction => interaction.interactionId));
+    if (!interactionIds.has(message.value.data.interaction.interactionId)) {
+      argumentContainer.interactions.push(message.value.data.interaction);
+    }  
   }
 };
 
-const writeOutFile = (data) => {
+const writeOutFile = (data, fileName) => {
   out = JSON.stringify(data, null, 4);
-  fs.writeFile(outputFileName, out, (err) => {
-    if (err) console.error(err);
-  });
+  fs.writeFileSync(fileName, out);
+  fs.writeFileSync(outputFileName, out);
 };
 
-setInterval(function () {
-  if (messageChanged) {
-    writeOutFile(processedMessage);
-    messageChanged = false;
-  }
-}, 2000);
-
+//UPDATE FILES WHEN SHUTTING OFF CONSUMER
 process.on('SIGINT', () => {
-  out = JSON.stringify(processedMessage, null, 4);
-  fs.writeFileSync(outputFileName, out);
-  console.log(out);
+  for (outputId of Object.keys(fileDictionary)) {
+    writeOutFile(fileDictionary[outputId], 'test-results/'+outputId.split('.').slice(0,-1).join('.')+'-output-consumer.json');
+  }
   process.exit();
 });

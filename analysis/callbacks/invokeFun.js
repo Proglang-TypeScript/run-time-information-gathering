@@ -50,6 +50,17 @@ const { produceMessage } = require('../../utils/kafka');
               }
             });
           }
+          const message = {
+            command: 'add-function-container',
+            data: {
+              functionId: functionContainer.functionId,
+              functionContainer,
+            },
+          };
+  
+          // eslint-disable-next-line no-console
+          produceMessage(message).catch((err) => console.log(err));
+
         }
 
         if (f.name === 'require') {
@@ -70,16 +81,7 @@ const { produceMessage } = require('../../utils/kafka');
             }
           });
         }
-        const message = {
-          command: 'add-function-container',
-          data: {
-            functionId: functionContainer.functionId,
-            functionContainer,
-          },
-        };
 
-        // eslint-disable-next-line no-console
-        produceMessage(message).catch((err) => console.log(err));
       }
 
       return {
