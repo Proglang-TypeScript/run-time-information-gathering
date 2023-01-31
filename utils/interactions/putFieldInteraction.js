@@ -11,7 +11,7 @@
     this.iid = iid;
     this.field = field;
 
-    this.code = 'setField';
+    this.code = 'putField';
 
     this.typeof = null;
   }
