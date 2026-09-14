@@ -10,7 +10,7 @@
     "argparse": "3.0.2",
     "acorn-legacy": "npm:acorn@7.4.1",
     "esotope": "1.4.5",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   },
   "scripts": {
     "generate": "node scripts/run.cjs",
