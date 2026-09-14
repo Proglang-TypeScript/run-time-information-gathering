@@ -23,11 +23,9 @@ const { nanoid } = require('nanoid');
           interaction,
         },
       };
-      
-      produceMessage(message).catch((err) => console.log(err));
+
+      produceMessage(message).catch((err) => process.stderr.write(String(err) + '\n'));
     };
-
-
   }
 
   if (sandbox.utils === undefined) {

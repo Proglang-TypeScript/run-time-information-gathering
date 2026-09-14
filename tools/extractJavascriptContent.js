@@ -3,7 +3,7 @@
 "use strict";
 
 var HTMLParser = require('node-html-parser');
-const getStdin = require('get-stdin');
+const getStdin = async () => (await import('get-stdin')).default();
  
 getStdin().then(html => {
 	var root = HTMLParser.parse(

@@ -57,10 +57,9 @@ const { produceMessage } = require('../../utils/kafka');
               functionContainer,
             },
           };
-  
+
           // eslint-disable-next-line no-console
           produceMessage(message).catch((err) => console.log(err));
-
         }
 
         if (f.name === 'require') {
@@ -81,7 +80,6 @@ const { produceMessage } = require('../../utils/kafka');
             }
           });
         }
-
       }
 
       return {

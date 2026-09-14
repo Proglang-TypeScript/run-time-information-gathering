@@ -14,7 +14,7 @@
       if (!map.has(result)) {
         try {
           map.set(result, interaction);
-        } catch (error) {
+        } catch {
           // Do nothing if result is not an object
         }
       }

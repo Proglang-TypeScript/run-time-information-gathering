@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ quiet: true });
 
 const KAFKA_TOPIC = process.env.KAFKA_TOPIC || '';
 const KAFKA_HOST = process.env.KAFKA_HOST || '';

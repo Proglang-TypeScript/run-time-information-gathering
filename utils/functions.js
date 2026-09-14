@@ -56,9 +56,8 @@
           for (var key in val) {
             if (propertyIsWritable(val, key)) {
               if (getTypeOf(val[key]) == 'function') {
-                val[key].declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(
-                  functionsExecutionStack,
-                );
+                val[key].declarationEnclosingFunctionId =
+                  getDeclarationEnclosingFunctionId(functionsExecutionStack);
               }
 
               doAddDeclarationFunctionIdToFunctionsInsideObject(val[key], functionsExecutionStack);
@@ -82,7 +81,8 @@
     getTypeOf: getTypeOf,
     getTypeOfForReporting: getTypeOfForReporting,
     getDeclarationEnclosingFunctionId: getDeclarationEnclosingFunctionId,
-    addDeclarationFunctionIdToFunctionsInsideObject: addDeclarationFunctionIdToFunctionsInsideObject,
+    addDeclarationFunctionIdToFunctionsInsideObject:
+      addDeclarationFunctionIdToFunctionsInsideObject,
     getRandomIdentifier: getRandomIdentifier,
   };
 })(J$);

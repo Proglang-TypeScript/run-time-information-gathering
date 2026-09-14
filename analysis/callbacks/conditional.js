@@ -19,9 +19,8 @@
       let newResult = result;
 
       if (dis.wrapperObjectsHandler.objectIsWrapperObject(result)) {
-        const finalRealValueFromWrapperObject = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(
-          result,
-        );
+        const finalRealValueFromWrapperObject =
+          dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(result);
 
         if (
           finalRealValueFromWrapperObject === undefined ||

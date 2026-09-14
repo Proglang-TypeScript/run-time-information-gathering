@@ -97,9 +97,8 @@ const { produceMessage } = require('../../utils/kafka');
       if (getTypeOf(val) == 'object') {
         const currentActiveFiid = dis.functionsExecutionStack.getCurrentExecutingFunction();
 
-        const containerForAddingNewInteraction = dis.interactionContainerFinder.findInteraction(
-          val,
-        );
+        const containerForAddingNewInteraction =
+          dis.interactionContainerFinder.findInteraction(val);
         if (currentActiveFiid && containerForAddingNewInteraction) {
           const usedAsArgumentInteraction = new UsedAsArgumentInteraction(
             currentActiveFiid,

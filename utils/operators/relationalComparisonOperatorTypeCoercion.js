@@ -55,7 +55,6 @@
     sandbox.utils = {};
   }
 
-  sandbox.utils.relationalComparisonOperatorTypeCoercion = new RelationalComparisonOperatorTypeCoercion(
-    sandbox.functions.getTypeOf,
-  );
+  sandbox.utils.relationalComparisonOperatorTypeCoercion =
+    new RelationalComparisonOperatorTypeCoercion(sandbox.functions.getTypeOf);
 })(J$);

@@ -1,0 +1,2 @@
+const globals = require('globals');
+module.exports = [{ignores: ['node_modules/**', 'dist/**', 'vendor/**', '**/*_jalangi_*.js']}, require('@eslint/js').configs.recommended, require('eslint-plugin-prettier/recommended'), {files: ['**/*.js'], languageOptions: {ecmaVersion: 2022, sourceType: 'commonjs', globals: {...globals.node, acorn: 'writable', esotope: 'writable'}}, rules: {'no-console': 'error', 'prefer-const': 'warn'}}, {files: ['tests/**/*.js'], rules: {'no-useless-assignment': 'off'}}];

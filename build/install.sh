@@ -1,10 +1,6 @@
-#!/bin/bash
-
-SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
-ROOT_PATH=$SCRIPT_PATH/..
-
-git clone https://github.com/Samsung/jalangi2.git
-npm install --prefix jalangi2/
-mv jalangi2 node_modules
-
-$ROOT_PATH/jalangi-commands/updateCommands.sh
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT_PATH="$(cd "$(dirname "$0")/.." && pwd -P)"
+cd "$ROOT_PATH"
+npm ci --ignore-scripts
+printf "%s\n" "Reviewed Jalangi runtime is included under vendor; no unpinned clone/install is required."

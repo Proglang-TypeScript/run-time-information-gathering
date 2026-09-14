@@ -9,7 +9,7 @@
     this.set = function (obj, traceId) {
       try {
         map.set(obj, traceId);
-      } catch (error) {
+      } catch {
         // Do nothing if obj is not an object
       }
     };

@@ -1,0 +1,11 @@
+# Security modernization — 2026-09-14
+
+Node24 LTS is the supported runtime. Select it with nvm; lifecycle scripts are disabled and lockfiles are enforced. Exact package versions are recorded in package manifests and frozen npm lockfiles. TypeScript6.0.3 is the current compiler-API release; TypeScript7 is native-only and cannot replace libraries that import the API. Node type definitions match the supported LTS rather than the host Node26. Jest30, compatible ts-jest29.4.12, ESLint10 and Prettier3 are used where applicable. Existing compiler errors were migrated, not suppressed.
+
+Use `npm ci` in each package directory, followed by its documented build/tests/lint. Full npm audits including development dependencies report zero advisories for the maintained package directories at validation. Audit findings can change: CI/weekly dependency updates are retained. Deprecated circular-json (viewer wire-format compatibility), ts-node and upstream transitive tooling remain maintenance risks even if no current advisory applies.
+
+Install with `npm ci`; run `npm run test:smoke` and `npm run lint`. `bin/run TARGET.js [BLACKLIST.json]` emits raw JSON to stdout using a unique temporary workspace and read-only source instrumentation. `bin/instrument.sh TARGET.js OUTPUT_DIR` supports standalone JS instrumentation. The reviewed Apache-2.0 Jalangi subset and original callbacks are retained; HTML/browser rewriting is legacy-only and was not migrated. Kafka2 transport is lazy when disabled; full asynchronous equivalence remains unverified. Only run trusted fixtures locally; external code requires the bounded container/service profile.
+
+Original golden outputs and their exact assertions are preserved. The calculator golden fails exact equality: it lacks IDs added by newer upstream analysis, and instrumentation IIDs differ after transpilation. No golden file was regenerated or assertion weakened. The maintained smoke exercises actual tracing and standalone arrow-function execution. The historical build/test wrappers remain diagnostic, not a green equivalence claim.
+
+ESLint no-useless-assignment is disabled only for instrumentation input fixtures: their assignments intentionally exercise write/operator callbacks even when the final variable value is unused. Original meaningful assertions, no-console and other checks remain active.
